@@ -1,25 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Fragment} from 'react';
 import './App.css';
+
+import Sidebar from './components/Sidebar';
+import Navbar from './components/Navbar';
+import Dashboard from './components/Dashboard';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment >
+    <Navbar/>
+    <div class="container-fluid ">
+        <div className="row">
+          <div className="col-md-3 side" >
+          <Sidebar/>
+          </div>
+          <div className=" col-md-9 " >
+          <Dashboard/>
+          </div>
+        </div>
+      </div>
+   
+    
+    </Fragment>
   );
 }
 
