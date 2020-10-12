@@ -66,3 +66,33 @@ div.content {
   padding-right: 0px !important;
 
 }
+
+/* Dashboard Componentes */
+.dashboard-componente{
+  background-color: white;
+  height: 300px;
+}
+
+.dashboard-componente-status{
+  background-color: white;
+  height: 90px;
+ 
+}
+.dashboard-componente-mejores{
+  background-color: white;
+  height: 200px;
+  margin-top: 10px;
+  
+}
+
+/*  Navbar */ 
+
+nav{
+  background-color: white;
+}
+
+/* Contenido */
+
+#contenido{
+  background-color: rgba(228, 228, 228, 0.404);
+}

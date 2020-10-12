@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 function StatusyMejores(){
     return(
         <Fragment>
-        <div class="container-fluid text-center">
+        <div class="container-fluid text-center dashboard-componente-status">
         <div className="row">
           <div className="col-md-4" >
           <p>Mesas</p>
@@ -25,7 +25,7 @@ function StatusyMejores(){
 
         
 
-        <div class="container-fluid text-center">
+        <div class="container-fluid text-center dashboard-componente-mejores">
         <div className="row">
                 <div className="col-md-12 text-left" >
                 <p>Mejores dias</p>

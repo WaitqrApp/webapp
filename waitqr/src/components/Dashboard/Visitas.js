@@ -2,7 +2,7 @@ import React from 'react';
 
 function Visitas(){
     return(
-        <div class="container-fluid ">
+        <div class="container-fluid dashboard-componente mt-4">
         <div className="row">
           <div className="col-md-6 text-left" >
           <p>Visitas mensuales</p>

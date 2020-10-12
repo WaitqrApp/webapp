@@ -2,7 +2,7 @@ import React from 'react';
 
 function Ayuda(){
     return(
-        <div class="container-fluid text-center">
+        <div className="container-fluid text-center dashboard-componente mt-4">
         <div className="row">
           <div className="col-md-12" >
           <p>imagen</p>
