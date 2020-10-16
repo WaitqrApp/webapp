@@ -11,7 +11,7 @@ import Ayuda from './Dashboard/Ayuda';
 
 function Dashboard(){
     return(
-        <div class="container-fluid ">
+        <div className="container-fluid ">
         <div className="row mt-4">
           <div className="col-md-4" >
             <PlatillosProbados/>
@@ -26,6 +26,11 @@ function Dashboard(){
         <div className="row">
           <div className="col-md-8" >
             <Visitas/>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
           </div>
           <div className=" col-md-4 " >
            <Ayuda/>

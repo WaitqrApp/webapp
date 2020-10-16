@@ -2,7 +2,7 @@ import React from 'react';
 
 function Ordenesgrafica(){
     return(
-        <div class="container-fluid text-center">
+        <div class="container-fluid text-center dashboard-componente">
         <div className="row">
           <div className="col-md-6" >
           <p>Total de platillos probados</p>
