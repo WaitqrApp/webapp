@@ -5,10 +5,13 @@ function Visitas(){
         <div class="container-fluid dashboard-componente mt-4">
         <div className="row">
           <div className="col-md-6 text-left" >
-          <p>Visitas mensuales</p>
+          <h1>Visitas mensuales</h1>
           </div>
           <div className="col-md-6 text-right" >
           <p>filtro</p>
+          <span class="material-icons">
+          filter_alt
+          </span>
           </div>
           </div>
           <div className="row">
@@ -20,7 +23,7 @@ function Visitas(){
       <th scope="col">Platillos</th>
       <th scope="col">Ingreso</th>
       <th scope="col">Restaurante</th>
-      <th scope="col">Ordenes por hora</th>
+      <th scope="col">Órdenes por hora</th>
 
     </tr>
   </thead>
