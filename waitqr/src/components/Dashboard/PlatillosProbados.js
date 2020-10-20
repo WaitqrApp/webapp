@@ -5,7 +5,7 @@ function PlatillosProbados(){
         <div className="container-fluid text-center dashboard-componente" >
         <div className="row">
           <div className="col-md-12" >
-          <p>Total de platillos probados</p>
+          <h1>Total de platillos probados</h1>
           </div>
           </div>
           <div className="row">
