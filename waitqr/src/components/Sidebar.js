@@ -1,4 +1,6 @@
 import React , {useState, useContext}from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Login from "./Login";
 
 
 function Sidebar() {
@@ -24,6 +26,9 @@ function Sidebar() {
             </a>
             <a class="non-active" href="#about">
                 <span class="material-icons mr-3">settings</span>Herramientas
+            </a>
+            <a>
+                <span class="material-icons mr-3">settings</span>Login
             </a>
         </div>
 

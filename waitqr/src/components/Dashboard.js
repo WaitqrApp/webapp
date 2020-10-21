@@ -1,11 +1,12 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import PlatillosProbados from './Dashboard/PlatillosProbados';
 import Ordenesgrafica from './Dashboard/Ordenesgrafica';
 import StatusyMejores from './Dashboard/StatusyMejores';
 import Visitas from './Dashboard/Visitas';
 import Ayuda from './Dashboard/Ayuda';
-
+import Login from "./Login";
 
 
 
@@ -26,11 +27,6 @@ function Dashboard(){
         <div className="row">
           <div className="col-md-8" >
             <Visitas/>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
           </div>
           <div className=" col-md-4 " >
            <Ayuda/>
