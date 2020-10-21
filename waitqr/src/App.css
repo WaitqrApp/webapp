@@ -157,7 +157,7 @@ div.content {
   background-color: white;
   height: 225px;
   margin-top: 10px;
-  margin-bottom: 1cm;
+  margin-bottom: 50px;
 }
 
 .dashboard-componente-mejores h1{
@@ -183,4 +183,6 @@ nav{
 #contenido{
   background-color: rgba(228, 228, 228, 0.404);
   height: 90%;
+}
+#login{
 }
