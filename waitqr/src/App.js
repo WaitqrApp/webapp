@@ -12,12 +12,12 @@ function App() {
     <Router>
     <Fragment >  
     <Navbar/>
-    <div class="container-fluid ">
+    <div class="container-fluid p-0">
         <div className="row">
-          <div className="col-md-3 side" >
+          <div className="col-md-2 side" >
           <Sidebar/>
           </div>
-          <div className=" col-md-9 " id="contenido" >
+          <div className="col-md-10 vh-100" id="contenido" >
           <Dashboard/>
           </div>
           <li className="nav-item">

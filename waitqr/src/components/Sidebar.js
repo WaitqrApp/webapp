@@ -5,12 +5,12 @@ import Login from "./Login";
 
 function Sidebar() {
     return(
-        <div class="sidebar">
+        <div class="sidebar col-md-2">
             <a class="active" href="#home">
                 <span class="material-icons mr-3">home</span>Dashboard
             </a>
             <a class="non-active" href="#news">
-                <span class="material-icons mr-3">menu_book</span>Menu
+                <span class="material-icons mr-3">fastfood</span>Menu
             </a>
             <a class="non-active" href="#contact">
                 <span class="material-icons mr-3" >view_list</span>Ordenes
@@ -27,11 +27,7 @@ function Sidebar() {
             <a class="non-active" href="#about">
                 <span class="material-icons mr-3">settings</span>Herramientas
             </a>
-            <a>
-                <span class="material-icons mr-3">settings</span>Login
-            </a>
         </div>
-
     );
 }
 

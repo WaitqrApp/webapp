@@ -5,15 +5,15 @@ function StatusyMejores(){
         <Fragment>
         <div class="container-fluid text-center dashboard-componente-status">
         <div className="row">
-          <div className="col-md-4" >
+          <div className="col-md-4" id="restaurante-ahora" >
             <h1>Mesas</h1>
             <p> 50</p>
           </div>
-          <div className="col-md-4" >
+          <div className="col-md-4" id="restaurante-ahora" >
             <h1>Capacidad</h1>
             <p>96%</p>
           </div>
-          <div className="col-md-4" >
+          <div className="col-md-4" id="restaurante-ahora">
             <h1>Status</h1>
             <p>Abierto</p>
           </div>
