@@ -104,3 +104,5 @@ dist
 .tern-port
 package-lock.json
 waitqr/package-lock.json
+waitqr/package.json
+waitqr/package-lock.json
