@@ -1,12 +1,12 @@
 import React , {useState, useContext}from 'react';
 
-import Logo from '../img/logo.png';
+import Logo from './img/logo_waiter-01 copy.png';
 
 
 function Navbar() {   
     return(
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <img class="waitqr-logo" src={Logo}/>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

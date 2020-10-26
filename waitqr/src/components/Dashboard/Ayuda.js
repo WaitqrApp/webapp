@@ -5,7 +5,6 @@ function Ayuda(){
         <div className="container-fluid text-center dashboard-componente mt-4">
         <div className="row">
           <div className="col-md-12" >
-          <p>imagen</p>
           </div>
           </div>
           <div className="row">

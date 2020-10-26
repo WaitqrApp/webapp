@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ordenes from './img/ordenes.png';
+
 function Ordenesgrafica(){
     return(
         <div class="container-fluid text-center dashboard-componente">
@@ -41,7 +43,6 @@ function Ordenesgrafica(){
           <div className="row">
           <div className="col-md-12">
                 <div >
-                   <p> imagen</p>
                 </div> 
             </div>
             
@@ -49,12 +50,11 @@ function Ordenesgrafica(){
           <div className="row">
           <div className="col-md-6">
                 <div className="platillosdashboard">
-                   <span>Entregados</span> 
+                <img class="ordenes" src={ordenes}/>
                 </div>
             </div>
             <div className="col-md-6">
                 <div className="platillosdashboard">
-                   <span>En proceso</span> 
                 </div>
             </div>
           </div>
