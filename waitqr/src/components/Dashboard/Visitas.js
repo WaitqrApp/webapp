@@ -2,21 +2,21 @@ import React from 'react';
 
 function Visitas(){
     return(
-        <div class="container-fluid dashboard-componente mt-4">
+        <div className="container-fluid dashboard-componente mt-4">
         <div className="row">
           <div className="col-md-6 text-left" >
           <h1>Visitas mensuales</h1>
           </div>
           <div className="col-md-6 text-right" >
           <p>filtro</p>
-          <span class="material-icons">
+          <span className="material-icons">
           filter_alt
           </span>
           </div>
           </div>
           <div className="row">
           <div className="col-md-12">
-          <table class="table">
+          <table className="table">
   <thead className="text-center">
     <tr>
       <th scope="col">Dia</th>

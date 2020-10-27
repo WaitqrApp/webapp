@@ -9,7 +9,7 @@ function PlatillosProbados(){
           <div className="col-md-12" >
           <h1>Total de platillos probados</h1>
           </div>
-          <img class="platillos-probados" src={platillos}/>
+          <img className="platillos-probados" src={platillos}/>
           </div>
           <div className="row">
           <div className="col-md-12">
