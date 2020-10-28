@@ -84,7 +84,7 @@ exports.actualizarRestaurante = async (req, res) =>{
                 return res.status(404).json({ msg: 'restaurante no encontrado'})
             }
 
-            //verificar 
+            //verificar el creador del restaurante
             if(restaurante.creador.toString() !== req.usuario.id){
                 return res.status(401).json({msg: 'No autorizado'});
             }
@@ -125,3 +125,4 @@ exports.eliminarRestaurante = async (req, res) =>{
         res.status(500).send('Error en el servidor')
     }
 }
+
