@@ -22,6 +22,8 @@ const PORT = process.env.PORT || 4000; //asigna el puerto o utiliza el 4000
 app.use('/api/usuario', require('./routes/usuario'));
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/restaurantes', require('./routes/restaurantes'));
+app.use('/api/menus', require('./routes/menus'));
+
 
 
 //arrancar la app
