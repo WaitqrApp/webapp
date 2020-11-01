@@ -4,7 +4,7 @@ import ordenes from './img/ordenes.png';
 
 function Ordenesgrafica(){
     return(
-        <div className="container-fluid text-center dashboard-componente">
+        <div className="container-fluid text-center p-0 dashboard-componente">
         <div className="row">
           <div className="col-md-6" >
           <h1>Órdenes</h1>

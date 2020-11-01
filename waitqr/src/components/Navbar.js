@@ -5,7 +5,7 @@ import Logo from './img/logo_waiter-01 copy.png';
 
 function Navbar() {   
     return(
-<nav className="navbar navbar-expand-lg navbar-light bg-white">
+<nav className="navbar navbar-expand-lg navbar-light bg-white sticky-top">
   <img className="waitqr-logo" src={Logo}/>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>

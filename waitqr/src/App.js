@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import ScrollLock from 'react-scroll-lock-component';
 
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
@@ -17,7 +18,7 @@ function App() {
           <div className="col-md-2 side" >
           <Sidebar/>
           </div>
-          <div className="col-md-10 vh-100" id="contenido" >
+          <div className="col-md-10 h-auto d-inline-block" id="contenido" >
           <Dashboard/>
           </div>
           {/*<li className="nav-item">

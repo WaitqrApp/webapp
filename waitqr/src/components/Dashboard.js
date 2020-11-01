@@ -14,7 +14,7 @@ function Dashboard(){
     return(
         <div className="container-fluid ">
             <h1>Hola Jane Doe!</h1>
-        <div className="row mt-4">
+        <div className="row mt-4 ">
           <div className="col-md-4" >
             <PlatillosProbados/>
           </div>
