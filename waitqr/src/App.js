@@ -20,9 +20,9 @@ function App() {
           <div className="col-md-10 vh-100" id="contenido" >
           <Dashboard/>
           </div>
-          <li className="nav-item">
+          {/*<li className="nav-item">
                 <Link className="nav-link" to={"/sign-in"}>Login</Link>
-              </li>
+          </li>*/}
         </div>
         {/* <div className = "col-md-6 side" id = "login">
           <div className="auth-wrapper">

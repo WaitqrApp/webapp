@@ -1,5 +1,8 @@
 import React from 'react';
 
+import help from './img/Help.png';
+
+
 function Ayuda(){
     return(
         <div className="container-fluid text-center dashboard-componente mt-4">
@@ -8,6 +11,7 @@ function Ayuda(){
           </div>
           </div>
           <div className="row">
+          <img className="help" src={help}/>
           <div className="col-md-12">
                 <h1> ¿Necesitas ayuda?</h1>
             </div>

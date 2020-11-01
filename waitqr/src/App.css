@@ -4,6 +4,17 @@
   overflow-x: hidden;
   }
 
+  .container-fluid h1 {
+    margin-top: 1%;
+    margin-bottom: 0%;
+  }
+
+.btn-secondary {
+    color: #fff;
+    background-color: #f68521;
+    border-color: #f68521;
+}
+
 /* The side navigation menu */
 .sidebar {
   position: fixed;
@@ -19,7 +30,7 @@
   color: rgb(165, 161, 161);
   padding: 16px;
   text-decoration: none;
-  margin-top: 1.5cm;
+  margin-top: 3%;
   align-items: left;
   font-size: large;
   text-decoration: none;
@@ -29,7 +40,7 @@
 .sidebar a.active {
   background-color: #ffdb774f;
   color: rgb(255, 208, 0);
-  width: 100%;
+  width: 16.3%;
   text-decoration: none;
 }
 
@@ -37,6 +48,7 @@
 .sidebar a:hover:not(.active) {
   background-color:#ffdb774f;
   color:  rgb(255, 208, 0);
+  width: 16.3%;
   text-decoration: none;
 }
 
@@ -203,8 +215,8 @@ div.content {
 .waitqr-logo {
     height: 150px;
     width: 150px; 
-    margin-right: 100px;
-    margin-left: 30px;
+    margin-right: 10%;
+    margin-left: 1%;
     margin-bottom: 0px;
 }
 
@@ -219,6 +231,15 @@ div.content {
   height: 250px;
   width: 350px; 
   margin-top: 20px;
+}
+
+.help {
+  height: 200px;
+  width: 220px; 
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 4%;
+  margin-top: 3%;
 }
 
 
