@@ -7,12 +7,12 @@ import StatusyMejores from './Dashboard/StatusyMejores';
 import Visitas from './Dashboard/Visitas';
 import Ayuda from './Dashboard/Ayuda';
 import Login from "./Login";
-
+import EditPlatillo from './Dashboard/MenuDashboard/EditarPlatillo';
 
 
 function Dashboard(){
     return(
-        <div className="container-fluid ">
+        <div className="container-fluid mt-4 mb-3">
             <h1>Hola Jane Doe!</h1>
         <div className="row mt-4 ">
           <div className="col-md-4" >
@@ -32,7 +32,9 @@ function Dashboard(){
           <div className=" col-md-4 " >
            <Ayuda/>
           </div>
-          
+          {/* <div className="col-md-4">
+            <EditPlatillo></EditPlatillo>
+          </div> */}
         </div>
       </div>
         

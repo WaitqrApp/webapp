@@ -11,33 +11,27 @@ import Login from "./components/Login";
 function App() {
   return (
     <Router>
-    <Fragment >  
-    <Navbar/>
-    <div className="container-fluid p-0">
-        <div className="row">
-          <div className="col-md-2 side" >
-          <Sidebar/>
-          </div>
-          <div className="col-md-10 h-auto d-inline-block" id="contenido" >
-          <Dashboard/>
-          </div>
-          {/*<li className="nav-item">
-                <Link className="nav-link" to={"/sign-in"}>Login</Link>
-          </li>*/}
-        </div>
-        {/* <div className = "col-md-6 side" id = "login">
-          <div className="auth-wrapper">
-            <div className="auth-inner">
-              <Switch>
-                <Route exact path='/' component={Login} />
-                <Route path="/sign-in" component={Login} />
-              </Switch>
-            </div>
-          </div>
-        </div> */}
-      </div>
+      <Fragment >  
+      <Navbar/>
       
-    </Fragment>
+
+      <div className="container-fluid p-0">
+          <div className="row">
+            <div className="col-md-2 side" >
+            <Sidebar/>
+            
+            </div>
+            <div className="col-md-10 p-0 d-inline-block" id="contenido" >
+            <Switch>
+      <Route exact path="/" component={(Dashboard)}/>
+      <Route exact path="/Login" component={ (Login)}/>
+
+      </Switch>
+
+            </div>
+        </div>
+        </div>
+      </Fragment>
     </Router>
   );
 }

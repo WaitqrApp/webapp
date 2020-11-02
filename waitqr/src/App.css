@@ -89,8 +89,6 @@ div.content {
 
 .dashboard{
   background-color: rgb(189, 189, 189);
-  height: 100%;
-  width: auto;
 }
 
 .side{
@@ -152,6 +150,7 @@ div.content {
   height: 115px;
   margin-bottom: 10px;
   text-align: center;
+  
 }
 
 #restaurante-ahora{

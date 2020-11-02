@@ -31,15 +31,12 @@ function Navbar() {
     notifications
       </span>
       <span>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Jane Doe
-          </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Sign in</a>
-              <a class="dropdown-item" href="#">Signt out</a>
-            </div>
-        </div>
+        
+      <select className="btn-secondary" name="userdropdown" id="userdropdown">
+        <option value="">User</option>
+        <option value="Enero">Sign In</option>
+        <option value="Febrero">Sign Out</option>
+      </select>
       </span>
     </form>
   </div>

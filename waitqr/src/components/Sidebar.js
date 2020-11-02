@@ -6,11 +6,14 @@ import Login from "./Login";
 function Sidebar() {
     return(
         <div className="sidebar col-md-2">
-            <a className="active" href="#home">
-                <span className="material-icons mr-3">home</span>Dashboard
-            </a>
+            <span className="active">
+                <Link to={'/'}>
+                    <span className="material-icons mr-3">home</span>
+                    Dashboard 
+                </Link>
+            </span>
             <a className="non-active" href="#news">
-                <span className="material-icons mr-3">fastfood</span>Menu
+             <span className="material-icons mr-3">fastfood</span> Menu
             </a>
             <a className="non-active" href="#contact">
                 <span className="material-icons mr-3" >view_list</span>Ordenes
