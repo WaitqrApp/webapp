@@ -23,10 +23,9 @@ function App() {
             </div>
             <div className="col-md-10 p-0 d-inline-block" id="contenido" >
             <Switch>
-      <Route exact path="/" component={(Dashboard)}/>
-      <Route exact path="/Login" component={ (Login)}/>
-
-      </Switch>
+                <Route exact path="/" component={(Dashboard)}/>
+                <Route exact path="/Login" component={ (Login)}/>
+            </Switch>
 
             </div>
         </div>

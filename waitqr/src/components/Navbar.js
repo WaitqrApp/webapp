@@ -1,5 +1,6 @@
 import React , {useState, useContext}from 'react';
-
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 import Logo from './img/logo_waiter-01 copy.png';
 
 
@@ -32,11 +33,12 @@ function Navbar() {
       </span>
       <span>
         
-      <select className="btn-secondary" name="userdropdown" id="userdropdown">
-        <option value="">User</option>
-        <option value="Enero">Sign In</option>
-        <option value="Febrero">Sign Out</option>
-      </select>
+      <DropdownButton id="dropdown-item-button" title="John Doe">
+              <Dropdown.ItemText>Agregar Restaurante</Dropdown.ItemText>
+              <Dropdown.Item>Agregar Platillo</Dropdown.Item>
+              <Dropdown.Item>Cambiar Contraseña</Dropdown.Item>
+              <Dropdown.Item>Cerrar Sesión</Dropdown.Item>
+      </DropdownButton>
       </span>
     </form>
   </div>

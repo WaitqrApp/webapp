@@ -1,5 +1,6 @@
 import React from 'react';
-
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 import ordenes from './img/ordenes.png';
 
 function Ordenesgrafica(){
@@ -19,12 +20,12 @@ function Ordenesgrafica(){
                 
             </div>
             <div className="col-md-6">
-            <select name="cars" id="cars">
-    <option value="">Mes</option>
-    <option value="Enero">Enero</option>
-    <option value="Febrero">Febrero</option>
-    <option value="Marzo">Marzo</option>
-  </select>
+            <DropdownButton id="dropdown-item-button" title="Mes">
+              <Dropdown.ItemText>Noviembre</Dropdown.ItemText>
+              <Dropdown.Item>Enero</Dropdown.Item>
+              <Dropdown.Item>Febrero</Dropdown.Item>
+              <Dropdown.Item>Marzo</Dropdown.Item>
+            </DropdownButton>
             </div>
           </div>
           <div className="row">
