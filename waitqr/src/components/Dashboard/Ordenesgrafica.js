@@ -11,15 +11,14 @@ function Ordenesgrafica(){
           <h1>Órdenes</h1>
           </div>
           <div className="col-md-6" >
-          <h1>24,000/mes</h1>
           </div>
           </div>
           <div className="row">
           <div className="col-md-6">
-                <h2>En curso <span><p><span> 13 ordenes</span></p></span></h2>
+                <h2>En curso <span><p1><span> 13 ordenes</span></p1></span></h2>
                 
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6" id ="month-button">
             <DropdownButton id="dropdown-item-button" title="Mes">
               <Dropdown.ItemText>Noviembre</Dropdown.ItemText>
               <Dropdown.Item>Enero</Dropdown.Item>
