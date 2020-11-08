@@ -1,8 +1,21 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
+import Dropdown from 'react-bootstrap/Dropdown';
 function History() {
     return (
         <Table striped bordered hover>
+            <Dropdown>
+                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                    La Noria
+            </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                    <Dropdown.Item href="#/action-1">Santo Chancho</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">La Noria Polanco</Dropdown.Item>
+                    <Dropdown.Item href="#/action-3">La Noria Puebla</Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
             <thead>
                 <tr>
                     <th># de orden</th>
@@ -39,6 +52,9 @@ function History() {
                     <td>23/06/2020</td>
                 </tr>
             </tbody>
+            <Button variant="success">Descargar</Button>
+            <Button variant="info">Filtro</Button>
+
         </Table>
     );
 }
