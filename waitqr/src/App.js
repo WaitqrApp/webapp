@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import ScrollLock from 'react-scroll-lock-component';
+import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
 
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
 import Dashboard from './components/Dashboard';
-import Login from "./components/Login";
+import Login from './components/Login';
+import Insights from './components/Dashboard/Insights/Insights';
 
 function App() {
   return (
@@ -21,7 +21,8 @@ function App() {
             <div className="col-md-10 p-0 d-inline-block" id="contenido" >
               <Switch>
                 <Route exact path="/" component={(Dashboard)} />
-                <Route exact path="/Login" component={(Login)} />
+                <Route exact path="/login" component={(Login)} />
+                <Route exact path="/insights" component={(Insights)} />
               </Switch>
             </div>
           </div>
