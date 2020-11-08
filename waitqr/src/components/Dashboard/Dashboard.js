@@ -1,14 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import PlatillosProbados from './Dashboard/PlatillosProbados';
-import Ordenesgrafica from './Dashboard/Ordenesgrafica';
-import StatusyMejores from './Dashboard/StatusyMejores';
-import Visitas from './Dashboard/Visitas';
-import Ayuda from './Dashboard/Ayuda';
-import Login from "./Login";
-import EditPlatillo from './Dashboard/MenuDashboard/EditarPlatillo';
-import './Dashboard/styles/dashboard.css';
+import PlatillosProbados from './CenterCanvas/PlatillosProbados';
+import Ordenesgrafica from './CenterCanvas/Ordenesgrafica';
+import StatusyMejores from './CenterCanvas/StatusyMejores';
+import Visitas from './CenterCanvas/Visitas';
+import Ayuda from './CenterCanvas/Ayuda';
+import '../Dashboard/styles/dashboard.css';
 
 
 function Dashboard() {
@@ -34,9 +32,6 @@ function Dashboard() {
         <div className=" col-md-4 " >
           <Ayuda />
         </div>
-        {/* <div className="col-md-4">
-            <EditPlatillo></EditPlatillo>
-          </div> */}
       </div>
     </div>
 
