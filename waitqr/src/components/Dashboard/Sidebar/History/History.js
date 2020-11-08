@@ -1,15 +1,47 @@
 import React from 'react';
-
+import Table from 'react-bootstrap/Table';
 function History() {
     return (
-        <div className="container-fluid dashboard-componente mt-4 mb-4">
-            <div className="row">
-                <div className="col-md-6 text-left" >
-                    <h1>Aqui va el historial </h1>
-                </div>
-            </div>
-        </div>
+        <Table striped bordered hover>
+            <thead>
+                <tr>
+                    <th># de orden</th>
+                    <th>Mesa</th>
+                    <th>Detalles</th>
+                    <th>Cuenta</th>
+                    <th>Restaurante</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Salon 1</td>
+                    <td>Diablo Roll y Carajillo</td>
+                    <td>$3,500.00</td>
+                    <td>Santo Chancho Centro</td>
+                    <td>23/06/2020</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Terraza 2</td>
+                    <td>Diablo Roll y Carajillo</td>
+                    <td>$3,500.00</td>
+                    <td>Santo Chancho Queret</td>
+                    <td>23/06/2020</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Terraza 1</td>
+                    <td>@twitter</td>
+                    <td>$3,500.00</td>
+                    <td>La Central de Brasil</td>
+                    <td>23/06/2020</td>
+                </tr>
+            </tbody>
+        </Table>
     );
 }
 
 export default History;
+

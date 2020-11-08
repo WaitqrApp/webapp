@@ -1,5 +1,4 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import PlatillosProbados from './CenterCanvas/PlatillosProbados';
 import Ordenesgrafica from './CenterCanvas/Ordenesgrafica';
