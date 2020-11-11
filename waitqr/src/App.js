@@ -12,6 +12,8 @@ import Settings from './components/Dashboard/Sidebar/Settings/Settings';
 import Tables from './components/Dashboard/Sidebar/Tables/Tables';
 import Orders from './components/Dashboard/Sidebar/Orders/Orders';
 import Menu from './components/Dashboard/Sidebar/Menu/Menu';
+import AlertaState from './context/alertas/alertaState'
+
 
 /* Describe el contenido del canvas central */
 function App() {
