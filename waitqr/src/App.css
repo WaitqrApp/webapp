@@ -1,19 +1,34 @@
+/* Font Color */
+
+h1, h2, p, th {
+  color: #002E48;
+}
+
+/* The top-right button of the navbar */
+ 
+.btn-secondary {
+    color: #fff;
+    background-color: #f68521;
+    border-color: #f68521;
+}
+
 /* The side navigation menu */
 .sidebar {
-  margin: 0;
-  padding: 0;
-  width: 250px;
-  background-color: #ffffff;
   position: fixed;
   height: 100%;
-  overflow: auto;
+  width: 100%;
+  background-color: white;
 }
 
 /* Sidebar links */
 .sidebar a {
-  display: block;
+  display: flex;
   color: rgb(165, 161, 161);
   padding: 16px;
+  text-decoration: none;
+  margin-top: 3%;
+  align-items: left;
+  font-size: large;
   text-decoration: none;
 }
 
@@ -21,26 +36,38 @@
 .sidebar a.active {
   background-color: #ffdb774f;
   color: rgb(255, 208, 0);
+  width: 16.33%;
+  text-decoration: none;
 }
 
 /* Links on mouse-over */
 .sidebar a:hover:not(.active) {
   background-color:#ffdb774f;
   color:  rgb(255, 208, 0);
+  width: 16.3%;
+  text-decoration: none;
 }
 
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
 div.content {
-  margin-left: 200px;
   padding: 1px 16px;
-  height: 1000px;
+  height: 100%;
+}
+
+/* On screens that are more than 700px wide */
+@media screen and (min-width: 700px) {
+  .sidebar {
+    min-width: 100%;
+    height: 100%;
+  }
+  div.content {margin-left: 0;}
 }
 
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
 @media screen and (max-width: 700px) {
   .sidebar {
     width: 100%;
-    height: auto;
+    height: 100%;
     position: relative;
   }
   .sidebar a {float: left;}
@@ -55,44 +82,36 @@ div.content {
   }
 }
 
-/* Dashboard */
+/*  Navbar */ 
 
-.dashboard{
-  background-color: rgb(189, 189, 189);
-}
-
-.side{
-  padding-left: 0px !important;
-  padding-right: 0px !important;
-
-}
-
-/* Dashboard Componentes */
-.dashboard-componente{
-  background-color: white;
-  height: 300px;
-}
-
-.dashboard-componente-status{
-  background-color: white;
-  height: 90px;
- 
-}
-.dashboard-componente-mejores{
-  background-color: white;
-  height: 200px;
-  margin-top: 10px;
+.navbar {
+  max-height: 80px;
+  padding-top: 10px;
   
 }
 
-/*  Navbar */ 
-
-nav{
-  background-color: white;
+.form-control{
+  width: 300%;
+  background-color: rgba(228, 228, 228, 0.404);;
 }
 
 /* Contenido */
 
 #contenido{
   background-color: rgba(228, 228, 228, 0.404);
+  height: 100%;
+}
+
+/* Imagenes */
+
+.waitqr-logo {
+    height: 200px;
+    width: 200px; 
+    margin-right: 4%;
+    margin-left: 1%;
+    margin-bottom: 0px;
+}
+/* LogIn */
+
+#login{
 }

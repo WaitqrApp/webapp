@@ -1,0 +1,165 @@
+/* Dashboard */
+
+.dashboard{
+    background-color: rgb(189, 189, 189);
+  }
+  
+  .side{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  
+  }
+
+.container-fluid{
+    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    }
+  
+.container-fluid h1 {
+      margin-top: 0%;
+      margin-bottom: 0%;
+    }
+  
+  /* Dashboard Componentes */
+  
+      /* General */
+  
+.dashboard-componente{
+    background-color: white;
+    height: 350px;
+  }
+  
+.dashboard-componente h1{
+    font-size: large;
+    font-weight: bold;
+    text-align: left;
+    color: #002E48;
+    margin-top: 2%;
+    margin-bottom: 1%;
+  }
+  
+  .dashboard-componente h2{
+    font-size: medium;
+    font-weight: bold;
+    text-align: left;
+    color: #002E48;
+  }
+  #month-button{
+    align-content: left;
+  }
+  .dashboard-componente button{
+    color: black;
+    background-color:  rgba(228, 228, 228, 0.404);
+    border: 2px solid black;
+  
+  }
+  
+  .dashboard-componente button:hover{
+    color: black;
+    background-color:  #f68521;
+    border: 2px solid black;
+  
+  }
+  
+  .dashboard-componente p {
+    font-size: small;
+    text-align: left;
+    color: #002E48;
+  }
+  
+  .dashboard-componente p1{
+    font-size: medium;
+    color: #f68521;
+    float: center;
+    font-weight: bold;
+  }
+      /* Status */
+  
+  .dashboard-componente-status{
+    background-color: white;
+    height: 115px;
+    margin-bottom: 10px;
+    text-align: center;
+    margin-left: -3%;
+    
+  }
+  
+  #restaurante-ahora{
+    padding-top: 20px;
+  }
+  
+  
+  .dashboard-componente-status h1{
+    position: center;
+    font-size: medium;
+    text-align: center;
+    margin-top: 2%;
+  }
+  
+  .dashboard-componente-status p{
+    font-size: xx-large;
+    font-weight: bold;
+  }
+  
+  /* Mejores */
+  
+  .dashboard-componente-mejores{
+    background-color: white;
+    height: 225px;
+    margin-top: 10px;
+    margin-bottom: 5%;
+    margin-left: -3%;
+  }
+  
+  .dashboard-componente-mejores h1{
+    font-size: large;
+    font-weight: bold;
+    margin-top: 2%;
+    margin-bottom: 1%;
+  }
+  
+  .dashboard-componente-mejores h2{
+    font-size: medium;
+  }
+  
+  .dashboard-componente-mejores p{
+    font-size: x-small;
+  }
+
+  /* Ayuda */
+
+  .dashboard-componente-ayuda{
+    background-color: white;
+    height: 350px;
+    margin-left: -3%;
+  }
+  /* Imagenes */
+
+  .platillos-probados {
+    height: 300px;
+    width: 370px; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4%;
+    margin-top: 3%;
+  
+  }
+  
+  .ordenes {
+    height: 250px;
+    width: 350px; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4%;
+    margin-top: 3%;
+  }
+  
+  .help {
+    height: 200px;
+    width: 220px; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4%;
+    margin-top: 3%;
+  }

@@ -17,7 +17,7 @@ const AlertaState = props => {
             type: MOSTRAR_ALERTA,
             payload:{
                 msg,
-                ategoria
+                categoria
             }
         });
 
@@ -31,7 +31,7 @@ const AlertaState = props => {
         <alertaContext.Provider
             value={{
                 alerta: state.alerta,
-                mostarAlerta
+                mostrarAlerta
             }}
         >
             {props.chidlren}
