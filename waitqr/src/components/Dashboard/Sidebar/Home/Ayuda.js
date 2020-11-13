@@ -1,6 +1,6 @@
 import React from 'react';
 
-import help from '../img/Help.png';
+import help from '../../img/Help.png';
 
 
 function Ayuda() {

@@ -1,7 +1,7 @@
 import React from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import ordenes from '../img/ordenes.png';
+import ordenes from '../../img/ordenes.png';
 
 function Ordenesgrafica(){
     return(

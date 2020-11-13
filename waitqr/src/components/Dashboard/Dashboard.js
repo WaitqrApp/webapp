@@ -1,10 +1,10 @@
 import React from 'react';
 
-import PlatillosProbados from './CenterCanvas/PlatillosProbados';
-import Ordenesgrafica from './CenterCanvas/Ordenesgrafica';
-import StatusyMejores from './CenterCanvas/StatusyMejores';
-import Visitas from './CenterCanvas/Visitas';
-import Ayuda from './CenterCanvas/Ayuda';
+import PlatillosProbados from './Sidebar/Home/PlatillosProbados';
+import Ordenesgrafica from './Sidebar/Home/Ordenesgrafica';
+import StatusyMejores from './Sidebar/Home/StatusyMejores';
+import Visitas from './Sidebar/Home/Visitas';
+import Ayuda from './Sidebar/Home/Ayuda';
 import '../Dashboard/styles/dashboard.css';
 
 
