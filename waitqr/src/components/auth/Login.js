@@ -2,6 +2,8 @@ import React, {useState, useContext, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import AlertaContext from '../../context/alertas/alertaContext'
 import AuthContext from '../../context/autenticacion/authContext'
+import Logo from './img/logo.png';
+import '../auth/styles/auth.css';
 
 function Login (props){
 
@@ -60,6 +62,7 @@ function Login (props){
     return(
         <div className="form-usuario">
             {alerta ? (<div className={`alerta ${alerta.categoria}`}> {alerta.msg}</div>) : null}
+            <img className="waitqr-logo-login" src={Logo} />
             <div className="contenedor-form sombra-dark">
                 <h1>Iniciar Sesion</h1>
 
@@ -92,7 +95,7 @@ function Login (props){
                     </div>
 
                     <div className="campo-form">
-                        <input type="submit" className="btn btn-primario btn-block"
+                        <input type="submit" className="btn-l btn-primario-l btn-block-l"
                         value="Iniciar Sesion" />
                     </div>
                 </form>

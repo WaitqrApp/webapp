@@ -27,6 +27,7 @@ function Navbar() {
               <Dropdown.ItemText>Agregar Restaurante</Dropdown.ItemText>
               <Dropdown.Item>Agregar Platillo</Dropdown.Item>
               <Dropdown.Item>Cambiar Contraseña</Dropdown.Item>
+              <Dropdown.Item>Contáctanos</Dropdown.Item>
               <Dropdown.Item>Cerrar Sesión</Dropdown.Item>
             </DropdownButton>
           </span>

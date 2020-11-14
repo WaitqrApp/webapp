@@ -2,6 +2,9 @@ import React, {useState, useContext, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import AlertaContext from '../../context/alertas/alertaContext'
 import AuthContext from '../../context/autenticacion/authContext'
+import Logo from './img/logo.png';
+import '../auth/styles/auth.css';
+
 
 
 function NuevaCuenta (props){
@@ -77,8 +80,8 @@ function NuevaCuenta (props){
         <div className="form-usuario">
             {alerta ? (<div className={`alerta ${alerta.categoria}`}> {alerta.msg}</div>) : null}
             <div className="contenedor-form sombra-dark">
-                <h1>Obtener una cuenta</h1>
-
+                <h1>Registrate con</h1>
+                <img className="waitqr-logo-nueva" src={Logo} />
                 <form
                     onSubmit={onSubmit}
                 >
@@ -152,7 +155,7 @@ function NuevaCuenta (props){
                     </div>
 
                     <div className="campo-form">
-                        <input type="submit" className="btn btn-primario btn-block"
+                        <input type="submit" className="btn-l btn-primario-l btn-block-l"
                         value="Registrarme" />
                     </div>
                 </form>
