@@ -20,7 +20,7 @@ const AlertaState = props => {
                 categoria
             }
         });
-
+        // Despues de 5 segundos limpiar la alerta
         setTimeout(() => {
            dispatch({
                type: OCULTAR_ALERTA
@@ -34,9 +34,9 @@ const AlertaState = props => {
                 mostrarAlerta
             }}
         >
-            {props.chidlren}
+            {props.children}
         </alertaContext.Provider>
     )
 }
 
-export default AlertaState;
+export default AlertaState

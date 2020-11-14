@@ -5,9 +5,12 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 function Sidebar() {
     return (
 
+
+
+
         <div className="sidebar col-md-2">
             <div className="active">
-                <Link to={'/'}>
+                <Link to={'/home'}>
                     <span className="material-icons mr-3">home</span>
                     Dashboard
                 </Link>

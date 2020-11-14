@@ -2,47 +2,37 @@ import React, { Fragment } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
 
-import Sidebar from './components/Dashboard/Sidebar/Sidebar';
-import Navbar from './components/Navbar';
 import Dashboard from './components/Dashboard/Dashboard';
-import Login from './components/Login/Login';
-import History from './components/Dashboard/Sidebar/History/History';
-import Insights from './components/Dashboard/Sidebar/Insights/Insights';
-import Settings from './components/Dashboard/Sidebar/Settings/Settings';
-import Tables from './components/Dashboard/Sidebar/Tables/Tables';
-import Orders from './components/Dashboard/Sidebar/Orders/Orders';
-import Menu from './components/Dashboard/Sidebar/Menu/Menu';
+import Login from './components/auth/Login';
+import NuevaCuenta from './components/auth/NuevaCuenta';
+
+
+
+
 import AlertaState from './context/alertas/alertaState'
+import AuthState from './context/autenticacion/authState'
+
 
 
 /* Describe el contenido del canvas central */
 function App() {
-  return (
-    <Router>
-      <Fragment >
-        <Navbar />
-        <div className="container-fluid p-0">
-          <div className="row">
-            <div className="col-md-2 side" >
-              <Sidebar />
-            </div>
-            <div className="col-md-10 p-0 d-inline-block" id="contenido" >
-              <Switch>
-                <Route exact path="/" component={(Dashboard)} />
-                <Route exact path="/menu" component={(Menu)} />
-                <Route exact path="/orders" component={(Orders)} />
-                <Route exact path="/login" component={(Login)} />
-                <Route exact path="/insights" component={(Insights)} />
-                <Route exact path="/history" component={(History)} />
-                <Route exact path="/tables" component={(Tables)} />
-                <Route exact path="/settings" component={(Settings)} />
 
-              </Switch>
-            </div>
-          </div>
-        </div>
-      </Fragment>
+  console.log(process.env.REACT_APP_BACKEND_URL);
+
+  return (
+    <AuthState>
+    <AlertaState>
+    <Router>
+     <Switch>
+     <Route exact path="/" component={(Login)} />
+     <Route exact path="/nueva-cuenta" component={(NuevaCuenta)} />
+     <Route exact path="/dashboard" component={(Dashboard)} />
+
+     </Switch>
     </Router>
+    </AlertaState>
+    </AuthState>
+
   );
 }
 
