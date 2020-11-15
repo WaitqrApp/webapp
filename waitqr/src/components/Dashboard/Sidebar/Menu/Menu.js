@@ -1,15 +1,28 @@
-import React from 'react';
+import React from "react";
+import {Container, Row, Col, Card, Form, Button } from "react-bootstrap";
+import { withRouter } from "react-router";
+import MenuSidebar from './MenuSidebar';
 
-function Menu() {
+import './menusidebar.css';
+
+const Dash = props => {
+   
+
     return (
-        <div className="container-fluid dashboard-componente mt-4 mb-4">
-            <div className="row">
-                <div className="col-md-6 text-left" >
-                    <h1>Aqui van los Menu</h1>
-                </div>
-            </div>
-        </div>
-    );
-}
+        <>
+         <Container fluid>
+                <Row>
+                    <Col xs={2} id="sidebar-wrapper">      
+                      <MenuSidebar />
+                    </Col>
+                    <Col  xs={10} id="page-content-wrapper">
+                        <h1>El Santo Chancho</h1>
+                    </Col> 
+                </Row>
 
-export default Menu;
+            </Container>
+        </>
+        );
+  };
+  const Dashboard = withRouter(Dash);
+  export default Dashboard
