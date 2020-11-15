@@ -4,6 +4,10 @@ import AlertaContext from '../../context/alertas/alertaContext'
 import AuthContext from '../../context/autenticacion/authContext'
 import Logo from './img/logo.png';
 import '../auth/styles/auth.css';
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Image from 'react-bootstrap/Image';
 
 function Login (props){
 
@@ -59,52 +63,54 @@ function Login (props){
     }
 
 
+
     return(
         <div className="form-usuario">
             {alerta ? (<div className={`alerta ${alerta.categoria}`}> {alerta.msg}</div>) : null}
-            <img className="waitqr-logo-login" src={Logo} />
-            <div className="contenedor-form sombra-dark">
-                <h1>Iniciar Sesion</h1>
+                    <img className="waitqr-logo-login" src={Logo}  />
+                    
+                    <div className="contenedor-form sombra-dark">
+                        <h1>Iniciar Sesion</h1>
 
-                <form
-                    onSubmit={onSubmit}
-                >
-                   
-                    <div className="campo-form">
-                        <label htmlFor="email">Email</label>
-                        <input 
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Tu Email"
-                            value={email}
-                            onChange={onChange}
-                        />
+                        <form
+                            onSubmit={onSubmit}
+                        >
+                        
+                            <div className="campo-form">
+                                <label htmlFor="email">Email</label>
+                                <input 
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Tu Email"
+                                    value={email}
+                                    onChange={onChange}
+                                />
+                            </div>
+
+                            <div className="campo-form">
+                                <label htmlFor="password">Password</label>
+                                <input 
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                    placeholder="Tu Password"
+                                    value={password}
+                                    onChange={onChange}
+                                />
+                            </div>
+
+                            <div className="campo-form">
+                                <input type="submit" className="btn-l btn-primario-l btn-block-l"
+                                value="Iniciar Sesion" />
+                            </div>
+                        </form>
+
+                        <Link to={'/nueva-cuenta'} className="enlace-cuenta">
+                            Obtener Cuenta
+
+                        </Link>
                     </div>
-
-                    <div className="campo-form">
-                        <label htmlFor="password">Password</label>
-                        <input 
-                            type="password"
-                            id="password"
-                            name="password"
-                            placeholder="Tu Password"
-                            value={password}
-                            onChange={onChange}
-                        />
-                    </div>
-
-                    <div className="campo-form">
-                        <input type="submit" className="btn-l btn-primario-l btn-block-l"
-                        value="Iniciar Sesion" />
-                    </div>
-                </form>
-
-                <Link to={'/nueva-cuenta'} className="enlace-cuenta">
-                    Obtener Cuenta
-
-                </Link>
-            </div>
         </div>
     );
 }

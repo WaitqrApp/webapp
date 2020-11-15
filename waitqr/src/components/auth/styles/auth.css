@@ -29,25 +29,6 @@
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*REVISAR*/
 
 /*Imagenes*/
@@ -59,9 +40,9 @@
     margin-bottom: 0px;
 }
 .waitqr-logo-nueva{
-    height: 50%;
-    width: 50%; 
-    margin-left: 25%;
+    height: 70%;
+    width: 70%; 
+    margin-left: 13%;
     margin-top: -20%;
     margin-bottom: -10%;
 }
@@ -76,43 +57,44 @@ AQUÍ ESTA EL PEDO*/
   --gris3: #f68521;
   --negro: #f68521;
 }
-*, *:before, *:after {
-  box-sizing: inherit;
-} 
-html {
-  box-sizing: border-box;
-  height: 100%;
-  font-size: 62.5%; 
+
+.contenedor-form {
+    padding: 5rem 3rem;
+    max-width: 500px;
+    width: 95%;
+    background-color: var(--blanco);
+    border-radius: 1rem;
+    max-height: 100vh;
+    height: auto;
+    font-size: 50%; 
 }
-body {
-  min-height: 100%;
+
+.form-usuario {
   background-color: var(--gris1);
-  font-size: 16px; 
-  font-size: 1.6rem;
+  font-size: 140%; 
   font-family: Roboto;
 }
-h1 {
+.form-usuario h1 {
   font-family: Roboto;
   font-weight: 900;
-  margin: 0 0 4rem 0;
   text-align: center;
   color: var(--gris2);
 }
-h1 span {
+.form-usuario h1 span {
   font-weight: 400;
 }
-h1 {
+.form-usuario h1 {
   font-size: 3rem;
 }
-h2 {
+.form-usuario h2 {
   font-size: 2.4rem;
 }
-ul {
+.form-usuario ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-a {
+.form-usuario a {
   text-decoration: none;
   color: var(--gris2);
 }
@@ -362,14 +344,6 @@ aside  {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.contenedor-form {
-    padding: 5rem 3rem;
-    max-width: 500px;
-    width: 95%;
-    background-color: var(--blanco);
-    border-radius: 1rem;
 }
 
 .campo-form {
