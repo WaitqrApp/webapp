@@ -17,13 +17,13 @@ const Dash = props => {
                     </Col>
                     <Col xs={10} id="page-content-wrapper">
                         <h1>El Santo Chancho</h1>
-                        <DishMenu/>
+                        <DishMenu />
 
                     </Col>
                 </Row>
                 <Row>
                     <Col xs={2}>
-                        <DishMenu/>
+                        <DishMenu />
                     </Col>
 
                 </Row>

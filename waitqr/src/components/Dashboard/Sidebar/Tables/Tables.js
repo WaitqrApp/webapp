@@ -11,7 +11,7 @@ function Tables() {
                             <Card.Title>Mesa 1</Card.Title>
                             <Card.Subtitle className="mb-2 text-muted">Terraza</Card.Subtitle>
                             <Card.Text>
-                                Entrada: 13:45<br/>
+                                Entrada: 13:45<br />
                                 Orden Procesada
                         </Card.Text>
                             <Card.Link href="#">Agregar Platillo</Card.Link>
