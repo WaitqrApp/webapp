@@ -6,7 +6,7 @@ function DishMenu() {
     return (
         <>
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="../img/ordenes.png" />
+                <Card.Img variant="top" src="" />
                 <Card.Body>
                     <Card.Title>Picaña Loca</Card.Title>
                     <Card.Text>

@@ -6,13 +6,8 @@ import Dashboard from './components/Dashboard/Dashboard';
 import Login from './components/auth/Login';
 import NuevaCuenta from './components/auth/NuevaCuenta';
 
-
-
-
 import AlertaState from './context/alertas/alertaState'
 import AuthState from './context/autenticacion/authState'
-
-
 
 /* Describe el contenido del canvas central */
 function App() {
