@@ -14,10 +14,9 @@ const Dash = props => {
             <Container fluid>
                 <Row>
                     <Col xs={2} id="sidebar-wrapper">
-                        <MenuSidebar />
+                        <MenuSidebar/>
                     </Col>
                     <Col xs={10} id="page-content-wrapper">
-                        <h1>El Santo Chancho</h1>
                         <DishMenu />
                         <>
                             <Button variant="primary" onClick={() => setModalShow(true)}>
@@ -26,7 +25,6 @@ const Dash = props => {
 
                             <DishModal show={modalShow} onHide={() => setModalShow(false)} />
                         </>
-);
                     </Col>
                 </Row>
                 <Row>

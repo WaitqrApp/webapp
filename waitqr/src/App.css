@@ -99,7 +99,7 @@ div.content {
 
 #contenido{
   background-color: rgb(245,246,249);
-  height: 100%;
+  height: 91vh;
 }
 
 /* Imagenes */
@@ -110,8 +110,4 @@ div.content {
     margin-right: 4%;
     margin-left: 1%;
     margin-bottom: 0px;
-}
-/* LogIn */
-
-#login{
 }

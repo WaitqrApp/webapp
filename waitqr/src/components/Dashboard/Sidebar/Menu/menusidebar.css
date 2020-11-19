@@ -1,28 +1,59 @@
-sidebar {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    min-height: 100vh !important;
-    z-index: 100;
-    padding: 48px 0 0;
-    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-}
-#sidebar-wrapper{
-    min-height: 100vh !important;
-    width: 100vw;
-    margin-left: -1rem;
-    -webkit-transition: margin .25s ease-out;
-    -moz-transition: margin .25s ease-out;
-    -o-transition: margin .25s ease-out;
-    transition: margin .25s ease-out;
-}
-#sidebar-wrapper .sidebar-heading {
-    padding: 0.875rem 1.25rem;
-    font-size: 1.2rem;
+.sidebar-menu {
+    min-height: 87vh !important;
+background-color: rgba(43, 160, 189, 0.082);
+margin-top:2.5vh;}
+
+.sidebar-text{
+    color: rgb(7, 46, 72);
+    padding-top: 12%;
+    margin-bottom: 30%;
+    margin-left: 5%;
+    font-weight: bold;
 }
 
-#page-content-wrapper {
-    min-width: 0;
-    width: 100%;
+.sidebar-text-active{
+    font-weight: bold;
+    margin-top: 25%;
+    margin-bottom: 30%;
+    color:rgb(246, 134, 33);
+    margin-left: 5%;
+    width: 110%;
+    background-color: rgb(245, 246, 249)
+}
+
+.sidebar-text-active:hover{    
+    color:rgb(246, 134, 33);
+}
+
+.sidebar-text:hover{
+    color:rgb(246, 134, 33)
+}
+
+.sidebar-title {
+    font-size: large;
+    padding-top: 2%;
+    text-align: center;
+    color:rgb(246, 134, 33);
+    font-weight: bold;
+
+}
+
+.sidebar-title:hover {
+    font-size: large;
+    padding-top: 2%;
+    text-align: center;
+    color:rgb(246, 134, 33);
+    font-weight: bold;
+
+}
+
+.sidebar-sub-title {
+    font-size: small;
+    font-weight: bold;
+    color:rgb(246, 134, 33);
+}
+
+.sidebar-sub-title:hover {
+    color: rgb(43, 160, 189);
+
 }
