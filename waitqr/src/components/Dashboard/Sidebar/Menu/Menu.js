@@ -18,13 +18,6 @@ const Dash = props => {
                     </Col>
                     <Col xs={10} id="page-content-wrapper">
                         <DishMenu />
-                        <>
-                            <Button variant="primary" onClick={() => setModalShow(true)}>
-                                  Editar Platillo
-                            </Button>
-
-                            <DishModal show={modalShow} onHide={() => setModalShow(false)} />
-                        </>
                     </Col>
                 </Row>
                 <Row>

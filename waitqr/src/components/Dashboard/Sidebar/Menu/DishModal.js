@@ -5,7 +5,7 @@ function DishModal(props) {
             <Modal {...props} aria-labelledby="contained-modal-title-vcenter">
               <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                  Using Grid in Modal
+                  Editar Platillo
                 </Modal.Title>
               </Modal.Header>
               <Modal.Body className="show-grid">

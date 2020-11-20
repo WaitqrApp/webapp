@@ -1,8 +1,7 @@
 import React from "react";
-import { Nav } from "react-bootstrap";
+import { Nav, Button } from "react-bootstrap";
 import { withRouter } from "react-router";
 import './menusidebar.css'
-
 const Side = props => {
 
 
@@ -31,7 +30,9 @@ const Side = props => {
                 </Nav.Link>
                 </Nav.Item>
                 <Nav.Item className="mx-auto">
-                    <Nav.Link className="sidebar-sub-title" href="">+ Nueva Categoría</Nav.Link>
+                    <Nav.Link className="sidebar-sub-title" href=""><Button variant="primary" size="lg" block>
+                            Agregar Categoria
+                        </Button></Nav.Link>
                 </Nav.Item>
             </Nav>
 
