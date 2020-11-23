@@ -1,20 +1,13 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
+import { Row, Col, Card, Form, Button } from "react-bootstrap";
 import Picaña from './img/picaña.jpg';
 import DishModal from './DishModal';
-import Switch from '@material-ui/core/Switch';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import './Styles/Styles.css';
 import AddDish from './AddDish';
 
 function DishMenu() {
     const [modalShow, setModalShow] = useState(false);
-    const [checked, setChecked] = React.useState(false);
-
-    const toggleChecked = () => {
-        setChecked((prev) => !prev);
-    };
+    
 
 
     return (
@@ -33,9 +26,10 @@ function DishMenu() {
                             </Button>
                         </Col>
                         <Col xs={6} md={4} >
-                            <FormControlLabel className="toggler"
-                                control={<Switch size="small" checked={checked} onChange={toggleChecked} />}
-                                label="Disponible" labelPlacement="bottom"
+                            <Form.Check
+                                type="switch"
+                                id="disponible-switch"
+                                label="Disponible"
                             />
                         </Col>
                         <DishModal show={modalShow} onHide={() => setModalShow(false)} />

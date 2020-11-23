@@ -6,9 +6,9 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 function DishModal(props) {
   const [checked, setChecked] = React.useState(false);
 
-    const toggleChecked = () => {
-        setChecked((prev) => !prev);
-    };
+  const toggleChecked = () => {
+    setChecked((prev) => !prev);
+  };
   return (
     <Modal {...props} aria-labelledby="contained-modal-title-vcenter">
       <Modal.Header closeButton>
@@ -64,13 +64,14 @@ function DishModal(props) {
             </fieldset>
             <Form.Group as={Row} controlId="formHorizontalCheck">
               <Col sm={{ span: 10, offset: 2 }}>
-              <FormControlLabel className="toggler"
-                                control={<Switch size="small" checked={checked} onChange={toggleChecked} />}
-                                label="Disponible" labelPlacement="bottom"
-                            />
+                <Form.Check
+                  type="switch"
+                  id="custom-switch"
+                  label="Disponible"
+                />
               </Col>
             </Form.Group>
-            
+
           </Form>
         </Container>
       </Modal.Body>
