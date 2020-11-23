@@ -32,7 +32,7 @@ function DishMenu() {
                                 Editar Platillo
                             </Button>
                         </Col>
-                        <Col xs={6} md={4} p={0}>
+                        <Col xs={6} md={4} >
                             <FormControlLabel className="toggler"
                                 control={<Switch size="small" checked={checked} onChange={toggleChecked} />}
                                 label="Disponible" labelPlacement="bottom"
