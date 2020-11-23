@@ -33,7 +33,7 @@ function DishModal(props) {
               custom
             />
             <Form.Group as={Row} controlId="formHorizontalPassword">
-              <Form.Label column sm={"auto"}>
+              <Form.Label>
                 Descripción
               </Form.Label>
               <Col sm={"auto"}>
