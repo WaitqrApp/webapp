@@ -24,10 +24,14 @@ function DishModal(props) {
                 Platillo
               </Form.Label>
               <Col sm={10}>
-                <Form.Control type="" placeholder="Email" />
+                <Form.Control type="" placeholder="Picaña Especial" />
               </Col>
             </Form.Group>
-
+            <Form.File
+              id="custom-file"
+              label="Imagen Platillo"
+              custom
+            />
             <Form.Group as={Row} controlId="formHorizontalPassword">
               <Form.Label column sm={"auto"}>
                 Descripción
