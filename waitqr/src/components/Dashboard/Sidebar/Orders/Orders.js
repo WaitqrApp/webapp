@@ -17,13 +17,15 @@ function Orders() {
                             <Card.Subtitle className="mb-2 text-muted">
                                 Terraza
                             </Card.Subtitle>
-                            <Card.Text className="text-success font-weight-bold">
-                                Status: Llena
-                           </Card.Text>
-                            <Card.Text>
-                                <br />
-                                Entrada: 13:45
-                           </Card.Text>
+                            <Card.Subtitle className="mb-2 text-muted">
+                                12:30 23-06-2020
+                            </Card.Subtitle>
+                            <Form.Group controlId="formBasicCheckbox">
+                                <Form.Check type="checkbox" label="Picaña Haye" />
+                            </Form.Group>
+                            <Form.Group controlId="formBasicCheckbox">
+                                <Form.Check type="checkbox" label="Cerveza" />
+                            </Form.Group>
                             <Card.Text>
                                 <br />
                                 Picania Haye
@@ -31,9 +33,9 @@ function Orders() {
                             <Button variant="primary">Aceptar</Button>
                             <Button variant="light">Rechazar</Button>
                         </Card.Body>
-                        
 
-                        
+
+
                     </Card>
 
                 </div>
