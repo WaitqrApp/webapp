@@ -28,11 +28,12 @@ function Orders() {
                                 <br />
                                 Picania Haye
                            </Card.Text>
-                            <Card.Link className="text-danger" href="#">Cerrar Mesa</Card.Link>
+                            <Button variant="primary">Aceptar</Button>
+                            <Button variant="light">Rechazar</Button>
                         </Card.Body>
-                        <Button variant="primary" size="lg" block>
-                            Aceptar
-                        </Button>
+                        
+
+                        
                     </Card>
 
                 </div>
