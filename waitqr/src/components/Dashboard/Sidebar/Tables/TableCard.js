@@ -8,7 +8,7 @@ function TableCard() {
     <Card className="mt-1" style={{ width: '18rem', height: "18rem", justifyContent: 'center' }}>
                         <Card.Body>
                             <Card.Title className="text-center font-weight-bold">
-                                Orden 1
+                                Mesa 1
                             </Card.Title>
                             <Card.Subtitle className="mb-2 text-muted">
                                 Terraza

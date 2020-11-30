@@ -43,7 +43,6 @@ function Orders() {
             <div className="row">
                 <div className="col-md-6 text-left contenido-mesas" >
                     <OrderCard></OrderCard>
-
                 </div>
             </div>
         </div>
