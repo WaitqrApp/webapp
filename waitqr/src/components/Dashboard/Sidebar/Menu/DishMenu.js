@@ -20,13 +20,12 @@ function DishMenu() {
                         Carne de vacuno al estilo Brazileiro Irmao
                     </Card.Text>
                     <Row>
-                    <Col /* sm={{ span: 5, offset: 4 }} */>
-
+                    <Col>
                             <Button variant="primary" onClick={() => setModalShow(true)}>
                                 Editar Platillo
                             </Button>
                         </Col>
-                        <Col /* sm={{ span: 10, offset: 4 }} */>
+                        <Col>
                             <Form.Check
                                 type="switch"
                                 id="disponible-switch"

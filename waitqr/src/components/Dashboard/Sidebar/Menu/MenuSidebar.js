@@ -1,8 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import { Nav, Button } from "react-bootstrap";
 import { withRouter } from "react-router";
-import './menusidebar.css'
+import './menusidebar.css';
+import AddCategory from './AddCategory';
+
 const Side = props => {
+    const [modalShow, setModalShow] = useState(false);
 
 
     return (
@@ -30,9 +33,13 @@ const Side = props => {
                 </Nav.Link>
                 </Nav.Item>
                 <Nav.Item className="mx-auto">
-                    <Nav.Link className="sidebar-sub-title" href=""><Button variant="primary" size="lg" block>
-                            Agregar Categoria
-                        </Button></Nav.Link>
+                    <Nav.Link className="sidebar-sub-title" href="">
+                    <Button variant="primary" onClick={() => setModalShow(true)}>
+                                Agregar Categoría
+                            </Button>
+                        <AddCategory show={modalShow} onHide={() => setModalShow(false)} />
+
+                        </Nav.Link>
                 </Nav.Item>
             </Nav>
 

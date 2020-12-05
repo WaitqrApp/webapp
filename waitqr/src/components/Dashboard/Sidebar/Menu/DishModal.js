@@ -1,7 +1,5 @@
 import React from 'react';
 import { Container, Row, Col, Card, Form, Button, Modal, InputGroup, FormControl } from "react-bootstrap";
-import Switch from '@material-ui/core/Switch';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 function DishModal(props) {
   const [checked, setChecked] = React.useState(false);
