@@ -85,24 +85,29 @@ margin-top:2.5vh;}
 }
 
 .input-nombre {
-    width: 100%
+    width: 100%;
+    margin-bottom: 3%;
 }
 
 .input-desc {
     margin-top: 2%;
-    width: 166%
+    width: 166%;
+    margin-bottom: 5%;
 }
 
 .input-dinero {
     width: 182%;
-    margin-left: -4%
+    margin-left: -4%;
+    margin-bottom: 5%;
 }
 
 .input-seccion{
     width: 80.5%;
+    margin-bottom: 5%;
 }
 
 .input-imagen {
+    margin-bottom: 5%;
 }
 
 .boton-orden-aceptar{
@@ -116,4 +121,8 @@ margin-top:2.5vh;}
     position: relative;
     bottom: -39%;
     right: -7%;
+}
+
+.disponible-edit-platillo{
+    align-self: center;
 }

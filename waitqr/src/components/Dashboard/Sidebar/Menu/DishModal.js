@@ -1,12 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Card, Form, Button, Modal, InputGroup, FormControl } from "react-bootstrap";
-<<<<<<< Updated upstream
-=======
-import Switch from '@material-ui/core/Switch';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import './menusidebar.css';
 
->>>>>>> Stashed changes
 
 function DishModal(props) {
   const [checked, setChecked] = React.useState(false);

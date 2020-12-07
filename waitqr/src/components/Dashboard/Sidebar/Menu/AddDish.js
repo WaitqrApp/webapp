@@ -5,16 +5,10 @@ import './menusidebar.css'
 function AddDish() {
     return (
         <>
-<<<<<<< Updated upstream
-            <Button variant="primary">
-                    Agregar Categoría
+            <Button className="boton-platillo" variant="primary" size="lg" block>
+                    Agregar Platillo
                 </Button>
             {/* <AddDishForm show={modalShow} onHide={() => setModalShow(false)} /> */}
-=======
-            <Button className="boton-platillo" variant="primary" size="lg" block>
-                Agregar Platillo
-            </Button>
->>>>>>> Stashed changes
         </>
     );
 }

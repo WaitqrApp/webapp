@@ -20,16 +20,10 @@ function DishMenu() {
                         Carne de vacuno al estilo Brazileiro Irmao
                     </Card.Text>
                     <Row>
-<<<<<<< Updated upstream
-                    <Col>
-                            <Button variant="primary" onClick={() => setModalShow(true)}>
-                                Editar Platillo
-=======
                     <Col /* sm={{ span: 5, offset: 4 }} */>
 
                             <Button className="boton-editar" variant="primary" onClick={() => setModalShow(true)}>
                                 Editar
->>>>>>> Stashed changes
                             </Button>
                         </Col>
                         <Col>
