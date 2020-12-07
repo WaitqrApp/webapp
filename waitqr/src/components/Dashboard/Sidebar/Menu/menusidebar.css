@@ -126,3 +126,8 @@ margin-top:2.5vh;}
 .disponible-edit-platillo{
     align-self: center;
 }
+
+.input-categoria{
+    width: 0%;
+    margin-bottom: 3%;
+}

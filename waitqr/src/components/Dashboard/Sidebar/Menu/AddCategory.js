@@ -21,8 +21,8 @@ function AddCategory(props) {
               <Form.Label>
                 Nombre de Categoría
               </Form.Label>
-              <Col sm={"auto"}>
-                <Form.Control type="password" placeholder="Nombre de Categoría" />
+              <Col classname="input-categoria" sm={"auto"}>
+                <Form.Control classname="input-categoria" type="password" placeholder="Nombre de Categoría" />
               </Col>
             </Form.Group>
             <Form.Group as={Row} controlId="formHorizontalCheck">

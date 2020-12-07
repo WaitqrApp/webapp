@@ -69,6 +69,7 @@ function DishModal(props) {
             <Form.Group as={Row} controlId="formHorizontalCheck">
               <Col sm={{ span: 10, offset: 2 }}>
                 <Form.Check
+                  className="disponible-edit-platillo"
                   type="switch"
                   id="custom-switch"
                   label="Disponible"

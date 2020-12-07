@@ -2,24 +2,25 @@ import React from 'react';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import Dropdown from 'react-bootstrap/Dropdown';
+import './history.css';
+
 function History() {
     return (
         <>
-        <Button className="btn-primary" variant="success">Descargar</Button>
-            <Button className="btn-primary" variant="info">Filtro</Button>
+        <Button className="boton-descargar" >Descargar</Button>
+        <Button className="boton-filtrar" >Filtro</Button>
         <Dropdown>
-                <Dropdown.Toggle className="btn-primary" variant="success" id="dropdown-basic">
+            <Dropdown.Toggle className = "dropdown-restaurantes"
+                        menuAlign="right"
+                        title="La Noria"
+                        id="dropdown-menu-align-right">
                     La Noria
             </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">Santo Chancho</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">La Noria Polanco</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">La Noria Puebla</Dropdown.Item>
-                </Dropdown.Menu> 
-            </Dropdown>
+            <Dropdown.Menu>
+                <Dropdown.Item href="#/action-1">El Restauro</Dropdown.Item>
+            </Dropdown.Menu> 
+        </Dropdown>
         <Table striped bordered hover>
-            
             <thead>
                 <tr>
                     <th># de orden</th>
