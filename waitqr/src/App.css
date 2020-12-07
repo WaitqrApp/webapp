@@ -6,10 +6,22 @@ h1, h2, p, th {
 
 /* The top-right button of the navbar */
  
-.btn-secondary {
+.btn-primary {
     color: #fff;
-    background-color: #f68521;
-    border-color: #f68521;
+    background-color: #EFB63D;
+    border-color: #EFB63D;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #cc9b30;
+  border-color: #EFB63D;
+}
+
+.btn-primary:active {
+  color: #fff;
+  background-color: #cc9b30;
+  border-color: #EFB63D;
 }
 
 /* The side navigation menu */

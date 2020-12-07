@@ -55,5 +55,65 @@ margin-top:2.5vh;}
 
 .sidebar-sub-title:hover {
     color: rgb(43, 160, 189);
+}
 
+.boton-platillo {
+    position: fixed;
+    width: 60%; 
+    bottom: 3%;
+    left: 35%;
+    /*background-color: #FDD000;
+    border-color: #FDD000;*/
+}
+
+.boton-categoria {
+    position: fixed;
+    width: 13%;
+    left: 16.6%;
+    bottom: 2%;
+    background-color: rgba(246, 132, 33, 0);
+}
+
+.boton-disponible {
+    margin-left: 20%;
+    margin-top: 10%;
+    margin-bottom: 0%;
+}
+
+.boton-editar {
+    margin-top: 15%
+}
+
+.input-nombre {
+    width: 100%
+}
+
+.input-desc {
+    margin-top: 2%;
+    width: 166%
+}
+
+.input-dinero {
+    width: 182%;
+    margin-left: -4%
+}
+
+.input-seccion{
+    width: 80.5%;
+}
+
+.input-imagen {
+}
+
+.boton-orden-aceptar{
+    position: relative;
+    bottom: -39%;
+    left: -4%;
+    width: 60%;
+
+}
+.boton-orden-rechazar{
+    position: relative;
+    bottom: -39%;
+    right: -7%;
 }

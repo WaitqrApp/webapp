@@ -1,0 +1,15 @@
+.dropdown-restaurante {
+    position: fixed;
+    width: 100%;
+    right: -80%;
+}
+
+.dropdown-seccion {
+    position: fixed;
+    width: 100%;
+    right: -90%;
+}
+
+.tarjeta-orden {
+    margin-top: 4%;
+}

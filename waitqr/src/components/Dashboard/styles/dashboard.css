@@ -137,8 +137,8 @@
   /* Imagenes */
 
   .platillos-probados {
-    height: 300px;
-    width: 370px; 
+    height: 30vh;
+    width: 90%; 
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 4%;
@@ -147,17 +147,17 @@
   }
   
   .ordenes {
-    height: 250px;
-    width: 350px; 
-    margin-left: auto;
+    height: 10%;
+    width: 190%; 
+    margin-left: 10%;
     margin-right: auto;
     margin-bottom: 4%;
     margin-top: 3%;
   }
   
   .help {
-    height: 200px;
-    width: 220px; 
+    height: 30%;
+    width: 30%; 
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 4%;

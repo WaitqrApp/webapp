@@ -1,5 +1,12 @@
 import React from 'react';
 import { Container, Row, Col, Card, Form, Button, Modal, InputGroup, FormControl } from "react-bootstrap";
+<<<<<<< Updated upstream
+=======
+import Switch from '@material-ui/core/Switch';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import './menusidebar.css';
+
+>>>>>>> Stashed changes
 
 function DishModal(props) {
   const [checked, setChecked] = React.useState(false);
@@ -22,28 +29,28 @@ function DishModal(props) {
                 Platillo
               </Form.Label>
               <Col sm={10}>
-                <Form.Control type="" placeholder="Picaña Especial" />
+                <Form.Control className="input-nombre" type="" placeholder="Picaña Especial" />
               </Col>
             </Form.Group>
             <Form.File
-              id="custom-file"
+              className="input-imagen"
               label="Imagen Platillo"
               custom
             />
             <Form.Group as={Row} controlId="formHorizontalPassword">
-              <Form.Label>
+              <Form.Label column sm={"auto"}>
                 Descripción
               </Form.Label>
-              <Col sm={"auto"}>
-                <Form.Control type="password" placeholder="Picaña Especial acompañada de aire" />
+              <Col  className="input" sm={"auto"}>
+                <Form.Control className="input-desc" type="password" placeholder="Picaña Especial acompañada de aire" />
               </Col>
             </Form.Group>
             <Form.Group as={Row} controlId="formHorizontalPassword">
-              <Form.Label column sm={"auto"}>
+              <Form.Label  column sm={"auto"}>
                 Precio: $
               </Form.Label>
               <Col sm={"auto"}>
-                <Form.Control type="" placeholder="250.00" />
+                <Form.Control  className="input-dinero" type="" placeholder="250.00" />
               </Col>
             </Form.Group>
             <fieldset>
@@ -53,7 +60,7 @@ function DishModal(props) {
                 </Form.Label>
                 <Form.Control
                   as="select"
-                  className="my-1 mr-sm-2"
+                  className="input-seccion my-1 mr-sm-2"
                   id="inlineFormCustomSelectPref"
                   custom
                 >
@@ -73,12 +80,12 @@ function DishModal(props) {
                 />
               </Col>
             </Form.Group>
-
           </Form>
         </Container>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Guardar</Button>
+        <Button variant="success" onClick={props.onHide}>Guardar</Button>
+        <Button className="btn-warning" variant="warning" onClick={props.onHide}>Cancelar</Button>
       </Modal.Footer>
     </Modal>
   );

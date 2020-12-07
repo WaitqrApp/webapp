@@ -5,23 +5,20 @@ import '../Tables/styles/tables.css';
 function TableCard() {
   return (
     <Fragment>
-    <Card className="mt-1" style={{ width: '18rem', height: "18rem", justifyContent: 'center' }}>
+    <Card className="mt-1" style={{ width: '18rem', height: "11rem", justifyContent: 'center' }}>
                         <Card.Body>
                             <Card.Title className="text-center font-weight-bold">
                                 Mesa 1
                             </Card.Title>
                             <Card.Subtitle className="mb-2 text-muted">
-                                Terraza
+                                Comienzo: 23-06-2020 12:30
                             </Card.Subtitle>
                             <Card.Subtitle className="mb-2 text-muted">
-                                12:30 23-06-2020
+                                Sesiones: 2                     
                             </Card.Subtitle>
-                            <Form.Group controlId="formBasicCheckbox">
-                                <Form.Check type="checkbox" label="Picaña Haye" />
-                            </Form.Group>
-                            <Form.Group controlId="formBasicCheckbox">
-                                <Form.Check type="checkbox" label="Cerveza" />
-                            </Form.Group>
+                            <Card.Subtitle className="mb-2 text-muted">                    
+                                Total: $278
+                            </Card.Subtitle>
                             <Button variant="primary" block>Cerrar Mesa</Button>
                         </Card.Body>
                     </Card>

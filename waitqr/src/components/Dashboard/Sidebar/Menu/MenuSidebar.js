@@ -33,6 +33,7 @@ const Side = props => {
                 </Nav.Link>
                 </Nav.Item>
                 <Nav.Item className="mx-auto">
+<<<<<<< Updated upstream
                     <Nav.Link className="sidebar-sub-title" href="">
                     <Button variant="primary" onClick={() => setModalShow(true)}>
                                 Agregar Categoría
@@ -40,6 +41,11 @@ const Side = props => {
                         <AddCategory show={modalShow} onHide={() => setModalShow(false)} />
 
                         </Nav.Link>
+=======
+                    <Nav.Link className="boton-categoria" href=""><Button variant="primary" size="lg" block>
+                            Agregar Categoria
+                        </Button></Nav.Link>
+>>>>>>> Stashed changes
                 </Nav.Item>
             </Nav>
 

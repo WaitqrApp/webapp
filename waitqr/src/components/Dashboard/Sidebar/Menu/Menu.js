@@ -20,13 +20,6 @@ const Dash = props => {
                         <DishMenu />
                     </Col>
                 </Row>
-                <Row>
-                    <Col xs={2}>
-                        <DishMenu />
-                    </Col>
-
-                </Row>
-
             </Container>
         </>
     );

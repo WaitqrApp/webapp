@@ -20,21 +20,27 @@ function DishMenu() {
                         Carne de vacuno al estilo Brazileiro Irmao
                     </Card.Text>
                     <Row>
+<<<<<<< Updated upstream
                     <Col>
                             <Button variant="primary" onClick={() => setModalShow(true)}>
                                 Editar Platillo
+=======
+                    <Col /* sm={{ span: 5, offset: 4 }} */>
+
+                            <Button className="boton-editar" variant="primary" onClick={() => setModalShow(true)}>
+                                Editar
+>>>>>>> Stashed changes
                             </Button>
                         </Col>
                         <Col>
                             <Form.Check
+                                className="boton-disponible"
                                 type="switch"
                                 id="disponible-switch"
-                                label="Disponible"
-                            />
+                            /><label> Disponible </label>
                         </Col>
                         <DishModal show={modalShow} onHide={() => setModalShow(false)} />
                     </Row>
-
                 </Card.Body>
             </Card>
             <Row>
@@ -42,8 +48,6 @@ function DishMenu() {
                     <AddDish />
                 </Col>
             </Row>
-
-
         </>
     );
 

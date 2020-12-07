@@ -4,11 +4,18 @@ import Button from 'react-bootstrap/Button';
 import Dropdown from 'react-bootstrap/Dropdown';
 function History() {
     return (
+<<<<<<< Updated upstream
         <>
         <Button variant="success">Descargar</Button>
             <Button variant="info">Filtro</Button>
         <Dropdown>
                 <Dropdown.Toggle variant="success" id="dropdown-basic">
+=======
+    <div>
+       <Table striped bordered hover>
+            <Dropdown>
+                <Dropdown.Toggle className="btn-primary" id="dropdown-basic">
+>>>>>>> Stashed changes
                     La Noria
             </Dropdown.Toggle>
 
@@ -16,7 +23,7 @@ function History() {
                     <Dropdown.Item href="#/action-1">Santo Chancho</Dropdown.Item>
                     <Dropdown.Item href="#/action-2">La Noria Polanco</Dropdown.Item>
                     <Dropdown.Item href="#/action-3">La Noria Puebla</Dropdown.Item>
-                </Dropdown.Menu>
+                </Dropdown.Menu> 
             </Dropdown>
         <Table striped bordered hover>
             
@@ -56,12 +63,20 @@ function History() {
                     <td>23/06/2020</td>
                 </tr>
             </tbody>
+<<<<<<< Updated upstream
             
 
         </Table>
 
         </>
         
+=======
+            <Button className="btn-primary" >Descargar</Button>
+            <Button className="btn-primary" >Filtro</Button>
+
+        </Table>
+    </div>
+>>>>>>> Stashed changes
     );
 }
 

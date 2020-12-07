@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
 import { Container, Row, Col, Form, Button, Modal, Card } from "react-bootstrap";
-import '../Tables/styles/tables.css';
+import './styles/orders.css';
 
 function OrderCard() {
   return (
     <Fragment>
-    <Card className="mt-1" style={{ width: '18rem', height: "18rem", justifyContent: 'center' }}>
+    <Card className="tarjeta-orden mt-1" style={{ width: '18rem', height: "22rem", justifyContent: 'center'}}>
                         <Card.Body>
                             <Card.Title className="text-center font-weight-bold">
                                 Orden 1
@@ -17,13 +17,13 @@ function OrderCard() {
                                 12:30 23-06-2020
                             </Card.Subtitle>
                             <Form.Group controlId="formBasicCheckbox">
-                                <Form.Check type="checkbox" label="Picaña Haye" />
+                                <Form.Check type="checkbox" label="Picaña Haye x1" />
                             </Form.Group>
                             <Form.Group controlId="formBasicCheckbox">
-                                <Form.Check type="checkbox" label="Cerveza" />
+                                <Form.Check type="checkbox" label="Cerveza x2" />
                             </Form.Group>
-                            <Button variant="primary">Aceptar</Button>
-                            <Button variant="light">Rechazar</Button>
+                            <Button className="boton-orden-aceptar" variant="primary">Aceptar</Button>
+                            <Button className="boton-orden-rechazar" variant="light">Rechazar</Button>
                         </Card.Body>
                     </Card>
     </Fragment>
