@@ -1,22 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Container, Row, Col, Card, Form, Button, Modal, InputGroup, FormControl } from "react-bootstrap";
-import './menusidebar.css';
+import './menusidebar.css'
 
-
-function DishModal(props) {
-  const [checked, setChecked] = React.useState(false);
-
-  const toggleChecked = () => {
-    setChecked((prev) => !prev);
-  };
-  return (
-    <Modal {...props} aria-labelledby="contained-modal-title-vcenter">
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
+function DishModal() {
+    const [show, setShow] = useState(false);
+  
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+  
+    return (
+      <>
+        <Button className = "boton-editar" size = "lg" block variant="primary" onClick={handleShow}>
           Editar Platillo
-                </Modal.Title>
-      </Modal.Header>
-      <Modal.Body className="show-grid">
+        </Button>
+  
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Editar Platillo</Modal.Title>
+          </Modal.Header>
+          <Modal.Body className="show-grid">
         <Container>
           <Form>
             <Form.Group as={Row} controlId="formHorizontalEmail">
@@ -79,12 +81,18 @@ function DishModal(props) {
           </Form>
         </Container>
       </Modal.Body>
-      <Modal.Footer>
-        <Button variant="success" onClick={props.onHide}>Guardar</Button>
-        <Button className="btn-warning" variant="warning" onClick={props.onHide}>Cancelar</Button>
-      </Modal.Footer>
-    </Modal>
-  );
-}
 
-export default DishModal;
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+                Cancelar
+            </Button>
+            <Button variant="primary" onClick={handleClose}>
+              Guardar Cambios
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </>
+    );
+  }
+  
+  export default DishModal;

@@ -75,9 +75,8 @@ margin-top:2.5vh;}
 }
 
 .boton-disponible {
-    margin-left: 20%;
-    margin-top: 10%;
-    margin-bottom: 0%;
+    position: absolute;
+    right: 0px;
 }
 
 .boton-editar {
