@@ -21,7 +21,6 @@ function DishMenu() {
                     </Card.Text>
                     <Row>
                     <Col /* sm={{ span: 5, offset: 4 }} */>
-
                             <Button className="boton-editar" variant="primary" onClick={() => setModalShow(true)}>
                                 Editar
                             </Button>
@@ -39,7 +38,7 @@ function DishMenu() {
             </Card>
             <Row>
                 <Col md={{ span: 8, offset: 3 }}>
-                    <AddDish />
+                    <AddDish show={modalShow} onHide={() => setModalShow(false)}/>
                 </Col>
             </Row>
         </>
