@@ -34,12 +34,11 @@ function AddCategory(props) {
                 />
               </Col>
             </Form.Group>
-
           </Form>
         </Container>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Guardar</Button>
+        <Button onClick={props.onHide}>Agregar</Button>
       </Modal.Footer>
     </Modal>
   );
