@@ -34,7 +34,7 @@ function MenuSidebar(){
                 </Nav.Item>
                 <Nav.Item className="mx-auto">
                     <Nav.Link className="boton-categoria" href="">
-                    <Button variant="primary" size="lg" block onClick={() => setModalShow(true)}>
+                    <Button variant="primary" size="auto" block onClick={() => setModalShow(true)}>
                                 Agregar Categoría
                             </Button>
                         <AddCategory show={modalShow} onHide={() => setModalShow(false)} />

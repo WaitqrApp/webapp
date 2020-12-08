@@ -9,7 +9,7 @@ function Menu() {
     return (
         <>
             <Container fluid>
-                    <DropdownButton size="lg" title="El Santo Chancho">
+                    <DropdownButton className="dropdown-restaurante-menu" size="auto" title="El Santo Chancho">
                         <Dropdown.Item eventKey="1">La Numero 20</Dropdown.Item>
                         <Dropdown.Divider />
                         <Dropdown.Item eventKey="2">El Santo Chancho Pedregal</Dropdown.Item>

@@ -10,7 +10,7 @@ function AddDish() {
   
     return (
       <>
-        <Button className = "boton-platillo" size = "lg" block variant="primary" onClick={handleShow}>
+        <Button className = "boton-platillo" size = "auto" block variant="primary" onClick={handleShow}>
           Agregar Platillo
         </Button>
   

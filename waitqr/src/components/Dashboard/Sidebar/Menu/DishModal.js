@@ -10,7 +10,7 @@ function DishModal() {
   
     return (
       <>
-        <Button className = "boton-editar" size = "lg" block variant="primary" onClick={handleShow}>
+        <Button className = "boton-editar" size = "auto" block variant="primary" onClick={handleShow}>
           Editar Platillo
         </Button>
   
