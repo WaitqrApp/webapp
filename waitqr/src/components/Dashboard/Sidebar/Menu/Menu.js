@@ -5,7 +5,9 @@ import MenuSidebar from './MenuSidebar';
 import DishMenu from './DishMenu';
 import './menusidebar.css';
 import DishModal from './DishModal';
-const Dash = props => {
+
+
+function Menu() {
 
     const [modalShow, setModalShow] = useState(false);
 
@@ -31,5 +33,5 @@ const Dash = props => {
         </>
     );
 };
-const Dashboard = withRouter(Dash);
-export default Dashboard
+
+export default Menu;

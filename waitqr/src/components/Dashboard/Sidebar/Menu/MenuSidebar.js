@@ -2,9 +2,9 @@ import React from "react";
 import { Nav, Button } from "react-bootstrap";
 import { withRouter } from "react-router";
 import './menusidebar.css'
-const Side = props => {
 
 
+function MenuSideBar(){
     return (
         <>
             <Nav className="col-md-12 d-none d-md-block sidebar-menu"
@@ -39,5 +39,4 @@ const Side = props => {
         </>
     );
 };
-const MenuSidebar = withRouter(Side);
-export default MenuSidebar
+export default MenuSideBar;
