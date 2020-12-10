@@ -8,7 +8,7 @@ function Sidebar() {
             <div className="active">
                 <Link to={'/home'}>
                     <span className="material-icons mr-3">home</span>
-                    Dashboard
+                    Home
                 </Link>
             </div>
             <div className="non-active">

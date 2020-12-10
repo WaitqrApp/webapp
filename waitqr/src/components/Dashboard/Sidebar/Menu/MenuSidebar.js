@@ -4,9 +4,10 @@ import { withRouter } from "react-router";
 import './menusidebar.css';
 import AddCategory from './AddCategory';
 
-function MenuSidebar(){
-    const [modalShow, setModalShow] = useState(false);
 
+
+function MenuSideBar(){
+    const [modalShow, setModalShow] = useState(false);
 
     return (
         <>
@@ -45,5 +46,5 @@ function MenuSidebar(){
 
         </>
     );
-};
-export default MenuSidebar
+}
+export default MenuSideBar;

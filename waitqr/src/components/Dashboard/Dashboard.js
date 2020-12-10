@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext, useEffect } from 'react';
 import '../../App.css';
 import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
 
@@ -13,11 +13,22 @@ import Tables from './Sidebar/Tables/Tables';
 import Orders from './Sidebar/Orders/Orders';
 import Menu from './Sidebar/Menu/Menu';
 
+import AuthContext from '../../context/autenticacion/authContext'
+
 
 
 
 /* Describe el contenido del canvas central */
 function Dashboard() {
+
+  //Extraer la informacion de autenticacion
+  const authContext = useContext(AuthContext);
+  const {usuario, usuarioAutenticado} = authContext;
+
+  useEffect(() =>{
+    usuarioAutenticado();
+  }, [])
+
   return (
 
     <Router>
@@ -29,6 +40,7 @@ function Dashboard() {
               <Sidebar />
             </div>
             <div className="col-md-10 p-0 d-inline-block" id="contenido" >
+              {usuario ? <h1>Hola, {usuario.nombre}</h1> : null}
               <Switch>
                 <Route exact path="/Home" component={(Home)} />
                 <Route exact path="/menu" component={(Menu)} />

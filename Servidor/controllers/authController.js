@@ -52,7 +52,8 @@ exports.autenticarUsuario = async (req, res) =>{
 //obtiene que usuario esta autenticado
 exports.usuarioAutenticado = async(req, res) =>{
     try {
-        const usuario = await Usuario.findById(req.usuario.id);
+        //obtenemos el usuario sin la contrasena
+        const usuario = await (await Usuario.findById(req.usuario.id));
         res.json({usuario});
         
     } catch (error) {
