@@ -6,9 +6,6 @@ import DishMenu from './DishMenu';
 import './menusidebar.css';
 import DishModal from './DishModal';
 
-
-
-
 function Menu() {
     const [modalShow, setModalShow] = useState(false);
 
@@ -34,4 +31,5 @@ function Menu() {
         </>
     );
 };
+
 export default Menu;
