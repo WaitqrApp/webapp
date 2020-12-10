@@ -29,6 +29,9 @@ function Menu() {
                         <Dropdown.Item eventKey="2">Menu Navideño </Dropdown.Item>
                         <Dropdown.Divider />
                         <Dropdown.Item eventKey="3">Menu Mexicano</Dropdown.Item>
+                        <Dropdown.Divider />
+
+                        <Dropdown.Item as="button">Agregar Menu +</Dropdown.Item>
                     </DropdownButton>
                     </Col>
                 </Row>
