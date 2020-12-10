@@ -12,6 +12,8 @@ function Menu() {
     return (
         <>
             <Container fluid>
+                <Row>
+                    <Col>
                     <DropdownButton size="lg" title="El Santo Chancho">
                         <Dropdown.Item eventKey="1">La Numero 20</Dropdown.Item>
                         <Dropdown.Divider />
@@ -19,6 +21,18 @@ function Menu() {
                         <Dropdown.Divider />
                         <Dropdown.Item eventKey="3">La Casa del Pastor</Dropdown.Item>
                     </DropdownButton>
+                    </Col>
+                    <Col>
+                    <DropdownButton size="lg" title="Menu Estandar">
+                        <Dropdown.Item eventKey="1">Menu Estandar</Dropdown.Item>
+                        <Dropdown.Divider />
+                        <Dropdown.Item eventKey="2">Menu Navideño </Dropdown.Item>
+                        <Dropdown.Divider />
+                        <Dropdown.Item eventKey="3">Menu Mexicano</Dropdown.Item>
+                    </DropdownButton>
+                    </Col>
+                </Row>
+                    
                 <Row>
                     <Col xs={2} id="sidebar-wrapper">
                         <MenuSidebar />
