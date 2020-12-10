@@ -7,11 +7,11 @@ import './menusidebar.css';
 import DishModal from './DishModal';
 
 
-function Menu() {
 
+
+function Menu() {
     const [modalShow, setModalShow] = useState(false);
 
-function Menu() {
     return (
         <>
             <Container fluid>
