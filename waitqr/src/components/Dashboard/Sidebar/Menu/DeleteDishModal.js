@@ -10,7 +10,7 @@ function DeleteDishModal() {
   
     return (
         <>
-        <Button variant="danger" size = "lg" block onClick={handleShow}>
+        <Button variant="danger" onClick={handleShow}>
           Eliminar
         </Button>
   

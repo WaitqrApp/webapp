@@ -33,7 +33,7 @@ function MenuSidebar(){
                 <Nav.Item>
                     <Nav.Link className="sidebar-text" eventKey="">
                         Cena
-                        <Button variant="light"><AiFillEdit /></Button>
+                        <Button ><AiFillEdit /></Button>
                 </Nav.Link>
                 
 
@@ -48,7 +48,7 @@ function MenuSidebar(){
                         </Nav.Link>
 
                 </Nav.Item>
-                <DeleteCategoryModal show={modalShow} onHide={() => setModalShow(false)} />
+                {/* <DeleteCategoryModal show={modalShow} onHide={() => setModalShow(false)} /> */}
 
             </Nav>
 

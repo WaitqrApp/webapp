@@ -1,12 +1,14 @@
 import React, {useState} from 'react';
-import { Container, Row, Col, Card, Form, Button, Modal, InputGroup, FormControl } from "react-bootstrap";
+import { Container, Row, Col, Form, Button, Modal, InputGroup, FormControl } from "react-bootstrap";
 import './menusidebar.css'
+import DeleteDishModal from './DeleteDishModal';
 
 function DishModal() {
     const [show, setShow] = useState(false);
   
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const [modalShow, setModalShow] = useState(false);
   
     return (
       <>
@@ -83,6 +85,8 @@ function DishModal() {
       </Modal.Body>
 
           <Modal.Footer>
+          <DeleteDishModal show={modalShow} onHide={() => setModalShow(false)} />
+
             <Button variant="secondary" onClick={handleClose}>
                 Cancelar
             </Button>
