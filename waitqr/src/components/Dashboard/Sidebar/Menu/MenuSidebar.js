@@ -3,6 +3,8 @@ import { Nav, Button } from "react-bootstrap";
 import { withRouter } from "react-router";
 import './menusidebar.css';
 import AddCategory from './AddCategory';
+import DeleteCategoryModal from './DeleteCategoryModal';
+import { AiFillEdit } from 'react-icons/ai';
 
 function MenuSidebar(){
     const [modalShow, setModalShow] = useState(false);
@@ -19,18 +21,22 @@ function MenuSidebar(){
                     <Nav.Link className="sidebar-title" href="">Categorías</Nav.Link>
                 </Nav.Item>
                 <Nav.Item className="mx-auto">
-                    <Nav.Link className="sidebar-text-active" href="" active>Entradas</Nav.Link>
+                    <Nav.Link className="sidebar-text-active" href="" active>Entradas<Button variant="light"><AiFillEdit /></Button> </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link className="sidebar-text" eventKey="">Pastas</Nav.Link>
+                    <Nav.Link className="sidebar-text" eventKey="">Pastas<Button variant="light"><AiFillEdit /></Button></Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link className="sidebar-text" eventKey="">Postres</Nav.Link>
+                    <Nav.Link className="sidebar-text" eventKey="">Postres<Button variant="light"><AiFillEdit /></Button></Nav.Link>
+
                 </Nav.Item>
                 <Nav.Item>
                     <Nav.Link className="sidebar-text" eventKey="">
                         Cena
+                        <Button variant="light"><AiFillEdit /></Button>
                 </Nav.Link>
+                
+
                 </Nav.Item>
                 <Nav.Item className="mx-auto">
                     <Nav.Link className="boton-categoria" href="">
@@ -40,7 +46,10 @@ function MenuSidebar(){
                         <AddCategory show={modalShow} onHide={() => setModalShow(false)} />
 
                         </Nav.Link>
+
                 </Nav.Item>
+                <DeleteCategoryModal show={modalShow} onHide={() => setModalShow(false)} />
+
             </Nav>
 
         </>

@@ -4,6 +4,7 @@ import Picaña from './img/picaña.jpg';
 import DishModal from './DishModal';
 import './Styles/Styles.css';
 import AddDish from './AddDish';
+import DeleteDishModal from './DeleteDishModal';
 
 function DishMenu() {
     const [modalShow, setModalShow] = useState(false);
@@ -34,8 +35,12 @@ function DishMenu() {
                         Carne de vacuno al estilo Brazileiro Irmao
                     </Card.Text>
                     <Row>
-
-                        <DishModal show={modalShow} onHide={() => setModalShow(false)} />
+                        <Col>
+                            <DishModal show={modalShow} onHide={() => setModalShow(false)} />
+                        </Col>
+                        <Col>
+                            <DeleteDishModal show={modalShow} onHide={() => setModalShow(false)} />
+                        </Col>
                     </Row>
                 </Card.Body>
             </Card>

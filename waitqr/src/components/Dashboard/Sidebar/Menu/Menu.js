@@ -4,7 +4,6 @@ import { withRouter } from "react-router";
 import MenuSidebar from './MenuSidebar';
 import DishMenu from './DishMenu';
 import './menusidebar.css';
-
 function Menu() {
     return (
         <>
