@@ -1,6 +1,5 @@
 import React, {Fragment,useEffect, useState, useContext} from "react";
-import { Container, Row, Col, Card, Form, ButtonGroup, DropdownButton, SplitButton, Dropdown } from "react-bootstrap";
-import { withRouter } from "react-router";
+import { Container, Row, Col, DropdownButton, Dropdown } from "react-bootstrap";
 import MenuSidebar from './MenuSidebar';
 import DishMenu from './DishMenu';
 import './menusidebar.css';
@@ -101,10 +100,6 @@ console.log(menuEscogido)
                 onClick={() => seleccionarMenu(menu)
                 }  
                 >{menu.nombre}</Dropdown.Item>
-               
-                
-              
-
             ))}
 
                         <Dropdown.Item as="button" onClick={() => setModalShow2(true)}>Agregar Menu +</Dropdown.Item>
