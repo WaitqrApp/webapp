@@ -26,6 +26,8 @@ exports.crearMenu = async (req, res) =>{
 
     //Creamos el menu
     const menu = new Menu(req.body);
+    //Guardar el creador via JWT 
+    menu.creador = req.usuario.id;
     await menu.save();
     res.json({menu});
 
@@ -40,7 +42,8 @@ exports.crearMenu = async (req, res) =>{
 exports.obtenerMenus = async (req, res) =>{
     try {
         //Extraer el restaurante y comprobar si existe
-   const {restaurante} = req.body;
+   const {restaurante} = req.query;
+   //console.log(req.query);
         const existeRestaurante = await Restaurante.findById(restaurante);
         if(!existeRestaurante){
             return res.status(404).json({msg: 'Restaurante no encontrado'})

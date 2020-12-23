@@ -34,9 +34,9 @@ exports.crearRestaurante = async (req, res) =>{
 exports.obtenerRestaurante = async (req, res) =>{
     try {
         //para ver todos
-        const restaurantes = await Restaurante.find();
+        //const restaurantes = await Restaurante.find();
         //para ver solo los creados por un usuario
-        //const restaurantes = await Restaurante.find({ creador: req.usuario.id}).sort({registro: -1});
+        const restaurantes = await Restaurante.find({ creador: req.usuario.id}).sort({registro: -1});
 
         res.json({restaurantes});
     } catch (error) {
