@@ -26,6 +26,8 @@ exports.crearSeccion = async (req, res) =>{
 
     //Creamos la seccion
     const seccion = new Seccion(req.body);
+    seccion.creador = req.usuario.id;
+
     await seccion.save();
     res.json({seccion});
 
@@ -40,7 +42,8 @@ exports.crearSeccion = async (req, res) =>{
 exports.obtenerSecciones = async (req, res) =>{
     try {
         //Extraer el menu y comprobar si existe
-   const {menu} = req.body;
+   const {menu} = req.query; 
+   console.log(req.query);
         const existeMenu = await Menu.findById(menu);
         if(!existeMenu){
             return res.status(404).json({msg: 'Menu no encontrado'})
@@ -52,8 +55,8 @@ exports.obtenerSecciones = async (req, res) =>{
      }
 
      //Obtener secciones por menu
-     const seccion = await Seccion.find({menu });
-     res.json({seccion});
+     const secciones = await Seccion.find({menu });
+     res.json({secciones}); 
     } catch (error) {
         console.log(error);
         res.status(500).send('Hubo un error');

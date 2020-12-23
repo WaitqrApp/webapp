@@ -40,10 +40,10 @@ exports.crearPlatillo = async (req, res) =>{
 exports.obtenerPlatillos = async (req, res) =>{
     try {
         //Extraer la seccion y comprobar si existe
-   const {seccion} = req.body;
+   const {seccion} = req.query;
         const existeSeccion = await Seccion.findById(seccion);
         if(!existeSeccion){
-            return res.status(404).json({msg: 'Seccion no encontrads'})
+            return res.status(404).json({msg: 'Seccion no encontrada'})
         }
  
         //Revisar si la seccion actual pertenece al usuario autenticado
@@ -52,9 +52,9 @@ exports.obtenerPlatillos = async (req, res) =>{
      }
 
      //Obtener platillos por seccion
-     const platillo = await Platillo.find({seccion });
-     res.json({platillo});
-    } catch (error) {
+     const platillos = await Platillo.find({seccion });
+     res.json({platillos});
+    } catch (error) { 
         console.log(error);
         res.status(500).send('Hubo un error');
     }

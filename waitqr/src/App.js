@@ -6,6 +6,14 @@ import Dashboard from './components/Dashboard/Dashboard';
 import Login from './components/auth/Login';
 import NuevaCuenta from './components/auth/NuevaCuenta';
 
+
+import RestauranteState from './context/restaurantes/restauranteState';
+import MenuState from './context/menus/menusState';
+import SeccionState from './context/secciones/seccionesState';
+import PlatillosState from './context/platillos/platillosState';
+
+
+
 import AlertaState from './context/alertas/alertaState'
 import AuthState from './context/autenticacion/authState'
 
@@ -24,6 +32,11 @@ function App() {
   console.log(process.env.REACT_APP_BACKEND_URL);
 
   return (
+    <RestauranteState>
+      <MenuState>
+      <SeccionState>
+        <PlatillosState>
+
     <AuthState>
       <AlertaState>
         <Router>
@@ -35,6 +48,11 @@ function App() {
         </Router>
       </AlertaState>
     </AuthState>
+    </PlatillosState>
+    </SeccionState>
+
+    </MenuState>
+    </RestauranteState>
 
   );
 }

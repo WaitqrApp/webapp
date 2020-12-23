@@ -1,48 +1,73 @@
-import React, {useState} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import { Nav, Button } from "react-bootstrap";
 import { withRouter } from "react-router";
 import './menusidebar.css';
 import AddCategory from './AddCategory';
+import AddRestaurant from './AddRestaurant';
+
+import menusContext from '../../../../context/menus/menusContext';
+import seccionesContext from '../../../../context/secciones/seccionesContext';
+import AlertaContext from '../../../../context/alertas/alertaContext';
+
+
 
 
 
 function MenuSideBar(){
     const [modalShow, setModalShow] = useState(false);
 
+    //Extraer si un menu esta activo
+    const menussContext = useContext(menusContext); 
+    const {menu } = menussContext;
+    
+
+
+    //obtener la funcion del context de seccion
+    const seccionessContext = useContext(seccionesContext);
+    const {seccionseleccionada,seccionesmenu, obtenerSecciones, guardarSeccionActual} = seccionessContext;
+
+    const alertaContext = useContext(AlertaContext);
+    const {alerta, mostrarAlerta} = alertaContext;
+
+
+    //obtener secciones cuando carga el componente
+    useEffect(() =>{
+
+        if(menu){
+            obtenerSecciones(menu[0]._id)
+        }
+        
+    }, [menu]); //para que corra solo una vez
+    
+    const seleccionarSeccion = seccion =>{
+        guardarSeccionActual(seccion._id)
+    }
+
     return (
         <>
             <Nav className="col-md-12 d-none d-md-block sidebar-menu"
-                activeKey="/home"
-                onSelect={selectedKey => alert(`selected ${selectedKey}`)}
             >
                 <div className="sidebar-sticky"></div>
                 <Nav.Item className="mx-auto">
-                    <Nav.Link className="sidebar-title" href="">Categorías</Nav.Link>
+                    <Nav.Link className="sidebar-title" href="">Secciones del menu</Nav.Link>
                 </Nav.Item>
+                {seccionesmenu.map(seccion=>(
                 <Nav.Item className="mx-auto">
-                    <Nav.Link className="sidebar-text-active" href="" active>Entradas</Nav.Link>
+                    <Nav.Link className="sidebar-text-active" onClick={() => seleccionarSeccion(seccion)}>{seccion.nombre}</Nav.Link>
                 </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link className="sidebar-text" eventKey="">Pastas</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link className="sidebar-text" eventKey="">Postres</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link className="sidebar-text" eventKey="">
-                        Cena
-                </Nav.Link>
-                </Nav.Item>
+                ))}
+                
                 <Nav.Item className="mx-auto">
                     <Nav.Link className="boton-categoria" href="">
                     <Button variant="primary" size="lg" block onClick={() => setModalShow(true)}>
-                                Agregar Categoría
+                                Agregar Categoria 
                             </Button>
                         <AddCategory show={modalShow} onHide={() => setModalShow(false)} />
 
                         </Nav.Link>
                 </Nav.Item>
             </Nav>
+            
 
         </>
     );
