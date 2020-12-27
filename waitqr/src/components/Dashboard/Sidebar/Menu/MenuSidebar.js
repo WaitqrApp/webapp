@@ -65,7 +65,7 @@ function MenuSideBar(){
                 
                 <Nav.Item className="mx-auto">
                     <Nav.Link className="boton-categoria" href="">
-                    <Button variant="primary" size="lg" block onClick={() => setModalShow(true)}>
+                    <Button type = "submit" variant="primary" size="lg" block onClick={() => setModalShow(true)}>
                                 Agregar Categoria 
                             </Button>
                         <AddCategory show={modalShow} onHide={() => setModalShow(false)} />

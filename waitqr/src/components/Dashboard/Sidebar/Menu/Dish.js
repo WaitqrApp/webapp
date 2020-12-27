@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Row, Col, Card, Form, Button } from "react-bootstrap";
+import { Row, Col, Card, Form } from "react-bootstrap";
 import Picaña from './img/picaña.jpg';
 import DishModal from './DishModal';
 import './Styles/Styles.css';
@@ -8,8 +8,9 @@ import AddDish from './AddDish';
 
 
 function Dish(platillo){
+    
     const [modalShow, setModalShow] = useState(false);
-    const [modalShow2, setModalShow2] = useState(false);
+
 
     console.log(platillo.platillo)
     console.log(platillo.platillo.nombre)
@@ -48,11 +49,11 @@ function Dish(platillo){
                     </Row>
                 </Card.Body>
             </Card>
-            <Row>
+            {/* <Row>
                 <Col md={{ span: 8, offset: 3 }}>
                     <AddDish show={modalShow2} onHide={() => setModalShow2(false)} />
                 </Col>
-            </Row>
+            </Row> */}
             </>
     );
 }

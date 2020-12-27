@@ -24,6 +24,8 @@ function DishMenu() {
     const platillossContext = useContext(platillosContext);
     const {platilloseleccionado,platillosseccion, obtenerPlatillos} = platillossContext;
 
+    const [modalShow, setModalShow] = useState(false);
+    const [modalShow2, setModalShow2] = useState(false);
     //obtener platillos cuando carga el componente
     useEffect(() =>{
 
@@ -46,7 +48,9 @@ function DishMenu() {
         />
         ))}
             
-          
+            <Col md={{ span: 8, offset: 3 }}>
+                    <AddDish show={modalShow2} onHide={() => setModalShow2(false)} />
+                </Col>
         </>
     );
 

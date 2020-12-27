@@ -23,7 +23,7 @@ function DeleteCategoryModal() {
             <Button variant="secondary" onClick={handleClose}>
               Cancelar
             </Button>
-            <Button variant="primary" onClick={handleClose}>
+            <Button variant="primary" onClick={handleClose}>  
               Borrar
             </Button>
           </Modal.Footer>

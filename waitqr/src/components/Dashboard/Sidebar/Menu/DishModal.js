@@ -90,7 +90,7 @@ function DishModal() {
             <Button variant="secondary" onClick={handleClose}>
                 Cancelar
             </Button>
-            <Button variant="primary" onClick={handleClose}>
+            <Button type = "submit" variant="primary" onClick={handleClose}>
               Guardar Cambios
             </Button>
           </Modal.Footer>
