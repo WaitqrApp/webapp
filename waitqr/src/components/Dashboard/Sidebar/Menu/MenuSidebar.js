@@ -1,6 +1,5 @@
 import React, {useState, useEffect, useContext} from "react";
 import { Nav, Button } from "react-bootstrap";
-import { withRouter } from "react-router";
 import './menusidebar.css';
 import AddCategory from './AddCategory';
 import DeleteCategoryModal from './DeleteCategoryModal';
