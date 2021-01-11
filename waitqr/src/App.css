@@ -14,13 +14,13 @@ h1, h2, p, th {
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #cc9b30;
+  background-color: #EFB63D;
   border-color: #EFB63D;
 }
 
 .btn-primary:active {
   color: #fff;
-  background-color: #cc9b30;
+  background-color: #EFB63D;
   border-color: #EFB63D;
 }
 
@@ -117,9 +117,10 @@ div.content {
 /* Imagenes */
 
 .waitqr-logo {
+    position: relative;
     height: 200px;
     width: 200px; 
-    margin-right: 4%;
-    margin-left: 1%;
+    margin-right: 5%;
+    margin-left: auto;
     margin-bottom: 0px;
 }

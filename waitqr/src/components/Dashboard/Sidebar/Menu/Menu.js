@@ -71,8 +71,23 @@ function Menu() {
         <>
             <Container fluid>
                 <Row>
+                <Col>
+                        <DropdownButton  className="boton-menu" size="m" title={restauranteEscogido == '' ? (<span>Menú</span>) : <span>Menú</span>}>
+                            {menusrestaurante.map(menu => (
+                                <Dropdown.Item
+                                    onClick={() => seleccionarMenu(menu)
+                                    }
+                                >{menu.nombre}</Dropdown.Item>
+                            ))}
+
+                            <Dropdown.Item as="button" onClick={() => setModalShow2(true)}>Agregar Menu +</Dropdown.Item>
+                            <AddMenu show={modalShow2} onHide={() => setModalShow2(false)} />
+
+                        </DropdownButton>
+                    </Col>
+
                     <Col>
-                        <DropdownButton size="lg" title={restauranteEscogido == '' ? (<span>Escoge un restaurante</span>) : <span>{restauranteEscogido}</span>}>
+                        <DropdownButton className="boton-restaurante" size="m" title={restauranteEscogido == '' ? (<span>Restaurante</span>) : <span>{restauranteEscogido}</span>}>
                             {restaurantes.map(restaurante => (
                                 <Dropdown.Item
                                     onClick={() => seleccionarRestaurante(restaurante)
@@ -87,20 +102,6 @@ function Menu() {
                         </DropdownButton>
                     </Col>
 
-                    <Col>
-                        <DropdownButton size="lg" title={restauranteEscogido == '' ? (<span>Primero escoge un restaurante</span>) : <span>Escoge un menu</span>}>
-                            {menusrestaurante.map(menu => (
-                                <Dropdown.Item
-                                    onClick={() => seleccionarMenu(menu)
-                                    }
-                                >{menu.nombre}</Dropdown.Item>
-                            ))}
-
-                            <Dropdown.Item as="button" onClick={() => setModalShow2(true)}>Agregar Menu +</Dropdown.Item>
-                            <AddMenu show={modalShow2} onHide={() => setModalShow2(false)} />
-
-                        </DropdownButton>
-                    </Col>
                 </Row>
 
                 <Row>

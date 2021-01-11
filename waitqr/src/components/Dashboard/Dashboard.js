@@ -18,7 +18,8 @@ import AuthContext from '../../context/autenticacion/authContext'
 
 
 
-/* Describe el contenido del canvas central */
+/* Describe el contenido del canvas central               {usuario ? <h1>Hola, {usuario.nombre}</h1> : null}
+*/
 function Dashboard() {
 
   //Extraer la informacion de autenticacion
@@ -40,7 +41,6 @@ function Dashboard() {
               <Sidebar />
             </div>
             <div className="col-md-10 p-0 d-inline-block" id="contenido" >
-              {usuario ? <h1>Hola, {usuario.nombre}</h1> : null}
               <Switch>
                 <Route exact path="/Home" component={(Home)} />
                 <Route exact path="/menu" component={(Menu)} />
