@@ -65,12 +65,13 @@ function Menu() {
     console.log(menuEscogido)
 
     //Extraer el restaurante
-
-
     return (
         <>
             <Container fluid>
                 <Row>
+                <Col xs={2} id="sidebar-wrapper">
+                        <MenuSidebar />
+                    </Col>
                     <Col>
                         <DropdownButton size="lg" title={restauranteEscogido == '' ? (<span>Escoge un restaurante</span>) : <span>{restauranteEscogido}</span>}>
                             {restaurantes.map(restaurante => (
@@ -101,12 +102,11 @@ function Menu() {
 
                         </DropdownButton>
                     </Col>
+                    
                 </Row>
 
                 <Row>
-                    <Col xs={2} id="sidebar-wrapper">
-                        <MenuSidebar />
-                    </Col>
+                   
                     <Col xs={10} id="page-content-wrapper">
                         <DishMenu />
                     </Col>
