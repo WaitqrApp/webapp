@@ -3,9 +3,8 @@ import { Nav, Button } from "react-bootstrap";
 import './menusidebar.css';
 import AddCategory from './AddCategory';
 import DeleteCategoryModal from './DeleteCategoryModal';
-import { AiFillEdit } from 'react-icons/ai';
 import AddRestaurant from './AddRestaurant';
-
+import EditCategoryModal from './EditCategoryModal';
 import menusContext from '../../../../context/menus/menusContext';
 import seccionesContext from '../../../../context/secciones/seccionesContext';
 import AlertaContext from '../../../../context/alertas/alertaContext';
@@ -56,7 +55,7 @@ function MenuSideBar(){
                 <Nav.Item className="mx-auto">
                     <Nav.Link className="sidebar-text-active" onClick={() => seleccionarSeccion(seccion)}>{seccion.nombre}
                      <Button variant="light">
-                         <AiFillEdit />
+                         <EditCategoryModal></EditCategoryModal>
                          </Button>
                         </Nav.Link>
                 </Nav.Item>
@@ -65,7 +64,7 @@ function MenuSideBar(){
                 <Nav.Item className="mx-auto">
                     <Nav.Link className="boton-categoria" href="">
                     <Button type = "submit" variant="primary" size="lg" block onClick={() => setModalShow(true)}>
-                                Agregar Categoria 
+                                Agregar Seccion
                             </Button>
                         <AddCategory show={modalShow} onHide={() => setModalShow(false)} />
 
