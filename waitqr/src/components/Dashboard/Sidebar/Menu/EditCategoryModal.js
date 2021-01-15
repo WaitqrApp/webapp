@@ -4,9 +4,14 @@ import { AiFillEdit } from 'react-icons/ai';
 
 function EditCategoryModal() {
     const [show, setShow] = useState(false);
+    const [isSwitchOn, setIsSwitchOn] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    const onChange = () => {
+        console.log("onChange was called!");
+      };
 
     return (
         <>
@@ -28,11 +33,7 @@ function EditCategoryModal() {
                 </Form.Text>
                     </Form.Group>
                     <Form.Group controlId="formBasicCheckbox">
-                        <Form.Check
-                            type="switch"
-                            id="custom-switch"
-                            label="Disponible"
-                        />
+                        <Form.Switch id="switch-2" label="Disponible" onChange={onChange} />
                     </Form.Group>
                 </Form></Modal.Body>
                 <Modal.Footer>
