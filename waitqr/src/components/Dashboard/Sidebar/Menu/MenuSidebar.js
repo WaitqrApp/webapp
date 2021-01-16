@@ -5,6 +5,8 @@ import AddCategory from './AddCategory';
 import DeleteCategoryModal from './DeleteCategoryModal';
 import AddRestaurant from './AddRestaurant';
 import EditCategoryModal from './EditCategoryModal';
+import BotonMenuSidebar from './BotonMenuSidebar';
+
 import menusContext from '../../../../context/menus/menusContext';
 import seccionesContext from '../../../../context/secciones/seccionesContext';
 import AlertaContext from '../../../../context/alertas/alertaContext';
@@ -14,7 +16,7 @@ import AlertaContext from '../../../../context/alertas/alertaContext';
 
 
 function MenuSideBar(){
-    const [modalShow, setModalShow] = useState(false);
+    
 
     //Extraer si un menu esta activo
     const menussContext = useContext(menusContext); 
@@ -24,7 +26,7 @@ function MenuSideBar(){
 
     //obtener la funcion del context de seccion
     const seccionessContext = useContext(seccionesContext);
-    const {seccionseleccionada,seccionesmenu, obtenerSecciones, guardarSeccionActual} = seccionessContext;
+    const {seccion,seccionesmenu, obtenerSecciones, guardarSeccionActual} = seccionessContext;
 
     const alertaContext = useContext(AlertaContext);
     const {alerta, mostrarAlerta} = alertaContext;
@@ -42,6 +44,8 @@ function MenuSideBar(){
     const seleccionarSeccion = seccion =>{
         guardarSeccionActual(seccion._id)
     }
+    console.log(seccion);
+
 
     return (
         <>
@@ -61,7 +65,7 @@ function MenuSideBar(){
                 </Nav.Item>
                 ))}
                 
-                <Nav.Item className="mx-auto">
+                {/* <Nav.Item className="mx-auto">
                     <Nav.Link className="boton-categoria" href="">
                     <Button type = "submit" variant="primary" size="lg" block onClick={() => setModalShow(true)}>
                                 Agregar Seccion
@@ -71,9 +75,15 @@ function MenuSideBar(){
                         </Nav.Link>
 
                 </Nav.Item>
-                {/* <DeleteCategoryModal show={modalShow} onHide={() => setModalShow(false)} /> */}
-
+                {/* <DeleteCategoryModal show={modalShow} onHide={() => setModalShow(false)} /> */} 
+               
+                <Nav.Item>
+                    <BotonMenuSidebar/>
+                </Nav.Item>
+            
+                
             </Nav>
+           
             
 
         </>

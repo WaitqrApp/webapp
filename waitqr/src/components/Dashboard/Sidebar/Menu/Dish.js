@@ -3,14 +3,12 @@ import { Row, Col, Card, Form } from "react-bootstrap";
 import Picaña from './img/picaña.jpg';
 import DishModal from './DishModal';
 import './Styles/Styles.css';
-import AddDish from './AddDish';
 
 
 
 function Dish(platillo){
     
     const [modalShow, setModalShow] = useState(false);
-
 
     console.log(platillo.platillo)
     console.log(platillo.platillo.nombre)
@@ -42,6 +40,8 @@ function Dish(platillo){
                     </Card.Title>
                     <Card.Text>
                         {platillo.platillo.descripcion}
+                        <br></br>
+                        <span><span>$</span>{platillo.platillo.precio}</span>
                     </Card.Text>
                     <Row>
 
@@ -49,11 +49,7 @@ function Dish(platillo){
                     </Row>
                 </Card.Body>
             </Card>
-            {/* <Row>
-                <Col md={{ span: 8, offset: 3 }}>
-                    <AddDish show={modalShow2} onHide={() => setModalShow2(false)} />
-                </Col>
-            </Row> */}
+            
             </>
     );
 }

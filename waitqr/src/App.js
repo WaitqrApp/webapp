@@ -9,6 +9,8 @@ import NuevaCuenta from './components/auth/NuevaCuenta';
 
 import RestauranteState from './context/restaurantes/restauranteState';
 import MenuState from './context/menus/menusState';
+import MesaState from './context/mesas/mesasState';
+
 import SeccionState from './context/secciones/seccionesState';
 import PlatillosState from './context/platillos/platillosState';
 
@@ -34,6 +36,7 @@ function App() {
   return (
     <RestauranteState>
       <MenuState>
+      <MesaState>
       <SeccionState>
         <PlatillosState>
 
@@ -50,6 +53,7 @@ function App() {
     </AuthState>
     </PlatillosState>
     </SeccionState>
+    </MesaState>
 
     </MenuState>
     </RestauranteState>

@@ -30,7 +30,7 @@ function AddMenu(props) {
                  nombre: '',
                  horarioInicio: '',
                  horarioFin:'',
-                 disponible: Boolean,
+                 disponible: true,
 
              })
          }
@@ -41,7 +41,7 @@ function AddMenu(props) {
       nombre: '',
       horarioInicio: '',
       horarioFin:'',
-      disponible: Boolean,
+      disponible: true,
 
     })
      //extraer el nombre del proyecto
@@ -60,6 +60,7 @@ function AddMenu(props) {
             [e.target.name] : e.target.value
         })
     }
+    
 
     const onSubmit = e =>{
       console.log("ENTRE AL SUBMIT DE MENU PUTO")
@@ -93,7 +94,7 @@ function AddMenu(props) {
         nombre: '',
         horarioInicio: '',
         horarioFin:'',
-        disponible: Boolean,
+        disponible: true,
       })
 
 

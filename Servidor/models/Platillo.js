@@ -18,6 +18,7 @@ const PlatilloSchema = mongoose.Schema({
         type: Boolean,
         default: true,
     },
+   
     seccion:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Seccion'

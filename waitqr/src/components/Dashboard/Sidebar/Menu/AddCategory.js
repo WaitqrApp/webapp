@@ -7,9 +7,7 @@ function AddCategory(props) {
   
   const [checked, setChecked] = useState(false);
 
-  const toggleChecked = () => {
-    setChecked((prev) => !prev);
-  };
+  
     //Extraer si un menu esta activo
     const menussContext = useContext(menusContext); 
     const {menu } = menussContext;
@@ -33,6 +31,7 @@ function AddCategory(props) {
             })
         }
     }, [seccionseleccionada]); //para que este revisando la seccion seleccionada
+    
     //state del formulario
     const [seccion,guardarSeccion] = useState({
      nombre: '',
@@ -46,7 +45,7 @@ function AddCategory(props) {
    
 
    //Array destructuring para extraer el proyecto actual
-   const [menuActual] = menu
+   const [menuActual] = menu;
    
 
    //leer los valores del formulario
@@ -58,12 +57,15 @@ function AddCategory(props) {
        })
    }
 
+   console.log("saludos pendeoscar")
+   console.log("esta es la seccion: " + seccionseleccionada)
+   console.log("esta es el menu actual: " + menuActual.nombre)
+
+
    const onSubmit = e =>{
-    
+    console.log("si entre putooooo")
      e.preventDefault();
-     console.log("si entre putooooo")
-
-
+    
      //validar
      if(nombre.trim() === '') {
       console.log("si entre putooooo")
@@ -102,7 +104,6 @@ function AddCategory(props) {
     <Modal {...props} aria-labelledby="contained-modal-title-vcenter">
        <Form
             onSubmit={onSubmit}
-            
           >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
@@ -132,7 +133,7 @@ function AddCategory(props) {
         </Container>
       </Modal.Body>
       <Modal.Footer>
-        <Button type="submit"  onClick={props.onHide}>Agregar Seccion</Button>
+        <Button type="submit" onClick={props.onHide}>Agregar Seccion</Button>
       </Modal.Footer>
       </Form>
     </Modal>
