@@ -1,9 +1,101 @@
-import React, {useState} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import { Container, Row, Col, Form, Button, Modal } from "react-bootstrap";
 import './menusidebar.css'
 
+import seccionesContext from '../../../../context/secciones/seccionesContext';
+import platillosContext from '../../../../context/platillos/platillosContext';
+
+
 function AddDish() {
     const [show, setShow] = useState(false);
+
+    //Extraer si una seccion esta activa
+    const seccionessContext = useContext(seccionesContext); 
+    const {seccion } = seccionessContext;
+
+    //obtener la funcion del context de platillo
+    const platillossContext = useContext(platillosContext);
+    const {platilloseleccionado, errorplatillo, agregarPlatillo, validarPlatillo, obtenerPlatillos,
+         actualizarPlatillo, limpiarPlatillo} = platillossContext;
+
+    //Effect que detecta si hay un platillo seleccionado
+    useEffect(() =>{
+      if(platilloseleccionado !== null){
+        guardarPlatilloCreado(platilloseleccionado);
+      }else{
+          guardarPlatilloCreado({
+              nombre: '',
+              descripcion: '',
+              precio:'',
+              disponible: true,
+
+          })
+      }
+  }, [platilloseleccionado]); //para que este revisando la platillo seleccionado 
+
+  //state del formulario
+  const [platilloCreado,guardarPlatilloCreado] = useState({
+    nombre: '',
+    descripcion: '',
+    precio:'',
+    disponible: true,
+
+  })
+
+  //extraer el nombre del proyecto
+  const {nombre, descripcion, precio, disponible} = platilloCreado;
+
+  //si no hay restaurante seleccionado
+  if(!seccion) return null;
+
+  //Array destructuring para extraer el proyecto actual
+  const [guardarSeccionActual] = seccion
+
+   //leer los valores del formulario
+   const handleChange = e =>{
+    guardarPlatilloCreado({
+        ...platilloCreado,
+        [e.target.name] : e.target.value
+    })
+}
+
+const onSubmit = e =>{
+  console.log("ENTRE AL SUBMIT DE platillo PUTO")
+  e.preventDefault();
+
+  //validar
+  if(nombre.trim() === '') {
+      validarPlatillo();
+      return;
+  }
+
+  //Si es edicion o si es nueva menu
+  if(platilloseleccionado === null ){
+     //agregar la seccion al state de platillos
+platilloCreado.seccion = guardarSeccionActual._id;
+  agregarPlatillo(platilloCreado);
+  }else{
+      //actualizar platillo existente
+     actualizarPlatillo(platilloCreado);
+
+     //Elimina menuseleccionado del state
+     limpiarPlatillo();
+  }
+
+
+  //Obtener y filtrar las tareas del proyecto actual, practicamente lo recarga
+  obtenerPlatillos(guardarSeccionActual.id);
+
+  //reiniciar el form
+  guardarPlatilloCreado({
+    nombre: '',
+    horarioInicio: '',
+    horarioFin:'',
+    disponible: true,
+  })
+
+
+}
   
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -15,6 +107,9 @@ function AddDish() {
         </Button>
   
         <Modal show={show} onHide={handleClose}>
+        <Form
+          onSubmit={onSubmit}
+        >
           <Modal.Header closeButton>
             <Modal.Title>Agregar Platillo</Modal.Title>
           </Modal.Header>
@@ -26,7 +121,11 @@ function AddDish() {
                 Platillo
               </Form.Label>
               <Col sm={10}>
-                <Form.Control className="input-nombre" type="" placeholder="Picaña Especial" />
+                <Form.Control className="input-nombre" type="text" placeholder=""
+                  name="nombre"
+                  value={nombre}
+                  onChange={handleChange}
+                />
               </Col>
             </Form.Group>
             <Form.File
@@ -39,7 +138,11 @@ function AddDish() {
                 Descripción
               </Form.Label>
               <Col  className="input" sm={"auto"}>
-                <Form.Control className="input-desc" type="password" placeholder="Picaña Especial acompañada de aire" />
+                <Form.Control className="input-desc" type="text" placeholder=""
+                  name="descripcion"
+                  value={descripcion}
+                  onChange={handleChange}
+                />
               </Col>
             </Form.Group>
             <Form.Group as={Row} controlId="formHorizontalPassword">
@@ -47,27 +150,14 @@ function AddDish() {
                 Precio: $
               </Form.Label>
               <Col sm={"auto"}>
-                <Form.Control  className="input-dinero" type="" placeholder="250.00" />
+                <Form.Control  className="input-dinero" type="text" placeholder=""
+                  name="precio"
+                  value={precio}
+                  onChange={handleChange}
+                />
               </Col>
             </Form.Group>
-            <fieldset>
-              <Form.Group as={Row}>
-                <Form.Label as="legend" column sm={2}>
-                  Sección
-                </Form.Label>
-                <Form.Control
-                  as="select"
-                  className="input-seccion my-1 mr-sm-2"
-                  id="inlineFormCustomSelectPref"
-                  custom
-                >
-                  <option value="0">Sección...</option>
-                  <option value="1">Restaurante</option>
-                  <option value="2">Bar</option>
-                  <option value="3">Otro</option>
-                </Form.Control>
-              </Form.Group>
-            </fieldset>
+            
             <Form.Group as={Row} controlId="formHorizontalCheck">
               <Col sm={{ span: 10, offset: 2 }}>
                 <Form.Check
@@ -85,10 +175,12 @@ function AddDish() {
             <Button variant="secondary" onClick={handleClose}>
                 Cancelar
             </Button>
-            <Button variant="primary" onClick={handleClose}>
+            <Button type="submit" variant="primary" onClick={handleClose}>
               Guardar Cambios
             </Button>
+           
           </Modal.Footer>
+          </Form>
         </Modal>
       </>
     );

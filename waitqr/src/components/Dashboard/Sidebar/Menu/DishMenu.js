@@ -14,6 +14,9 @@ import { Fragment } from "react";
 
 
 function DishMenu() {
+
+    const [modalShow2, setModalShow2] = useState(false);
+
     
 
     //Extraer si una seccion esta activa
@@ -45,7 +48,11 @@ function DishMenu() {
             platillo = {platillo}
         />
         ))}
-            
+
+
+                    <Button>
+                    <AddDish show={modalShow2} onHide={() => setModalShow2(false)} />
+                    </Button>
           
         </>
     );

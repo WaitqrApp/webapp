@@ -100,7 +100,7 @@ const PlatilloState = props =>{
             type:PLATILLO_ACTUAL,
             payload: platilloId
         })
-    }
+    } 
     
     
     //Elimina la seccionseleccionado

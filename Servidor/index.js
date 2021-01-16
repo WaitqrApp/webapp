@@ -6,6 +6,7 @@ const cors = require('cors')
 //crear el servidor
 const app = express();
 
+
 //Conectar a la base de datos
 conectarDB();
 
@@ -25,6 +26,8 @@ app.use('/api/restaurantes', require('./routes/restaurantes'));
 app.use('/api/menus', require('./routes/menus'));
 app.use('/api/secciones', require('./routes/secciones'));
 app.use('/api/platillos', require('./routes/platillos'));
+app.use('/api/mesas', require('./routes/mesas'));
+
 
 
 

@@ -4,13 +4,11 @@ import { withRouter } from "react-router";
 import MenuSidebar from './MenuSidebar';
 import DishMenu from './DishMenu';
 import './menusidebar.css';
-import DishModal from './DishModal';
 import AddRestaurant from './AddRestaurant';
-import AddCategory from './AddCategory';
 
 import AddMenu from './AddMenu';
-import restauranteContext from '../../../../context/restaurantes/restauranteContext';
-import menusContext from '../../../../context/menus/menusContext';
+import restauranteContext from '../../../../context/restaurantes/restauranteContext'; 
+import menusContext from '../../../../context/menus/menusContext'; 
 
 import AlertaContext from '../../../../context/alertas/alertaContext';
 
@@ -79,10 +77,6 @@ console.log(menuEscogido)
                 onClick={() => seleccionarRestaurante(restaurante)
                 }  
                 >{restaurante.nombre}</Dropdown.Item>
-               
-                
-              
-
             ))}
             <Dropdown.Divider />
 
@@ -95,16 +89,14 @@ console.log(menuEscogido)
 
 
                     <Col>
-                    <DropdownButton size="lg" title={restauranteEscogido == '' ? (<span>Primero escoge un restaurante</span>) : <span>Escoge un menu</span>}>
+                    <DropdownButton size="lg" title={restauranteEscogido == '' ? (<span>Primero escoge un restaurante</span>) : <span>Escoge un menu</span>, 
+                menuEscogido !== '' ? (<span>{menuEscogido}</span>) : <span> Escoge un menu</span>
+                }>
                         {menusrestaurante.map(menu=>(
                 <Dropdown.Item 
                 onClick={() => seleccionarMenu(menu)
                 }  
                 >{menu.nombre}</Dropdown.Item>
-               
-                
-              
-
             ))}
 
                         <Dropdown.Item as="button" onClick={() => setModalShow2(true)}>Agregar Menu +</Dropdown.Item>
