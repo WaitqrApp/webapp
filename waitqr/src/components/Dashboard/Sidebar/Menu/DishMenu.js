@@ -15,7 +15,6 @@ import { Fragment } from "react";
 
 function DishMenu() {
 
-    const [modalShow2, setModalShow2] = useState(false);
 
     
 
