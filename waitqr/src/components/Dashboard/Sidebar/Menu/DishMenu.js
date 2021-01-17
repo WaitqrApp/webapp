@@ -45,6 +45,7 @@ function DishMenu() {
 
     return (
         <>
+         {console.log("entre a los platillos")}
         {platillosseccion.map(platillo=>(
         <Dish
             platillo = {platillo}
