@@ -53,7 +53,7 @@ function MenuSideBar(){
             >
                 <div className="sidebar-sticky"></div>
                 <Nav.Item className="mx-auto">
-                    <Nav.Link className="sidebar-title" href="">Secciones del menu</Nav.Link>
+                    <Nav.Link className="sidebar-title" href="">Secciones</Nav.Link>
                 </Nav.Item>
                 {seccionesmenu.map(seccion=>(
                 <Nav.Item className="mx-auto">
@@ -67,8 +67,8 @@ function MenuSideBar(){
                 
                 {/* <Nav.Item className="mx-auto">
                     <Nav.Link className="boton-categoria" href="">
-                    <Button type = "submit" variant="primary" size="lg" block onClick={() => setModalShow(true)}>
-                                Agregar Seccion
+                    <Button type = "submit" variant="primary" size="m" block onClick={() => setModalShow(true)}>
+                                + Categoria
                             </Button>
                         <AddCategory show={modalShow} onHide={() => setModalShow(false)} />
 

@@ -11,8 +11,8 @@ function BotonMenuSidebar(){
     return( 
         <Nav>
                     <Nav.Link className="boton-categoria">
-                    <Button variant="primary" size="lg" block onClick={() => setModalShow3(true)}>
-                                Agregar Categoria 
+                    <Button variant="primary" size="m" block onClick={() => setModalShow3(true)}>
+                                + Categoria 
                             </Button>
                         <AddCategory show={modalShow3} onHide={() => setModalShow3(false)} />
 
