@@ -66,48 +66,44 @@ function Menu() {
     return (
         <>
             <Container fluid>
-                <Row>
-                    <Col>
-                    <DropdownButton className="boton-menu" size="m" title={restauranteEscogido == '' ? (<span>Menú POSIBLE TOAST?</span>) : <span>Menú</span>, 
-                menuEscogido !== '' ? (<span>{menuEscogido}</span>) : <span>Menú</span>
-                }>
-                        {menusrestaurante.map(menu=>(
-                <Dropdown.Item 
-                onClick={() => seleccionarMenu(menu)
-                }  
-                >{menu.nombre}</Dropdown.Item>
-            ))}
-
-                        <Dropdown.Item as="button" onClick={() => setModalShow2(true)}>Agregar Menu +</Dropdown.Item>
-                        <AddMenu show={modalShow2} onHide={() => setModalShow2(false)} />
-
-                  </DropdownButton>
+                <Row xs={2} md={4} lg={6}>
+                    {/* COL 1 */}
+                    <Col xs={2} id="sidebar-wrapper">
+                        <MenuSidebar />
                     </Col>
-
+                    {/* COL 2 */}
+                    <Row>
+                    <Col  className="py-5" id="page-content-wrapper">
+                        <DishMenu />
+                    </Col>
+                    </Row>
+                   
+                    {/* COL 3 */}
+                    <Col className="py-2 px-5">
+                        <DropdownButton
+                            size="m" title={restauranteEscogido == '' ? (<span>Menú POSIBLE TOAST?</span>) : <span>Menú</span>, 
+                            menuEscogido !== '' ? (<span>{menuEscogido}</span>) : <span>Menú</span>}>{menusrestaurante.map(menu=>(
+                                    <Dropdown.Item onClick={() => seleccionarMenu(menu)}>{menu.nombre}</Dropdown.Item>))}
+                                    <Dropdown.Item as="button" onClick={() => setModalShow2(true)}>Agregar Menu +</Dropdown.Item>
+                                    <AddMenu show={modalShow2} onHide={() => setModalShow2(false)} />
+                        </DropdownButton>
+                        </Col>     
                     <Col>
-                    <DropdownButton className="boton-restaurante" size="m" title={restauranteEscogido == '' ? (<span>Restaurante</span>) : <span>{restauranteEscogido}</span>}>
-                {restaurantes.map(restaurante=>(
-                <Dropdown.Item 
-                onClick={() => seleccionarRestaurante(restaurante)
-                }  
-                >{restaurante.nombre}</Dropdown.Item>
-                ))} 
-                <Dropdown.Divider />
 
+                        <DropdownButton className="py-2 px-5"  size="m" title={restauranteEscogido == '' ? (<span>Restaurante</span>) : <span>{restauranteEscogido}</span>}>
+                        {restaurantes.map(restaurante=>(
+                        <Dropdown.Item 
+                        onClick={() => seleccionarRestaurante(restaurante)
+                        }  
+                        >{restaurante.nombre}</Dropdown.Item>
+                        ))} 
+                        <Dropdown.Divider/>
                         <Dropdown.Item as="button" onClick={() => setModalShow(true)}>Agregar Restaurante +</Dropdown.Item>
                         <AddRestaurant show={modalShow} onHide={() => setModalShow(false)} />
-
                     </DropdownButton>
                     </Col>
                 </Row>
-                <Row>
-                <Col xs={2} id="sidebar-wrapper">
-                        <MenuSidebar />
-                </Col>   
-                    <Col xs={10} id="page-content-wrapper">
-                        <DishMenu />
-                    </Col>
-                </Row>
+                
             </Container>
         </>
     );

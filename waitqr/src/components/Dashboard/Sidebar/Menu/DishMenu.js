@@ -1,23 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Row, Col, Card, Form, Button } from "react-bootstrap";
-import Picaña from './img/picaña.jpg';
-import DishModal from './DishModal';
 import './Styles/Styles.css';
 import AddDish from './AddDish';
-import AddCategory from './AddCategory';
 import Dish from './Dish';
-
 import seccionesContext from '../../../../context/secciones/seccionesContext';
 import platillosContext from '../../../../context/platillos/platillosContext';
-import { Fragment } from "react";
-
-
-
+import CardDeck from 'react-bootstrap/Col';
 function DishMenu() {
-
-
-    
-
     //Extraer si una seccion esta activa
     const seccionessContext = useContext(seccionesContext); 
     const {seccion } = seccionessContext;
@@ -35,33 +23,21 @@ function DishMenu() {
             console.log(seccion[0]._id)
             obtenerPlatillos(seccion[0]._id)
         }
-        
     }, [seccion]); //para que corra solo una vez
-    
-
-
- 
-
     return (
         <>
          {console.log("entre a los platillos")}
         {platillosseccion.map(platillo=>(
-        <Dish
-            platillo = {platillo}
-        />
+            <CardDeck style={{display: 'flex', flexDirection: 'row', width:'100%', justifyContent:'center' }}>
+                <Dish  
+                 platillo = {platillo}
+                 />
+            </CardDeck> 
+        
         ))}
-
-
-                    <Button>
-                    <AddDish show={modalShow2} onHide={() => setModalShow2(false)} />
-                    </Button>
-          
+            <AddDish  show={modalShow2} onHide={() => setModalShow2(false)} />
         </>
     );
-
-
 }
-
-
 export default DishMenu;
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Row, Col, Card, Form } from "react-bootstrap";
+import { Row, Col, Card,CardDeck, Form } from "react-bootstrap";
 import Picaña from './img/picaña.jpg';
 import DishModal from './DishModal';
 import './Styles/Styles.css';
@@ -17,8 +17,8 @@ function Dish(platillo){
     return(
 
         <>
-
-        <Card className="mt-4" style={{ width: '20rem' }}>
+        <Col>
+        <Card className="mb-4" style={{  flex:1 }}>
                 <Card.Img variant="top" src={Picaña} />
                 <Card.Body>
                     <Card.Title className="font-weight-bold">
@@ -49,7 +49,7 @@ function Dish(platillo){
                     </Row>
                 </Card.Body>
             </Card>
-            
+            </Col>
             </>
     );
 }

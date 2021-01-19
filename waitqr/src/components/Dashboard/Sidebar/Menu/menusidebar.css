@@ -83,17 +83,18 @@ margin-top:2.5vh;}
     margin-top: 15%
 }
 
-.boton-menu {
-    width: 100%;
-    right: -160%;
-    margin-top: 4%;
+/* .boton-menu {
+    margin-top: 10px;
+    position: absolute;
+    padding-left: 85%;
 }
 
 .boton-restaurante {
-    width: 100%;
-    right: -75%;
-    margin-top: 4%;
-}
+    margin-top: 10px;
+    position: absolute;
+    padding-left: 90%;
+
+} */
 
 .input-nombre {
     width: 100%;
