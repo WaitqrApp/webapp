@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Row, Col, Card, Form, Button } from "react-bootstrap";
+import { Row, Col, Card, Form } from "react-bootstrap";
 import Picaña from './img/picaña.jpg';
 import DishModal from './DishModal';
 import './Styles/Styles.css';
@@ -7,6 +7,7 @@ import './Styles/Styles.css';
 
 
 function Dish(platillo){
+    
     const [modalShow, setModalShow] = useState(false);
 
 

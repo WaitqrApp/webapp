@@ -15,7 +15,6 @@ import { Fragment } from "react";
 
 function DishMenu() {
 
-    const [modalShow2, setModalShow2] = useState(false);
 
     
 
@@ -27,6 +26,8 @@ function DishMenu() {
     const platillossContext = useContext(platillosContext);
     const {platilloseleccionado,platillosseccion, obtenerPlatillos} = platillossContext;
 
+    const [modalShow, setModalShow] = useState(false);
+    const [modalShow2, setModalShow2] = useState(false);
     //obtener platillos cuando carga el componente
     useEffect(() =>{
 

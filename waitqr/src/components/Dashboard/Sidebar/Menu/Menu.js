@@ -1,6 +1,5 @@
-import React, {Fragment,useEffect, useState, useContext} from "react";
-import { Container, Row, Col, Card, Form, ButtonGroup, DropdownButton, SplitButton, Dropdown } from "react-bootstrap";
-import { withRouter } from "react-router";
+import React, {  useEffect, useState, useContext } from "react";
+import { Container, Row, Col, DropdownButton, Dropdown } from "react-bootstrap";
 import MenuSidebar from './MenuSidebar';
 import DishMenu from './DishMenu';
 import './menusidebar.css';
@@ -24,48 +23,46 @@ function Menu() {
 
     //Extraer restaurantes de state inicial
     const restaurantesContext = useContext(restauranteContext);
-    const {mensaje, restaurantes, obtenerRestaurantes, restauranteActual} = restaurantesContext;
+    const { mensaje, restaurantes, obtenerRestaurantes, restauranteActual } = restaurantesContext;
 
     const alertaContext = useContext(AlertaContext);
-    const {alerta, mostrarAlerta} = alertaContext;
+    const { alerta, mostrarAlerta } = alertaContext;
 
     const menussContext = useContext(menusContext);
-    const {menusrestaurante, eliminarMenu, obtenerMenus, actualizarMenu, guardarMenuActual} = menussContext;
+    const { menusrestaurante, eliminarMenu, obtenerMenus, actualizarMenu, guardarMenuActual } = menussContext;
 
-    
+
 
 
     //obtener restaurantes cuando carga el componente
-    useEffect(() =>{
+    useEffect(() => {
 
-        if(mensaje){
+        if (mensaje) {
             mostrarAlerta(mensaje.msg, mensaje.categoria);
         }
-        
+
 
         obtenerRestaurantes();
     }, [mensaje]); //para que corra solo una vez
 
-     //revisar si restaurantes tiene contenido
-   //if (restaurantes.length === 0 ) return <p>No hay restaurantes, comienza creando uno</p>;
+    //revisar si restaurantes tiene contenido
+    //if (restaurantes.length === 0 ) return <p>No hay restaurantes, comienza creando uno</p>;
 
-   //Funcion para agregar el restaurante actual
-   const seleccionarRestaurante = restaurante =>{
-    restauranteActual(restaurante._id); //fijar un restaurante actual
-    obtenerMenus(restaurante._id);
-    guardarRestauranteEscogido(restaurante.nombre);
-}
+    //Funcion para agregar el restaurante actual
+    const seleccionarRestaurante = restaurante => {
+        restauranteActual(restaurante._id); //fijar un restaurante actual
+        obtenerMenus(restaurante._id);
+        guardarRestauranteEscogido(restaurante.nombre);
+    }
 
-//Funcion para agregar el menu actual
-const seleccionarMenu = menu =>{
-    guardarMenuActual(menu._id); //fijar un menu actual
-    guardarMenuEscogido(menu.nombre);
-}
-console.log(menuEscogido)
+    //Funcion para agregar el menu actual
+    const seleccionarMenu = menu => {
+        guardarMenuActual(menu._id); //fijar un menu actual
+        guardarMenuEscogido(menu.nombre);
+    }
+    console.log(menuEscogido)
 
-//Extraer el restaurante
-
-
+    //Extraer el restaurante
     return (
         <>
             <Container fluid>
@@ -87,8 +84,6 @@ console.log(menuEscogido)
                     </DropdownButton>
                     </Col>
 
-
-
                     <Col>
                     <DropdownButton size="lg" title={restauranteEscogido == '' ? (<span>Primero escoge un restaurante</span>) : <span>Escoge un menu</span>, 
                 menuEscogido !== '' ? (<span>{menuEscogido}</span>) : <span> Escoge un menu</span>
@@ -105,8 +100,9 @@ console.log(menuEscogido)
 
                   </DropdownButton>
                     </Col>
-                </Row>
                     
+                </Row>
+
                 <Row>
                 <Col xs={2} id="sidebar-wrapper">
                         <MenuSidebar />

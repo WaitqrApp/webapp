@@ -1,6 +1,7 @@
 import React, {useState, useContext} from 'react';
 import { Container, Row, Col, Card, Form, Button, Modal, InputGroup, FormControl } from "react-bootstrap";
 import './menusidebar.css'
+import DeleteDishModal from './DeleteDishModal';
 
 import platillosContext from '../../../../context/platillos/platillosContext';
 

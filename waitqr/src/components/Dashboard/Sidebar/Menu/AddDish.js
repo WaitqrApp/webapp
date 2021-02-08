@@ -172,6 +172,7 @@ platilloCreado.seccion = guardarSeccionActual._id;
       </Modal.Body>
 
           <Modal.Footer>
+            
             <Button variant="secondary" onClick={handleClose}>
                 Cancelar
             </Button>

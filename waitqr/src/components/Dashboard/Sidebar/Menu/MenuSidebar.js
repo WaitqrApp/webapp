@@ -1,11 +1,10 @@
 import React, {useState, useEffect, useContext} from "react";
 import { Nav, Button } from "react-bootstrap";
-import { withRouter } from "react-router";
 import './menusidebar.css';
 import AddCategory from './AddCategory';
 import AddRestaurant from './AddRestaurant';
-import BotonMenuSidebar from './BotonMenuSidebar';
 import EditCategoryModal from './EditCategoryModal';
+import BotonMenuSidebar from './BotonMenuSidebar';
 import DeleteCategoryModal from './DeleteCategoryModal';
 
 import menusContext from '../../../../context/menus/menusContext';
@@ -67,10 +66,23 @@ function MenuSideBar(){
                     </Nav.Link>
                 </Nav.Item>
                 ))}
+                
+                {/* <Nav.Item className="mx-auto">
+                    <Nav.Link className="boton-categoria" href="">
+                    <Button type = "submit" variant="primary" size="lg" block onClick={() => setModalShow(true)}>
+                                Agregar Seccion
+                            </Button>
+                        <AddCategory show={modalShow} onHide={() => setModalShow(false)} />
+
+                        </Nav.Link>
+
+                </Nav.Item>
+                {/* <DeleteCategoryModal show={modalShow} onHide={() => setModalShow(false)} /> */} 
+               
                 <Nav.Item>
                     <BotonMenuSidebar/>
                 </Nav.Item>
-                
+            
                 
             </Nav>
            
