@@ -70,6 +70,7 @@ console.log(menuEscogido)
         <>
             <Container fluid>
                 <Row>
+                
                     <Col>
                     <DropdownButton size="lg" title={restauranteEscogido == '' ? (<span>Escoge un restaurante</span>) : <span>{restauranteEscogido}</span>}>
                 {restaurantes.map(restaurante=>(
@@ -107,9 +108,10 @@ console.log(menuEscogido)
                 </Row>
                     
                 <Row>
-                    <Col xs={2} id="sidebar-wrapper">
+                <Col xs={2} id="sidebar-wrapper">
                         <MenuSidebar />
                     </Col>
+                    
                     <Col xs={10} id="page-content-wrapper">
                         <DishMenu />
                     </Col>

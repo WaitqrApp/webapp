@@ -5,6 +5,8 @@ import './menusidebar.css';
 import AddCategory from './AddCategory';
 import AddRestaurant from './AddRestaurant';
 import BotonMenuSidebar from './BotonMenuSidebar';
+import EditCategoryModal from './EditCategoryModal';
+import DeleteCategoryModal from './DeleteCategoryModal';
 
 import menusContext from '../../../../context/menus/menusContext';
 import seccionesContext from '../../../../context/secciones/seccionesContext';
@@ -56,7 +58,13 @@ function MenuSideBar(){
                 </Nav.Item>
                 {seccionesmenu.map(seccion=>(
                 <Nav.Item className="mx-auto">
-                    <Nav.Link className="sidebar-text-active" onClick={() => seleccionarSeccion(seccion)}>{seccion.nombre}</Nav.Link>
+                    <Nav.Link className="sidebar-text-active" onClick={() => seleccionarSeccion(seccion)}>{seccion.nombre}
+                    <Button variant="light">
+                         <EditCategoryModal
+                            seccion = {seccion}
+                         ></EditCategoryModal>
+                         </Button>
+                    </Nav.Link>
                 </Nav.Item>
                 ))}
                 <Nav.Item>

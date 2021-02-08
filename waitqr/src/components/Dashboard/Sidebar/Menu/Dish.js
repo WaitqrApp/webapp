@@ -9,8 +9,6 @@ import './Styles/Styles.css';
 function Dish(platillo){
     const [modalShow, setModalShow] = useState(false);
 
-    console.log(platillo.platillo)
-    console.log(platillo.platillo.nombre)
 
 
     return(
@@ -44,7 +42,9 @@ function Dish(platillo){
                     </Card.Text>
                     <Row>
 
-                        <DishModal show={modalShow} onHide={() => setModalShow(false)} />
+                        <DishModal show={modalShow} onHide={() => setModalShow(false)}
+                            platillo = {platillo}
+                        />
                     </Row>
                 </Card.Body>
             </Card>

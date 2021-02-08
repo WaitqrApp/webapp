@@ -86,7 +86,7 @@ if(nombre){
 }
 
 if(disponible){
-    nuevaSeccion.disponible = disponible;
+    nuevoPlatillo.disponible = disponible;
 }
 
 if(precio){
@@ -114,7 +114,7 @@ exports.eliminarPlatillo = async (req, res) =>{
 
     try {
         //Extraer la seccion y comprobar si existe
-  const {seccion} = req.body;
+  const {seccion} = req.query;
   const existeSeccion = await Seccion.findById(seccion);
 
   //Revisar si el platillo existe o no
@@ -122,10 +122,7 @@ exports.eliminarPlatillo = async (req, res) =>{
    if(!platilloExiste){
        return res.status(404).json({msg: "No existe el platillo"});
    }
-  //Revisar si la seccion actual pertenece al usuario autenticado
-  if(existeSeccion.creador.toString() !== req.usuario.id){
-   return res.status(401).json({msg: 'No autorizado'});
-}
+ 
 
 //eliminar
 await Platillo.findByIdAndRemove({_id: req.params.id});

@@ -69,7 +69,7 @@ exports.obtenerSecciones = async (req, res) =>{
 exports.actualizarSeccion = async(req, res) =>{
     try {
          //Extraer el Menu y comprobar si existe
-   const {menu, nombre, disponible, horarioInicio, horarioFin} = req.body;
+   const {menu, nombre, disponible, horarioInicio, horarioFin} = req.body; 
    const existeMenu = await Menu.findById(menu);
  
    //Revisar si la seccion existe o no
@@ -103,7 +103,7 @@ seccion = await Seccion.findOneAndUpdate({_id: req.params.id}, nuevaSeccion, {
         
     } catch (error) {
         console.timeLog(error);
-        res.status(500).send('Hubo un error');
+        res.status(500).send('Hubo un error'); 
 
     }
 }
@@ -121,11 +121,7 @@ exports.eliminarSeccion = async (req, res) =>{
    if(!seccionExiste){
        return res.status(404).json({msg: "No existe la seccion"});
    }
-  //Revisar si el menu actual pertenece al usuario autenticado
-  if(existeMenu.creador.toString() !== req.usuario.id){
-   return res.status(401).json({msg: 'No autorizado'});
-}
-
+ 
 //eliminar
 await Seccion.findByIdAndRemove({_id: req.params.id});
 res.json({msg: 'seccion eliminada'})
