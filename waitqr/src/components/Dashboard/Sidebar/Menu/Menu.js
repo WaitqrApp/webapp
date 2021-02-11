@@ -69,18 +69,17 @@ function Menu() {
                 <Row>
                 
                     <Col>
-                    <DropdownButton size="lg" title={restauranteEscogido == '' ? (<span>Escoge un restaurante</span>) : <span>{restauranteEscogido}</span>}>
-                {restaurantes.map(restaurante=>(
-                <Dropdown.Item 
-                onClick={() => seleccionarRestaurante(restaurante)
-                }  
-                >{restaurante.nombre}</Dropdown.Item>
-            ))}
-            <Dropdown.Divider />
 
+                        <DropdownButton className="py-2 px-5"  size="m" title={restauranteEscogido == '' ? (<span>Restaurante</span>) : <span>{restauranteEscogido}</span>}>
+                        {restaurantes.map(restaurante=>(
+                        <Dropdown.Item 
+                        onClick={() => seleccionarRestaurante(restaurante)
+                        }  
+                        >{restaurante.nombre}</Dropdown.Item>
+                        ))} 
+                        <Dropdown.Divider/>
                         <Dropdown.Item as="button" onClick={() => setModalShow(true)}>Agregar Restaurante +</Dropdown.Item>
                         <AddRestaurant show={modalShow} onHide={() => setModalShow(false)} />
-
                     </DropdownButton>
                     </Col>
 
@@ -112,6 +111,7 @@ function Menu() {
                         <DishMenu />
                     </Col>
                 </Row>
+                
             </Container>
         </>
     );

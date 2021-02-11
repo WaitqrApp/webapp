@@ -1,6 +1,6 @@
 .sidebar-menu {
     min-height: 87vh !important;
-background-color: rgba(43, 160, 189, 0.082);
+background-color: rgb(255, 255, 255);
 margin-top:2.5vh;}
 
 .sidebar-text{
@@ -82,6 +82,19 @@ margin-top:2.5vh;}
 .boton-editar {
     margin-top: 15%
 }
+
+/* .boton-menu {
+    margin-top: 10px;
+    position: absolute;
+    padding-left: 85%;
+}
+
+.boton-restaurante {
+    margin-top: 10px;
+    position: absolute;
+    padding-left: 90%;
+
+} */
 
 .input-nombre {
     width: 100%;
