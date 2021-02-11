@@ -2,10 +2,10 @@ import React, {useState, useEffect, useContext} from "react";
 import { Nav, Button } from "react-bootstrap";
 import './menusidebar.css';
 import AddCategory from './AddCategory';
-import DeleteCategoryModal from './DeleteCategoryModal';
 import AddRestaurant from './AddRestaurant';
 import EditCategoryModal from './EditCategoryModal';
 import BotonMenuSidebar from './BotonMenuSidebar';
+import DeleteCategoryModal from './DeleteCategoryModal';
 
 import menusContext from '../../../../context/menus/menusContext';
 import seccionesContext from '../../../../context/secciones/seccionesContext';
@@ -58,10 +58,12 @@ function MenuSideBar(){
                 {seccionesmenu.map(seccion=>(
                 <Nav.Item className="mx-auto">
                     <Nav.Link className="sidebar-text-active" onClick={() => seleccionarSeccion(seccion)}>{seccion.nombre}
-                     <Button variant="light">
-                         <EditCategoryModal></EditCategoryModal>
+                    <Button variant="light">
+                         <EditCategoryModal
+                            seccion = {seccion}
+                         ></EditCategoryModal>
                          </Button>
-                        </Nav.Link>
+                    </Nav.Link>
                 </Nav.Item>
                 ))}
                 
