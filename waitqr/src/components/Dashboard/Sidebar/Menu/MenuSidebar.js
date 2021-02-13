@@ -58,7 +58,7 @@ function MenuSideBar(){
                 {seccionesmenu.map(seccion=>(
                 <Nav.Item className="mx-auto">
                     <Nav.Link className="sidebar-text-active" onClick={() => seleccionarSeccion(seccion)}>{seccion.nombre}
-                    <Button variant="light">
+                    <Button className="boton-editar-seccion" variant="light">
                          <EditCategoryModal
                             seccion = {seccion}
                          ></EditCategoryModal>
@@ -67,18 +67,6 @@ function MenuSideBar(){
                 </Nav.Item>
                 ))}
                 
-                {/* <Nav.Item className="mx-auto">
-                    <Nav.Link className="boton-categoria" href="">
-                    <Button type = "submit" variant="primary" size="m" block onClick={() => setModalShow(true)}>
-                                + Categoria
-                            </Button>
-                        <AddCategory show={modalShow} onHide={() => setModalShow(false)} />
-
-                        </Nav.Link>
-
-                </Nav.Item>
-                {/* <DeleteCategoryModal show={modalShow} onHide={() => setModalShow(false)} /> */} 
-               
                 <Nav.Item>
                     <BotonMenuSidebar/>
                 </Nav.Item>

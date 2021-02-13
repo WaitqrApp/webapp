@@ -12,7 +12,7 @@ h1, h2, p, th {
     border-color: #EFB63D;
 }
 
-.btn-primary:hover {
+.btn-primary:focus {
   color: #fff;
   background-color: #EFB63D;
   border-color: #EFB63D;
@@ -123,4 +123,10 @@ div.content {
     margin-right: 5%;
     margin-left: auto;
     margin-bottom: 0px;
+}
+
+.dropdown-restaurante {
+  position: relative;
+  margin-right: 0%;
+  margin-top: 1%;
 }

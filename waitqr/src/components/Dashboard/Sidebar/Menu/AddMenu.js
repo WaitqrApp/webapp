@@ -2,6 +2,7 @@ import React, {useState, useContext, useEffect } from 'react';
 import { Container, Row, Col, Card, Form, Button, Modal, InputGroup, FormControl } from "react-bootstrap";
 import menusContext from '../../../../context/menus/menusContext';
 import restauranteContext from '../../../../context/restaurantes/restauranteContext';
+import './menusidebar.css'
 
 
 function AddMenu(props) {
@@ -112,10 +113,9 @@ function AddMenu(props) {
       </Modal.Header>
       <Modal.Body className="show-grid">
         <Container>
-         
             <Form.Group as={Row} controlId="formHorizontalPassword">
               <Form.Label>
-                Nombre del Menu
+                Nombre
               </Form.Label>
               <Col classname="input-categoria" sm={"auto"}>
                 <Form.Control
@@ -130,7 +130,7 @@ function AddMenu(props) {
             </Form.Group>
             <Form.Group as={Row} controlId="formHorizontalPassword">
               <Form.Label>
-                Horario Inicio del Menu
+                Horario Inicio
               </Form.Label>
               <Col classname="input-categoria" sm={"auto"}>
                 <Form.Control
@@ -145,7 +145,7 @@ function AddMenu(props) {
             </Form.Group>
             <Form.Group as={Row} controlId="formHorizontalPassword">
               <Form.Label>
-                Horario Fin del Menu
+                Horario Fin
               </Form.Label>
               <Col classname="input-categoria" sm={"auto"}>
                 <Form.Control
@@ -158,8 +158,6 @@ function AddMenu(props) {
                    />
               </Col>
             </Form.Group>
-           
-         
         </Container>
       </Modal.Body>
       <Modal.Footer>

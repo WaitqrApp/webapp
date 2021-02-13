@@ -1,23 +1,23 @@
 import React from 'react';
+import { Row, Container, Col } from 'react-bootstrap';
+
 
 function Visitas() {
   return (
 
-    <div className="container-fluid dashboard-componente mt-4 mb-4">
-      <div className="row">
-        <div className="col-md-6 text-left" >
+    <Container className="dashboard-componente mt-4 mb-4">
+      <Row className="mt-2" >
+        <Col sm={6}>
           <h1>Visitas mensuales</h1>
-        </div>
-        <div className="col-md-6 text-right" >
-          <p>filtro</p>
+        </Col>
+        <Col sm={6} className="text-right" >
           <span className="material-icons">
             filter_alt
           </span>
-        </div>
-      </div>
-
-      <div className="row">
-        <div className="col-md-12">
+        </Col>
+      </Row>
+      <Row className="mt-4">
+        <Col sm={12} >
           <table className="table">
             <thead className="text-center">
               <tr>
@@ -38,9 +38,9 @@ function Visitas() {
               </tr>
             </tbody>
           </table>
-        </div>
-      </div>
-    </div>
+        </Col>
+      </Row>
+    </Container>
 
   );
 }

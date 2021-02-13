@@ -1,34 +1,23 @@
 import React from 'react';
-
+import { Row, Container, Col } from 'react-bootstrap';
 import platillos from '../../img/total-platillos.png';
 
 function PlatillosProbados() {
   return (
 
-    <div className="container-fluid text-center dashboard-componente" >
-      <div className="row">
-        <div className="col-md-12" >
+    <Container className="text-center dashboard-componente" >
+      <Row>
+        <Col sm={12} >
           <h1>Total de platillos probados</h1>
-        </div>
-        <img className="platillos-probados" src={platillos} />
-      </div>
+        </Col>
+      </Row>
 
-      <div className="row">
-        <div className="col-md-12">
-        </div>
-      </div>
-      
-      <div className="row">
-        <div className="col-md-6">
-          <div className="platillosdashboard">
-          </div>
-        </div>
-        <div className="col-md-6">
-          <div className="platillosdashboard">
-          </div>
-        </div>
-      </div>
-    </div>
+      <Row>
+        <Col sm={12} >
+        <img className="platillos-probados" src={platillos} />
+        </Col>
+      </Row>
+    </Container>
 
   );
 }

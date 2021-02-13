@@ -1,43 +1,46 @@
 import React from 'react';
 import OrderCard from './OrderCard';
-import { Dropdown, DropdownButton, Col, Row } from 'react-bootstrap';
+import { Dropdown, DropdownButton, Col, Row, Container } from 'react-bootstrap';
 import './styles/orders.css'
 
 function Orders() {
     return (
-        <div className="container-fluid dashboard-componente-mesas mt-4 mb-4">
+        <Container className="container-fluid">
             <Row>
-                <Col md = "auto">
-                    <DropdownButton
-                        className = "dropdown-restaurante"
-                        menuAlign="right"
-                        title="La Noria"
-                        id="dropdown-menu-align-right">
-                        <Dropdown.Item eventKey="1">La Noria</Dropdown.Item>
-                        <Dropdown.Divider />
-                        <Dropdown.Item eventKey="2">El Restauro</Dropdown.Item>
-                    </DropdownButton>
+                <Col sm={8}></Col>
+                <Col xs={2} className="dropdown-seccion">
+                    <Dropdown block>
+                        <Dropdown.Toggle block
+                            menuAlign="right"
+                            title="Sección"
+                            id="dropdown-menu-align-right">
+                            Cocina
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                            <Dropdown.Item>Bar</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
                 </Col>
-                <Col xs lg="2">
-                <DropdownButton
-                    className="dropdown-seccion"
-                    menuAlign="right"
-                    title="Restaurante"
-                    id="dropdown-menu-align-right"
-                    >
-                    <Dropdown.Item eventKey="1">Cocina</Dropdown.Item>
-
-                    <Dropdown.Divider />
-                    <Dropdown.Item eventKey="4">Bar</Dropdown.Item>
-                </DropdownButton>
+                <Col sm={2} className="dropdown-restaurante">
+                <Dropdown block>
+                        <Dropdown.Toggle block
+                            menuAlign="right"
+                            title="Restaurante"
+                            id="dropdown-menu-align-right">
+                            La Noria
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                            <Dropdown.Item>El Restauro</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
                 </Col>
             </Row>
-            <div className="row">
-                <div className="col-md-6 text-left tarjeta-orden" >
+            <Row className="tarjeta-orden">
+                <Col sm={12} className=" text-left tarjeta-orden" >
                     <OrderCard></OrderCard>
-                </div>
-            </div>
-        </div>
+                </Col>
+            </Row>
+        </Container>
     );
 }
 

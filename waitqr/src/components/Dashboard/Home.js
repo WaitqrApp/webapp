@@ -1,13 +1,13 @@
-import React, {useContext,useEffect} from 'react';
+import React, {useContext,useEffect, } from 'react';
 
 import PlatillosProbados from './Sidebar/Home/PlatillosProbados';
 import Ordenesgrafica from './Sidebar/Home/Ordenesgrafica';
 import StatusyMejores from './Sidebar/Home/StatusyMejores';
 import Visitas from './Sidebar/Home/Visitas';
 import Ayuda from './Sidebar/Home/Ayuda';
-import '../Dashboard/styles/dashboard.css';
 
 import AuthContext from '../../context/autenticacion/authContext'
+import { Row ,Container, Col} from 'react-bootstrap';
 
 
 function Home() {
@@ -25,28 +25,28 @@ function Home() {
 
 
 
-    <div className="container-fluid mt-4 mb-3">
+    <Container className="container-fluid mt-4 mb-3">
       {usuario ? <h1>Hola, {usuario.nombre}</h1> : null}
-      <div className="row mt-4 ">
-        <div className="col-md-4" >
+      <Row className="row mt-4 ">
+        <Col sm={4}>
           <PlatillosProbados />
-        </div>
-        <div className=" col-md-4 " >
+        </Col>
+        <Col sm={4}>
           <Ordenesgrafica />
-        </div>
-        <div className=" col-md-4 " >
+        </Col>
+        <Col sm={4}>
           <StatusyMejores />
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-md-8" >
+        </Col>
+      </Row>
+      <Row className="row">
+        <Col sm={8}>
           <Visitas />
-        </div>
-        <div className=" col-md-4 " >
+        </Col>
+        <Col sm={4} >
           <Ayuda />
-        </div>
-      </div>
-    </div>
+        </Col>
+      </Row>
+    </Container>
 
   );
 }

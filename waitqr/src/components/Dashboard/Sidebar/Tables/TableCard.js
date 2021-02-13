@@ -6,7 +6,7 @@ function TableCard({mesa}) {
     console.log(mesa)
   return (
     <Fragment>
-    <Card className="mt-1" style={{ width: '18rem', height: "11rem", justifyContent: 'center' }}>
+    <Card className="" style={{ width: '18rem', height: "11rem", justifyContent: 'center' }}>
                         <Card.Body>
                             <Card.Title className="text-center font-weight-bold">
                                {mesa.numero}
