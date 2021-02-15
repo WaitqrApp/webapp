@@ -22,7 +22,7 @@ function Orders() {
                     </Dropdown>
                 </Col>
                 <Col sm={2} className="dropdown-restaurante">
-                <Dropdown block>
+                    <Dropdown block>
                         <Dropdown.Toggle block
                             menuAlign="right"
                             title="Restaurante"

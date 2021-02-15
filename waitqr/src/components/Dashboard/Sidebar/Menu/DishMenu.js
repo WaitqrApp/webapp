@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from "react";
-import './Styles/Styles.css';
 import AddDish from './AddDish';
 import Dish from './Dish';
 import seccionesContext from '../../../../context/secciones/seccionesContext';
