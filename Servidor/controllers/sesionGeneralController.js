@@ -73,10 +73,10 @@ exports.actualizarSesionGeneral = async(req, res) =>{
 const nuevaSesionGeneral ={};
 
 if(horarioInicio){
-    nuevoMenu.horarioInicio = horarioInicio;
+    nuevaSesionGeneral.horarioInicio = horarioInicio;
 }
 if(horarioFin){
-    nuevoMenu.horarioFin = horarioFin;
+    nuevaSesionGeneral.horarioFin = horarioFin;
 }
 //guardar sesionGeneral 
 sesionGeneral = await SesionGeneral.findOneAndUpdate({_id: req.params.id}, nuevaSesionGeneral, {

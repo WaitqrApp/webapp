@@ -28,6 +28,8 @@ app.use('/api/secciones', require('./routes/secciones'));
 app.use('/api/platillos', require('./routes/platillos'));
 app.use('/api/mesas', require('./routes/mesas'));
 app.use('/api/sesionesgenerales', require('./routes/sesionesgenerales'));
+app.use('/api/sesionesindividuales', require('./routes/sesionesindividuales'));
+
 
 
 
