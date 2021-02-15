@@ -1,7 +1,8 @@
 .sidebar-menu {
-    min-height: 87vh !important;
+min-height: 87vh !important;
 background-color: rgb(255, 255, 255);
-margin-top:2.5vh;}
+margin-top: -5vh;
+}
 
 .sidebar-text{
     color: rgb(7, 46, 72);
@@ -75,7 +76,7 @@ margin-top:2.5vh;}
 }
 
 .boton-disponible {
-    position: absolute;
+    position: relative;
     right: 0px;
 }
 
@@ -83,18 +84,11 @@ margin-top:2.5vh;}
     margin-top: 15%
 }
 
-/* .boton-menu {
-    margin-top: 10px;
-    position: absolute;
+ .boton-menu {
+    margin-top: 5%;
+    position: relative;
     padding-left: 85%;
 }
-
-.boton-restaurante {
-    margin-top: 10px;
-    position: absolute;
-    padding-left: 90%;
-
-} */
 
 .input-nombre {
     width: 100%;
@@ -142,4 +136,9 @@ margin-top:2.5vh;}
 .input-categoria{
     width: 0%;
     margin-bottom: 3%;
+}
+
+.boton-editar-seccion {
+    padding: 0% !important;
+    margin-left: 15%; 
 }
