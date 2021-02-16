@@ -69,9 +69,7 @@ function MenuSideBar(){
                 
                 <Nav.Item>
                     <BotonMenuSidebar/>
-                </Nav.Item>
-            
-                
+                </Nav.Item> 
             </Nav>
            
             

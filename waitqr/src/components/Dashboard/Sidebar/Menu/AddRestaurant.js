@@ -64,39 +64,39 @@ function AddRestaurant(props) {
 
   return (
     <Container>
-    <Modal {...props} aria-labelledby="contained-modal-title-vcenter">
-      <Form
-        onSubmit={onSubmitRestaurante}
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            Agregar Restaurante
+      <Modal {...props} aria-labelledby="contained-modal-title-vcenter">
+        <Form
+          onSubmit={onSubmitRestaurante}
+        >
+          <Modal.Header closeButton>
+            <Modal.Title id="contained-modal-title-vcenter">
+              Agregar Restaurante
           </Modal.Title>
-        </Modal.Header>
-        <Modal.Body className="show-grid">
-              <Form.Group as={Row} controlId="formHorizontalPassword">
-                <Col sm={3} className="ml-0">
-                  <Form.Label>
-                    Nombre
-                  </Form.Label>
-                </Col>
-                <Col sm={9}>
-                  <Form.Control
-                    type="text"
-                    placeholder="Nombre del Restaurante"
-                    name="nombre"
-                    value={nombre}
-                    onChange={onChangeRestaurante}
-                  />
-                </Col>
-              </Form.Group>
+          </Modal.Header>
+          <Modal.Body className="show-grid">
             <Form.Group as={Row} controlId="formHorizontalPassword">
-              <Form.Label>
-                Email
-              </Form.Label>
-              <Col classname="input-categoria" sm={"auto"}>
+              <Col sm={3} className="ml-0">
+                <Form.Label>
+                  Nombre
+                  </Form.Label>
+              </Col>
+              <Col sm={9}>
                 <Form.Control
-                  classname="input-categoria"
+                  type="text"
+                  placeholder="Nombre del Restaurante"
+                  name="nombre"
+                  value={nombre}
+                  onChange={onChangeRestaurante} />
+              </Col>
+            </Form.Group>
+            <Form.Group as={Row} controlId="formHorizontalPassword">
+              <Col sm={3}>
+                <Form.Label>
+                  Email
+              </Form.Label>
+              </Col>
+              <Col sm={9}>
+                <Form.Control
                   type="text"
                   placeholder="Correo del Restaurante"
                   name="correo"
@@ -106,12 +106,13 @@ function AddRestaurant(props) {
               </Col>
             </Form.Group>
             <Form.Group as={Row} controlId="formHorizontalPassword">
-              <Form.Label>
-                Teléfono
+              <Col sm={3}>
+                <Form.Label>
+                  Teléfono
               </Form.Label>
-              <Col classname="input-categoria" sm={"auto"}>
+              </Col>
+              <Col sm={9}>
                 <Form.Control
-                  classname="input-categoria"
                   type="text"
                   placeholder="Telefono del Restaurante"
                   name="telefono"
@@ -122,28 +123,29 @@ function AddRestaurant(props) {
               </Col>
             </Form.Group>
             <Form.Group as={Row} controlId="formHorizontalPassword">
-              <Form.Label>
-                Facebook
+              <Col sm={3}>
+                <Form.Label>
+                  Facebook
               </Form.Label>
-              <Col classname="input-categoria" sm={"auto"}>
+              </Col>
+              <Col sm={9}>
                 <Form.Control
-                  classname="input-categoria"
                   type="text"
                   placeholder="Facebook del Restaurante"
                   name="facebook"
                   value={facebook}
-
                   onChange={onChangeRestaurante}
                 />
               </Col>
             </Form.Group>
             <Form.Group as={Row} controlId="formHorizontalPassword">
+              <Col sm={3}>
               <Form.Label>
                 Instagram
               </Form.Label>
-              <Col classname="input-categoria" sm={"auto"}>
+              </Col>
+              <Col sm={9}>
                 <Form.Control
-                  classname="input-categoria"
                   type="text"
                   placeholder="Instagram del Restaurante"
                   name="instagram"
@@ -152,13 +154,12 @@ function AddRestaurant(props) {
                 />
               </Col>
             </Form.Group>
-          
-        </Modal.Body>
-        <Modal.Footer>
-          <Button type="submit" onClick={props.onHide}>Agregar Restaurante</Button>
-        </Modal.Footer>
-      </Form>
-    </Modal>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button type="submit" onClick={props.onHide}>Agregar Restaurante</Button>
+          </Modal.Footer>
+        </Form>
+      </Modal>
     </Container>
   );
 }

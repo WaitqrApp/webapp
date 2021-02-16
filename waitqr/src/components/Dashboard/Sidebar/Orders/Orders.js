@@ -5,7 +5,7 @@ import './styles/orders.css'
 
 function Orders() {
     return (
-        <Container className="container-fluid">
+        <Container fluid dclassName="container-fluid">
             <Row>
                 <Col sm={8}></Col>
                 <Col xs={2} className="dropdown-seccion">

@@ -7,7 +7,7 @@ import { Row, Container, Col } from 'react-bootstrap';
 
 function History() {
     return (
-        <Container>
+        <Container fluid>
             <Row>
                 <Col sm={2} className="boton-descargar">
                     <Button>Descargar</Button>

@@ -90,32 +90,6 @@ margin-top: -5vh;
     padding-left: 85%;
 }
 
-.input-nombre {
-    width: 100%;
-    margin-bottom: 3%;
-}
-
-.input-desc {
-    margin-top: 2%;
-    width: 166%;
-    margin-bottom: 5%;
-}
-
-.input-dinero {
-    width: 182%;
-    margin-left: -4%;
-    margin-bottom: 5%;
-}
-
-.input-seccion{
-    width: 80.5%;
-    margin-bottom: 5%;
-}
-
-.input-imagen {
-    margin-bottom: 5%;
-}
-
 .boton-orden-aceptar{
     position: relative;
     bottom: -39%;
@@ -131,11 +105,6 @@ margin-top: -5vh;
 
 .disponible-edit-platillo{
     align-self: center;
-}
-
-.input-categoria{
-    width: 0%;
-    margin-bottom: 3%;
 }
 
 .boton-editar-seccion {

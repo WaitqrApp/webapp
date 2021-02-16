@@ -98,12 +98,10 @@ div.content {
 
 .navbar {
   max-height: 80px;
-  padding-top: 10px;
-  
 }
 
 .form-control{
-  width: 300%;
+  width: 100%;
   background-color: rgba(228, 228, 228, 0.404);;
 }
 
@@ -120,13 +118,13 @@ div.content {
     position: relative;
     height: 200px;
     width: 200px; 
-    margin-right: 5%;
+    margin-right: auto;
     margin-left: auto;
     margin-bottom: 0px;
 }
 
 .dropdown-restaurante {
   position: relative;
-  margin-right: 0%;
+  padding-right: 2%;
   margin-top: 1%;
 }
