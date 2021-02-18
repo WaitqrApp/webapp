@@ -3,29 +3,24 @@ const mongoose = require('mongoose');
 const PlatilloOrdenadoSchema = mongoose.Schema({
     nombre:{
         type: String,
-        required: true,
+        required: false,
         trim: true
     },
     precio:{
         type: Number,
-        required: true,
+        required: false,
     },
     comentario:{
         type: String,
-        required: true
-    },
-    precio:{
-        type: Number,
-        required: true,
-    },
-   
-    sesionIndividual:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'SesionIndividual'
+        required: false
     },
     platillo:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Platillo'
+    },
+    orden:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Orden'
     },
     registro:{
         type: Date,

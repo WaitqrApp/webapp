@@ -11,7 +11,7 @@ auth,
 [
     check('nombre','El nombre es obligatorio').not().isEmpty(),
     check('precio','El precio es obligatorio').not().isEmpty(),
-    check('sesionIndividual','La seccionIndividual es obligatoria').not().isEmpty()
+    check('orden','La orden es obligatoria').not().isEmpty()
 
 ],
 

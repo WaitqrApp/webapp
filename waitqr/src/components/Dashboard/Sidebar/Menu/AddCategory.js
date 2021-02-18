@@ -96,7 +96,7 @@ function AddCategory(props) {
        nombre: '',
        disponible: true,
      })
-     
+     props.onHide();
   }
   
   return (
@@ -133,7 +133,9 @@ function AddCategory(props) {
         </Container>
       </Modal.Body>
       <Modal.Footer>
-        <Button type="submit" onClick={props.onHide}>Agregar Seccion</Button>
+        {/*<Button type="Submit" onClick={props.onHide}>Agregar Seccion</Button>*/}
+        <Button onClick={onSubmit}>Agregar Seccion</Button>
+
       </Modal.Footer>
       </Form>
     </Modal>

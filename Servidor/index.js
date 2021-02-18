@@ -29,6 +29,10 @@ app.use('/api/platillos', require('./routes/platillos'));
 app.use('/api/mesas', require('./routes/mesas'));
 app.use('/api/sesionesgenerales', require('./routes/sesionesgenerales'));
 app.use('/api/sesionesindividuales', require('./routes/sesionesindividuales'));
+app.use('/api/orden', require('./routes/orden'));
+app.use('/api/platilloOrdenado', require('./routes/platilloOrdenado'));
+
+
 
 
 

@@ -44,7 +44,8 @@ function EditCategoryModal(seccion) {
   }
 
   const onClickEliminarSeccion = e => {
-    eliminarSeccion(seccion.seccion._id, seccion.seccion.menu)
+    eliminarSeccion(seccion.seccion._id, seccion.seccion.menu);
+    handleClose();
   }
 
   return (
@@ -64,7 +65,7 @@ function EditCategoryModal(seccion) {
                 <Form.Label>Nombre</Form.Label>
               </Col>
               <Col sm={8}>  
-                <Form.Control type="text" name="Nombre de la categoría" value={nombre} onChange={onChange} />
+                <Form.Control type="text" name="nombre" value={nombre} onChange={onChange} />
               </Col>
               </Form.Group>
             </Row>

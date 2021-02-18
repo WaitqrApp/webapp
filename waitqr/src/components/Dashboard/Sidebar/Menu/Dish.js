@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext} from "react";
 import { Row, Col, Card, CardDeck, Form, Container } from "react-bootstrap";
 import Picaña from './img/picaña.jpg';
 import DishModal from './DishModal';
@@ -13,10 +13,10 @@ function Dish(platillo) {
 
     return (
 
-        <Container>
-            <Row>
-                <Col xs={3}>
-                    <Card className="mb-0" style={{ flex: 1 }}>
+        
+       
+                <div className="col-md-3" >
+                    <Card className="mb-0">
                         <Card.Img variant="top" src={Picaña} />
                         <Card.Body>
                             <Card.Title className="font-weight-bold">
@@ -47,10 +47,11 @@ function Dish(platillo) {
                             </Row>
                         </Card.Body>
                     </Card>
-                </Col>
-            </Row>
-        </Container>
+                </div>
+               
     );
+  
+   
 }
 
 export default Dish;
