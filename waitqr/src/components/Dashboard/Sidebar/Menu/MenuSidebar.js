@@ -4,7 +4,7 @@ import './menusidebar.css';
 import AddCategory from './AddCategory';
 import AddRestaurant from './AddRestaurant';
 import EditCategoryModal from './EditCategoryModal';
-import BotonMenuSidebar from './BotonMenuSidebar';
+import AddCategoryButton from './AddCategoryButton';
 import DeleteCategoryModal from './DeleteCategoryModal';
 
 import menusContext from '../../../../context/menus/menusContext';
@@ -68,7 +68,7 @@ function MenuSideBar(){
                 ))}
                 
                 <Nav.Item>
-                    <BotonMenuSidebar/>
+                    <AddCategoryButton/>
                 </Nav.Item>
             
                 

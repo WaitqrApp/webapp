@@ -4,7 +4,7 @@ import { Nav, Button } from "react-bootstrap";
 import AddCategory from './AddCategory';
 
 
-function BotonMenuSidebar(){
+function AddCategoryButton(){
 
     const [modalShow3, setModalShow3] = useState(false);
 
@@ -21,4 +21,4 @@ function BotonMenuSidebar(){
     );
 }
 
-export default BotonMenuSidebar;
+export default AddCategoryButton;
