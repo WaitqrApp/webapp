@@ -59,11 +59,10 @@ function EditCategoryModal(seccion) {
         </Modal.Header>
         <Modal.Body><Form>
           <Container>
-              <Col>
-                <Form.Group as={Row} controlId="formBasicEmail">
-                  <Form.Label>Nombre</Form.Label>
-                  <Form.Control type="text" name="Nombre de la categoría" value={nombre} onChange={onChange} />
-                </Form.Group>
+            <Row>
+              <Form.Group controlId="formBasicEmail">
+              <Col sm={2}>
+                <Form.Label>Nombre</Form.Label>
               </Col>
               <Col sm={8}>  
                 <Form.Control type="text" name="nombre" value={nombre} onChange={onChange} />
