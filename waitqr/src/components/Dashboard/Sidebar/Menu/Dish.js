@@ -4,7 +4,6 @@ import Picaña from './img/picaña.jpg';
 import DishModal from './DishModal';
 
 
-
 function Dish(platillo) {
 
     const [modalShow, setModalShow] = useState(false);

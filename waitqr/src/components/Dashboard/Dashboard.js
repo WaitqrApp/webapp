@@ -1,7 +1,7 @@
-import React, { Fragment, useContext, useEffect } from 'react';
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 import '../../App.css';
 import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
-
 import Sidebar from './Sidebar/Sidebar';
 import Navbar from '../Navbar';
 import Home from './Home';
@@ -13,28 +13,23 @@ import Tables from './Sidebar/Tables/Tables';
 import Orders from './Sidebar/Orders/Orders';
 import Menu from './Sidebar/Menu/Menu';
 
-
-
-
-
 /* Describe el contenido del canvas central               {usuario ? <h1>Hola, {usuario.nombre}</h1> : null}
 */
 function Dashboard() {
 
-  
-
-  
   return (
+    <>
+    <Navbar />
 
     <Router>
-      <Fragment >
-        <Navbar />
-        <div className="container-fluid p-0">
-          <div className="row">
-            <div className="col-md-2 side" >
+        
+        <Container fluid className="p-0">
+        
+          <Row >
+            <Col md={2} className="side" >
               <Sidebar />
-            </div>
-            <div className="col-md-10 p-0 d-inline-block" id="contenido" >
+            </Col>
+            <Col md={10} className="p-0 d-inline-block" id="contenido" >
               <Switch>
                 <Route exact path="/Home" component={(Home)} />
                 <Route exact path="/menu" component={(Menu)} />
@@ -45,14 +40,11 @@ function Dashboard() {
                 <Route exact path="/tables" component={(Tables)} />
                 <Route exact path="/settings" component={(Settings)} />
               </Switch>
-            </div>
-          </div>
-        </div>
-      </Fragment>
+            </Col>
+          </Row>
+        </Container>
     </Router>
-
-
-
+</>
   );
 }
 

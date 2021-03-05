@@ -45,7 +45,7 @@ function Tables() {
         guardarRestauranteEscogido(restaurante.nombre);
     }
     return (
-        <Container>
+        <Container fluid>
             <Row>
                 <Col sm={10}></Col>
                 <Col sm={2} className="dropdown-restaurante btn-group btn-block">
