@@ -13,6 +13,11 @@ import MesaState from './context/mesas/mesasState';
 
 import SeccionState from './context/secciones/seccionesState';
 import PlatillosState from './context/platillos/platillosState';
+import SesionGeneralState from './context/sesionesGenerales/sesionGeneralState';
+import SesionIndividualState from './context/sesionesIndividuales/sesionIndividualState';
+import OrdenState from './context/ordenes/ordenState';
+import PlatilloOrdenadoState from './context/platillosOrdenados/platilloOrdenadoState';
+
 
 
 
@@ -39,18 +44,25 @@ function App() {
       <MesaState>
       <SeccionState>
         <PlatillosState>
-
-    <AuthState>
-      <AlertaState>
-        <Router>
-          <Switch>
-            <Route exact path="/" component={(Login)} />
-            <Route exact path="/nueva-cuenta" component={(NuevaCuenta)} />
-            <RutaPrivada exact path="/dashboard" component={(Dashboard)} />
-          </Switch>
-        </Router>
-      </AlertaState>
-    </AuthState>
+          <SesionGeneralState>
+            <SesionIndividualState>
+              <OrdenState>
+                <PlatilloOrdenadoState>
+                <AuthState>
+                    <AlertaState>
+                      <Router>
+                        <Switch>
+                          <Route exact path="/" component={(Login)} />
+                          <Route exact path="/nueva-cuenta" component={(NuevaCuenta)} />
+                          <RutaPrivada exact path="/dashboard" component={(Dashboard)} />
+                        </Switch>
+                      </Router>
+                    </AlertaState>
+                  </AuthState>
+                </PlatilloOrdenadoState>
+              </OrdenState>
+            </SesionIndividualState>
+          </SesionGeneralState>
     </PlatillosState>
     </SeccionState>
     </MesaState>
