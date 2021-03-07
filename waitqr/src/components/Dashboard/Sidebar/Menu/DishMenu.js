@@ -3,9 +3,8 @@ import AddDish from './AddDish';
 import Dish from './Dish';
 import seccionesContext from '../../../../context/secciones/seccionesContext';
 import platillosContext from '../../../../context/platillos/platillosContext';
-import CardDeck from 'react-bootstrap/Col';
-
-
+import { Row, Col, Card, CardDeck, Form, Container } from "react-bootstrap";
+import './menusidebar.css'
 function DishMenu() {
     //Extraer si una seccion esta activa
     const seccionessContext = useContext(seccionesContext);
@@ -28,14 +27,14 @@ function DishMenu() {
     return (
         <> 
          <div className="container-fluid "  >
-        <div className="row ">
+        <Row className="contenedorPlatillos ">
       
             {console.log("entre a los platillos")}
             {platillosseccion.map(platillo => (
                     <Dish platillo={platillo}/>
             ))}
             
-            </div>
+            </Row>
             </div>
             <AddDish show={modalShow2} onHide={() => setModalShow2(false)} />
         </>

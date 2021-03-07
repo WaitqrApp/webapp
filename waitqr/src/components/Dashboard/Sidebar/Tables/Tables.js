@@ -45,36 +45,23 @@ function Tables() {
         guardarRestauranteEscogido(restaurante.nombre);
     }
     return (
-        <Container fluid>
+        <Container>
             <Row>
                 <Col sm={10}></Col>
                 <Col sm={2} className="dropdown-restaurante btn-group btn-block">
-                    <Dropdown block>
-                        <Dropdown.Toggle block
+                    <Dropdown>
+                        <DropdownButton
                             menuAlign="right"
                             title={restauranteEscogido == '' ? (<span>Restaurante</span>) : <span>{restauranteEscogido}</span>}
                             id="dropdown-menu-align-right">
                             {restaurantes.map(restaurante => (
-                                    <Dropdown.Item
-                                        onClick={() => seleccionarRestaurante(restaurante)
-                                        }
-                                    >{restaurante.nombre}</Dropdown.Item>
+                                <Dropdown.Item
+                                    onClick={() => seleccionarRestaurante(restaurante)
+                                    }
+                                >{restaurante.nombre}</Dropdown.Item>
                             ))}
-                        </Dropdown.Toggle>
+                        </DropdownButton>
                     </Dropdown>
-
-                    
-                    {/* <DropdownButton
-                        menuAlign="right"
-                        title={restauranteEscogido == '' ? (<span>Restaurante</span>) : <span>{restauranteEscogido}</span>}
-                        id="dropdown-menu-align-right">
-                        {restaurantes.map(restaurante => (
-                            <Dropdown.Item
-                                onClick={() => seleccionarRestaurante(restaurante)
-                                }
-                            >{restaurante.nombre}</Dropdown.Item>
-                        ))}
-                    </DropdownButton> */}
                 </Col>
             </Row>
             <Row></Row>

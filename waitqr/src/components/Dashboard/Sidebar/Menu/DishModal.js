@@ -11,8 +11,6 @@ function DishModal(platillo) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-
-
   const [platilloAux, guardarPlatilloAux] = useState({
     nombre: "",
     descripcion: "",
@@ -24,9 +22,6 @@ function DishModal(platillo) {
   platilloAux.nombre = platillo.platillo.platillo.nombre;
   platilloAux.descripcion = platillo.platillo.platillo.descripcion;
   platilloAux.precio = platillo.platillo.platillo.precio;
-
-
-
 
   //obtener la funcion del context de platillo
   const platillossContext = useContext(platillosContext);
