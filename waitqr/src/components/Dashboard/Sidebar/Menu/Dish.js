@@ -8,7 +8,7 @@ function Dish(platillo) {
     const [modalShow, setModalShow] = useState(false);
     return (
                 <div className="col-md-3" >
-                    <Card className="mb-0">
+                    <Card className="mb-0 mt-1">
                         <Card.Img variant="top" src={Picaña} />
                         <Card.Body>
                             <Card.Title className="font-weight-bold">

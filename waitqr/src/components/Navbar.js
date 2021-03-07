@@ -28,7 +28,7 @@ function Navbar() {
             <img className="waitqr-logo" src={Logo} />
           </Col>
           <Col sm={8}>
-                <input className="form-control" type="search" placeholder="Search" aria-label="Search" />
+                <input className="form-control" type="search" placeholder="Busca un menu, un platillo, una mesa o una órden" aria-label="Search" />
           </Col>
           <Col sm={1}>
             <span className="material-icons">notifications</span>

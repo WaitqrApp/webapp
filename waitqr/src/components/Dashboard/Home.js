@@ -25,7 +25,7 @@ function Home() {
 
 
 
-    <Container fluid className="container-fluid mt-4 mb-3">
+    <Container fluid className="mt-4 mb-3">
       {usuario ? <h1>Hola, {usuario.nombre}</h1> : null}
       <Row className="row mt-4 ">
         <Col sm={4}>

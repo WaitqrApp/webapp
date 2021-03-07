@@ -4,6 +4,10 @@ background-color: rgb(255, 255, 255);
 margin-top: -5vh;
 }
 
+.sidebar-wrapper {
+    position: absolute;
+}
+
 .sidebar-text{
     color: rgb(7, 46, 72);
     padding-top: 12%;
