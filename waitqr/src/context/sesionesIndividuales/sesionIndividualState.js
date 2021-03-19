@@ -35,7 +35,7 @@ const SesionIndividualState = props =>{
             console.log(resultado)
             dispatch({
                 type: SESIONINDIVIDUAL_SESIONGENERAL,
-                payload: resultado.data.sesionindividual
+                payload: resultado.data.sesionesindividuales
             })
         } catch (error) {
             console.log(error)
