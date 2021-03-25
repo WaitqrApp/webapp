@@ -6,14 +6,9 @@ import AddRestaurant from './AddRestaurant';
 import EditCategoryModal from './EditCategoryModal';
 import AddCategoryButton from './AddCategoryButton';
 import DeleteCategoryModal from './DeleteCategoryModal';
-
 import menusContext from '../../../../context/menus/menusContext';
 import seccionesContext from '../../../../context/secciones/seccionesContext';
 import AlertaContext from '../../../../context/alertas/alertaContext';
-
-
-
-
 
 function MenuSideBar(){
     
@@ -46,7 +41,6 @@ function MenuSideBar(){
     }
     console.log(seccion);
 
-
     return (
         <>
             <Nav className="col-md-12 d-none d-md-block sidebar-menu"
@@ -70,12 +64,7 @@ function MenuSideBar(){
                 <Nav.Item>
                     <AddCategoryButton/>
                 </Nav.Item>
-            
-                
             </Nav>
-           
-            
-
         </>
     );
 }
