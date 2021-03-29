@@ -64,11 +64,13 @@ function DishModal(platillo) {
         <Modal.Body className="show-grid">
           <Container>
             <Form>
+            <Col sm ={12}>
+
               <Form.Group as={Row} controlId="formHorizontalEmail">
                 <Form.Label column sm={2}>
                   Platillo
               </Form.Label>
-                <Col sm={10}>
+                <Col sm={12}>
                   <Form.Control
                     onChange={handleChange}
                     name="nombre" value={nombre}
@@ -79,11 +81,18 @@ function DishModal(platillo) {
 
                 </Col>
               </Form.Group>
+              </Col>
+
+              <Col sm ={12}>
               <Form.File
                 className="input-imagen"
                 label="Imagen Platillo"
                 custom
-              />
+              /><p>
+
+              </p>
+              </Col>
+              <Col sm ={12}>
               <Form.Group as={Row} controlId="formHorizontalPassword">
                 <Form.Label column sm={"auto"}>
                   Descripción
@@ -102,6 +111,7 @@ function DishModal(platillo) {
                   </Form.Control>
                 </Col>
               </Form.Group>
+              </Col>
               <Form.Group as={Row} controlId="formHorizontalCheck">
                 <Col sm={{ span: 10, offset: 2 }}>
                   <Form.Check
