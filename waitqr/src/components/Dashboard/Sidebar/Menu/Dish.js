@@ -7,7 +7,7 @@ function Dish(platillo) {
 
     const [modalShow, setModalShow] = useState(false);
     return (
-                <div className="col-md-3" >
+                <CardDeck className="col-sm-3 d-inline-flex p-2 overflow-y-scroll" >
                     <Card className="mb-0">
                         <Card.Img variant="top" src={Picaña} />
                         <Card.Body>
@@ -29,7 +29,6 @@ function Dish(platillo) {
                             </Card.Title>
                             <Card.Text>
                                 {platillo.platillo.descripcion}
-                                <br></br>
                                 <span><span>$</span>{platillo.platillo.precio}</span>
                             </Card.Text>
                             <Row>
@@ -39,7 +38,7 @@ function Dish(platillo) {
                             </Row>
                         </Card.Body>
                     </Card>
-                </div>
+                </CardDeck>
     );
    
 }

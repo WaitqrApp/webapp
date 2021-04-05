@@ -88,11 +88,9 @@ function DishModal(platillo) {
                 className="input-imagen"
                 label="Imagen Platillo"
                 custom
-              /><p>
-
-              </p>
+              />
               </Col>
-              <Col sm ={12}>
+              <Col className="m-3"sm ={12}>
               <Form.Group as={Row} controlId="formHorizontalPassword">
                 <Form.Label column sm={"auto"}>
                   Descripción
