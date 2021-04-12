@@ -1,1 +1,6 @@
-
+#restaurant-button {
+    position: fixed;
+    top: 30px;
+    right: 100px;
+    width: 20%;
+}

@@ -85,7 +85,7 @@ function Menu() {
                         </DropdownButton>
                     </Col>    
                     <Col xs={2}>
-                        <DropdownButton className="dropdown-restaurante py-2 px-5" size="m" title={restauranteEscogido == '' ? (<span>Restaurante</span>) : <span>{restauranteEscogido}</span>}>
+                        <DropdownButton className="dropdown-restaurante restaurant-button btn-group btn-block" title={restauranteEscogido == '' ? (<span>Restaurante</span>) : <span>{restauranteEscogido}</span>}>
                             {restaurantes.map(restaurante => (
                                 <Dropdown.Item
                                     onClick={() => seleccionarRestaurante(restaurante)

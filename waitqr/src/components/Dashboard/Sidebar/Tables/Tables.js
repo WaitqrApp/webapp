@@ -45,15 +45,16 @@ function Tables() {
         guardarRestauranteEscogido(restaurante.nombre);
     }
     return (
-        <Container>
+    <>
+        <Container fluid>
             <Row>
                 <Col sm={10}></Col>
-                <Col sm={2} className="dropdown-restaurante btn-group btn-block">
-                    <Dropdown>
+                <Col sm={2} >
+                    <Dropdown id="restaurant-button" className="dropdown-restaurante btn-group btn-block">
                         <DropdownButton
                             menuAlign="right"
                             title={restauranteEscogido == '' ? (<span>Restaurante</span>) : <span>{restauranteEscogido}</span>}
-                            id="dropdown-menu-align-right">
+                            className="dropdown-restaurante btn-group btn-block">
                             {restaurantes.map(restaurante => (
                                 <Dropdown.Item
                                     onClick={() => seleccionarRestaurante(restaurante)
@@ -63,8 +64,7 @@ function Tables() {
                         </DropdownButton>
                     </Dropdown>
                 </Col>
-            </Row>
-            <Row></Row>
+            </Row>    
             <Row>
                 <Col sm={12} className="contenido-mesas text-left" >
                     {mesasrestaurante.map(mesa => (
@@ -75,6 +75,7 @@ function Tables() {
                 </Col>
             </Row>
         </Container>
+    </>
     );
 }
 

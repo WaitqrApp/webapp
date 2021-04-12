@@ -19,8 +19,7 @@ function History() {
                     <Dropdown block>
                         <Dropdown.Toggle block
                             menuAlign="right"
-                            title="La Noria"
-                            id="dropdown-menu-align-right">
+                            title="La Noria">
                             La Noria
                         </Dropdown.Toggle>
                         <Dropdown.Menu>

@@ -54,9 +54,9 @@ function DishModal(platillo) {
 
   return (
     <>
-      <Button className="boton-editar" size="m" block variant="primary" onClick={handleShow}>
+      <Button className="boton-editar" block variant="primary" onClick={handleShow}>
         Editar Platillo
-        </Button>
+      </Button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Editar Platillo</Modal.Title>

@@ -85,7 +85,10 @@ margin-top: -5vh;
 }
 
 .boton-editar {
-    margin-top: 15%
+    position: absolute;
+    bottom: 0;
+    margin-top: 15%;
+
 }
 
  .boton-menu {
@@ -118,4 +121,16 @@ margin-top: -5vh;
 
 .page-content-wrapper{
     overflow-y: scroll;
+}
+.restaurant-button {
+    position: fixed;
+    top: 54px;
+    right: 0px;
+    width: 290px;
+    z-index: 10;
+}
+
+.contenedorPlatillos {
+    overflow: auto;
+    height: 750px;
 }

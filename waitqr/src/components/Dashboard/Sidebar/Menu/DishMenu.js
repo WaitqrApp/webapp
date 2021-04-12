@@ -26,8 +26,8 @@ function DishMenu() {
     }, [seccion]); //para que corra solo una vez
     return (
         <> 
-         <div className="container-fluid "  >
-        <Row className="contenedorPlatillos ">
+         <div className="container-fluid"  >
+        <Row className="contenedorPlatillos">
       
             {console.log("entre a los platillos")}
             {platillosseccion.map(platillo => (

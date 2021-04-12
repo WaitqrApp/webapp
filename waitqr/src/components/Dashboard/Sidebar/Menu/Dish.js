@@ -36,6 +36,7 @@ function Dish(platillo) {
                                     platillo={platillo}
                                 />
                             </Row>
+                            <Row></Row>
                         </Card.Body>
                     </Card>
                 </CardDeck>
