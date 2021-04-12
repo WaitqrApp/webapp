@@ -1,6 +1,6 @@
-#restaurant-button {
+.restaurant-button {
     position: fixed;
-    top: 30px;
+    top: 50px;
     right: 100px;
     width: 20%;
 }

@@ -50,7 +50,7 @@ function Tables() {
             <Row>
                 <Col sm={10}></Col>
                 <Col sm={2} >
-                    <Dropdown id="restaurant-button" className="dropdown-restaurante btn-group btn-block">
+                    <Dropdown className="dropdown-restaurante restaurant-button btn-group btn-block">
                         <DropdownButton
                             menuAlign="right"
                             title={restauranteEscogido == '' ? (<span>Restaurante</span>) : <span>{restauranteEscogido}</span>}
