@@ -125,7 +125,7 @@ margin-top: -5vh;
 .restaurant-button {
     position: fixed;
     top: 80px;
-    right: 0px;
+    right: 15px;
     width: 290px;
     z-index: 10;
 }

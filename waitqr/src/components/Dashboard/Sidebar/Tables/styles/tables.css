@@ -1,6 +1,16 @@
 .restaurant-button {
     position: fixed;
-    top: 50px;
+    top: 49px;
     right: 100px;
     width: 20%;
+    z-index: 10;
+}
+
+.tarjeta-mesa {
+    margin-top: 5%;
+}
+
+.contenido-mesas {
+    overflow: auto;
+    height: 800px;
 }
