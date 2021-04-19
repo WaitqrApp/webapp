@@ -14,7 +14,7 @@ function TableCard({mesa}) {
 
   return (
     <Fragment>
-    <Card className="" style={{ width: '18rem', height: "11rem", justifyContent: 'center' }}>
+    <Card className="tarjeta-mesa" style={{ width: '18rem', height: "11rem", justifyContent: 'center' }}>
                         <Card.Body>
                             <Card.Title className="text-center font-weight-bold">
                                {mesa.numero}

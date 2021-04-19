@@ -19,8 +19,8 @@ function PlatillosProbados() {
         </Col>
       </Row>
     </Container>
-    {/* <div id="chart"></div>
-    <script src="./platillochart.js>"></script> */}
+    <div id="chart"></div>
+    <script src="./platillochart.js>"></script>
     </>
 
   );

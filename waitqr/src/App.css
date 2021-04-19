@@ -108,8 +108,10 @@ div.content {
 /* Contenido */
 
 #contenido{
-  background-color: rgb(245,246,249);
+  position: relative;
+  background-color: rgb(245, 246, 249);
   height: 91.5vh;
+  z-index: 1;
 }
 
 /* Imagenes */

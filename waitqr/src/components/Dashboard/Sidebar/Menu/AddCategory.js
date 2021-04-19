@@ -110,9 +110,9 @@ function AddCategory(props) {
         <Modal.Body className="show-grid">
           <Container>
             <Form.Group as={Row} controlId="formHorizontalPassword">
-              <Col sm={3}>
+              <Col >
                 <Form.Label>
-                  Nombre
+                  Nombre de la Sección
               </Form.Label>
               </Col>
               <Col sm={9}>

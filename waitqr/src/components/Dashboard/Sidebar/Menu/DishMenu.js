@@ -26,8 +26,8 @@ function DishMenu() {
     }, [seccion]); //para que corra solo una vez
     return (
         <> 
-         <div className="container-fluid "  >
-        <Row className="contenedorPlatillos ">
+         <div className="container-fluid"  >
+        <Row className="contenedorPlatillos">
       
             {console.log("entre a los platillos")}
             {platillosseccion.map(platillo => (
@@ -36,7 +36,7 @@ function DishMenu() {
             
             </Row>
             </div>
-            <AddDish show={modalShow2} onHide={() => setModalShow2(false)} />
+            <AddDish className="boton-platillo-main" show={modalShow2} onHide={() => setModalShow2(false)} />
         </>
     );
 }

@@ -116,64 +116,65 @@ function AddDish() {
           <Modal.Body className="show-grid">
             <Container>
               <Form>
-                <Form.Group as={Row} controlId="formHorizontalEmail">
-                  <Col sm={3}>
+                <Form.Group controlId="formHorizontalEmail">
+                  <Col >
                     <Form.Label>
-                      Platillo
+                      Nombre del Platillo
                     </Form.Label>
                   </Col>
-                  <Col sm={9}>
+                  <Col>
                     <Form.Control 
                       type="text" 
                       placeholder="Nombre del platillo"
-                      name="nombre"
+                      className="input-nombre"
                       value={nombre}
                       onChange={handleChange}
                     />
                   </Col>
                 </Form.Group>
-                <Form.File as={Row}
-                  label="Imagen Platillo"
-                  custom
-                  className="mb-auto mr-auto ml-auto"
-                />
-                <Form.Group as={Row} controlId="formHorizontalPassword">
-                  <Col sm={3}>
-                    <Form.Label>
+                <Col sm ={12}>
+              <Form.File
+                className="input-imagen"
+                label="Imagen Platillo"
+                custom
+              />
+              </Col>
+                <Form.Group controlId="formHorizontalPassword">
+                  <Col >
+                    <Form.Label className="mt-3">
                       Descripción
                     </Form.Label>
                   </Col>
-                  <Col sm={9}>
-                    <Form.Control type="text" placeholder=""
-                      name="descripcion"
+                  <Col>
+                    <Form.Control className="input-nombre" type="text" placeholder="Descripción del Platillo"
                       value={descripcion}
                       onChange={handleChange}
                     />
                   </Col>
                 </Form.Group>
-                <Form.Group as={Row} controlId="formHorizontalPassword">
-                  <Col sm={3}>
-                    <Form.Label>
-                      Precio: $
-                    </Form.Label>
-                  </Col>
-                  <Col sm={9}>
-                    <Form.Control type="text" placeholder=""
-                      name="precio"
-                      value={precio}
-                      onChange={handleChange}
-                    />
-                  </Col>
-                </Form.Group>
-                <Form.Group as={Row} controlId="formHorizontalCheck">
-                  <Col sm={{ span: 10, offset: 2 }}>
-                    <Form.Check
-                      type="switch"
-                      id="custom-switch"
-                      label="Disponible"
-                    />
-                  </Col>
-                </Form.Group>
+                <Col className="mt-2"sm ={12}>
+             
+              <Form.Group as={Row} controlId="formHorizontalPassword">
+                <Form.Label column sm={"auto"}>
+                  Precio: $
+              </Form.Label>
+                <Col className="input-precio" sm={"auto"}>
+                  <Form.Control onChange={handleChange} name="precio" value={precio} className="input-dinero" type="">
+                  </Form.Control>
+                </Col>
+              </Form.Group>
+              </Col>
+              <Form.Group as={Row} controlId="formHorizontalCheck">
+                <Col sm={{ span: 10, offset: 2 }}>
+                  <Form.Check
+                    onChange={handleChange}
+                    className="disponible-edit-platillo"
+                    type="switch"
+                    id="custom-switch"
+                    label="Disponible"
+                  />
+                </Col>
+              </Form.Group>
               </Form>
             </Container>
           </Modal.Body>
@@ -181,8 +182,8 @@ function AddDish() {
             <Button variant="secondary" onClick={handleClose}>
               Cancelar
             </Button>
-            <Button type="submit" variant="primary" onClick={handleClose}>
-              Guardar Cambios
+            <Button  className="ml-4" type="submit" variant="primary" onClick={handleClose}>
+              Guardar
             </Button>
           </Modal.Footer>
         </Form>

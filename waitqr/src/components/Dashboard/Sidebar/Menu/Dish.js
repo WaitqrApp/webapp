@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext} from "react";
 import { Row, Col, Card, CardDeck, Form, Container } from "react-bootstrap";
 import Picaña from './img/picaña.jpg';
 import DishModal from './DishModal';
+import './menusidebar.css';
+
 
 function Dish(platillo) {
 
@@ -16,14 +18,14 @@ function Dish(platillo) {
                                     <Col>
                                         {platillo.platillo.nombre}
                                     </Col>
+                                </Row>
+                                <Row>
                                     <Col>
-                                        <Col>
-                                            <Form.Check
-                                                className="boton-disponible"
+                                        <Form.Check
+                                                className="boton-disponible mt-2"
                                                 type="switch"
                                                 id="disponible-switch"
                                             />
-                                        </Col>
                                     </Col>
                                 </Row>
                             </Card.Title>
@@ -32,10 +34,11 @@ function Dish(platillo) {
                                 <span><span>$</span>{platillo.platillo.precio}</span>
                             </Card.Text>
                             <Row>
-                                <DishModal show={modalShow} onHide={() => setModalShow(false)}
+                                <DishModal className="boton-editar" show={modalShow} onHide={() => setModalShow(false)}
                                     platillo={platillo}
                                 />
                             </Row>
+                            <Row></Row>
                         </Card.Body>
                     </Card>
                 </CardDeck>

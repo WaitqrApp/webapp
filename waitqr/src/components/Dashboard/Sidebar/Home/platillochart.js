@@ -1,4 +1,4 @@
-/* import ChartsEmbedSDK from '@mongodb-js/charts-embed-dom';
+{ /* import ChartsEmbedSDK from '@mongodb-js/charts-embed-dom';
 
 const sdk = new ChartsEmbedSDK({
   baseUrl: 'https://charts.mongodb.com/charts-waitqr-mzuje',
@@ -10,6 +10,5 @@ const chart = sdk.createChart({
     width: 100
   });
 
-  chart
-  .render(document.getElementById('chart'))
-  .catch(() => window.alert('Chart failed to initialise')); */
+  chart.render(document.getElementById('chart'))
+  .catch(() => window.alert('Chart failed to initialise')); */}
