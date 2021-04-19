@@ -67,8 +67,8 @@ function DishModal(platillo) {
             <Col sm ={12}>
 
               <Form.Group as={Row} controlId="formHorizontalEmail">
-                <Form.Label column sm={2}>
-                  Platillo
+                <Form.Label column >
+                  Nombre del Platillo
               </Form.Label>
                 <Col sm={12}>
                   <Form.Control
@@ -90,13 +90,13 @@ function DishModal(platillo) {
                 custom
               />
               </Col>
-              <Col className="m-3"sm ={12}>
+              <Col className="mt-2"sm ={12}>
               <Form.Group as={Row} controlId="formHorizontalPassword">
                 <Form.Label column sm={"auto"}>
                   Descripción
               </Form.Label>
-                <Col className="input" sm={"auto"}>
-                  <Form.Control onChange={handleChange} name="descripcion" value={descripcion} className="input-desc" type="text">
+                <Col className="input-nombre" sm={"auto"}>
+                  <Form.Control onChange={handleChange} className="input-nombre" value={descripcion} className="input-desc" type="text">
                   </Form.Control>
                 </Col>
               </Form.Group>
@@ -104,7 +104,7 @@ function DishModal(platillo) {
                 <Form.Label column sm={"auto"}>
                   Precio: $
               </Form.Label>
-                <Col sm={"auto"}>
+                <Col className="input-precio" sm={"auto"}>
                   <Form.Control onChange={handleChange} name="precio" value={precio} className="input-dinero" type="">
                   </Form.Control>
                 </Col>

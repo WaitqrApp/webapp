@@ -36,7 +36,7 @@ function DishMenu() {
             
             </Row>
             </div>
-            <AddDish show={modalShow2} onHide={() => setModalShow2(false)} />
+            <AddDish className="boton-platillo-main" show={modalShow2} onHide={() => setModalShow2(false)} />
         </>
     );
 }

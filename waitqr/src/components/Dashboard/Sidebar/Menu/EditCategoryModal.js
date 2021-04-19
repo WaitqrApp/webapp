@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Container, Row, Col, Card, Form, Button, Modal, InputGroup, FormControl } from "react-bootstrap";
 import { AiFillEdit } from 'react-icons/ai';
-
+import './menusidebar.css';
 import seccionesContext from '../../../../context/secciones/seccionesContext';
 
 function EditCategoryModal(seccion) {
@@ -61,11 +61,11 @@ function EditCategoryModal(seccion) {
           <Container>
             <Row>
               <Form.Group controlId="formBasicEmail">
-              <Col sm={2}>
-                <Form.Label>Nombre</Form.Label>
+              <Col>
+                <Form.Label>Nombre de la Sección</Form.Label>
               </Col>
-              <Col sm={8}>  
-                <Form.Control type="text" name="nombre" value={nombre} onChange={onChange} />
+              <Col>  
+                <Form.Control type="text" className="input-seccion" value={nombre} onChange={onChange} />
               </Col>
               </Form.Group>
             </Row>

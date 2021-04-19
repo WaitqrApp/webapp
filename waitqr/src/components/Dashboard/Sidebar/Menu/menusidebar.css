@@ -64,9 +64,9 @@ margin-top: -5vh;
 
 .boton-platillo {
     position: fixed;
-    width: 60%; 
+    width: 65%; 
     bottom: 3%;
-    left: 35%;
+    left: 31%;
     /*background-color: #FDD000;
     border-color: #FDD000;*/
 }
@@ -94,7 +94,6 @@ margin-top: -5vh;
  .boton-menu {
     margin-top: 5%;
     position: relative;
-    padding-left: 85%;
 }
 
 .boton-orden-aceptar{
@@ -115,8 +114,11 @@ margin-top: -5vh;
 }
 
 .boton-editar-seccion {
+    position: absolute;
     padding: 0% !important;
-    margin-left: 15%; 
+    transform: scale(.7);
+    right:0;
+    margin-top: -3%;
 }
 
 .page-content-wrapper{
@@ -133,4 +135,18 @@ margin-top: -5vh;
 .contenedorPlatillos {
     overflow: auto;
     height: 750px;
+}
+
+ /*MODAL EDITAR PLATILLO*/
+
+ .input-nombre {
+     width: 100%;
+ }
+
+ .input-precio {
+    width: 30%;
+}
+
+.input-seccion {
+    width: 230%;
 }
