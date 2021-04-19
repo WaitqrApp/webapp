@@ -16,13 +16,11 @@ sesionIndividualController.crearSesionIndividual
 );
 
 router.get('/',
-auth,
 sesionIndividualController.obtenerSesionesIndividuales
 );
 
 //Actualizar sesionIndividual
 router.put('/:id',
-    auth,
     sesionIndividualController.actualizarSesionIndividual
 );
 

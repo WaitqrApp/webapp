@@ -38,7 +38,7 @@ const SesionIndividualState = props =>{
                 payload: resultado.data.sesionesindividuales
             })
         } catch (error) {
-            console.log(error)
+            console.log(JSON.stringify(error))
         }
     }
 

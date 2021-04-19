@@ -2,6 +2,8 @@ import React, { Fragment, useContext, useEffect, useState } from 'react';
 import { Container, Row, Col, Form, Button, Modal, Card } from "react-bootstrap";
 import '../Tables/styles/tables.css';
 import sesionGeneralContext from '../../../../context/sesionesGenerales/sesionGeneralContext';
+import sesionIndividualContext from '../../../../context/sesionesIndividuales/sesionIndividualContext';
+
 
 function TableModal(mesa){
     const [show, setShow] = useState(false);
@@ -13,22 +15,34 @@ function TableModal(mesa){
  const sesionGeneralsContext = useContext(sesionGeneralContext);
  const {sesiongeneralmesa, obtenerSesionGeneral } = sesionGeneralsContext;
 
+ const sesionIndividualsContext = useContext(sesionIndividualContext);
+ const {sesionindividualsesiongeneral, obtenerSesionIndividual } = sesionIndividualsContext;
+
  const [sesiongeneralAuxId, guardarSesionGeneralAuxId] = useState("");
 
  
     const verDetalle = e => {
         obtenerSesionGeneral(mesa.mesa._id)
+        var intento
         setShow(true)
-    }
-    var intento
-
     sesiongeneralmesa.map(sesiongeneral=>(
         intento = sesiongeneral._id))
-        console.log(intento)
-
+        if(intento){
+          console.log("intentandeando", intento)
+          var resultado2 = obtenerSesionIndividual(intento)
+          console.log(resultado2)
+          //console.log("avanzando",sesionindividualsesiongeneral)
+        }
+    }
+    
+ 
         //ToDo: mandar el intento a obtener sesion individual, obtener el length y mostrarlo como personas conectadas
         //el total lo podemos sacar de Orden
         //podemos sacar el total sumando platillos ordenados
+
+        
+
+
    
     
 
@@ -49,7 +63,7 @@ function TableModal(mesa){
             {sesiongeneralmesa.map(sesiongeneral=>(
                 <span>Hora de Inicio: {sesiongeneral.horarioInicio}</span>
             ))}
-            <span>{intento}</span>
+            {/*<span>{intento}</span>*/}
           </Container>
         </Modal.Body>
         <Modal.Footer>
