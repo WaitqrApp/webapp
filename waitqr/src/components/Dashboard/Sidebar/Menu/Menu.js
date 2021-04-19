@@ -60,6 +60,7 @@ function Menu() {
         guardarMenuActual(menu._id); //fijar un menu actual
         guardarMenuEscogido(menu.nombre);
     }
+    console.log(menusrestaurante)
     console.log(menuEscogido)
 
     //Extraer el restaurante

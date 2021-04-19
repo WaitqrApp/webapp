@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
+import {HashRouter} from 'react-router-dom';
+
 
 import Dashboard from './components/Dashboard/Dashboard';
 import Login from './components/auth/Login';

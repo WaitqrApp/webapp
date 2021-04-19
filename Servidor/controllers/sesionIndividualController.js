@@ -36,18 +36,18 @@ exports.crearSesionIndividual = async (req, res) =>{
 }
 
 //Obtiene las sesiones individuales por sesion general
-exports.obtenerSesionesIndividuales = async (req, res) =>{
+exports.obtenerSesionesIndividuales = async (req, res) =>{ 
     try {
         //Extraer la sesion general y comprobar si existe
    const {sesionGeneral} = req.query;
    //console.log(req.query);
         const existeSesionGeneral = await SesionGeneral.findById(sesionGeneral);
         if(!existeSesionGeneral){
-            return res.status(404).json({msg: 'SesionGeneral no encontrada'})
+            return res.status(666).json({msg: 'SesionGeneral no encontrada'})
         }
  
 
-     //Obtener sesiones generales por mesa
+     //Obtener sesiones individuales por sesion general 
      const sesionesIndividuales = await SesionIndividual.find({sesionGeneral });
      res.json({sesionesIndividuales});
     } catch (error) {

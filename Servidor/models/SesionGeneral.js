@@ -3,13 +3,11 @@ const mongoose = require('mongoose');
 const SesionGeneralSchema = mongoose.Schema({
     
     horarioInicio:{
-        hour: Number,
-        minute: Number,
+        type: String,
         required: false,
     },
     horarioFin:{
-        hour: Number,
-        minute: Number,
+        type: String,
         required: false,
     },
     mesa:{

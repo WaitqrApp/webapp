@@ -26,7 +26,7 @@ const SesionGeneralState = props =>{
 
     //crear las funciones
 
-
+ 
     //obtener las menus de un restaurante
 
     const obtenerSesionGeneral = async mesa =>{
@@ -35,7 +35,7 @@ const SesionGeneralState = props =>{
             console.log(resultado)
             dispatch({
                 type: SESIONGENERAL_MESA,
-                payload: resultado.data.sesiongeneral
+                payload: resultado.data.sesionesGenerales
             })
         } catch (error) {
             console.log(error)
