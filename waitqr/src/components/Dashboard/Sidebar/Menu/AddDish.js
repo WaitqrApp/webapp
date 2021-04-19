@@ -27,6 +27,8 @@ function AddDish() {
         nombre: '',
         descripcion: '',
         precio: '',
+        platillo:'',
+        imagenPlatillo:'',
         disponible: true,
 
       })
@@ -38,12 +40,14 @@ function AddDish() {
     nombre: '',
     descripcion: '',
     precio: '',
+    platillo:'',
+    imagenPlatillo:'',
     disponible: true,
 
   })
 
   //extraer el nombre del proyecto
-  const { nombre, descripcion, precio, disponible } = platilloCreado;
+  const { nombre, descripcion, precio, platillo, imagenPlatillo, disponible } = platilloCreado;
 
   //si no hay restaurante seleccionado
   if (!seccion) return null;
@@ -132,16 +136,17 @@ function AddDish() {
                     />
                   </Col>
                 </Form.Group>
-                <Col sm ={12}>
-              <Form.File
-                className="input-imagen"
-                label="Imagen Platillo"
-                custom
-              />
-              </Col>
-                <Form.Group controlId="formHorizontalPassword">
-                  <Col >
-                    <Form.Label className="mt-3">
+                <Form.File as={Row}
+                  label="Imagen Platillo"
+                  name="imagenPlatillo"
+                  value={imagenPlatillo}
+                  onChange={handleChange}
+                  custom
+                  className="mb-auto mr-auto ml-auto"
+                />
+                <Form.Group as={Row} controlId="formHorizontalPassword">
+                  <Col sm={3}>
+                    <Form.Label>
                       Descripción
                     </Form.Label>
                   </Col>
