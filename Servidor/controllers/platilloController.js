@@ -67,7 +67,7 @@ exports.obtenerPlatillos = async (req, res) =>{
 exports.actualizarPlatillo = async(req, res) =>{
     try {
          //Extraer la seccion y comprobar si existe
-   const {seccion, nombre, disponible, precio, descripcion} = req.body;
+   const {seccion, nombre, disponible, precio, descripcion, imagenPlatillo} = req.body;
    const existeSeccion = await Seccion.findById(seccion);
  
    //Revisar si el platillo existe o no
@@ -95,6 +95,9 @@ if(precio){
 
 if(descripcion){
     nuevoPlatillo.descripcion = descripcion;
+}
+if(imagenPlatillo){
+    nuevoPlatillo.imagenPlatillo = imagenPlatillo;
 }
 
 //guardar platillo
