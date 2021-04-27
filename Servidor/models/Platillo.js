@@ -30,6 +30,10 @@ const PlatilloSchema = mongoose.Schema({
     registro:{
         type: Date,
         default: Date.now()
+    },
+    imagenPlatillo:{
+        data: Buffer,
+        contentType: String
     }
 });
 
