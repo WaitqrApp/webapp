@@ -15,9 +15,14 @@ router.post('/',
 ordenController.crearOrden
 );
 
-router.get('/',
+router.get('/restaurante/',
 
-ordenController.obtenerOrdenes
+ordenController.obtenerOrdenesRestaurante
+);
+
+router.get('/sesionIndividual/',
+
+ordenController.obtenerOrdenSesionIndividual
 );
 
 //Actualizar orden

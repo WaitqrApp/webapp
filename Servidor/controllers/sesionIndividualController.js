@@ -48,7 +48,7 @@ exports.obtenerSesionesIndividuales = async (req, res) =>{
  
 
      //Obtener sesiones individuales por sesion general 
-     const sesionesIndividuales = await SesionIndividual.find({sesionGeneral });
+     const sesionesIndividuales = await SesionIndividual.find({sesionGeneral});
      res.json({sesionesIndividuales});
     } catch (error) {
         console.log(error);

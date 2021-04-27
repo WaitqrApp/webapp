@@ -1,4 +1,5 @@
 import {ORDEN_SESIONINDIVIDUAL} from '../../types'
+import {ORDEN_RESTAURANTE} from '../../types'
 import {AGREGAR_ORDEN} from '../../types'
 import {VALIDAR_ORDEN} from '../../types'
 import {ELIMINAR_ORDEN} from '../../types'
@@ -14,6 +15,11 @@ export default (state, action) => {
             return{
                 ...state,
                 ordensesionindividual:action.payload
+            }
+            case ORDEN_RESTAURANTE:
+            return{
+                ...state,
+                ordenrestaurante:action.payload
             }
         case AGREGAR_ORDEN:
             return{

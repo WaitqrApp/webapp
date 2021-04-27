@@ -2,6 +2,7 @@ import React, {useReducer} from 'react';
 import OrdenContext from './ordenContext';
 import OrdenReducer from './ordenReducer';
 import {ORDEN_SESIONINDIVIDUAL} from '../../types'
+import {ORDEN_RESTAURANTE} from '../../types'
 import {AGREGAR_ORDEN} from '../../types'
 import {VALIDAR_ORDEN} from '../../types'
 import {ELIMINAR_ORDEN} from '../../types'
@@ -14,6 +15,7 @@ import clienteAxios from '../../config/axios'
 const OrdenState = props =>{
     
     const initialState ={
+        ordenrestaurante:[],
         ordensesionindividual: [],
         errororden: false,
         ordenseleccionada:null,
@@ -29,13 +31,25 @@ const OrdenState = props =>{
 
     //obtener las menus de un restaurante
 
-    const obtenerOrden = async sesionindividual =>{
+    const obtenerOrdenSesionIndividual = async sesionindividual =>{
         try {
-            const resultado = await clienteAxios.get('/api/ordenes',{params:{sesionindividual}});
+            const resultado = await clienteAxios.get('/api/orden/sesionIndividual',{params:{sesionindividual}});
             console.log(resultado)
             dispatch({
                 type: ORDEN_SESIONINDIVIDUAL,
-                payload: resultado.data.orden
+                payload: resultado.data.ordenes
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    const obtenerOrdenRestaurante = async restaurante =>{
+        try {
+            const resultado = await clienteAxios.get('/api/orden/restaurante',{params:{restaurante}});
+            console.log(resultado)
+            dispatch({
+                type: ORDEN_RESTAURANTE,
+                payload: resultado.data.ordenes
             })
         } catch (error) {
             console.log(error)
@@ -117,10 +131,12 @@ const OrdenState = props =>{
             value ={{
                // menus: state.menus,
                 ordensesionindividual: state.ordensesionindividual,
+                ordenrestaurante: state.ordenrestaurante,
                 errororden: state.errororden,
                 ordenseleccionada: state.ordenseleccionada,
                 orden: state.orden,
-                obtenerOrden,
+                obtenerOrdenSesionIndividual,
+                obtenerOrdenRestaurante,
                 agregarOrden,
                 validarOrden,
                 eliminarOrden,
