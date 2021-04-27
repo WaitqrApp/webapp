@@ -24,31 +24,29 @@ function TableModal(mesa){
     const verDetalle = e => {
         obtenerSesionGeneral(mesa.mesa._id)
         var intento
+        sesiongeneralmesa.map(sesiongeneral=>(
+          intento = sesiongeneral._id))
+          if(intento){
+            console.log("intentandeando", intento)
+            var resultado2 = obtenerSesionIndividual(intento)
+            console.log("este es el resultado"+resultado2)
+            console.log(sesionindividualsesiongeneral)
+          }
         setShow(true)
-    sesiongeneralmesa.map(sesiongeneral=>(
-        intento = sesiongeneral._id))
-        if(intento){
-          console.log("intentandeando", intento)
-          var resultado2 = obtenerSesionIndividual(intento)
-          console.log(resultado2)
+        /*
+    
           //console.log("avanzando",sesionindividualsesiongeneral)
-        }
+        }*/
+    }
+
+    const cerrarMesa = e => {
+      setShow(false)
     }
     
  
-        //ToDo: mandar el intento a obtener sesion individual, obtener el length y mostrarlo como personas conectadas
-        //el total lo podemos sacar de Orden
-        //podemos sacar el total sumando platillos ordenados
+        //ToDo: cerrar la mesa
 
         
-
-
-   
-    
-
-    
-    
-   
     return(
         <>
       <Button className="boton-editar" size="m" block variant="primary" onClick={() => verDetalle()}>
@@ -63,11 +61,15 @@ function TableModal(mesa){
             {sesiongeneralmesa.map(sesiongeneral=>(
                 <span>Hora de Inicio: {sesiongeneral.horarioInicio}</span>
             ))}
+            <br/>
+           {<span>Numero de personas en la mesa: {sesionindividualsesiongeneral.length}</span>}
             {/*<span>{intento}</span>*/}
           </Container>
         </Modal.Body>
         <Modal.Footer>
-          
+        <Button className="boton-editar" size="m" block variant="primary" onClick={() => cerrarMesa()}>
+        Cerrar mesa
+        </Button>
 
         </Modal.Footer>
       </Modal>

@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { Container, Row, Col, Form, Button, Modal, Card } from "react-bootstrap";
 import './styles/orders.css';
 
-function OrderCard() {
+function OrderCard(orden) {
     return (
         <Fragment>
             <Card className="tarjeta-orden mt-1" style={{ width: '18rem', height: "22rem", justifyContent: 'center' }}>

@@ -29,16 +29,16 @@ const SesionIndividualState = props =>{
 
     //obtener las menus de un restaurante
 
-    const obtenerSesionIndividual = async sesiongeneral =>{
+    const obtenerSesionIndividual = async sesionGeneral =>{
         try {
-            const resultado = await clienteAxios.get('/api/sesionesindividuales',{params:{sesiongeneral}});
+            const resultado = await clienteAxios.get('/api/sesionesindividuales',{params:{sesionGeneral}});
             console.log(resultado)
             dispatch({
                 type: SESIONINDIVIDUAL_SESIONGENERAL,
-                payload: resultado.data.sesionesindividuales
+                payload: resultado.data.sesionesIndividuales
             })
         } catch (error) {
-            console.log(JSON.stringify(error))
+            console.log(error)
         }
     }
 

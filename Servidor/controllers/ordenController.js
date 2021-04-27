@@ -1,5 +1,7 @@
 const Orden = require('../models/Orden');
 const SesionIndividual = require('../models/SesionIndividual');
+const Restaurante = require('../models/Restaurante');
+
 
 const {validationResult} = require('express-validator');
 
@@ -36,7 +38,7 @@ exports.crearOrden = async (req, res) =>{
 }
 
 //Obtiene las sesiones individuales por sesion general
-exports.obtenerOrdenes = async (req, res) =>{
+exports.obtenerOrdenSesionIndividual = async (req, res) =>{
     try {
         //Extraer la sesion general y comprobar si existe
    const {sesionIndividual} = req.query;
@@ -49,6 +51,27 @@ exports.obtenerOrdenes = async (req, res) =>{
 
      //Obtener sesiones generales por mesa
      const ordenes = await Orden.find({sesionIndividual });
+     res.json({ordenes});
+    } catch (error) {
+        console.log(error);
+        res.status(500).send('Hubo un error');
+    }
+}
+
+//Obtiene las sesiones individuales por sesion general
+exports.obtenerOrdenesRestaurante = async (req, res) =>{
+    try {
+        //Extraer la sesion general y comprobar si existe
+   const {restaurante} = req.query;
+   //console.log(req.query);
+        const existeRestaurante = await Restaurante.findById(restaurante);
+        if(!existeRestaurante){
+            return res.status(405).json({msg: 'Restaurante no encontrado'})
+        }
+ 
+
+     //Obtener sesiones generales por mesa
+     const ordenes = await Orden.find({restaurante });
      res.json({ordenes});
     } catch (error) {
         console.log(error);
