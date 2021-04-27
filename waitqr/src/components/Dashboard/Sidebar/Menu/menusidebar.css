@@ -59,7 +59,7 @@ margin-top: -5vh;
 }
 
 .sidebar-sub-title:hover {
-    color: rgb(43, 160, 189);
+    color: rgb(148, 185, 194);
 }
 
 .boton-platillo {
@@ -87,7 +87,10 @@ margin-top: -5vh;
 .boton-editar {
     position: absolute;
     bottom: 0;
-    margin-top: 15%;
+    left: 10;
+    margin-bottom: 5%;
+    width: 14.2vw;
+    height: 4vh;
 
 }
 
