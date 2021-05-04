@@ -41,7 +41,7 @@ function AddDish() {
     descripcion: '',
     precio: '',
     platillo:'',
-    imagenPlatillo:'',
+    imagenPlatillo:Buffer,
     disponible: true,
 
   })
@@ -131,6 +131,7 @@ function AddDish() {
                       type="text" 
                       placeholder="Nombre del platillo"
                       className="input-nombre"
+                      name = "nombre"
                       value={nombre}
                       onChange={handleChange}
                     />
@@ -141,7 +142,6 @@ function AddDish() {
                   name="imagenPlatillo"
                   value={imagenPlatillo}
                   onChange={handleChange}
-                  custom
                   className="mb-auto mr-auto ml-auto"
                 />
                 <Form.Group as={Row} controlId="formHorizontalPassword">
@@ -152,6 +152,7 @@ function AddDish() {
                   </Col>
                   <Col>
                     <Form.Control className="input-nombre" type="text" placeholder="Descripción del Platillo"
+                      name="descripcion"
                       value={descripcion}
                       onChange={handleChange}
                     />

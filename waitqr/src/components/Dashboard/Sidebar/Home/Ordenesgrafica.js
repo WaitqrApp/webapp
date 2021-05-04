@@ -3,7 +3,9 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import ordenes from '../../img/ordenes.png';
 import { Row, Container, Col } from 'react-bootstrap';
-import './styles/home.css'
+import './styles/home.css';
+import VerticalBar from './VerticalBar';
+
 
 function Ordenesgrafica() {
   return (
@@ -31,7 +33,8 @@ function Ordenesgrafica() {
       </Row>
       <Row>
         <Col sm={12} className="platillosdashboard">
-          <img className="ordenes" src={ordenes} />
+          {/* <img className="ordenes" src={ordenes} /> */}
+          <VerticalBar/>
         </Col>
       </Row>
     </Container>
