@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext} from "react";
 import { Row, Col, Card, CardDeck, Form, Container } from "react-bootstrap";
-import Picaña from './img/picaña.jpg';
 import DishModal from './DishModal';
 import './menusidebar.css';
 
