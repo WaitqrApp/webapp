@@ -11,6 +11,10 @@ const OrdenSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'SesionIndividual'
     },
+    registro:{
+        type: Date,
+        default: Date.now()
+    },
     restaurante:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Restaurante'

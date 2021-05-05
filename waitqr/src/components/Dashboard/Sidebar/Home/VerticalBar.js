@@ -1,11 +1,11 @@
 import React from 'react';
-import { Doughnut } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 
 const data = {
-  labels: ['Pizza', 'Pasta', 'Pica;a', 'Sandwiches', 'Agua', 'Zanahoria'],
+  labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
   datasets: [
     {
-      label: '# of Votes',
+      label: '# of orders',
       data: [12, 19, 3, 5, 2, 3],
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
@@ -28,10 +28,22 @@ const data = {
   ],
 };
 
-const DoughnutChart = () => (
+const options = {
+  scales: {
+    yAxes: [
+      {
+        ticks: {
+          beginAtZero: true,
+        },
+      },
+    ],
+  },
+};
+
+const VerticalBar = () => (
   <>
-    <Doughnut data={data} />
+    <Bar data={data} options={options} />
   </>
 );
 
-export default DoughnutChart;
+export default VerticalBar;
