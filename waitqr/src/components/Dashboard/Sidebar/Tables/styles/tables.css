@@ -14,3 +14,12 @@
     overflow: auto;
     height: 800px;
 }
+
+
+.boton-cerrar {
+    position: relative;
+    bottom: 0;
+    margin-bottom: 0%;
+    width: 14.2vw;
+    height: 4vh;
+}

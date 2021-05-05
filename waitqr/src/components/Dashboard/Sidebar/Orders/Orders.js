@@ -66,7 +66,7 @@ function Orders() {
                 </Col>
                    */ }
                 <Col sm={2} className="dropdown-restaurante">
-                <DropdownButton className="dropdown-restaurante py-2 px-5" size="m" title={restauranteEscogido == '' ? (<span>Restaurante</span>) : <span>{restauranteEscogido}</span>}>
+                <DropdownButton className="dropdown-restaurante restaurant-button py-2 px-5" size="m" title={restauranteEscogido == '' ? (<span>Restaurante</span>) : <span>{restauranteEscogido}</span>}>
                             {restaurantes.map(restaurante => (
                                 <Dropdown.Item
                                     onClick={() => seleccionarRestaurante(restaurante)
