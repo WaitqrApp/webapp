@@ -10,7 +10,11 @@ const OrdenSchema = mongoose.Schema({
     sesionIndividual:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'SesionIndividual'
-    }
+    },
+    registro:{
+        type: Date,
+        default: Date.now()
+    },
     
 });
 
