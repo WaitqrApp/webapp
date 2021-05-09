@@ -67,7 +67,7 @@ function TableModal(mesa){
           </Container>
         </Modal.Body>
         <Modal.Footer>
-        <Button className="boton-editar" size="m" block variant="primary" onClick={() => cerrarMesa()}>
+        <Button className="boton-cerrar" size="m" block variant="primary" onClick={() => cerrarMesa()}>
         Cerrar mesa
         </Button>
 

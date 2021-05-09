@@ -12,3 +12,11 @@
 .dropdown-restaurante{
     z-index: 10;
 }
+
+.restaurant-button {
+    position: fixed;
+    top: 80px;
+    right: 15px;
+    width: 290px;
+    z-index: 10;
+}
