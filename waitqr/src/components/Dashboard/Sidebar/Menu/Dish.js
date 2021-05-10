@@ -11,6 +11,7 @@ function Dish(platillo) {
                 <CardDeck className="col-sm-3 d-inline-flex p-2 overflow-y-scroll" >
                     <Card className="mb-0">
                         <Card.Img variant="top" src={platillo.platillo.imagenPlatillo}></Card.Img> 
+                      {/*  <Card.Img variant="top" src={platillo.platillo.imagenPlatillo}></Card.Img>  */}
                         <Card.Body>
                             <Card.Title className="font-weight-bold">
                                 <Row>

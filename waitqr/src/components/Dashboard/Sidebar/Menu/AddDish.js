@@ -8,7 +8,8 @@ import platillosContext from '../../../../context/platillos/platillosContext';
 
 function AddDish() {
   const [show, setShow] = useState(false);
-
+  //aqui se agrega la imagen
+  const[image, setImage] = useState("");
   //Extraer si una seccion esta activa
   const seccionessContext = useContext(seccionesContext);
   const { seccion } = seccionessContext;
@@ -54,7 +55,7 @@ function AddDish() {
 
   //Array destructuring para extraer el proyecto actual
   const [guardarSeccionActual] = seccion
-
+  
   //leer los valores del formulario
   const handleChange = e => {
     guardarPlatilloCreado({
@@ -141,7 +142,7 @@ function AddDish() {
                   label="Imagen Platillo"
                   name="imagenPlatillo"
                   value={imagenPlatillo}
-                  onChange={handleChange}
+                  onChange={handleChange,(e)=>console.log(e.target.files)}
                   className="mb-auto mr-auto ml-auto"
                 />
                 <Form.Group as={Row} controlId="formHorizontalPassword">
