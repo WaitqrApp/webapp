@@ -10,6 +10,26 @@ function AddDish() {
   const [show, setShow] = useState(false);
   //aqui se agrega la imagen
   const[image, setImage] = useState("");
+  const[url, setUrl] = useState("");
+
+  const postImage = ()=>{
+    const data = new FormData()
+    data.append("file", image)
+    data.append("upload_preset","waitqrapp")
+    data.append("cloud_name", "waitqrapp")
+
+    fetch("https://api.cloudinary.com/v1_1/waitqrapp/image/upload",{
+      method:"post",
+      body:data
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      setUrl(data.url)
+    })
+    .catch(err=>{
+      console.log(err)
+    })
+  }
   //Extraer si una seccion esta activa
   const seccionessContext = useContext(seccionesContext);
   const { seccion } = seccionessContext;
@@ -29,9 +49,8 @@ function AddDish() {
         descripcion: '',
         precio: '',
         platillo:'',
-        imagenPlatillo:'',
+        imagenPlatillo:url,
         disponible: true,
-
       })
     }
   }, [platilloseleccionado]); //para que este revisando la platillo seleccionado 
@@ -42,7 +61,7 @@ function AddDish() {
     descripcion: '',
     precio: '',
     platillo:'',
-    imagenPlatillo:Buffer,
+    imagenPlatillo:'',
     disponible: true,
 
   })
@@ -105,6 +124,11 @@ function AddDish() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  function closeModal() {
+   postImage();
+   handleClose();
+}
+
   return (
     <>
       <Button className="boton-platillo" size="m" block variant="primary" onClick={handleShow}>
@@ -141,11 +165,13 @@ function AddDish() {
                 <Form.File as={Row}
                   label="Imagen Platillo"
                   name="imagenPlatillo"
-                  value={imagenPlatillo}
-                  onChange={handleChange,(e)=>console.log(e.target.files)}
+                  value={url}
+                  /* onChange={handleChange,(e)=>console.log(e.target.files)} */
+                 /*  onChange={(e)=>console.log(e.target.files[0])} */
+                  onChange={(e)=>setImage(e.target.files[0])}
                   className="mb-auto mr-auto ml-auto"
                 />
-                <Form.Group as={Row} controlId="formHorizontalPassword">
+                <Form.Group as={Row} >
                   <Col sm={3}>
                     <Form.Label>
                       Descripción
@@ -189,7 +215,7 @@ function AddDish() {
             <Button variant="secondary" onClick={handleClose}>
               Cancelar
             </Button>
-            <Button  className="ml-4" type="submit" variant="primary" onClick={handleClose}>
+            <Button  className="ml-4" type="submit" variant="primary" onClick={closeModal}>
               Guardar
             </Button>
           </Modal.Footer>
