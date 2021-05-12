@@ -9,27 +9,31 @@ import platillosContext from '../../../../context/platillos/platillosContext';
 function AddDish() {
   const [show, setShow] = useState(false);
   //aqui se agrega la imagen
-  const[image, setImage] = useState("");
-  const[url, setUrl] = useState("");
-
-  const postImage = ()=>{
+  const [image, setImage] = useState("");
+  const [url, setUrl] = useState("");
+  var aux;
+  const postImage = () => {
     const data = new FormData()
     data.append("file", image)
-    data.append("upload_preset","waitqrapp")
+    data.append("upload_preset", "waitqrapp")
     data.append("cloud_name", "waitqrapp")
 
-    fetch("https://api.cloudinary.com/v1_1/waitqrapp/image/upload",{
-      method:"post",
-      body:data
+    fetch("https://api.cloudinary.com/v1_1/waitqrapp/image/upload", {
+      method: "post",
+      body: data
     })
-    .then(res=>res.json())
-    .then(data=>{
-      setUrl(data.url)
-    })
-    .catch(err=>{
-      console.log(err)
-    })
-  }
+      .then(res => res.json())
+      .then(data => {
+        console.log(data.url)
+        aux = data.url
+        console.log("soy la verga" + url)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    }
+
+  
   //Extraer si una seccion esta activa
   const seccionessContext = useContext(seccionesContext);
   const { seccion } = seccionessContext;
@@ -48,8 +52,8 @@ function AddDish() {
         nombre: '',
         descripcion: '',
         precio: '',
-        platillo:'',
-        imagenPlatillo:url,
+        platillo: '',
+        imagenPlatillo: '',
         disponible: true,
       })
     }
@@ -60,8 +64,8 @@ function AddDish() {
     nombre: '',
     descripcion: '',
     precio: '',
-    platillo:'',
-    imagenPlatillo:'',
+    platillo: '',
+    imagenPlatillo: '',
     disponible: true,
 
   })
@@ -74,7 +78,7 @@ function AddDish() {
 
   //Array destructuring para extraer el proyecto actual
   const [guardarSeccionActual] = seccion
-  
+
   //leer los valores del formulario
   const handleChange = e => {
     guardarPlatilloCreado({
@@ -83,6 +87,7 @@ function AddDish() {
     })
   }
 
+  
   const onSubmit = e => {
     console.log("ENTRE AL SUBMIT DE platillo PUTO")
     e.preventDefault();
@@ -95,8 +100,10 @@ function AddDish() {
 
     //Si es edicion o si es nueva menu
     if (platilloseleccionado === null) {
+      var aux =  platilloCreado.imagenPlatillo;
       //agregar la seccion al state de platillos
       platilloCreado.seccion = guardarSeccionActual._id;
+      console.log("PENDEJO " + JSON.stringify(platilloCreado));
       agregarPlatillo(platilloCreado);
     } else {
       //actualizar platillo existente
@@ -116,6 +123,7 @@ function AddDish() {
       horarioInicio: '',
       horarioFin: '',
       disponible: true,
+      imagenPlatillo: ''
     })
 
 
@@ -125,15 +133,14 @@ function AddDish() {
   const handleShow = () => setShow(true);
 
   function closeModal() {
-   postImage();
-   handleClose();
-}
-
+    postImage();
+    handleClose();
+ }
   return (
     <>
       <Button className="boton-platillo" size="m" block variant="primary" onClick={handleShow}>
         + Platillo
-        </Button>
+      </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Form
@@ -152,11 +159,11 @@ function AddDish() {
                     </Form.Label>
                   </Col>
                   <Col>
-                    <Form.Control 
-                      type="text" 
+                    <Form.Control
+                      type="text"
                       placeholder="Nombre del platillo"
                       className="input-nombre"
-                      name = "nombre"
+                      name="nombre"
                       value={nombre}
                       onChange={handleChange}
                     />
@@ -164,11 +171,9 @@ function AddDish() {
                 </Form.Group>
                 <Form.File as={Row}
                   label="Imagen Platillo"
-                  name="imagenPlatillo"
-                  value={url}
                   /* onChange={handleChange,(e)=>console.log(e.target.files)} */
-                 /*  onChange={(e)=>console.log(e.target.files[0])} */
-                  onChange={(e)=>setImage(e.target.files[0])}
+                  /*  onChange={(e)=>console.log(e.target.files[0])} */
+                  onChange={(e) => setImage(e.target.files[0])}
                   className="mb-auto mr-auto ml-auto"
                 />
                 <Form.Group as={Row} >
@@ -185,29 +190,29 @@ function AddDish() {
                     />
                   </Col>
                 </Form.Group>
-                <Col className="mt-2"sm ={12}>
-             
-              <Form.Group as={Row} controlId="formHorizontalPassword">
-                <Form.Label column sm={"auto"}>
-                  Precio: $
-              </Form.Label>
-                <Col className="input-precio" sm={"auto"}>
-                  <Form.Control onChange={handleChange} name="precio" value={precio} className="input-dinero" type="">
-                  </Form.Control>
+                <Col className="mt-2" sm={12}>
+
+                  <Form.Group as={Row} controlId="formHorizontalPassword">
+                    <Form.Label column sm={"auto"}>
+                      Precio: $
+                    </Form.Label>
+                    <Col className="input-precio" sm={"auto"}>
+                      <Form.Control onChange={handleChange} name="precio" value={precio} className="input-dinero" type="">
+                      </Form.Control>
+                    </Col>
+                  </Form.Group>
                 </Col>
-              </Form.Group>
-              </Col>
-              <Form.Group as={Row} controlId="formHorizontalCheck">
-                <Col sm={{ span: 10, offset: 2 }}>
-                  <Form.Check
-                    onChange={handleChange}
-                    className="disponible-edit-platillo"
-                    type="switch"
-                    id="custom-switch"
-                    label="Disponible"
-                  />
-                </Col>
-              </Form.Group>
+                <Form.Group as={Row} controlId="formHorizontalCheck">
+                  <Col sm={{ span: 10, offset: 2 }}>
+                    <Form.Check
+                      onChange={handleChange}
+                      className="disponible-edit-platillo"
+                      type="switch"
+                      id="custom-switch"
+                      label="Disponible"
+                    />
+                  </Col>
+                </Form.Group>
               </Form>
             </Container>
           </Modal.Body>
@@ -215,7 +220,7 @@ function AddDish() {
             <Button variant="secondary" onClick={handleClose}>
               Cancelar
             </Button>
-            <Button  className="ml-4" type="submit" variant="primary" onClick={closeModal}>
+            <Button className="ml-4" type="submit" variant="primary" onClick={closeModal}>
               Guardar
             </Button>
           </Modal.Footer>
