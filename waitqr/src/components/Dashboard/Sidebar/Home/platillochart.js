@@ -1,5 +1,7 @@
 import React from 'react';
 import { Doughnut } from 'react-chartjs-2';
+import "./styles/home.css"
+
 
 const data = {
   labels: ['Pizza', 'Pasta', 'Pica;a', 'Sandwiches', 'Agua', 'Zanahoria'],
@@ -30,7 +32,7 @@ const data = {
 
 const DoughnutChart = () => (
   <>
-    <Doughnut data={data} />
+    <Doughnut className="platillos-probados" data={data} />
   </>
 );
 

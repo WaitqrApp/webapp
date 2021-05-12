@@ -16,13 +16,11 @@ function PlatillosProbados() {
       </Row>
 
       <Row>
-        <Col sm={12} >
-        <DoughnutChart/>
+        <Col className="platillo-canvas" sm={12} >
+        <DoughnutChart />
         </Col>
       </Row>
     </Container>
-    <div id="chart"></div>
-      
     </>
 
   );
