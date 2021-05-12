@@ -32,8 +32,8 @@ const PlatilloSchema = mongoose.Schema({
         default: Date.now()
     },
     imagenPlatillo:{
-        data: Buffer,
-        contentType: String
+        type: String,
+        required: false
     }
 });
 

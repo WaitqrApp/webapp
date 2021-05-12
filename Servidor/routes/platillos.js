@@ -12,7 +12,6 @@ auth,
     check('nombre','El nombre es obligatorio').not().isEmpty(),
     check('precio','El precio es obligatorio').not().isEmpty(),
     check('seccion','La seccion es obligatoria').not().isEmpty(),
-    check('imagenPlatillo', 'La imagen es obligatoria').not().isEmpty()
 
 ],
 
