@@ -22,7 +22,7 @@ function TableModal(mesa){
 
  
     const verDetalle = e => {
-        obtenerSesionGeneral(mesa.mesa._id)
+        obtenerSesionGeneral(mesa.mesa._id) 
         var intento
         sesiongeneralmesa.map(sesiongeneral=>(
           intento = sesiongeneral._id))

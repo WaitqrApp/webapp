@@ -18,6 +18,10 @@ const OrdenSchema = mongoose.Schema({
     restaurante:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Restaurante'
+    }, 
+    registro:{
+        type: Date,
+        default: Date.now()
     }
 });
 
