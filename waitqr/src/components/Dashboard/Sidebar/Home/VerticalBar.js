@@ -1,5 +1,7 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
+import "./styles/home.css"
+
 
 const data = {
   labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
@@ -42,7 +44,7 @@ const options = {
 
 const VerticalBar = () => (
   <>
-    <Bar data={data} options={options} />
+    <Bar className="ordenes-chart" data={data} options={options} />
   </>
 );
 

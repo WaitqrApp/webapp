@@ -11,16 +11,10 @@ function Ordenesgrafica() {
   return (
     <Container className="container-fluid text-center p-0 dashboard-componente">
       <Row className="mt-2">
-        <Col sm={8} className="ml-2">
+        <Col sm={8} className="ml-2 mb-2">
           <h1>Órdenes</h1>
         </Col>
         <Col sm={3} id="month-button">
-          <DropdownButton id="dropdown-item-button" title="Mes">
-            <Dropdown.ItemText>Noviembre</Dropdown.ItemText>
-            <Dropdown.Item>Enero</Dropdown.Item>
-            <Dropdown.Item>Febrero</Dropdown.Item>
-            <Dropdown.Item>Marzo</Dropdown.Item>
-          </DropdownButton>
         </Col>
       </Row>
       <Row>

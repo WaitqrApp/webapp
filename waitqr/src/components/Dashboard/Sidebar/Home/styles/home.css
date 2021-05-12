@@ -138,17 +138,17 @@
   /* Imagenes */
 
   .platillos-probados {
-    height: 90%;
-    width: 100%; 
+    height: 80% !important;
+    width:  70% !important; 
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 4%;
-    margin-top: 3%;
-  
+    margin-top: 10%;
+    padding: 0;
   }
   
-  .ordenes {
-    height: 95%;
+  .ordenes-chart {
+    margin-top: 10%;
+    height: 90%;
     width: 100%; 
   }
   
