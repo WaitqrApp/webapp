@@ -40,12 +40,12 @@ exports.obtenerPlatillosOrdenados = async (req, res) =>{
    const {orden} = req.query;
         const existeOrden = await Orden.findById(orden);
         if(!existeOrden){
-            return res.status(404).json({msg: 'Orden no encontrada'})
+            return res.status(407).json({msg: 'Orden no encontrada'})
         }
  
 
      //Obtener platillosOrdenados por seccion
-     const platillosOrdenados = await PlatilloOrdenado.find({orden });
+     const platillosOrdenados = await PlatilloOrdenado.find({orden});
      res.json({platillosOrdenados});
     } catch (error) { 
         console.log(error);
