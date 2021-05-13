@@ -10,9 +10,6 @@ function Dish(platillo) {
     return (
                 <CardDeck className="col-sm-3 d-inline-flex p-2 overflow-y-scroll" >
                     <Card className="mb-0">
-                        <p>
-                            {platillo.platillo.imagenPlatillo}
-                        </p>
                         <Card.Img variant="top" src={platillo.platillo.imagenPlatillo}></Card.Img> 
                       {/*  <Card.Img variant="top" src={platillo.platillo.imagenPlatillo}></Card.Img>  */}
                         <Card.Body>
