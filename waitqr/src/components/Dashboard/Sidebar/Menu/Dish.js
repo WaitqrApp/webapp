@@ -28,7 +28,7 @@ function Dish(platillo) {
                                         <Form.Check
                                                 className="boton-disponible mt-2"
                                                 type="switch"
-                                                id="disponible-switch"
+                                                id={platillo.disponible}
                                             />
                                     </Col>
                                 </Row>
