@@ -1,5 +1,5 @@
 import React, {useState, useContext, useEffect} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 import AlertaContext from '../../context/alertas/alertaContext'
 import AuthContext from '../../context/autenticacion/authContext'
 import Logo from './img/logo.png';
@@ -17,17 +17,17 @@ function Login (props){
    
    
        const authContext = useContext(AuthContext);
-       const {mensaje, autenticado, iniciarSesion} = authContext;
+       const {mensaje, autenticado, iniciarSesion, usuarioAutenticado} = authContext;
 
 
        //En caos de que el password o usuario no exista
        useEffect(() =>{
+           usuarioAutenticado()
        if(autenticado){
            props.history.push('/Dashboard');
-     }
+        }
         if(mensaje){
             mostrarAlerta(mensaje.msg, mensaje.categoria);
-           
         }
 
     },[mensaje, autenticado, props.history ]);
