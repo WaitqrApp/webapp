@@ -22,6 +22,7 @@ function DishModal(platillo) {
   platilloAux.nombre = platillo.platillo.platillo.nombre;
   platilloAux.descripcion = platillo.platillo.platillo.descripcion;
   platilloAux.precio = platillo.platillo.platillo.precio;
+  platilloAux.disponible = platillo.platillo.platillo.disponible;
 
   //obtener la funcion del context de platillo
   const platillossContext = useContext(platillosContext);
@@ -38,6 +39,7 @@ function DishModal(platillo) {
     platillo.platillo.platillo.nombre = nombre;
     platillo.platillo.platillo.descripcion = descripcion;
     platillo.platillo.platillo.precio = precio;
+    platillo.platillo.platillo.disponible = disponible;
     console.log(JSON.stringify(platillo))
     actualizarPlatillo(platillo.platillo.platillo)
     handleClose();
@@ -110,13 +112,13 @@ function DishModal(platillo) {
                 </Col>
               </Form.Group>
               </Col>
-              <Form.Group as={Row} controlId="formHorizontalCheck">
+              <Form.Group as={Row}>
                 <Col sm={{ span: 10, offset: 2 }}>
                   <Form.Check
                     onChange={handleChange}
                     className="disponible-edit-platillo"
                     type="switch"
-                    id="custom-switch"
+                    id={disponible}
                     label="Disponible"
                   />
                 </Col>
