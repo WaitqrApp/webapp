@@ -103,6 +103,12 @@ div.content {
 .form-control{
   width: 100%;
   background-color: rgba(228, 228, 228, 0.404);;
+}d
+
+#dropdown-usuario {
+  position: absolute;
+  z-index: 100;
+  width: 1000%;
 }
 
 /* Contenido */

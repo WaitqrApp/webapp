@@ -15,11 +15,18 @@
     height: 800px;
 }
 
+.boton-detalle-mesa {
+    position: absolute;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    width: 90%;
+    left: 0;
+    bottom: 0;
+}
 
 .boton-cerrar {
     position: relative;
     bottom: 0;
     margin-bottom: 0%;
-    width: 14.2vw;
     height: 4vh;
 }

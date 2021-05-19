@@ -50,11 +50,10 @@ function Tables() {
             <Row>
                 <Col sm={10}></Col>
                 <Col sm={2} >
-                    <Dropdown className="dropdown-restaurante restaurant-button btn-group btn-block">
                         <DropdownButton
                             menuAlign="right"
                             title={restauranteEscogido == '' ? (<span>Restaurante</span>) : <span>{restauranteEscogido}</span>}
-                            className="dropdown-restaurante btn-group btn-block">
+                            className="dropdown-restaurante restaurant-button btn-group btn-block">
                             {restaurantes.map(restaurante => (
                                 <Dropdown.Item
                                     onClick={() => seleccionarRestaurante(restaurante)
@@ -62,7 +61,6 @@ function Tables() {
                                 >{restaurante.nombre}</Dropdown.Item>
                             ))}
                         </DropdownButton>
-                    </Dropdown>
                 </Col>
             </Row>    
             <Row>

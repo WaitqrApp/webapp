@@ -26,6 +26,26 @@ margin-top: -5vh;
     background-color: rgb(245, 246, 249)
 }
 
+.sidebar-text-active a.active{
+    font-weight: bold;
+    margin-top: 25%;
+    margin-bottom: 30%;
+    color:rgb(246, 134, 33);
+    margin-left: 5%;
+    width: 110%;
+    background-color: rgb(245, 246, 249)
+}
+
+.sidebar-text-active a:hover:not(.active) {
+    font-weight: bold;
+    margin-top: 25%;
+    margin-bottom: 30%;
+    color:rgb(246, 134, 33);
+    margin-left: 5%;
+    width: 110%;
+    background-color: rgb(245, 246, 249)
+}
+
 .sidebar-text-active:hover{    
     color:rgb(246, 134, 33);
 }
