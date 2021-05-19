@@ -49,7 +49,7 @@ function TableModal(mesa){
         
     return(
         <>
-      <Button className="boton-editar" size="m" block variant="primary" onClick={() => verDetalle()}>
+      <Button className="boton-detalle-mesa" size="m" variant="primary" onClick={() => verDetalle()}>
         Ver Detalle
         </Button>
       <Modal show={show} onHide={handleClose}>
@@ -67,8 +67,8 @@ function TableModal(mesa){
           </Container>
         </Modal.Body>
         <Modal.Footer>
-        <Button className="boton-cerrar" size="m" block variant="primary" onClick={() => cerrarMesa()}>
-        Cerrar mesa
+        <Button className="boton-cerrar" size="m" variant="primary" onClick={() => cerrarMesa()}>
+        Finalizar Sesion
         </Button>
 
         </Modal.Footer>
