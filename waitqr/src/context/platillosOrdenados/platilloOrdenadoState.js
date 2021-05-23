@@ -31,11 +31,11 @@ const PlatilloOrdenadoState = props =>{
 
     const obtenerPlatilloOrdenado = async orden =>{
         try {
-            const resultado = await clienteAxios.get('/api/platillosOrdenados',{params:{orden}});
+            const resultado = await clienteAxios.get('/api/platilloOrdenado',{params:{orden}});
             console.log(resultado)
             dispatch({
                 type: PLATILLOORDENADO_ORDEN,
-                payload: resultado.data.platilloordenado
+                payload: resultado.data.platillosOrdenados
             })
         } catch (error) {
             console.log(error)

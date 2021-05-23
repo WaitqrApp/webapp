@@ -11,29 +11,7 @@ function AddDish() {
   //aqui se agrega la imagen
   const [image, setImage] = useState("");
   const [url, setUrl] = useState("");
-  var aux;
-  const postImage = () => {
-    const data = new FormData()
-    data.append("file", image)
-    data.append("upload_preset", "waitqrapp")
-    data.append("cloud_name", "waitqrapp")
 
-    fetch("https://api.cloudinary.com/v1_1/waitqrapp/image/upload", {
-      method: "post",
-      body: data
-    })
-      .then(res => res.json())
-      .then(data => {
-        console.log(data.url)
-        aux = data.url
-        console.log("soy la verga" + url)
-      })
-      .catch(err => {
-        console.log(err)
-      })
-    }
-
-  
   //Extraer si una seccion esta activa
   const seccionessContext = useContext(seccionesContext);
   const { seccion } = seccionessContext;
@@ -53,7 +31,6 @@ function AddDish() {
         descripcion: '',
         precio: '',
         platillo: '',
-        imagenPlatillo: '',
         disponible: true,
       })
     }
@@ -65,7 +42,6 @@ function AddDish() {
     descripcion: '',
     precio: '',
     platillo: '',
-    imagenPlatillo: '',
     disponible: true,
 
   })
@@ -79,6 +55,29 @@ function AddDish() {
   //Array destructuring para extraer el proyecto actual
   const [guardarSeccionActual] = seccion
 
+  var aux
+
+  const postImage = () => {
+    const data = new FormData()
+    data.append("file", image)
+    data.append("upload_preset", "waitqrapp")
+    data.append("cloud_name", "waitqrapp")
+
+    fetch("https://api.cloudinary.com/v1_1/waitqrapp/image/upload", {
+      method: "post",
+      body: data
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data.url)
+        aux = JSON.parse(JSON.stringify(data.url))
+        console.log("esto tiene aux" + aux)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    }
+
   //leer los valores del formulario
   const handleChange = e => {
     guardarPlatilloCreado({
@@ -87,7 +86,6 @@ function AddDish() {
     })
   }
 
-  
   const onSubmit = e => {
     console.log("ENTRE AL SUBMIT DE platillo PUTO")
     e.preventDefault();
@@ -100,10 +98,12 @@ function AddDish() {
 
     //Si es edicion o si es nueva menu
     if (platilloseleccionado === null) {
-      var aux =  platilloCreado.imagenPlatillo;
+    
       //agregar la seccion al state de platillos
       platilloCreado.seccion = guardarSeccionActual._id;
-      console.log("PENDEJO " + JSON.stringify(platilloCreado));
+      postImage()
+      console.log("antes de enviarlo" + JSON.parse(JSON.stringify(aux)))
+      platilloCreado.imagenPlatillo = aux;
       agregarPlatillo(platilloCreado);
     } else {
       //actualizar platillo existente
@@ -123,8 +123,9 @@ function AddDish() {
       horarioInicio: '',
       horarioFin: '',
       disponible: true,
-      imagenPlatillo: ''
     })
+
+    handleClose();
 
 
   }
@@ -132,10 +133,7 @@ function AddDish() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  function closeModal() {
-    postImage();
-    handleClose();
- }
+  
   return (
     <>
       <Button className="boton-platillo" size="m" block variant="primary" onClick={handleShow}>
@@ -220,7 +218,7 @@ function AddDish() {
             <Button variant="secondary" onClick={handleClose}>
               Cancelar
             </Button>
-            <Button className="ml-4" type="submit" variant="primary" onClick={closeModal}>
+            <Button className="ml-4" type="submit" variant="primary" onClick={onSubmit}>
               Guardar
             </Button>
           </Modal.Footer>
