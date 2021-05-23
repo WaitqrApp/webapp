@@ -4,12 +4,12 @@ import { Row, Container, Col } from 'react-bootstrap';
 
 function Visitas() {
   return (
-
     <Container className="dashboard-componente mt-4 mb-4">
       <Row className="mt-2" >
         <Col sm={6}>
           <h1>Visitas mensuales</h1>
         </Col>
+
         <Col sm={6} className="text-right" >
           <span className="material-icons">
             filter_alt
