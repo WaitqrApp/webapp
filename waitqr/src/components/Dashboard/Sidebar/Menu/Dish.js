@@ -47,7 +47,8 @@ function Dish(platillo) {
   return (
     <CardDeck className="col-sm-3 d-inline-flex p-2 overflow-y-scroll">
       <Card className="mb-0">
-        <Card.Img
+        <Card.Img 
+          className="imagen-platillo"
           variant="top"
           src={platillo.platillo.imagenPlatillo}
         ></Card.Img>
@@ -79,8 +80,12 @@ function Dish(platillo) {
               </Col>
             </Row>
           </Card.Title>
-          <Card.Text>
+          <Card.Text
+          className="descripcion-platillo">
             {platillo.platillo.descripcion}
+          </Card.Text>
+          <Card.Text
+          className="descripcion-platillo">
             <span>
               <span>$</span>
               {platillo.platillo.precio}
