@@ -82,7 +82,7 @@ const PlatilloState = props =>{
 
     //Edita o modifica una tarea
     const actualizarPlatillo = async platillo =>{
-        console.log(platillo);
+        console.log("PLATILLO",platillo);
        try {
            const resultado = await clienteAxios.put(`/api/platillos/${platillo._id}`,platillo);
            console.log(resultado)

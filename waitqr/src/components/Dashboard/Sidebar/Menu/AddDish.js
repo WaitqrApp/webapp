@@ -46,6 +46,9 @@ function AddDish() {
 
   })
 
+
+  console.log(platilloCreado.disponible)
+
   //extraer el nombre del proyecto
   const { nombre, descripcion, precio, platillo, imagenPlatillo, disponible } = platilloCreado;
 

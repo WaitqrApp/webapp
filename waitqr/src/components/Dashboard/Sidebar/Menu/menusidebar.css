@@ -100,9 +100,23 @@ margin-top: -5vh;
 }
 
 .boton-disponible {
+    display:block;
     position: relative;
     right: 0px;
 }
+.boton-disponible:after {
+    display: block;
+    height: 100px;
+    width: 100px;
+    right: 0px;
+}
+
+input[type=checkbox] {
+    z-index: 100;
+    display: block;
+    height: 30px;
+    width: 60px;
+  }
 
 .boton-editar {
     position: absolute;
