@@ -1,10 +1,9 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect } from "react";
 import { Container, Row, Col, Form, Button, Modal } from "react-bootstrap";
-import './menusidebar.css'
+import "./menusidebar.css";
 
-import seccionesContext from '../../../../context/secciones/seccionesContext';
-import platillosContext from '../../../../context/platillos/platillosContext';
-
+import seccionesContext from "../../../../context/secciones/seccionesContext";
+import platillosContext from "../../../../context/platillos/platillosContext";
 
 function AddDish() {
   const [show, setShow] = useState(false);
@@ -18,8 +17,15 @@ function AddDish() {
 
   //obtener la funcion del context de platillo
   const platillossContext = useContext(platillosContext);
-  const { platilloseleccionado, errorplatillo, agregarPlatillo, validarPlatillo, obtenerPlatillos,
-    actualizarPlatillo, limpiarPlatillo } = platillossContext;
+  const {
+    platilloseleccionado,
+    errorplatillo,
+    agregarPlatillo,
+    validarPlatillo,
+    obtenerPlatillos,
+    actualizarPlatillo,
+    limpiarPlatillo,
+  } = platillossContext;
 
   //Effect que detecta si hay un platillo seleccionado
   useEffect(() => {
@@ -27,85 +33,83 @@ function AddDish() {
       guardarPlatilloCreado(platilloseleccionado);
     } else {
       guardarPlatilloCreado({
-        nombre: '',
-        descripcion: '',
-        precio: '',
-        platillo: '',
+        nombre: "",
+        descripcion: "",
+        precio: "",
+        platillo: "",
         disponible: true,
-      })
+      });
     }
-  }, [platilloseleccionado]); //para que este revisando la platillo seleccionado 
+  }, [platilloseleccionado]); //para que este revisando la platillo seleccionado
 
   //state del formulario
   const [platilloCreado, guardarPlatilloCreado] = useState({
-    nombre: '',
-    descripcion: '',
-    precio: '',
-    platillo: '',
+    nombre: "",
+    descripcion: "",
+    precio: "",
+    platillo: "",
     disponible: true,
+  });
 
-  })
-
-
-  console.log(platilloCreado.disponible)
+  console.log(platilloCreado.disponible);
 
   //extraer el nombre del proyecto
-  const { nombre, descripcion, precio, platillo, imagenPlatillo, disponible } = platilloCreado;
+  const { nombre, descripcion, precio, platillo, imagenPlatillo, disponible } =
+    platilloCreado;
 
   //si no hay restaurante seleccionado
   if (!seccion) return null;
 
   //Array destructuring para extraer el proyecto actual
-  const [guardarSeccionActual] = seccion
+  const [guardarSeccionActual] = seccion;
 
-  var aux
+  var aux;
 
   const postImage = () => {
-    const data = new FormData()
-    data.append("file", image)
-    data.append("upload_preset", "waitqrapp")
-    data.append("cloud_name", "waitqrapp")
+    const data = new FormData();
+    data.append("file", image);
+    data.append("upload_preset", "waitqrapp");
+    data.append("cloud_name", "waitqrapp");
 
     fetch("https://api.cloudinary.com/v1_1/waitqrapp/image/upload", {
       method: "post",
-      body: data
+      body: data,
     })
-      .then(res => res.json())
-      .then(data => {
-        console.log(data.url)
-        aux = JSON.parse(JSON.stringify(data.url))
-        console.log("esto tiene aux" + aux)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.url);
+        aux = JSON.parse(JSON.stringify(data.url));
+        console.log("esto tiene aux" + aux);
       })
-      .catch(err => {
-        console.log(err)
-      })
-    }
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   //leer los valores del formulario
-  const handleChange = e => {
+  const handleChange = (e) => {
     guardarPlatilloCreado({
       ...platilloCreado,
-      [e.target.name]: e.target.value
-    })
-  }
+      [e.target.name]: e.target.value,
+    });
+  };
 
-  const onSubmit = e => {
-    console.log("ENTRE AL SUBMIT DE platillo PUTO")
+  const onSubmit = (e) => {
+    console.log("ENTRE AL SUBMIT DE platillo PUTO");
     e.preventDefault();
 
     //validar
-    if (nombre.trim() === '') {
+    if (nombre.trim() === "") {
       validarPlatillo();
       return;
     }
 
     //Si es edicion o si es nueva menu
     if (platilloseleccionado === null) {
-    
       //agregar la seccion al state de platillos
       platilloCreado.seccion = guardarSeccionActual._id;
-      postImage()
-      console.log("antes de enviarlo" + JSON.parse(JSON.stringify(aux)))
+      postImage();
+      console.log("antes de enviarlo" + JSON.parse(JSON.stringify(aux)));
       platilloCreado.imagenPlatillo = aux;
       agregarPlatillo(platilloCreado);
     } else {
@@ -116,37 +120,37 @@ function AddDish() {
       limpiarPlatillo();
     }
 
-
     //Obtener y filtrar las tareas del proyecto actual, practicamente lo recarga
     obtenerPlatillos(guardarSeccionActual.id);
 
     //reiniciar el form
     guardarPlatilloCreado({
-      nombre: '',
-      horarioInicio: '',
-      horarioFin: '',
+      nombre: "",
+      horarioInicio: "",
+      horarioFin: "",
       disponible: true,
-    })
+    });
 
     handleClose();
-
-
-  }
+  };
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  
   return (
     <>
-      <Button className="boton-platillo" size="m" block variant="primary" onClick={handleShow}>
+      <Button
+        className="boton-platillo"
+        size="m"
+        block
+        variant="primary"
+        onClick={handleShow}
+      >
         + Platillo
       </Button>
 
       <Modal show={show} onHide={handleClose}>
-        <Form
-          onSubmit={onSubmit}
-        >
+        <Form onSubmit={onSubmit}>
           <Modal.Header closeButton>
             <Modal.Title>Agregar Platillo</Modal.Title>
           </Modal.Header>
@@ -154,10 +158,8 @@ function AddDish() {
             <Container>
               <Form>
                 <Form.Group controlId="formHorizontalEmail">
-                  <Col >
-                    <Form.Label>
-                      Nombre del Platillo
-                    </Form.Label>
+                  <Col>
+                    <Form.Label>Nombre del Platillo</Form.Label>
                   </Col>
                   <Col>
                     <Form.Control
@@ -170,21 +172,23 @@ function AddDish() {
                     />
                   </Col>
                 </Form.Group>
-                <Form.File as={Row}
+                <Form.File
                   label="Imagen Platillo"
                   /* onChange={handleChange,(e)=>console.log(e.target.files)} */
                   /*  onChange={(e)=>console.log(e.target.files[0])} */
                   onChange={(e) => setImage(e.target.files[0])}
-                  className="mb-auto mr-auto ml-auto"
+                  custom
+                  className="input-imagen mb-4 mr-auto ml-auto"
                 />
-                <Form.Group as={Row} >
+                <Form.Group as={Row}>
                   <Col sm={3}>
-                    <Form.Label>
-                      Descripción
-                    </Form.Label>
+                    <Form.Label>Descripción</Form.Label>
                   </Col>
                   <Col>
-                    <Form.Control className="input-nombre" type="text" placeholder="Descripción del Platillo"
+                    <Form.Control
+                      className="input-nombre"
+                      type="text"
+                      placeholder="Descripción del Platillo"
                       name="descripcion"
                       value={descripcion}
                       onChange={handleChange}
@@ -192,14 +196,18 @@ function AddDish() {
                   </Col>
                 </Form.Group>
                 <Col className="mt-2" sm={12}>
-
                   <Form.Group as={Row} controlId="formHorizontalPassword">
                     <Form.Label column sm={"auto"}>
                       Precio: $
                     </Form.Label>
                     <Col className="input-precio" sm={"auto"}>
-                      <Form.Control onChange={handleChange} name="precio" value={precio} className="input-dinero" type="">
-                      </Form.Control>
+                      <Form.Control
+                        onChange={handleChange}
+                        name="precio"
+                        value={precio}
+                        className="input-dinero"
+                        type=""
+                      ></Form.Control>
                     </Col>
                   </Form.Group>
                 </Col>
@@ -221,7 +229,12 @@ function AddDish() {
             <Button variant="secondary" onClick={handleClose}>
               Cancelar
             </Button>
-            <Button className="ml-4" type="submit" variant="primary" onClick={onSubmit}>
+            <Button
+              className="ml-4"
+              type="submit"
+              variant="primary"
+              onClick={onSubmit}
+            >
               Guardar
             </Button>
           </Modal.Footer>

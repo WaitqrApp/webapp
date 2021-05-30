@@ -23,20 +23,10 @@ margin-top: -5vh;
     color:rgb(246, 134, 33);
     margin-left: 5%;
     width: 110%;
-    background-color: rgb(245, 246, 249)
+    background-color: rgba(245, 246, 249, 0)
 }
 
-.sidebar-text-active a.active{
-    font-weight: bold;
-    margin-top: 25%;
-    margin-bottom: 30%;
-    color:rgb(246, 134, 33);
-    margin-left: 5%;
-    width: 110%;
-    background-color: rgb(245, 246, 249)
-}
-
-.sidebar-text-active a:hover:not(.active) {
+.sidebar-text-active:focus{
     font-weight: bold;
     margin-top: 25%;
     margin-bottom: 30%;
@@ -104,12 +94,6 @@ margin-top: -5vh;
     position: relative;
     right: 0px;
 }
-.boton-disponible:after {
-    display: block;
-    height: 100px;
-    width: 100px;
-    right: 0px;
-}
 
 input[type=checkbox] {
     z-index: 100;
@@ -122,7 +106,7 @@ input[type=checkbox] {
     position: absolute;
     bottom: 0;
     left: 10;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
     width: 14.2vw;
     height: 4vh;
 
@@ -174,6 +158,19 @@ input[type=checkbox] {
     height: 750px;
 }
 
+.descripcion-platillo {
+    padding-bottom: 10%;
+}
+
+.imagen-platillo {
+    width: auto;
+    height: auto;
+    max-width: 250px;
+    max-height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
  /*MODAL EDITAR PLATILLO*/
 
  .input-nombre {
@@ -186,4 +183,9 @@ input[type=checkbox] {
 
 .input-seccion {
     width: 230%;
+}
+
+.input-imagen {
+    width: 100%;
+    
 }
