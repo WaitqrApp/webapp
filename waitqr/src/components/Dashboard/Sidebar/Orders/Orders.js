@@ -75,7 +75,7 @@ function Orders() {
                             ))}
                         </DropdownButton>
                 </Col>
-            </Row>
+            </Row> 
             <Row className="tarjeta-orden">
             
             {ordenrestaurante.map(orden =>(

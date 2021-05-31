@@ -33,6 +33,11 @@ const RestauranteSchema = mongoose.Schema({
     registro:{
         type: Date,
         default: Date.now()
+    },
+    capacidad:{
+        type: Number,
+        required: false,
+        trim: true
     }
 });
 

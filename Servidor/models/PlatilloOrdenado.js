@@ -25,7 +25,11 @@ const PlatilloOrdenadoSchema = mongoose.Schema({
     registro:{
         type: Date,
         default: Date.now()
-    }
+    },
+    restaurante:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Restaurante'
+    } 
 });
 
 module.exports = mongoose.model('PlatilloOrdenado', PlatilloOrdenadoSchema)

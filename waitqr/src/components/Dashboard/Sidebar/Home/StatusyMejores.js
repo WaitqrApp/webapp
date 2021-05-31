@@ -2,7 +2,8 @@ import React, { Fragment } from 'react';
 import { Row, Container, Col } from 'react-bootstrap';
 
 
-function StatusyMejores() {
+function StatusyMejores({mesasrestaurante, ordenrestaurante}) {
+  console.log("dentro status" + JSON.stringify(ordenrestaurante))
   return (
 
     <Fragment>

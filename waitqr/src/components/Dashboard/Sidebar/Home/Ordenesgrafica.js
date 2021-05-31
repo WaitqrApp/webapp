@@ -7,7 +7,12 @@ import './styles/home.css';
 import VerticalBar from './VerticalBar';
 
 
-function Ordenesgrafica() {
+function Ordenesgrafica(ordenrestaurante) {
+
+  console.log("desde Ordenesgrafica" + JSON.stringify(ordenrestaurante))
+  var aux= JSON.parse(JSON.stringify(ordenrestaurante))
+  console.log(aux.ordenrestaurante[0].registro)
+  
   return (
     <Container className="container-fluid text-center p-0 dashboard-componente">
       <Row className="mt-2">
