@@ -15,10 +15,11 @@ function AddRestaurant(props) {
     telefono: '',
     facebook: '',
     instagram: '',
+    capacidad: ''
   });
 
   //extraer nombre, correo, telefono, facebook e Instagram de restaurante
-  const { nombre, correo, telefono, facebook, instagram } = restaurante;
+  const { nombre, correo, telefono, facebook, instagram, capacidad } = restaurante;
 
   //Lee los contenidos del input
   const onChangeRestaurante = e => {
@@ -49,6 +50,7 @@ function AddRestaurant(props) {
       telefono: '',
       facebook: '',
       instagram: '',
+      capacidad: '',
 
     })
   }
@@ -150,6 +152,22 @@ function AddRestaurant(props) {
                   placeholder="Instagram del Restaurante"
                   name="instagram"
                   value={instagram}
+                  onChange={onChangeRestaurante}
+                />
+              </Col>
+            </Form.Group>
+            <Form.Group as={Row} controlId="formHorizontalPassword">
+              <Col sm={3}>
+              <Form.Label>
+                Capacidad
+              </Form.Label>
+              </Col>
+              <Col sm={9}>
+                <Form.Control
+                  type="number"
+                  placeholder="Capacidad del restaurante"
+                  name="capacidad"
+                  value={capacidad}
                   onChange={onChangeRestaurante}
                 />
               </Col>
