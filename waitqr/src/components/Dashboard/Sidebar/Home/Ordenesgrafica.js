@@ -8,11 +8,14 @@ import VerticalBar from './VerticalBar';
 
 
 function Ordenesgrafica(ordenrestaurante) {
-
-if(ordenrestaurante === []){
-  console.log("desde Ordenesgrafica" + JSON.stringify(ordenrestaurante))
+  // recibimos las ordenes del restaurante desde el Home
+  //convertimos ordenrestaurante en legible para manipularlo usado aux como variable
   var aux= JSON.parse(JSON.stringify(ordenrestaurante))
-  console.log(aux.ordenrestaurante[0].registro)
+
+if( aux.ordenrestaurante[0]){
+  //esta es la forma en la que podemos acceder a cualquier propiedad de nuestro objeto
+  //solo es necesario cambiar "registro" por cualquier otra propiedad necesaria.
+  console.log("estoy dentro"+ aux.ordenrestaurante[0].registro)
 }
   
   
