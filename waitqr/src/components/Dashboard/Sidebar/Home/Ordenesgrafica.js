@@ -16,6 +16,8 @@ if( aux.ordenrestaurante[0]){
   //esta es la forma en la que podemos acceder a cualquier propiedad de nuestro objeto
   //solo es necesario cambiar "registro" por cualquier otra propiedad necesaria.
   console.log("estoy dentro"+ aux.ordenrestaurante[0].registro)
+
+  var dates = aux.ordenrestaurante[0].registro
 }
   
   
@@ -39,7 +41,7 @@ if( aux.ordenrestaurante[0]){
       <Row>
         <Col sm={12} className="platillosdashboard">
           {/* <img className="ordenes" src={ordenes} /> */}
-          <VerticalBar/>
+          <VerticalBar dates = {dates}/>
         </Col>
       </Row>
     </Container>
