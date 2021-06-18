@@ -23,6 +23,32 @@ function DishModal({
   guardarPlatilloAux,
 }) {
   const { nombre, descripcion, precio, disponible } = platillo;
+  const [image, setImage] = useState("");
+  var aux;
+
+  const postImage = () => {
+    const data = new FormData();
+    data.append("file", image);
+    data.append("upload_preset", "waitqrapp");
+    data.append("cloud_name", "waitqrapp");
+
+    fetch("https://api.cloudinary.com/v1_1/waitqrapp/image/upload", {
+      method: "post",
+      body: data,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.url);
+        aux = JSON.parse(JSON.stringify(data.url));
+        console.log("esto tiene aux 2 " + aux);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  postImage();
+  
+
 
   return (
     <>
@@ -56,10 +82,13 @@ function DishModal({
                 </Form.Group>
               </Col>
               <Col sm={12}>
-                <Form.File
-                  className="input-imagen"
+              <Form.File
                   label="Imagen Platillo"
+                  /* onChange={handleChange,(e)=>console.log(e.target.files)} */
+                  /*  onChange={(e)=>console.log(e.target.files[0])} */
+                  onChange={(e) => setImage(e.target.files[0])}
                   custom
+                  className="input-imagen mb-4 mr-auto ml-auto"
                 />
               </Col>
               <Col className="mt-2" sm={12}>
