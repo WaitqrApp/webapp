@@ -1,13 +1,29 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
-import "./styles/home.css"
+import "./styles/home.css";
+  
 
+
+function getdata(ordenrestaurante) {
+  // recibimos las ordenes del restaurante desde el Home
+  //convertimos ordenrestaurante en legible para manipularlo usado aux como variable
+  var aux= JSON.parse(JSON.stringify(ordenrestaurante))
+
+if( aux.ordenrestaurante[0]){
+  //esta es la forma en la que podemos acceder a cualquier propiedad de nuestro objeto
+  //solo es necesario cambiar "registro" por cualquier otra propiedad necesaria.
+  console.log("estoy dentro"+ aux.ordenrestaurante[0].registro)
+
+  var dates = aux.ordenrestaurante[0].registro
+}
+}
 
 const data = {
-  labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
+
+  labels: dates,
   datasets: [
     {
-      label: '# of orders',
+      label: 'Numero de Ordenes',
       data: [12, 19, 3, 5, 2, 3],
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
