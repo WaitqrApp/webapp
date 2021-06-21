@@ -79,7 +79,7 @@ function AddDish() {
       .then((data) => {
         console.log(data.url);
         aux = JSON.parse(JSON.stringify(data.url));
-        console.log("esto tiene aux" + aux);
+        console.log("esto tiene aux " + aux);
       })
       .catch((err) => {
         console.log(err);
