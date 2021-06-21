@@ -4,6 +4,7 @@ import "./styles/home.css";
   
 
 
+var dates;
 function getdata(ordenrestaurante) {
   // recibimos las ordenes del restaurante desde el Home
   //convertimos ordenrestaurante en legible para manipularlo usado aux como variable
@@ -14,7 +15,7 @@ if( aux.ordenrestaurante[0]){
   //solo es necesario cambiar "registro" por cualquier otra propiedad necesaria.
   console.log("estoy dentro"+ aux.ordenrestaurante[0].registro)
 
-  var dates = aux.ordenrestaurante[0].registro
+  dates = aux.ordenrestaurante[0].registro
 }
 }
 
