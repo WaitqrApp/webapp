@@ -1,68 +1,79 @@
-import React from 'react';
-import { Bar } from 'react-chartjs-2';
+import React from "react";
+import { Bar } from "react-chartjs-2";
 import "./styles/home.css";
-  
 
+function VerticalBar({ days }) {
+  days = [
+    "2021-02-07",
+    "2021-02-07",
+    "2021-01-01",
+    "2020-01-01",
+    "2021-01-07",
+    "2021-01-18",
+    "2020-03-01",
+    "2020-01-01",
+    "2020-01-01",
+    "2020-01-01",
+  ];
 
-var dates;
-function getdata(ordenrestaurante) {
-  // recibimos las ordenes del restaurante desde el Home
-  //convertimos ordenrestaurante en legible para manipularlo usado aux como variable
-  var aux= JSON.parse(JSON.stringify(ordenrestaurante))
+  var distinct_days = [],
+    day_counts = [],
+    prev;
 
-if( aux.ordenrestaurante[0]){
-  //esta es la forma en la que podemos acceder a cualquier propiedad de nuestro objeto
-  //solo es necesario cambiar "registro" por cualquier otra propiedad necesaria.
-  console.log("estoy dentro"+ aux.ordenrestaurante[0].registro)
+  days.sort();
+  for (var i = 0; i < days.length; i++) {
+    if (days[i] !== prev) {
+      distinct_days.push(days[i]);
+      day_counts.push(1);
+    } else {
+      day_counts[day_counts.length - 1]++;
+    }
+    prev = days[i];
+  }
 
-  dates = aux.ordenrestaurante[0].registro
-}
-}
+  console.log("distinct days" + distinct_days);
+  console.log("day count" + day_counts);
 
-const data = {
-
-  labels: dates,
-  datasets: [
-    {
-      label: 'Numero de Ordenes',
-      data: [12, 19, 3, 5, 2, 3],
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)',
-      ],
-      borderColor: [
-        'rgba(255, 99, 132, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)',
-      ],
-      borderWidth: 1,
-    },
-  ],
-};
-
-const options = {
-  scales: {
-    yAxes: [
+  const data = {
+    labels: distinct_days,
+    datasets: [
       {
-        ticks: {
-          beginAtZero: true,
-        },
+        label: "Ordenes por Día",
+        data: day_counts,
+        backgroundColor: [
+          "rgba(239, 182, 61, 1)",
+          "rgba(64, 99, 118, 1)",
+          "rgba(246, 135, 32, 1)",
+        ],
+        borderColor: [
+          "rgba(239, 182, 61, 1)",
+          "rgba(64, 99, 118, 1)",
+          "rgba(246, 135, 32, 1)",
+        ],
+        borderWidth: 1,
       },
     ],
-  },
-};
+  };
 
-const VerticalBar = () => (
-  <>
-    <Bar className="ordenes-chart" data={data} options={options} />
-  </>
-);
+  const options = {
+    scales: {
+      yAxes: [
+        {
+          ticks: {
+            beginAtZero: true,
+            stepSize: 1,
+            precision: 0,
+          },
+        },
+      ],
+    },
+  };
+  console.log("hola hola aqui los labels" + days);
+  return (
+    <>
+      <Bar className="ordenes-chart" data={data} options={options} />
+    </>
+  );
+}
 
 export default VerticalBar;
