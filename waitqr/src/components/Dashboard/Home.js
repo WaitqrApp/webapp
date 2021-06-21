@@ -1,100 +1,105 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, { useContext, useEffect, useState } from "react";
 
-import { Dropdown, DropdownButton, Col, Row, Container } from 'react-bootstrap';
+import { Dropdown, DropdownButton, Col, Row, Container } from "react-bootstrap";
 
-import PlatillosProbados from './Sidebar/Home/PlatillosProbados';
-import Ordenesgrafica from './Sidebar/Home/Ordenesgrafica';
-import StatusyMejores from './Sidebar/Home/StatusyMejores';
-import Visitas from './Sidebar/Home/Visitas';
-import Ayuda from './Sidebar/Home/Ayuda';
+import PlatillosProbados from "./Sidebar/Home/PlatillosProbados";
+import Ordenesgrafica from "./Sidebar/Home/Ordenesgrafica";
+import StatusyMejores from "./Sidebar/Home/StatusyMejores";
+import Visitas from "./Sidebar/Home/Visitas";
+import Ayuda from "./Sidebar/Home/Ayuda";
 
-import restauranteContext from '../../context/restaurantes/restauranteContext';
-import ordenContext from '../../context/ordenes/ordenContext';
-import mesasContext from '../../context/mesas/mesasContext';
+import restauranteContext from "../../context/restaurantes/restauranteContext";
+import ordenContext from "../../context/ordenes/ordenContext";
+import mesasContext from "../../context/mesas/mesasContext";
 
-import AuthContext from '../../context/autenticacion/authContext'
-
+import AuthContext from "../../context/autenticacion/authContext";
+import MenuDisponibleDesplegable from "./Sidebar/Home/MenuDisponibleDesplegable";
 
 function Home() {
-
-  const [restauranteEscogido, guardarRestauranteEscogido] = useState('');
-  const [restauranteEscogidoId, guardarRestauranteEscogidoId] = useState('');
+  const [restauranteEscogido, guardarRestauranteEscogido] = useState("");
+  const [restauranteEscogidoId, guardarRestauranteEscogidoId] = useState("");
   //Extraer restaurantes de state inicial
   const restaurantesContext = useContext(restauranteContext);
-  const { mensaje, restaurantes, obtenerRestaurantes, restauranteActual } = restaurantesContext;
+  const { mensaje, restaurantes, obtenerRestaurantes, restauranteActual } =
+    restaurantesContext;
 
   const ordenesContext = useContext(ordenContext);
   const { ordenrestaurante, obtenerOrdenRestaurante } = ordenesContext;
 
   const mesassContext = useContext(mesasContext);
-    const { mesasrestaurante, eliminarMesa, obtenerMesas, actualizarMesa, guardarMesaActual } = mesassContext;
+  const {
+    mesasrestaurante,
+    eliminarMesa,
+    obtenerMesas,
+    actualizarMesa,
+    guardarMesaActual,
+  } = mesassContext;
 
   //Extraer la informacion de autenticacion
   const authContext = useContext(AuthContext);
-  const {usuario, usuarioAutenticado} = authContext;
+  const { usuario, usuarioAutenticado } = authContext;
 
-  useEffect(() =>{
+  useEffect(() => {
     usuarioAutenticado();
 
     obtenerRestaurantes();
-  }, [])
+  }, []);
 
-  const seleccionarRestaurante = restaurante => {
+  const seleccionarRestaurante = (restaurante) => {
     restauranteActual(restaurante._id); //fijar un restaurante actual
     guardarRestauranteEscogido(restaurante.nombre);
     guardarRestauranteEscogidoId(restaurante._id);
     console.log(restaurante._id);
     obtenerOrdenRestaurante(restaurante._id);
     obtenerMesas(restaurante._id);
-    
-}
+  };
 
-  return ( 
-
-
-
+  return (
     <Container fluid className="mt-4 mb-3">
       <Row>
-                <Col sm={8}>
-                {usuario ? <h1>Hola, {usuario.nombre}</h1> : null}
-                </Col>
-                <Col sm={2} className="dropdown-restaurante">
-                <DropdownButton className="dropdown-restaurante restaurant-button py-2 px-5" size="m" title={restauranteEscogido == '' ? (<span>Restaurante</span>) : <span>{restauranteEscogido}</span>}>
-                            {restaurantes.map(restaurante => (
-                                <Dropdown.Item
-                                    onClick={() => seleccionarRestaurante(restaurante)
-                                    }
-                                >{restaurante.nombre}</Dropdown.Item>
-                            ))}
-                        </DropdownButton>
-                </Col>
-            </Row>
+        <Col sm={8}>{usuario ? <h1>Hola, {usuario.nombre}</h1> : null}</Col>
+        <Col sm={2} className="dropdown-restaurante">
+          <DropdownButton
+            className="dropdown-restaurante restaurant-button py-2 px-5"
+            size="m"
+            title={
+              restauranteEscogido == "" ? (
+                <span>Restaurante</span>
+              ) : (
+                <span>{restauranteEscogido}</span>
+              )
+            }
+          >
+            {restaurantes.map((restaurante) => (
+              <Dropdown.Item
+                onClick={() => seleccionarRestaurante(restaurante)}
+              >
+                {restaurante.nombre}
+              </Dropdown.Item>
+            ))}
+          </DropdownButton>
+        </Col>
+      </Row>
       <Row className="row mt-4 ">
         <Col sm={4}>
           <PlatillosProbados />
         </Col>
         <Col sm={4}>
-          <Ordenesgrafica 
-          ordenrestaurante = {ordenrestaurante}
-          />
+          <Ordenesgrafica ordenrestaurante={ordenrestaurante} />
         </Col>
         <Col sm={4}>
-          <StatusyMejores
-          mesasrestaurante = {mesasrestaurante}
-          ordenrestaurante = {ordenrestaurante}
-          />
+          <MenuDisponibleDesplegable />
         </Col>
       </Row>
       <Row className="row">
         <Col sm={8}>
           <Visitas />
         </Col>
-        <Col sm={4} >
+        <Col sm={4}>
           <Ayuda />
         </Col>
       </Row>
     </Container>
-
   );
 }
 
