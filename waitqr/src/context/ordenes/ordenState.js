@@ -105,7 +105,7 @@ const OrdenState = props =>{
             payload: resultado.data.orden
         })
        } catch (error) {
-           console.log(error)
+           console.error(error)
        }
     }
     //Extrae una tarea para edicion

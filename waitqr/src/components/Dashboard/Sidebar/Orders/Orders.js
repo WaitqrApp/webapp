@@ -17,7 +17,7 @@ function Orders() {
     const { mensaje, restaurantes, obtenerRestaurantes, restauranteActual } = restaurantesContext;
 
     const ordenesContext = useContext(ordenContext);
-    const { ordenrestaurante, obtenerOrdenRestaurante } = ordenesContext;
+    const { ordenrestaurante, obtenerOrdenRestaurante, actualizarOrden } = ordenesContext;
 
     const alertaContext = useContext(AlertaContext);
     const { alerta, mostrarAlerta } = alertaContext;
@@ -33,7 +33,7 @@ function Orders() {
 
         obtenerRestaurantes();
 
-    }, [mensaje]); //para que corra solo una vez
+    }, []); //para que corra solo una vez
 
     const seleccionarRestaurante = restaurante => {
         restauranteActual(restaurante._id); //fijar un restaurante actual
@@ -82,6 +82,7 @@ function Orders() {
                 <Col sm={4} className=" text-left tarjeta-orden" >
                     
                         <OrderCard
+                            actualizarOrden={actualizarOrden}
                             orden = {orden}
                         />
                     

@@ -84,9 +84,10 @@ exports.obtenerOrdenesRestaurante = async (req, res) =>{
 exports.actualizarOrden = async(req, res) =>{
     try {
          //Extraer la sesionIndividual y comprobar si existe
-   const {sesionIndividual, horarioInicio, horarioFin,total} = req.body;
+   const {sesionIndividual, horarioInicio, horarioFin,total, finalizado} = req.body;
    const existeSesionIndividual = await SesionIndividual.findById(sesionIndividual);
- 
+
+
    //Revisar si la orden existe o no
     let ordenExiste = await Orden.findById(req.params.id);
     if(!ordenExiste){
@@ -95,6 +96,10 @@ exports.actualizarOrden = async(req, res) =>{
    
 //Crear un objeto con la nueva informacion
 const nuevaOrden ={};
+
+if(finalizado !== undefined){
+    nuevaOrden.finalizado = finalizado
+}
 
 if(horarioInicio){
     nuevaOrden.horarioInicio = horarioInicio;
