@@ -38,7 +38,7 @@ h1, h2, p, th {
   color: rgb(165, 161, 161);
   padding: 16px;
   text-decoration: none;
-  margin-top: 3%;
+  margin-top: 0%;
   align-items: left;
   font-size: large;
   text-decoration: none;
@@ -116,7 +116,8 @@ div.content {
 #contenido{
   position: relative;
   background-color: rgb(245, 246, 249);
-  height: 91.5vh;
+  height: 100vh;
+  width: 100vw;
   z-index: 1;
 }
 
@@ -124,10 +125,10 @@ div.content {
 
 .waitqr-logo {
     position: relative;
-    height: 200px;
-    width: 200px; 
+    height: 150px;
+    width: 150px; 
     margin-right: auto;
-    margin-left: auto;
+    margin-left: -10%;
     margin-bottom: 0px;
 }
 

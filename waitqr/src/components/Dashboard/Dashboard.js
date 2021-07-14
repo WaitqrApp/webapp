@@ -19,7 +19,7 @@ function Dashboard() {
 
   return (
     <>
-    <Navbar />
+    {/*<Navbar />*/}
 
     <Router>
         
