@@ -6,7 +6,6 @@ const OrdenSchema = mongoose.Schema({
         type: Number,
         required: false,
     },
-   
     sesionIndividual:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'SesionIndividual'
@@ -18,7 +17,11 @@ const OrdenSchema = mongoose.Schema({
     restaurante:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Restaurante'
-    } 
+    },
+    finalizado: {
+        type: Boolean,
+        default: false
+    }
 });
 
 module.exports = mongoose.model('Orden', OrdenSchema)

@@ -20,18 +20,20 @@ const ORDEN_RECHAZADO = 2;
 const ORDEN_EMPEZADO = 3;
 const ORDEN_FINALIZADO = 4;
 
-function OrderCard(orden) {
+function OrderCard(props) {
+  const {orden, actualizarOrden} = props
   //obtener la funcion del context de platillo
   const platillosOrdenadossContext = useContext(platillosOrdenadosContext);
   const { platilloOrdenadoOrden, obtenerPlatilloOrdenado } =
     platillosOrdenadossContext;
 
+  const [finalizado, setFinalizado] = useState(false)
+
   useEffect(() => {
-    console.log("este es el id de la orden" + orden.orden._id);
-    obtenerPlatilloOrdenado(orden.orden._id);
+    console.log("este es el id de la orden" + orden._id);
+    obtenerPlatilloOrdenado(orden._id);
   }, [orden]);
 
-  console.log(JSON.stringify(platilloOrdenadoOrden));
   return (
     <Fragment>
       <Card
@@ -44,17 +46,19 @@ function OrderCard(orden) {
           </Card.Title>
           <Card.Subtitle className="mb-2 text-muted">Terraza</Card.Subtitle>
           <Card.Subtitle className="mb-2 text-muted">
-            {orden.orden.registro.substring(0, 10)}
+            {orden.registro.substring(0, 10)}
           </Card.Subtitle>
           <Card.Subtitle className="mb-2 text-muted">
-            {orden.orden.registro.substring(11, 16)}
+            {orden.registro.substring(11, 16)}
           </Card.Subtitle>
           {platilloOrdenadoOrden.map((platilloOrdenado) => (
             <Form.Group controlId="formBasicCheckbox">
               <Form.Check type="checkbox" label={platilloOrdenado.nombre} />
             </Form.Group>
           ))}
-          <OrderCardActions order={orden} />
+            <Button className="boton-orden-finalizar" variant="primary" onClick={() => {actualizarOrden({...orden, finalizado: !orden.finalizado})}}>
+              {!orden.finalizado ? "Finalizar" : "Undo"}
+            </Button>
         </Card.Body>
       </Card>
     </Fragment>
@@ -62,33 +66,3 @@ function OrderCard(orden) {
 }
 
 export default OrderCard;
-
-const OrderCardActions = ({ orden }) => {
-  let orderActions;
-  switch (orden.status) {
-    case ORDEN_ESPERANDO:
-      orderActions = (
-        <>
-          <Button className="boton-orden-aceptar" variant="primary">
-            Aceptar
-          </Button>
-          <Button className="boton-orden-rechazar" variant="light">
-            Rechazar
-          </Button>
-        </>
-      );
-    case ORDEN_EMPEZADO:
-      orderActions = (
-        <>
-          <Button className="boton-orden-finalizat" variant="primary">
-            Finalizar
-          </Button>
-        </>
-      );
-  }
-  return orderActions;
-};
-
-OrderCardActions.propTypes = {
-  order: PropTypes.object.isRequired,
-};
