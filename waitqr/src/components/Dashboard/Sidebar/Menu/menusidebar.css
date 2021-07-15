@@ -147,7 +147,7 @@ input[type=checkbox] {
 }
 .restaurant-button {
     position: fixed;
-    top: 80px;
+    top: 0px;
     right: 15px;
     width: 290px;
     z-index: 10;

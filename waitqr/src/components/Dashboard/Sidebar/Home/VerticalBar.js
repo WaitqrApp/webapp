@@ -38,7 +38,7 @@ function VerticalBar({ days }) {
     labels: distinct_days,
     datasets: [
       {
-        label: "Ordenes por Día",
+        label: "",
         data: day_counts,
         backgroundColor: [
           "rgba(239, 182, 61, 1)",
@@ -56,6 +56,11 @@ function VerticalBar({ days }) {
   };
 
   const options = {
+     plugins: {
+    legend: {
+      display: false
+    }
+  },
     scales: {
       yAxes: [
         {

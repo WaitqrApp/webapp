@@ -11,6 +11,7 @@ import Ayuda from "./Sidebar/Home/Ayuda";
 import restauranteContext from "../../context/restaurantes/restauranteContext";
 import ordenContext from "../../context/ordenes/ordenContext";
 import mesasContext from "../../context/mesas/mesasContext";
+import PlatilloOrdenadoContext from "../../context/platillosOrdenados/platilloOrdenadoContext.js";
 
 import AuthContext from "../../context/autenticacion/authContext";
 import MenuDisponibleDesplegable from "./Sidebar/Home/MenuDisponibleDesplegable";
@@ -25,6 +26,9 @@ function Home() {
 
   const ordenesContext = useContext(ordenContext);
   const { ordenrestaurante, obtenerOrdenRestaurante } = ordenesContext;
+
+  const PlatillosOrdenadosContext = useContext(PlatilloOrdenadoContext);
+  const { platillosordenados, obtenerPlatillosOrdenados } = PlatillosOrdenadosContext;
 
   const mesassContext = useContext(mesasContext);
   const {
@@ -58,6 +62,9 @@ function Home() {
     <Container fluid className="mt-4 mb-3">
       <Row>
         <Col sm={8}>{usuario ? <h1>Hola, {usuario.nombre}</h1> : null}</Col>
+        <Col sm={4}>
+          <MenuDisponibleDesplegable />
+        </Col>
         <Col sm={2} className="dropdown-restaurante">
           <DropdownButton
             className="dropdown-restaurante restaurant-button py-2 px-5"
@@ -79,26 +86,22 @@ function Home() {
             ))}
           </DropdownButton>
         </Col>
+        
       </Row>
       <Row className="row mt-4 ">
-        <Col sm={4}>
-          <PlatillosProbados />
+        <Col sm={5}>
+          <PlatillosProbados platillosordenados={platillosordenados}/>
         </Col>
-        <Col sm={4}>
+        <Col sm={5}>
           <Ordenesgrafica ordenrestaurante={ordenrestaurante} />
         </Col>
-        <Col sm={4}>
-          <MenuDisponibleDesplegable />
-        </Col>
       </Row>
-      <Row className="row">
-        <Col sm={8}>
+        {/*<Col sm={8}>
           <Visitas />
         </Col>
         <Col sm={4}>
           <Ayuda />
-        </Col>
-      </Row>
+        </Col>*/}
     </Container>
   );
 }

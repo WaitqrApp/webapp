@@ -24,7 +24,7 @@ function Ordenesgrafica(ordenrestaurante) {
     })
   }
   
-  console.log('xlabels' + days)
+  
   
   return (
     <Container className="container-fluid text-center p-0 dashboard-componente">
@@ -35,14 +35,7 @@ function Ordenesgrafica(ordenrestaurante) {
         <Col sm={3} id="month-button">
         </Col>
       </Row>
-      <Row>
-        <Col sm={4} className="ml-2">
-          <h2>En curso</h2>
-        </Col>
-        <Col sm={4}>
-          <p>13 ordenes</p>
-        </Col>
-      </Row>
+      
       <Row>
         <Col sm={12} className="platillosdashboard">
           {/* <img className="ordenes" src={ordenes} /> */}

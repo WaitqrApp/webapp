@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Col, Row, Container } from 'react-bootstrap';
 import Logo from '../img/logo_waiter-01 copy.png';
+import Ayuda from "./Home/Ayuda";
 
 
 
@@ -47,6 +48,9 @@ function Sidebar() {
           <span className="material-icons mr-3">logout</span>Log Out
         </Link>
       </span>
+      <Col sm={4}>
+          <Ayuda />
+        </Col>
     </div>
   );
 }
