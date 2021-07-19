@@ -7,6 +7,7 @@ import Ordenesgrafica from "./Sidebar/Home/Ordenesgrafica";
 import StatusyMejores from "./Sidebar/Home/StatusyMejores";
 import Visitas from "./Sidebar/Home/Visitas";
 import Ayuda from "./Sidebar/Home/Ayuda";
+import './Sidebar/Home/styles/home.css'
 
 import restauranteContext from "../../context/restaurantes/restauranteContext";
 import ordenContext from "../../context/ordenes/ordenContext";
@@ -88,11 +89,11 @@ function Home() {
         </Col>
         
       </Row>
-      <Row className="row mt-4 ">
-        <Col sm={5}>
+      <Row className="row mt-4">
+        <Col sm={5} className="platillos-probados">
           <PlatillosProbados platillosordenados={platillosordenados}/>
         </Col>
-        <Col sm={5}>
+        <Col sm={5} className="ordenes-grafica">
           <Ordenesgrafica ordenrestaurante={ordenrestaurante} />
         </Col>
       </Row>

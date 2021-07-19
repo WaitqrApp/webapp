@@ -139,15 +139,31 @@
     margin-right: auto;
     width:15vw;
   }
-  /* Imagenes */
+  /* Plots */
 
   .platillos-probados {
-    height: 80% !important;
-    width:  70% !important; 
+    position: fixed;
+    height: auto;
+    width:  auto; 
+    bottom: 0;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10%;
     padding: 0;
+  }
+
+  .platillo-chart {
+    height: 100%;
+  }
+
+  .ordenes-grafica{
+    position: fixed;
+    bottom: 10;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    padding-right: 150px;
   }
   
   .ordenes-chart {

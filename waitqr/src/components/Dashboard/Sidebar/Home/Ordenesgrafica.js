@@ -27,12 +27,10 @@ function Ordenesgrafica(ordenrestaurante) {
   
   
   return (
-    <Container className="container-fluid text-center p-0 dashboard-componente">
+    <Container className="text-center p-0 dashboard-componente">
       <Row className="mt-2">
         <Col sm={8} className="ml-2 mb-2">
           <h1>Órdenes</h1>
-        </Col>
-        <Col sm={3} id="month-button">
         </Col>
       </Row>
       
@@ -43,7 +41,6 @@ function Ordenesgrafica(ordenrestaurante) {
         </Col>
       </Row>
     </Container>
-
   );
 }
 
