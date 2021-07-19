@@ -31,7 +31,7 @@ function Dashboard() {
             </Col>
             <Col md={10} className="p-0 d-inline-block" id="contenido" >
               <Switch>
-                <Route exact path="/Home" component={(Home)} />
+                <Route exact path="/" component={(Home)} />
                 <Route exact path="/menu" component={(Menu)} />
                 <Route exact path="/orders" component={(Orders)} />
                 <Route exact path="/login" component={(Login)} />

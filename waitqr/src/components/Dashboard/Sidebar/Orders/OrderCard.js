@@ -35,9 +35,11 @@ function OrderCard(orden) {
                             {orden.orden.registro.substring(11,16)}
                             </Card.Subtitle>
                     {platilloOrdenadoOrden.map(platilloOrdenado => (
-                    <Form.Group controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label={platilloOrdenado.nombre} />
-                    </Form.Group>
+                        <ul>
+                            <li>
+                                <p>{platilloOrdenado.nombre}</p>
+                            </li>
+                        </ul>
                     ))}
                    
                     <Button className="boton-orden-aceptar" variant="primary">Aceptar</Button>

@@ -10,6 +10,10 @@ const PlatilloOrdenadoSchema = mongoose.Schema({
         type: Number,
         required: false,
     },
+    cantidad:{
+        type: Number,
+        required: false,
+    },
     comentario:{
         type: String,
         required: false
@@ -29,7 +33,19 @@ const PlatilloOrdenadoSchema = mongoose.Schema({
     restaurante:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Restaurante'
-    } 
+    } ,
+    sesionIndividual:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'SesionIndividual'
+    },
+    sesionGeneral:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'SesionGeneral'
+    },
+    restaurante:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Restaurante'
+    },
 });
 
 module.exports = mongoose.model('PlatilloOrdenado', PlatilloOrdenadoSchema)

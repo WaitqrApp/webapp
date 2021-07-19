@@ -7,9 +7,17 @@ const OrdenSchema = mongoose.Schema({
         required: false,
     },
    
+    status:{
+        type: Boolean,
+        default: true,
+    },
     sesionIndividual:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'SesionIndividual'
+    },
+    sesionGeneral:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'SesionGeneral'
     },
     registro:{
         type: Date,

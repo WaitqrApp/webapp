@@ -21,6 +21,11 @@ router.get('/',
     restauranteController.obtenerRestaurante
 )
 
+//obtener todos los proyectos
+router.get('/restaurante', 
+    restauranteController.obtenerUnRestaurante
+)
+
 //Actualizar proyecto via ID
 router.put('/:id',
 auth,

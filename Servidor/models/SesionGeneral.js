@@ -14,6 +14,10 @@ const SesionGeneralSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Mesa'
     },
+    restaurante:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Restaurante'
+    },
     registro:{
         type: Date,
         default: Date.now()
