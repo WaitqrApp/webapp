@@ -27,7 +27,6 @@ ordenController.obtenerOrdenSesionIndividual
 
 //Actualizar orden
 router.put('/:id',
-    
     ordenController.actualizarOrden
 );
 

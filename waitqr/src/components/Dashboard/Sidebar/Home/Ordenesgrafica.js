@@ -12,12 +12,19 @@ function Ordenesgrafica(ordenrestaurante) {
   //convertimos ordenrestaurante en legible para manipularlo usado aux como variable
   var aux= JSON.parse(JSON.stringify(ordenrestaurante))
 
-if( aux.ordenrestaurante[0]){
-  //esta es la forma en la que podemos acceder a cualquier propiedad de nuestro objeto
-  //solo es necesario cambiar "registro" por cualquier otra propiedad necesaria.
-  console.log("estoy dentro"+ aux.ordenrestaurante[0].registro)
-}
+  const days = [];
+
+  if(aux.ordenrestaurante[0]){
+    //esta es la forma en la que podemos acceder a cualquier propiedad de nuestro objeto
+    //solo es necesario cambiar "registro" por cualquier otra propiedad necesaria.
+    console.log("estoy dentro"+ aux.ordenrestaurante[0].registro)
+
+    Object.keys(aux.ordenrestaurante).forEach(key => {
+      days.push(aux.ordenrestaurante[key].registro.substring(0,10))
+    })
+  }
   
+  console.log('xlabels' + days)
   
   return (
     <Container className="container-fluid text-center p-0 dashboard-componente">
@@ -39,7 +46,7 @@ if( aux.ordenrestaurante[0]){
       <Row>
         <Col sm={12} className="platillosdashboard">
           {/* <img className="ordenes" src={ordenes} /> */}
-          <VerticalBar/>
+          <VerticalBar days = {days}/>
         </Col>
       </Row>
     </Container>

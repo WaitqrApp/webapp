@@ -26,7 +26,11 @@ const OrdenSchema = mongoose.Schema({
     restaurante:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Restaurante'
-    } 
+    },
+    finalizado: {
+        type: Boolean,
+        default: false
+    }
 });
 
 module.exports = mongoose.model('Orden', OrdenSchema)

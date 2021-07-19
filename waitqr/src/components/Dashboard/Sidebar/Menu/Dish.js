@@ -31,6 +31,7 @@ function Dish(platillo) {
       platillo.platillo.seccion
     );
   };
+  
 
   const onGuardarPlatillo = (e) => {
     actualizarPlatillo(platilloAux);

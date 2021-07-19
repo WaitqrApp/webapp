@@ -80,7 +80,7 @@ function EditCategoryModal(seccion) {
           <Container>
             <Row>
               <Col md={6} className="text-left">
-                <button onClick={onClickEliminarSeccion} type="button" class="btn btn-danger">
+                <button onClick={onClickEliminarSeccion} type="button" class="btn btn-danger" onClick={handleClose}>
                   Eliminar
               </button>
               </Col>
