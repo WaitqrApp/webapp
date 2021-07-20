@@ -1,16 +1,41 @@
-import React from "react";
+import React, { useContext} from "react";
 import { Row, Container, Col } from "react-bootstrap";
 import platillos from "../../img/total-platillos.png";
 import "./platillochart.js";
 import PlatilloChart from "./platillochart";
 import './styles/home.css'
+import PlatilloOrdenadoContext from "../../../../context/platillosOrdenados/platilloOrdenadoContext.js";
+import authContext from "../../../../context/autenticacion/authContext";
 
-function PlatillosProbados(platillosordenados) {
+
+
+function PlatillosProbados(ordenrestaurante) {
+
+
   // recibimos las ordenes del restaurante desde el Home
   //convertimos ordenrestaurante en legible para manipularlo usado aux como variable
-  var aux = JSON.parse(JSON.stringify(platillosordenados));
+  var aux = JSON.parse(JSON.stringify(ordenrestaurante));
 
-  const platillos = [];
+  console.log("estamos bien eh" + aux)
+
+  var platillos;
+  
+  const PlatillosOrdenadosContext = useContext(PlatilloOrdenadoContext);
+  const { platillosordenados, obtenerPlatillosOrdenados } =
+  PlatillosOrdenadosContext;
+
+  if (aux.ordenrestaurante) {
+    console.log("existe la vida" + platillos)
+    aux.ordenrestaurante.map(orden => (
+      console.log(orden._id),
+      obtenerPlatillosOrdenados(orden._id),
+      platillos.push(platillosordenados)
+      ))
+  
+    
+  }
+
+  console.log("HOLA HOLA ES EL LOG" + JSON.stringify(platillos))
 
   if (aux.platillosordenados) {
     //esta es la forma en la que podemos acceder a cualquier propiedad de nuestro objeto

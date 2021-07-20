@@ -31,9 +31,6 @@ function VerticalBar({ days }) {
     prev = days[i];
   }
 
-  console.log("distinct days" + distinct_days);
-  console.log("day count" + day_counts);
-
   const data = {
     labels: distinct_days,
     datasets: [
@@ -73,7 +70,6 @@ function VerticalBar({ days }) {
       ],
     },
   };
-  console.log("hola hola aqui los labels" + days);
   return (
     <>
       <Bar className="ordenes-chart" data={data} options={options} />

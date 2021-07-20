@@ -7,7 +7,7 @@ import Ordenesgrafica from "./Sidebar/Home/Ordenesgrafica";
 import StatusyMejores from "./Sidebar/Home/StatusyMejores";
 import Visitas from "./Sidebar/Home/Visitas";
 import Ayuda from "./Sidebar/Home/Ayuda";
-import './Sidebar/Home/styles/home.css'
+import "./Sidebar/Home/styles/home.css";
 
 import restauranteContext from "../../context/restaurantes/restauranteContext";
 import ordenContext from "../../context/ordenes/ordenContext";
@@ -29,7 +29,8 @@ function Home() {
   const { ordenrestaurante, obtenerOrdenRestaurante } = ordenesContext;
 
   const PlatillosOrdenadosContext = useContext(PlatilloOrdenadoContext);
-  const { platillosordenados, obtenerPlatillosOrdenados } = PlatillosOrdenadosContext;
+  const { platillosordenados, obtenerPlatillosOrdenados } =
+    PlatillosOrdenadosContext;
 
   const mesassContext = useContext(mesasContext);
   const {
@@ -87,17 +88,16 @@ function Home() {
             ))}
           </DropdownButton>
         </Col>
-        
       </Row>
       <Row className="row mt-4">
         <Col sm={5} className="platillos-probados">
-          <PlatillosProbados platillosordenados={platillosordenados}/>
+            <PlatillosProbados ordenrestaurante = {ordenrestaurante}/>
         </Col>
         <Col sm={5} className="ordenes-grafica">
           <Ordenesgrafica ordenrestaurante={ordenrestaurante} />
         </Col>
       </Row>
-        {/*<Col sm={8}>
+      {/*<Col sm={8}>
           <Visitas />
         </Col>
         <Col sm={4}>
