@@ -6,6 +6,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Dropdown, DropdownButton, Container } from "react-bootstrap";
+import './styles/home.css'
+
 
 const baseData = [
   {
@@ -18,8 +20,8 @@ const baseData = [
 
 function MenuDisponibleDesplegable(props) {
   return (
-    <Container className="dashboard-componente">
-      <DropdownButton title="Menu Activo" className="dropdown-restaurante">
+    <Container>
+      <DropdownButton title="Menu Activo" className="dropdown-menu-activo">
         {baseData.map((menu) => (
           <Dropdown.Item onClick={() => console.log("Menu Seleccionado")}>
             {menu.nombre}

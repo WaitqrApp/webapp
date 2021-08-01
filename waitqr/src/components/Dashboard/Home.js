@@ -61,16 +61,15 @@ function Home() {
   };
 
   return (
-    <Container fluid className="mt-4 mb-3">
+    <Container fluid>
       <Row>
         <Col sm={8}>{usuario ? <h1>Hola, {usuario.nombre}</h1> : null}</Col>
-        <Col sm={4}>
-          <MenuDisponibleDesplegable />
+        <Col sm={2}>
+          <MenuDisponibleDesplegable className="btn-primary"/>
         </Col>
-        <Col sm={2} className="dropdown-restaurante">
+        <Col sm={2} className="dropdown-restaurante restaurant-button btn-group btn-block">
           <DropdownButton
-            className="dropdown-restaurante restaurant-button py-2 px-5"
-            size="m"
+            className="dropdown-restaurante restaurant-button btn-group btn-block"
             title={
               restauranteEscogido == "" ? (
                 <span>Restaurante</span>
@@ -91,10 +90,15 @@ function Home() {
       </Row>
       <Row className="row mt-4">
         <Col sm={5} className="platillos-probados">
-            <PlatillosProbados ordenrestaurante = {ordenrestaurante}/>
+          <PlatillosProbados ordenrestaurante={ordenrestaurante} />
         </Col>
         <Col sm={5} className="ordenes-grafica">
           <Ordenesgrafica ordenrestaurante={ordenrestaurante} />
+        </Col>
+      </Row>
+      <Row>
+        <Col sm={5} className="status">
+          <StatusyMejores />
         </Col>
       </Row>
       {/*<Col sm={8}>

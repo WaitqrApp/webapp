@@ -113,7 +113,8 @@ input[type=checkbox] {
 }
 
  .boton-menu {
-    margin-top: 5%;
+    margin-top: 8%;
+    margin-right:100%;
     position: relative;
 }
 

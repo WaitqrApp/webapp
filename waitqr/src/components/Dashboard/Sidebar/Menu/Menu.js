@@ -70,7 +70,7 @@ function Menu() {
                 <Row>
                     <Col xs={8}></Col>
                     <Col xs={2}>
-                        <DropdownButton className="boton-menu py-2 px-5" ize="m" title={restauranteEscogido == '' ? (<span>Primero escoge un restaurante</span>) : <span>Escoge un menu</span>,
+                        <DropdownButton className="boton-menu" ize="m" title={restauranteEscogido == '' ? (<span>Primero escoge un restaurante</span>) : <span>Escoge un menu</span>,
                             menuEscogido !== '' ? (<span>{menuEscogido}</span>) : <span> Escoge un menu</span>
                         }>
                             {menusrestaurante.map(menu => (
