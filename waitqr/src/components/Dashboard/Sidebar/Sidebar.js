@@ -1,12 +1,20 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect
+} from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Col, Row, Container } from 'react-bootstrap';
 import Logo from '../img/logo_waiter-01 copy.png';
 import Ayuda from "./Home/Ayuda";
 
+import AuthContext from 'C:/Users/Esteban.Cortes/Downloads/webapp/waitqr/src/context/autenticacion/authContext.js'
 
 
 function Sidebar() {
+  const authContext = useContext(AuthContext);
+  const { usuario, usuarioAutenticado, cerrarSesion } = authContext;
+
+  useEffect(() => {
+    usuarioAutenticado();
+  }, [])
   return (
     <div className="sidebar col-md-2">
       <Col sm={2}>
@@ -44,9 +52,8 @@ function Sidebar() {
         </Link>
       </span>
       <span className="non-active">
-        <Link to={"/settings"}>
-          <span className="material-icons mr-3">logout</span>Log Out
-        </Link>
+            
+          <span className="material-icons mr-3" onClick={() => cerrarSesion()}>logout</span>Cerrar Sesión
       </span>
       <Col sm={4}>
           <Ayuda />

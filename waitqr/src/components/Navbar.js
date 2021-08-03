@@ -15,12 +15,7 @@ function Navbar() {
 
 
   //Extraer la informacion de autenticacion
-  const authContext = useContext(AuthContext);
-  const { usuario, usuarioAutenticado, cerrarSesion } = authContext;
-
-  useEffect(() => {
-    usuarioAutenticado();
-  }, [])
+ 
 
   return (
     <Container fluid>
