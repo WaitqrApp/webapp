@@ -5,16 +5,16 @@ import { Col, Row, Container } from 'react-bootstrap';
 import Logo from '../img/logo_waiter-01 copy.png';
 import Ayuda from "./Home/Ayuda";
 
-import AuthContext from 'C:/Users/Esteban.Cortes/Downloads/webapp/waitqr/src/context/autenticacion/authContext.js'
+//import AuthContext from 'C:/Users/Esteban.Cortes/Downloads/webapp/waitqr/src/context/autenticacion/authContext.js'
 
 
 function Sidebar() {
-  const authContext = useContext(AuthContext);
-  const { usuario, usuarioAutenticado, cerrarSesion } = authContext;
+  //const authContext = useContext(AuthContext);
+  //const { usuario, usuarioAutenticado, cerrarSesion } = authContext;
 
-  useEffect(() => {
-    usuarioAutenticado();
-  }, [])
+  //useEffect(() => {
+    //usuarioAutenticado();
+  //}, [])
   return (
     <div className="sidebar col-md-2">
       <Col sm={2}>
@@ -53,7 +53,6 @@ function Sidebar() {
       </span>
       <span className="non-active">
             
-          <span className="material-icons mr-3" onClick={() => cerrarSesion()}>logout</span>Cerrar Sesión
       </span>
       <Col sm={4}>
           <Ayuda />

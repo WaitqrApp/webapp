@@ -54,6 +54,10 @@ function VerticalBar({ days }) {
 
   const options = {
      plugins: {
+      title: {
+        display: true,
+        text: 'Órdenes'
+    },
     legend: {
       display: false
     }

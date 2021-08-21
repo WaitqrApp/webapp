@@ -4,6 +4,7 @@ import { Dropdown, DropdownButton, Col, Row, Container } from "react-bootstrap";
 
 import PlatillosProbados from "./Sidebar/Home/PlatillosProbados";
 import Ordenesgrafica from "./Sidebar/Home/Ordenesgrafica";
+import OrdenesPorHora from "./Sidebar/Home/OrdenesPorHora";
 import StatusyMejores from "./Sidebar/Home/StatusyMejores";
 import Visitas from "./Sidebar/Home/Visitas";
 import Ayuda from "./Sidebar/Home/Ayuda";
@@ -64,11 +65,11 @@ function Home() {
     <Container fluid>
       <Row>
         <Col sm={8}>{usuario ? <h1>Hola, {usuario.nombre}</h1> : null}</Col>
-        <Col sm={2}>
-          <MenuDisponibleDesplegable className="btn-primary"/>
+        <Col sm={4}>
+          <MenuDisponibleDesplegable className="btn-primary" />
         </Col>
-        <Col sm={2} className="dropdown-restaurante restaurant-button btn-group btn-block">
-          <DropdownButton
+        {/*<Col sm={2} className="dropdown-menu-activo restaurant-button btn-group btn-block">
+           comment here <DropdownButton
             className="dropdown-restaurante restaurant-button btn-group btn-block"
             title={
               restauranteEscogido == "" ? (
@@ -85,23 +86,30 @@ function Home() {
                 {restaurante.nombre}
               </Dropdown.Item>
             ))}
-          </DropdownButton>
-        </Col>
+          </DropdownButton> 
+        </Col>*/}
       </Row>
       <Row className="row mt-4">
-        <Col sm={5} className="platillos-probados">
+        <Col sm={4} className="platillos-probados">
           <PlatillosProbados ordenrestaurante={ordenrestaurante} />
         </Col>
-        <Col sm={5} className="ordenes-grafica">
+        <Col sm={4} className="ordenes-grafica">
           <Ordenesgrafica ordenrestaurante={ordenrestaurante} />
         </Col>
       </Row>
       <Row>
+        <Col sm={4}>
+        </Col>
+        <Col sm={4} className="ordenes-grafica">
+          <OrdenesPorHora />
+        </Col>
+      </Row>
+      {/* <Row>
         <Col sm={5} className="status">
           <StatusyMejores />
         </Col>
       </Row>
-      {/*<Col sm={8}>
+      <Col sm={8}>
           <Visitas />
         </Col>
         <Col sm={4}>

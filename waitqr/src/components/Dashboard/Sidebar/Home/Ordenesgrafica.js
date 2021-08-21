@@ -27,13 +27,7 @@ function Ordenesgrafica(ordenrestaurante) {
   
   
   return (
-    <Container className="text-center p-0 dashboard-componente">
-      <Row className="mt-2">
-        <Col sm={8} className="ml-2 mb-2">
-          <h1>Órdenes</h1>
-        </Col>
-      </Row>
-      
+    <Container className="">
       <Row>
         <Col sm={12} className="platillosdashboard">
           {/* <img className="ordenes" src={ordenes} /> */}

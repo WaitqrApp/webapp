@@ -51,9 +51,21 @@ function DoughnutChart ({platillos}){
     ],
   };
 
+  const options = {
+    plugins: {
+     title: {
+       display: true,
+       text: 'Platillos Probados'
+   },
+   legend: {
+     display: false
+   }
+ }
+ };
+
     return (
     <>
-      <Doughnut className="platillos-probados" data={data} />
+      <Doughnut className="platillos-probados" data={data} options={options}/>
     </>
   );
 }

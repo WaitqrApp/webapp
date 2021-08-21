@@ -13,15 +13,9 @@ function PlatillosProbados(ordenrestaurante) {
 
   return (
     <>
-      <Container className="container-fluid text-center p-0 dashboard-componente">
-        <Row className="mt-2">
-          <Col sm={12}>
-            <h1>Total de platillos probados</h1>
-          </Col>
-        </Row>
-
+      <Container className="">
         <Row>
-          <Col className="platillo-chart" sm={12}>
+          <Col className="" sm={12}>
             <PlatilloChart platillos={platillos} />
           </Col>
         </Row>
