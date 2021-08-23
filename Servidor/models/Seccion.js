@@ -28,6 +28,10 @@ const SeccionSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Usuario'
     },
+    restaurante:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Restaurante'
+    },
     registro:{
         type: Date,
         default: Date.now()

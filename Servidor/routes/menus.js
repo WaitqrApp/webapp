@@ -17,7 +17,6 @@ menuController.crearMenu
 );
 
 router.get('/',
-auth,
 menuController.obtenerMenus
 );
 

@@ -48,11 +48,6 @@ exports.obtenerSecciones = async (req, res) =>{
         if(!existeMenu){
             return res.status(404).json({msg: 'Menu no encontrado'})
         }
- 
-        //Revisar si el menu actual pertenece al usuario autenticado
-        if(existeMenu.creador.toString() !== req.usuario.id){
-         return res.status(401).json({msg: 'No autorizado'});
-     }
 
      //Obtener secciones por menu
      const secciones = await Seccion.find({menu });

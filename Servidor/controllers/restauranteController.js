@@ -45,6 +45,20 @@ exports.obtenerRestaurante = async (req, res) =>{
         res.status(500).send("Hubo un error")
     }
 }
+//Obtiene un restaurante
+exports.obtenerUnRestaurante = async (req, res) =>{
+    try {
+        //Extraer la sesion general y comprobar si existe
+        const {restaurante} = req.query;
+        const restaurantes = await Restaurante.findById(restaurante);
+
+        res.json({restaurantes});
+    } catch (error) {
+        
+        console.log(error);
+        res.status(500).send("Hubo un error")
+    }
+}
 
 //Actualiza un restaurante
 exports.actualizarRestaurante = async (req, res) =>{

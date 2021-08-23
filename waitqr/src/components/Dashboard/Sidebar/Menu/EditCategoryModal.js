@@ -17,7 +17,7 @@ function EditCategoryModal(seccion) {
 
 
   const [seccionAux, guardarSeccionAux] = useState({
-    nombre: "",
+    nombre : "",
     disponible: true
   })
 
@@ -72,7 +72,7 @@ function EditCategoryModal(seccion) {
             <Row>
               <Form.Group controlId="formBasicCheckbox">
                 <Form.Switch id="switch-2" label="Disponible" onChange={onChange} />
-              </Form.Group>
+              </Form.Group> 
             </Row>
           </Container>
         </Form></Modal.Body>
@@ -80,7 +80,7 @@ function EditCategoryModal(seccion) {
           <Container>
             <Row>
               <Col md={6} className="text-left">
-                <button onClick={onClickEliminarSeccion} type="button" class="btn btn-danger">
+                <button onClick={onClickEliminarSeccion} type="button" class="btn btn-danger" onClick={handleClose}>
                   Eliminar
               </button>
               </Col>

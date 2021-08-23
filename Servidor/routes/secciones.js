@@ -17,7 +17,6 @@ seccionController.crearSeccion
 );
 
 router.get('/',
-auth,
 seccionController.obtenerSecciones
 );
 

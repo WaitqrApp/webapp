@@ -45,10 +45,6 @@ exports.obtenerPlatillos = async (req, res) => {
       return res.status(404).json({ msg: "Seccion no encontrada" });
     }
 
-    //Revisar si la seccion actual pertenece al usuario autenticado
-    if (existeSeccion.creador.toString() !== req.usuario.id) {
-      return res.status(401).json({ msg: "No autorizado" });
-    }
 
     //Obtener platillos por seccion
     const platillos = await Platillo.find({ seccion });

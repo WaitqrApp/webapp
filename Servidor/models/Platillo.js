@@ -23,9 +23,17 @@ const PlatilloSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Seccion'
     },
+    menu:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Menu'
+    },
     creador:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Usuario'
+    },
+    restaurante:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Restaurante'
     },
     registro:{
         type: Date,

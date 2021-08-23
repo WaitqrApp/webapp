@@ -47,10 +47,6 @@ exports.obtenerMesas = async (req, res) =>{
             return res.status(404).json({msg: 'Restaurante no encontrado'})
         }
  
-        //Revisar si el restaurante actual pertenece al usuario autenticado
-        if(existeRestaurante.creador.toString() !== req.usuario.id){
-         return res.status(401).json({msg: 'No autorizado'});
-     }
 
      //Obtener mesas por restaurante
      const mesas = await Mesa.find({restaurante });

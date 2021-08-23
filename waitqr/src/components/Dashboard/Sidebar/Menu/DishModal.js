@@ -49,7 +49,6 @@ function DishModal({
   postImage();
   
 
-
   return (
     <>
       <Button

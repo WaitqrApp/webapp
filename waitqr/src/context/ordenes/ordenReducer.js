@@ -16,7 +16,7 @@ export default (state, action) => {
                 ...state,
                 ordensesionindividual:action.payload
             }
-            case ORDEN_RESTAURANTE:
+        case ORDEN_RESTAURANTE:
             return{
                 ...state,
                 ordenrestaurante:action.payload
@@ -40,9 +40,8 @@ export default (state, action) => {
         case ACTUALIZAR_ORDEN:
             return{
                 ...state,
-                ordensesionindividual: state.ordensesionindividual.map(orden => orden._id === action.payload._id 
-                    ? action.payload
-                    : orden)
+                ordensesionindividual: [...state.ordensesionindividual.filter(orden => orden._id === action.payload._id ), action.payload],
+                ordenrestaurante: [...state.ordenrestaurante.filter(orden => orden._id !== action.payload._id), action.payload]
             }
         case ORDEN_ACTUAL:
         return{

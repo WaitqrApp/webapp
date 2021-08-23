@@ -19,7 +19,6 @@ platilloController.crearPlatillo
 );
 
 router.get('/',
-auth,
 platilloController.obtenerPlatillos
 );
 

@@ -13,7 +13,11 @@ const SesionIndividualSchema = mongoose.Schema({
     sesionGeneral:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'SesionGeneral'
-    }
+    },
+    restaurante:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Restaurante'
+    },
     
 });
 

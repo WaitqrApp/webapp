@@ -17,7 +17,6 @@ mesaController.crearMesa
 );
 
 router.get('/',
-auth,
 mesaController.obtenerMesas
 );
 

@@ -7,7 +7,7 @@ import './styles/home.css';
 import VerticalBar from './VerticalBar';
 
 
-function Ordenesgrafica() {
+function OrdenesPorHora() {
   return (
     <Container className="">
       <Row>
@@ -20,4 +20,4 @@ function Ordenesgrafica() {
   );
 }
 
-export default Ordenesgrafica;
+export default OrdenesPorHora;
