@@ -113,7 +113,8 @@ input[type=checkbox] {
 }
 
  .boton-menu {
-    margin-top: 5%;
+    margin-top: 8%;
+    margin-right:100%;
     position: relative;
 }
 
@@ -147,7 +148,7 @@ input[type=checkbox] {
 }
 .restaurant-button {
     position: fixed;
-    top: 80px;
+    top: 0px;
     right: 15px;
     width: 290px;
     z-index: 10;

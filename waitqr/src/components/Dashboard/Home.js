@@ -4,13 +4,16 @@ import { Dropdown, DropdownButton, Col, Row, Container } from "react-bootstrap";
 
 import PlatillosProbados from "./Sidebar/Home/PlatillosProbados";
 import Ordenesgrafica from "./Sidebar/Home/Ordenesgrafica";
+import OrdenesPorHora from "./Sidebar/Home/OrdenesPorHora";
 import StatusyMejores from "./Sidebar/Home/StatusyMejores";
 import Visitas from "./Sidebar/Home/Visitas";
 import Ayuda from "./Sidebar/Home/Ayuda";
+import "./Sidebar/Home/styles/home.css";
 
 import restauranteContext from "../../context/restaurantes/restauranteContext";
 import ordenContext from "../../context/ordenes/ordenContext";
 import mesasContext from "../../context/mesas/mesasContext";
+import PlatilloOrdenadoContext from "../../context/platillosOrdenados/platilloOrdenadoContext.js";
 
 import AuthContext from "../../context/autenticacion/authContext";
 import MenuDisponibleDesplegable from "./Sidebar/Home/MenuDisponibleDesplegable";
@@ -25,6 +28,10 @@ function Home() {
 
   const ordenesContext = useContext(ordenContext);
   const { ordenrestaurante, obtenerOrdenRestaurante } = ordenesContext;
+
+  const PlatillosOrdenadosContext = useContext(PlatilloOrdenadoContext);
+  const { platillosordenados, obtenerPlatillosOrdenados } =
+    PlatillosOrdenadosContext;
 
   const mesassContext = useContext(mesasContext);
   const {
@@ -55,13 +62,15 @@ function Home() {
   };
 
   return (
-    <Container fluid className="mt-4 mb-3">
+    <Container fluid>
       <Row>
         <Col sm={8}>{usuario ? <h1>Hola, {usuario.nombre}</h1> : null}</Col>
-        <Col sm={2} className="dropdown-restaurante">
-          <DropdownButton
-            className="dropdown-restaurante restaurant-button py-2 px-5"
-            size="m"
+        <Col sm={4}>
+          <MenuDisponibleDesplegable className="btn-primary" />
+        </Col>
+        {/*<Col sm={2} className="dropdown-menu-activo restaurant-button btn-group btn-block">
+           comment here <DropdownButton
+            className="dropdown-restaurante restaurant-button btn-group btn-block"
             title={
               restauranteEscogido == "" ? (
                 <span>Restaurante</span>
@@ -77,28 +86,35 @@ function Home() {
                 {restaurante.nombre}
               </Dropdown.Item>
             ))}
-          </DropdownButton>
-        </Col>
+          </DropdownButton> 
+        </Col>*/}
       </Row>
-      <Row className="row mt-4 ">
-        <Col sm={4}>
-          <PlatillosProbados />
+      <Row className="row mt-4">
+        <Col sm={4} className="platillos-probados">
+          <PlatillosProbados ordenrestaurante={ordenrestaurante} />
         </Col>
-        <Col sm={4}>
+        <Col sm={4} className="ordenes-grafica">
           <Ordenesgrafica ordenrestaurante={ordenrestaurante} />
         </Col>
+      </Row>
+      <Row>
         <Col sm={4}>
-          <MenuDisponibleDesplegable />
+        </Col>
+        <Col sm={4} className="ordenes-grafica">
+          <OrdenesPorHora />
         </Col>
       </Row>
-      <Row className="row">
-        <Col sm={8}>
+      {/* <Row>
+        <Col sm={5} className="status">
+          <StatusyMejores />
+        </Col>
+      </Row>
+      <Col sm={8}>
           <Visitas />
         </Col>
         <Col sm={4}>
           <Ayuda />
-        </Col>
-      </Row>
+        </Col>*/}
     </Container>
   );
 }

@@ -4,20 +4,20 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import ordenes from '../../img/ordenes.png';
 import { Row, Container, Col } from 'react-bootstrap';
 import './styles/home.css';
-import LineChart from './LineChart';
+import VerticalBar from './VerticalBar';
 
 
-function Ordenesgrafica() {
+function OrdenesPorHora() {
   return (
     <Container className="">
       <Row>
         <Col sm={12} className="platillosdashboard">
           {/* <img className="ordenes" src={ordenes} /> */}
-          <LineChart/>
+          <VerticalBar/>
         </Col>
       </Row>
     </Container>
   );
 }
 
-export default Ordenesgrafica;
+export default OrdenesPorHora;

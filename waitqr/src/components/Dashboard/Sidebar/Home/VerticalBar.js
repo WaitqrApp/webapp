@@ -31,14 +31,11 @@ function VerticalBar({ days }) {
     prev = days[i];
   }
 
-  console.log("distinct days" + distinct_days);
-  console.log("day count" + day_counts);
-
   const data = {
     labels: distinct_days,
     datasets: [
       {
-        label: "Ordenes por Día",
+        label: "",
         data: day_counts,
         backgroundColor: [
           "rgba(239, 182, 61, 1)",
@@ -56,6 +53,15 @@ function VerticalBar({ days }) {
   };
 
   const options = {
+     plugins: {
+      title: {
+        display: true,
+        text: 'Órdenes'
+    },
+    legend: {
+      display: false
+    }
+  },
     scales: {
       yAxes: [
         {
@@ -68,7 +74,6 @@ function VerticalBar({ days }) {
       ],
     },
   };
-  console.log("hola hola aqui los labels" + days);
   return (
     <>
       <Bar className="ordenes-chart" data={data} options={options} />

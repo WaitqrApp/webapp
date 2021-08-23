@@ -15,12 +15,7 @@ function Navbar() {
 
 
   //Extraer la informacion de autenticacion
-  const authContext = useContext(AuthContext);
-  const { usuario, usuarioAutenticado, cerrarSesion } = authContext;
-
-  useEffect(() => {
-    usuarioAutenticado();
-  }, [])
+ 
 
   return (
     <Container fluid>
@@ -28,7 +23,7 @@ function Navbar() {
           <Col sm={2}>
             <img className="waitqr-logo" src={Logo} />
           </Col>
-          <Col sm={7}>
+          {/*<Col sm={7}>
                 <input className="form-control" type="search" placeholder="Busca un menu, un platillo, una mesa o una órden" aria-label="Search" />
           </Col>
           <Col sm={1}>
@@ -42,7 +37,7 @@ function Navbar() {
                 <Dropdown.Item>Contáctanos</Dropdown.Item>
                 <Dropdown.Item onClick={() => cerrarSesion()}>Cerrar Sesión</Dropdown.Item>
               </DropdownButton>
-          </Col>
+          </Col>*/}
         </Row>
     </Container>
   );
