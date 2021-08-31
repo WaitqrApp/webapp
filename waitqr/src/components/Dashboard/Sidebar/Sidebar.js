@@ -21,7 +21,7 @@ function Sidebar() {
         <img className="waitqr-logo" src={Logo} />
       </Col>
       <div className="active">
-        <Link to={"/home"}>
+        <Link to={"/"}>
           <span className="material-icons mr-3">home</span>
           Home
         </Link>
