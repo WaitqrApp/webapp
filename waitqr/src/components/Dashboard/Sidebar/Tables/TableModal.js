@@ -23,14 +23,16 @@ function TableModal(mesa){
  
     const verDetalle = e => {
         obtenerSesionGeneral(mesa.mesa._id) 
-        var intento
-        sesiongeneralmesa.map(sesiongeneral=>(
-          intento = sesiongeneral._id))
-          if(intento){
-            console.log("intentandeando", intento)
-            var resultado2 = obtenerSesionIndividual(intento)
-            console.log("este es el resultado"+resultado2)
-            console.log(sesionindividualsesiongeneral)
+        var idSesionGeneral
+         sesiongeneralmesa.map(sesiongeneral=>(
+          idSesionGeneral = sesiongeneral._id))
+          if(idSesionGeneral){
+            console.log("intentandeando", idSesionGeneral)
+            var resultado2 = obtenerSesionIndividual(idSesionGeneral)
+            console.log("este es el resultado"+ JSON.stringify(resultado2))
+            console.log("esta es la sesion individual general" + sesionindividualsesiongeneral)
+            console.log("esta es la lenght " + sesionindividualsesiongeneral.length)
+
           }
         setShow(true)
         /*
@@ -63,7 +65,7 @@ function TableModal(mesa){
             ))}
             <br/>
            {<span>Numero de personas en la mesa: {sesionindividualsesiongeneral.length}</span>}
-            {/*<span>{intento}</span>*/}
+            {/*<span>{idSesionGeneral}</span>*/}
           </Container>
         </Modal.Body>
         <Modal.Footer>
