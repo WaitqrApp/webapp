@@ -1,20 +1,19 @@
-import React, { useState, useContext, useEffect
-} from "react";
+import React, { useState, useContext, useEffect} from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Col, Row, Container } from 'react-bootstrap';
+import { Col, Row, Container, Dropdown, DropdownButton } from 'react-bootstrap';
 import Logo from '../img/logo_waiter-01 copy.png';
 import Ayuda from "./Home/Ayuda";
 
-//import AuthContext from 'C:/Users/Esteban.Cortes/Downloads/webapp/waitqr/src/context/autenticacion/authContext.js'
+import AuthContext from 'C:/Users/Esteban.Cortes/Downloads/webapp/waitqr/src/context/autenticacion/authContext.js'
 
 
 function Sidebar() {
-  //const authContext = useContext(AuthContext);
-  //const { usuario, usuarioAutenticado, cerrarSesion } = authContext;
+  const authContext = useContext(AuthContext);
+  const { usuario, usuarioAutenticado, cerrarSesion } = authContext;
 
-  //useEffect(() => {
-    //usuarioAutenticado();
-  //}, [])
+  useEffect(() => {
+    usuarioAutenticado();
+  }, [])
   return (
     <div className="sidebar col-md-2">
       <Col sm={2}>
@@ -41,14 +40,22 @@ function Sidebar() {
           <span className="material-icons mr-3">bar_chart</span>Estadísticas
         </Link>
       </span>
-      {/*<span className="non-active">
-                <Link to={'/history'}>
-                    <span className="material-icons mr-3">history</span>Historial
-                </Link>
-            </span>*/}
       <span className="non-active">
         <Link to={"/tables"}>
           <span className="material-icons mr-3">all_out</span>Mesas
+        </Link>
+      </span>
+      <span className="non-active">
+        <Link to={"/logout"}>
+          <span className="material-icons mr-3" onClick={() => cerrarSesion()}>logout</span>Cerrar Sesión
+
+          <DropdownButton id="dropdown-usuario"  title={usuario ? <span>{usuario.nombre}</span> : null}>
+                <Dropdown.ItemText>Agregar Restaurante</Dropdown.ItemText>
+                <Dropdown.Item>Agregar Platillo</Dropdown.Item>
+                <Dropdown.Item>Cambiar Contraseña</Dropdown.Item>
+                <Dropdown.Item>Contáctanos</Dropdown.Item>
+                <Dropdown.Item onClick={() => cerrarSesion()}>Cerrar Sesión</Dropdown.Item>
+              </DropdownButton>
         </Link>
       </span>
       <span className="non-active">
