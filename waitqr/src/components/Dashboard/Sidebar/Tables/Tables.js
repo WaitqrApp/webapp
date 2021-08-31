@@ -65,9 +65,9 @@ function Tables() {
             </Row>    
             <Row>
                 <Col sm={12} className="contenido-mesas text-left" >
-                    {mesasrestaurante.map(mesa => (
+                    {mesasrestaurante.map(mesas => (
                         <TableCard
-                            mesa={mesa}
+                            mesas={mesas}
                         />
                     ))}
                 </Col>
