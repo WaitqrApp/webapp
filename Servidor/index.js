@@ -32,15 +32,6 @@ app.use('/api/sesionesindividuales', require('./routes/sesionesindividuales'));
 app.use('/api/ordenes', require('./routes/orden'));
 app.use('/api/platilloOrdenado', require('./routes/platilloOrdenado'));
 
-
-
-
-
-
-
-
-
-
 //arrancar la app
 app.listen(port,'0.0.0.0', () =>{
     console.log(`El servidor esta funcionando en el puerto ${port}`);
