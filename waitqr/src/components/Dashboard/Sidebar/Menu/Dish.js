@@ -28,7 +28,7 @@ function Dish(platillo) {
   const onClickEliminarPlatillo = (e) => {
     eliminarPlatillo(
       platillo.platillo._id,
-      platillo.platillo.seccion
+      platillo.platillo.seccion 
     );
   };
   

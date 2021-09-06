@@ -57,6 +57,21 @@ exports.obtenerMesas = async (req, res) =>{
     }
 }
 
+//Obtiene una mesa
+exports.obtenerUnaMesa = async (req, res) =>{
+    try {
+        //Extraer la sesion general y comprobar si existe
+        const {mesa} = req.query;
+        const mesaobtenida = await Mesa.findById(mesa);
+
+        res.json({mesaobtenida});
+    } catch (error) {
+        
+        console.log(error);
+        res.status(500).send("Hubo un error")
+    }
+}
+
 //Actualizar un mesa
 
 exports.actualizarMesa = async(req, res) =>{

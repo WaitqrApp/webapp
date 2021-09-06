@@ -24,6 +24,7 @@ export const ESTADO_MESA = "ESTADO_MESA"
 export const MESA_ACTUAL = "MESA_ACTUAL";
 export const ACTUALIZAR_MESA = 'ACTUALIZAR_MESA'
 export const LIMPIAR_MESA = 'LIMPIAR_MESA'
+export const OBTENER_UNA_MESA = 'OBTENER_UNA_MESA'
 
 
 export const SECCIONES_MENU = 'SECCIONES_MENU';
