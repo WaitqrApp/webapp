@@ -66,7 +66,7 @@ const PlatilloState = props =>{
     }
 
     // Eliminar tarea por id
-    const eliminarPlatillo = async (id, platillo) =>{ 
+    const eliminarPlatillo = async (id, platillo) =>{
         try {
             await clienteAxios.delete(`/api/platillos/${id}`, {params: {platillo}});
             dispatch({

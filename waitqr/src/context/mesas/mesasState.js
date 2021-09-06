@@ -9,7 +9,6 @@ import {ESTADO_MESA} from '../../types'
 import {MESA_ACTUAL} from '../../types'
 import {ACTUALIZAR_MESA} from '../../types'
 import {LIMPIAR_MESA} from '../../types'
-import {OBTENER_UNA_MESA} from '../../types'
 import clienteAxios from '../../config/axios'
 
 const MesaState = props =>{
@@ -18,8 +17,7 @@ const MesaState = props =>{
         mesasrestaurante: [],
         errormesa: false,
         mesaseleccionada:null,
-        mesa:null,
-        mesaobtenida: null
+        mesa:null
 
     }
 
@@ -38,19 +36,6 @@ const MesaState = props =>{
             dispatch({
                 type: MESAS_RESTAURANTE,
                 payload: resultado.data.mesas
-            })
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
-    const obtenerUnaMesa= async mesa =>{
-        try {
-            const resultado = await clienteAxios.get('/api/mesas/mesa',{params:{mesa}});
-            console.log(resultado)
-            dispatch({
-                type: OBTENER_UNA_MESA,
-                payload: resultado.data.mesaobtenida
             })
         } catch (error) {
             console.log(error)
@@ -137,8 +122,6 @@ const MesaState = props =>{
                 errormesa: state.errormesa,
                 mesaseleccionada: state.mesaseleccionada,
                 mesa: state.mesa,
-                mesaobtenida: state.mesaobtenida,
-                obtenerUnaMesa,
                 obtenerMesas,
                 agregarMesa,
                 validarMesa,

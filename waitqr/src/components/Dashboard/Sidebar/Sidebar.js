@@ -3,9 +3,6 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Col, Row, Container, Dropdown, DropdownButton } from 'react-bootstrap';
 import Logo from '../img/logo_waiter-01 copy.png';
 import Ayuda from "./Home/Ayuda";
-import AuthContext from '../../../context/autenticacion/authContext'
-import { useHistory } from "react-router-dom";
-
 
 /* import AuthContext from 'C:/Users/Esteban.Cortes/Downloads/webapp/waitqr/src/context/autenticacion/authContext.js'; */
 import AuthContext from '../../../context/autenticacion/authContext.js';
@@ -49,7 +46,6 @@ function Sidebar() {
           <span className="material-icons mr-3">all_out</span>Mesas
         </Link>
       </span>
-     
       <span className="non-active">
         <Link to={"/logout"} onClick={() => cerrarSesion()}>
           <span className="material-icons mr-3" >logout</span>Cerrar Sesión
