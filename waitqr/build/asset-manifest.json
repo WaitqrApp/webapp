@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7e98ffbc.chunk.css",
+    "main.js": "/static/js/main.6319cdbd.chunk.js",
+    "main.js.map": "/static/js/main.6319cdbd.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.8d9aad41.js",
+    "runtime-main.js.map": "/static/js/runtime-main.8d9aad41.js.map",
+    "static/js/2.64b71dcf.chunk.js": "/static/js/2.64b71dcf.chunk.js",
+    "static/js/2.64b71dcf.chunk.js.map": "/static/js/2.64b71dcf.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.7e98ffbc.chunk.css.map": "/static/css/main.7e98ffbc.chunk.css.map",
+    "static/js/2.64b71dcf.chunk.js.LICENSE.txt": "/static/js/2.64b71dcf.chunk.js.LICENSE.txt",
+    "static/media/insight-final.6bb76ecc.jpeg": "/static/media/insight-final.6bb76ecc.jpeg",
+    "static/media/logo.479233c3.png": "/static/media/logo.479233c3.png",
+    "static/media/logo_waiter-01 copy.479233c3.png": "/static/media/logo_waiter-01 copy.479233c3.png",
+    "static/media/ordenes.d7cacbf4.png": "/static/media/ordenes.d7cacbf4.png",
+    "static/media/total-platillos.692472a3.png": "/static/media/total-platillos.692472a3.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8d9aad41.js",
+    "static/js/2.64b71dcf.chunk.js",
+    "static/css/main.7e98ffbc.chunk.css",
+    "static/js/main.6319cdbd.chunk.js"
+  ]
+}
