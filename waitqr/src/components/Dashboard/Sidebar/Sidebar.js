@@ -4,7 +4,8 @@ import { Col, Row, Container, Dropdown, DropdownButton } from 'react-bootstrap';
 import Logo from '../img/logo_waiter-01 copy.png';
 import Ayuda from "./Home/Ayuda";
 
-import AuthContext from 'C:/Users/Esteban.Cortes/Downloads/webapp/waitqr/src/context/autenticacion/authContext.js'
+/* import AuthContext from 'C:/Users/Esteban.Cortes/Downloads/webapp/waitqr/src/context/autenticacion/authContext.js'; */
+import AuthContext from '../../../context/autenticacion/authContext.js';
 
 
 function Sidebar() {
