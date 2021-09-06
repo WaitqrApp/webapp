@@ -66,9 +66,9 @@ const SesionGeneralState = props =>{
     }
 
     // Eliminar tarea por id
-    const eliminarSesionGeneral = async (id, sesiongeneral) =>{
+    const eliminarSesionGeneral = async (id, mesa) =>{
         try {
-            await clienteAxios.delete(`/api/sesionesgenerales/${id}`, {params: {sesiongeneral}});
+            await clienteAxios.delete(`/api/sesionesgenerales/${id}`, {params: {mesa}});
             dispatch({
                 type: ELIMINAR_SESIONGENERAL,
                 payload: id

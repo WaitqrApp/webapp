@@ -20,11 +20,6 @@ router.get('/',
 mesaController.obtenerMesas
 );
 
-//obtener todos los proyectos
-router.get('/mesa', 
-mesaController.obtenerUnaMesa
-);
-
 //Actualizar mesa
 router.put('/:id',
     auth,
