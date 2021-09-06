@@ -35,7 +35,7 @@ function TableCard({mesas}) {
                   
                     <Button className="boton-editar-seccion" variant="light" onClick={() => seleccionarMesa(mesas)}>
                     <TableModal show={modalShow} onHide={() => setModalShow(false)}
-                                    
+                                    mesas = {mesas}
                                 />
                          </Button>
                     
