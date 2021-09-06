@@ -33,7 +33,7 @@ function TableCard({mesas}) {
 
                             <Nav.Item className="mx-auto">
                   
-                    <Button className="boton-editar-seccion" variant="light" onClick={() => seleccionarMesa(mesas)}>
+                    <Button  variant="light" onClick={() => seleccionarMesa(mesas)}>
                     <TableModal show={modalShow} onHide={() => setModalShow(false)}
                                     mesas = {mesas}
                                 />

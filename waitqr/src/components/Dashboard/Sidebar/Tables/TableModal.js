@@ -11,17 +11,13 @@ function TableModal({mesas}){
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const mesassContext = useContext(mesasContext);
+    const {mesa, mesaobtenida, obtenerUnaMesa } = mesassContext;
+    const sesionGeneralsContext = useContext(sesionGeneralContext);
+    const {sesiongeneralmesa, obtenerSesionGeneral, eliminarSesionGeneral } = sesionGeneralsContext;
 
-     //Extraer si una seccion esta activa
-
-     
-     const mesassContext = useContext(mesasContext);
-     const {mesa, mesaobtenida, obtenerUnaMesa } = mesassContext;
- const sesionGeneralsContext = useContext(sesionGeneralContext);
- const {sesiongeneralmesa, obtenerSesionGeneral, eliminarSesionGeneral } = sesionGeneralsContext;
-
- const sesionIndividualsContext = useContext(sesionIndividualContext);
- const {sesionindividualsesiongeneral, obtenerSesionIndividual } = sesionIndividualsContext;
+    const sesionIndividualsContext = useContext(sesionIndividualContext);
+    const {sesionindividualsesiongeneral, obtenerSesionIndividual } = sesionIndividualsContext;
 
  useEffect(() => {
 
@@ -34,9 +30,9 @@ function TableModal({mesas}){
   }
   },[sesiongeneralmesa]); //para que corra solo una vez
 
-const llamadaSesionIndividual = e=>{
+  const llamadaSesionIndividual = e=>{
   obtenerSesionIndividual(sesiongeneralmesa[0]._id)
-}
+  }
 
     const verDetalle = e => {
         obtenerSesionGeneral(mesas._id)     

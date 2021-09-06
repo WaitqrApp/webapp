@@ -10,17 +10,13 @@ import { useHistory } from "react-router-dom";
 
 
 function Sidebar() {
-  const authContext = useContext(AuthContext);
-  const { usuario, usuarioAutenticado, cerrarSesion } = authContext;
+
   let history = useHistory();
   //useEffect(() => {
     //usuarioAutenticado();
   //}, [])
 
-  const cerrarLaSesion = e =>{
-    cerrarSesion();
-    window.location.reload();
-  }
+
   return (
     <div className="sidebar col-md-2">
       <Col sm={2}>
@@ -57,11 +53,7 @@ function Sidebar() {
           <span className="material-icons mr-3">all_out</span>Mesas
         </Link>
       </span>
-      <span className="non-active" onClick={() => cerrarLaSesion()}>
-       <Link>
-          <span className="material-icons mr-3" >logout</span>Cerrar Sesion
-          </Link>
-      </span>
+     
       <span className="non-active">
             
       </span>
