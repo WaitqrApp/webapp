@@ -6,6 +6,7 @@ import {ESTADO_MESA} from '../../types'
 import {MESA_ACTUAL} from '../../types'
 import {ACTUALIZAR_MESA} from '../../types'
 import {LIMPIAR_MESA} from '../../types'
+import {OBTENER_UNA_MESA} from '../../types'
 
 
 export default (state, action) => {
@@ -14,6 +15,11 @@ export default (state, action) => {
             return{
                 ...state,
                 mesasrestaurante:action.payload
+            }
+        case OBTENER_UNA_MESA:
+            return{
+                ...state,
+                mesaobtenida: action.payload
             }
         case AGREGAR_MESA:
             return{
@@ -39,10 +45,10 @@ export default (state, action) => {
                     : mesa)
             }
         case MESA_ACTUAL:
-        return{
-            ...state,
-            mesa: state.mesasrestaurante.filter(mesa => mesa._id === action.payload)
-        }
+            return{
+                ...state,
+                mesa:  action.payload 
+            }
         case LIMPIAR_MESA:
             return{
                 ...state,
