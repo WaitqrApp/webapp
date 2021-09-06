@@ -35,7 +35,6 @@ function TableModal({mesas}){
   }
 
     const verDetalle = e => {
-
         obtenerSesionGeneral(mesas._id)     
         setShow(true)
     }
