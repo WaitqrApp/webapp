@@ -28,6 +28,14 @@ export default(state,action)=>{
                 cargando: false
             }
         case CERRAR_SESION:
+            localStorage.removeItem('token')
+            return{
+                ...state,
+                token: null,
+                usuario: null,
+                autenticado: null,
+                cargando: false
+            }
         case LOGIN_ERROR:
         case REGISTRO_ERROR:
             localStorage.removeItem('token')

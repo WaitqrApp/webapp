@@ -46,16 +46,8 @@ function Sidebar() {
         </Link>
       </span>
       <span className="non-active">
-        <Link to={"/logout"}>
-          <span className="material-icons mr-3" onClick={() => cerrarSesion()}>logout</span>Cerrar Sesión
-
-          <DropdownButton id="dropdown-usuario"  title={usuario ? <span>{usuario.nombre}</span> : null}>
-                <Dropdown.ItemText>Agregar Restaurante</Dropdown.ItemText>
-                <Dropdown.Item>Agregar Platillo</Dropdown.Item>
-                <Dropdown.Item>Cambiar Contraseña</Dropdown.Item>
-                <Dropdown.Item>Contáctanos</Dropdown.Item>
-                <Dropdown.Item onClick={() => cerrarSesion()}>Cerrar Sesión</Dropdown.Item>
-              </DropdownButton>
+        <Link to={"/logout"} onClick={() => cerrarSesion()}>
+          <span className="material-icons mr-3" >logout</span>Cerrar Sesión
         </Link>
       </span>
       <span className="non-active">
