@@ -7,15 +7,9 @@ import Ayuda from "./Home/Ayuda";
 import AuthContext from '../../../context/autenticacion/authContext'
 import { useHistory } from "react-router-dom";
 
-<<<<<<< HEAD
-=======
-import AuthContext from 'C:/Users/Esteban.Cortes/Downloads/webapp/waitqr/src/context/autenticacion/authContext.js'
->>>>>>> parent of 02028ed (Update Sidebar.js)
-
 
 function Sidebar() {
 
-  let history = useHistory();
   //useEffect(() => {
     //usuarioAutenticado();
   //}, [])
