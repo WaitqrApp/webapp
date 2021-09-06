@@ -7,11 +7,9 @@ const RutaPrivada = ({component: Component, ...props}) =>{
 
     const authContext = useContext(AuthContext);
     const{autenticado, cargando, usuarioAutenticado} = authContext;
-    console.log(autenticado);
+
     useEffect(() =>{
-        if(autenticado){
-            usuarioAutenticado();
-        }
+        usuarioAutenticado();
     }, []);
 
     return(

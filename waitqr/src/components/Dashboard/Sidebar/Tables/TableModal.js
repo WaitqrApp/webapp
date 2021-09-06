@@ -3,60 +3,60 @@ import { Container, Row, Col, Form, Button, Modal, Card } from "react-bootstrap"
 import '../Tables/styles/tables.css';
 import sesionGeneralContext from '../../../../context/sesionesGenerales/sesionGeneralContext';
 import sesionIndividualContext from '../../../../context/sesionesIndividuales/sesionIndividualContext';
+import mesasContext from '../../../../context/mesas/mesasContext';
 
 
-function TableModal(mesa){
+function TableModal({mesas}){
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const mesassContext = useContext(mesasContext);
+    const {mesa, mesaobtenida, obtenerUnaMesa } = mesassContext;
+    const sesionGeneralsContext = useContext(sesionGeneralContext);
+    const {sesiongeneralmesa, obtenerSesionGeneral, eliminarSesionGeneral } = sesionGeneralsContext;
 
-     //Extraer si una seccion esta activa
- const sesionGeneralsContext = useContext(sesionGeneralContext);
- const {sesiongeneralmesa, obtenerSesionGeneral } = sesionGeneralsContext;
+    const sesionIndividualsContext = useContext(sesionIndividualContext);
+    const {sesionindividualsesiongeneral, obtenerSesionIndividual } = sesionIndividualsContext;
 
- const sesionIndividualsContext = useContext(sesionIndividualContext);
- const {sesionindividualsesiongeneral, obtenerSesionIndividual } = sesionIndividualsContext;
+ useEffect(() => {
 
- const [sesiongeneralAuxId, guardarSesionGeneralAuxId] = useState("");
+  if(!sesiongeneralmesa.length){
+    console.log("cai en undefined")
+  }
+  else{
+   
+    llamadaSesionIndividual();
+  }
+  },[sesiongeneralmesa]); //para que corra solo una vez
 
- 
+  const llamadaSesionIndividual = e=>{
+  obtenerSesionIndividual(sesiongeneralmesa[0]._id)
+  }
+
     const verDetalle = e => {
-        obtenerSesionGeneral(mesa.mesa._id) 
-        var idSesionGeneral
-         sesiongeneralmesa.map(sesiongeneral=>(
-          idSesionGeneral = sesiongeneral._id))
-          if(idSesionGeneral){
-            console.log("intentandeando", idSesionGeneral)
-            var resultado2 = obtenerSesionIndividual(idSesionGeneral)
-            console.log("este es el resultado"+ JSON.stringify(resultado2))
-            console.log("esta es la sesion individual general" + sesionindividualsesiongeneral)
-            console.log("esta es la lenght " + sesionindividualsesiongeneral.length)
-
-          }
+        obtenerSesionGeneral(mesas._id)     
         setShow(true)
-        /*
-    
-          //console.log("avanzando",sesionindividualsesiongeneral)
-        }*/
     }
 
     const cerrarMesa = e => {
+      eliminarSesionGeneral(
+        sesiongeneralmesa[0]._id,
+        sesiongeneralmesa[0].mesa 
+      );
       setShow(false)
     }
-    
- 
-        //ToDo: cerrar la mesa
-
-        
+   
     return(
         <>
       <Button className="boton-detalle-mesa" size="m" variant="primary" onClick={() => verDetalle()}>
         Ver Detalle
         </Button>
-      <Modal show={show} onHide={handleClose}>
+        {
+          sesiongeneralmesa[0]? 
+          <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Detalle de la mesa {mesa.mesa.numero}</Modal.Title>
+        <Modal.Title>Detalle de la mesa {mesas.numero}</Modal.Title>
         </Modal.Header>
         <Modal.Body className="show-grid">
           <Container>
@@ -64,8 +64,11 @@ function TableModal(mesa){
                 <span>Hora de Inicio: {sesiongeneral.horarioInicio}</span>
             ))}
             <br/>
-           {<span>Numero de personas en la mesa: {sesionindividualsesiongeneral.length}</span>}
-            {/*<span>{idSesionGeneral}</span>*/}
+           {
+              
+              <span>Numero de personas en la mesa: {sesionindividualsesiongeneral.length}</span>
+             }
+            {/*<span>{intento}</span>*/}
           </Container>
         </Modal.Body>
         <Modal.Footer>
@@ -75,6 +78,23 @@ function TableModal(mesa){
 
         </Modal.Footer>
       </Modal>
+      :
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+        <Modal.Title>Detalle de la mesa {mesas.numero}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="show-grid">
+          <Container>
+            
+            <p>no hay personas en la mesa</p>
+           
+          </Container>
+        </Modal.Body>
+        <Modal.Footer>
+        </Modal.Footer>
+      </Modal>
+}
+      
     </>
     );
 }
