@@ -6,8 +6,7 @@ const { check } = require("express-validator");
 
 //crear una orden
 //api/ordenes
-router.post(
-  "/",
+router.post("/",
   [
     //check('Horario Inicio','El horario inicio es obligatorio').not().isEmpty(),
     check("sesionIndividual", "La sesion individual es obligatoria")

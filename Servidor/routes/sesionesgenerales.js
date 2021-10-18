@@ -17,7 +17,6 @@ sesionGeneralController.crearSesionGeneral
 );
 
 router.get('/',
-auth,
 sesionGeneralController.obtenerSesionesGenerales
 );
 

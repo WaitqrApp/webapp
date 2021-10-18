@@ -42,9 +42,9 @@ const PlatilloOrdenadoSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'SesionGeneral'
     },
-    restaurante:{
+    mesa:{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Restaurante'
+        ref: 'Mesa'
     },
 });
 

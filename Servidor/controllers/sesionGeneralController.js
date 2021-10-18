@@ -47,7 +47,7 @@ exports.obtenerSesionesGenerales = async (req, res) =>{
  
 
      //Obtener sesiones generales por mesa
-     const sesionesGenerales = await SesionGeneral.find({mesa });
+     const sesionesGenerales = await SesionGeneral.find({mesa});
      res.json({sesionesGenerales});
     } catch (error) {
         console.log(error);

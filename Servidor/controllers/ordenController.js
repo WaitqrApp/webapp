@@ -38,17 +38,15 @@ exports.crearOrden = async (req, res) => {
 exports.obtenerOrdenSesionIndividual = async (req, res) => {
   try {
     //Extraer la sesion general y comprobar si existe
-    const { sesionIndividual } = req.query;
+    const {sesionindividual} = req.query;
     //console.log(req.query);
-    const existeSesionIndividual = await SesionIndividual.findById(
-      sesionIndividual
-    );
+    const existeSesionIndividual = await SesionIndividual.findById(sesionindividual);
     if (!existeSesionIndividual) {
       return res.status(404).json({ msg: "SesionIndividual no encontrada" });
     }
 
     //Obtener sesiones generales por mesa
-    const ordenes = await Orden.find({ sesionIndividual });
+    const ordenes = await Orden.find({ sesionindividual });
     res.json({ ordenes });
   } catch (error) {
     console.log(error);

@@ -59,15 +59,15 @@ exports.obtenerPlatillosOrdenados = async (req, res) =>{
 exports.actualizarPlatilloOrdenado = async(req, res) =>{
     try {
          //Extraer la orden y comprobar si existe
-   const {orden, nombre, comentario, precio} = req.body;
+   const {orden, nombre, comentario, precio, cantidad} = req.body;
    const existeOrden = await Orden.findById(orden);
    if(!existeOrden){
-    return res.status(404).json({msg: "No existe orden"});
+    return res.status(405).json({msg: "No existe orden"});
 }
    //Revisar si el platilloOrdenado existe o no
-    let platilloOrdenadoExiste = await PlatilloOrdenado.findById(req.params.id);
+    let platilloOrdenadoExiste = await PlatilloOrdenado.findById(req.params.id); 
     if(!platilloOrdenadoExiste){
-        return res.status(404).json({msg: "No existe el platilloOrdenado"});
+        return res.status(401).json({msg: "No existe el platilloOrdenado"});
     }
   
 //Crear un objeto con la nueva informacion
@@ -82,7 +82,10 @@ if(precio){
 }
 
 if(comentario){
-    nuevoPlatilloOrdenado.descripcion = descripcion;
+    nuevoPlatilloOrdenado.comentario = comentario;
+}
+if(cantidad){
+    nuevoPlatilloOrdenado.cantidad = cantidad;
 }
 
 //guardar platilloOrdenado
