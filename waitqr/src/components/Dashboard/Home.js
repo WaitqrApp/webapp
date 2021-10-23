@@ -68,26 +68,6 @@ function Home() {
         <Col sm={4}>
           <MenuDisponibleDesplegable className="btn-primary" />
         </Col>
-        {/*<Col sm={2} className="dropdown-menu-activo restaurant-button btn-group btn-block">
-           comment here <DropdownButton
-            className="dropdown-restaurante restaurant-button btn-group btn-block"
-            title={
-              restauranteEscogido == "" ? (
-                <span>Restaurante</span>
-              ) : (
-                <span>{restauranteEscogido}</span>
-              )
-            }
-          >
-            {restaurantes.map((restaurante) => (
-              <Dropdown.Item
-                onClick={() => seleccionarRestaurante(restaurante)}
-              >
-                {restaurante.nombre}
-              </Dropdown.Item>
-            ))}
-          </DropdownButton> 
-        </Col>*/}
       </Row>
       <Row className="row mt-4">
         <Col sm={4} className="platillos-probados">
@@ -104,17 +84,6 @@ function Home() {
           <OrdenesPorHora />
         </Col>
       </Row>
-      {/* <Row>
-        <Col sm={5} className="status">
-          <StatusyMejores />
-        </Col>
-      </Row>
-      <Col sm={8}>
-          <Visitas />
-        </Col>
-        <Col sm={4}>
-          <Ayuda />
-        </Col>*/}
     </Container>
   );
 }

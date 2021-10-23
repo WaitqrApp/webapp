@@ -4,10 +4,7 @@ import AlertaContext from '../../context/alertas/alertaContext'
 import AuthContext from '../../context/autenticacion/authContext'
 import Logo from './img/logo.png';
 import '../auth/styles/auth.css';
-import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Image from 'react-bootstrap/Image';
+import CookieConsent from "react-cookie-consent";
 
 function Login (props){
 
@@ -111,6 +108,7 @@ function Login (props){
 
                         </Link>
                     </div>
+                    <CookieConsent>Este sitio usa cookies para mejorar la experiencia de usuario</CookieConsent>
         </div>
     );
 }
