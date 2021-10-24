@@ -1,32 +1,33 @@
 .restaurant-button {
-    position: fixed;
-    top: 40px;
-    right: 100px;
-    width: 20%;
-    z-index: 10;
+  position: fixed;
+  top: 40px;
+  right: 100px;
+  width: 20%;
+  z-index: 10;
 }
 
 .tarjeta-mesa {
-    margin-top: 5%;
+  margin-top: 7%;
+  height: 15vh !important;
+  width: 15vw;
 }
 
 .contenido-mesas {
-    overflow: auto;
-    height: 800px;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  overflow: auto;
+  width: 100vw;
+  height: 99vh;
 }
 
 .boton-detalle-mesa {
-    position: absolute;
-    margin-left: 5%;
-    margin-bottom: 5%;
-    width: 90%;
-    left: 0;
-    bottom: 0;
+  width: 100%;
 }
 
 .boton-cerrar {
-    position: relative;
-    bottom: 0;
-    margin-bottom: 0%;
-    height: 4vh;
+  position: relative;
+  bottom: 0;
+  margin-bottom: 0%;
+  height: 4vh;
 }
