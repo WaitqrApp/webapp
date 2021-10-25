@@ -101,12 +101,12 @@ input[type="checkbox"] {
 }
 
 .boton-editar {
-  position: absolute;
+  position: relative;
   bottom: 0;
   left: 10;
-  margin-bottom: 3%;
-  width: 14.2vw;
-  height: 4vh;
+  margin-bottom: -10%;
+  width: 100%;
+  height: auto;
 }
 
 .boton-menu {
@@ -168,6 +168,12 @@ p {
 .contenedorPlatillos {
   overflow: auto;
   height: 750px;
+}
+
+.platillo-card {
+  height: 50vh;
+  width: 15vw;
+  margin-right: 1%;
 }
 
 .descripcion-platillo {

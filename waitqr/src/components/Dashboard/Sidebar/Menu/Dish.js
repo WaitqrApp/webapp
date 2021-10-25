@@ -26,12 +26,8 @@ function Dish(platillo) {
   const [platilloAux, guardarPlatilloAux] = useState(platilloAuxInicial);
 
   const onClickEliminarPlatillo = (e) => {
-    eliminarPlatillo(
-      platillo.platillo._id,
-      platillo.platillo.seccion 
-    );
+    eliminarPlatillo(platillo.platillo._id, platillo.platillo.seccion);
   };
-  
 
   const onGuardarPlatillo = (e) => {
     actualizarPlatillo(platilloAux);
@@ -46,9 +42,9 @@ function Dish(platillo) {
   };
 
   return (
-    <CardDeck className="col-sm-3 d-inline-flex p-2 overflow-y-scroll">
+    <CardDeck className="platillo-card overflow-y-scroll">
       <Card className="mb-0">
-        <Card.Img 
+        <Card.Img
           className="imagen-platillo"
           variant="top"
           src={platillo.platillo.imagenPlatillo}
@@ -69,24 +65,24 @@ function Dish(platillo) {
                   type="switch"
                   onClick={() =>
                     guardarPlatilloAux((platilloAux) => {
-                      const nuevoPlatillo = {...platilloAux, disponible: !platilloAux.disponible}
-                      console.log(nuevoPlatillo)
-                      actualizarPlatillo(nuevoPlatillo)
-                     return nuevoPlatillo
-                    }
-                    )
+                      const nuevoPlatillo = {
+                        ...platilloAux,
+                        disponible: !platilloAux.disponible,
+                      };
+                      console.log(nuevoPlatillo);
+                      actualizarPlatillo(nuevoPlatillo);
+                      return nuevoPlatillo;
+                    })
                   }
                   checked={platilloAux.disponible}
                 ></Form.Check>
               </Col>
             </Row>
           </Card.Title>
-          <Card.Text
-          className="descripcion-platillo">
+          <Card.Text className="descripcion-platillo">
             {platillo.platillo.descripcion}
           </Card.Text>
-          <Card.Text
-          className="descripcion-platillo">
+          <Card.Text className="descripcion-platillo">
             <span>
               <span>$</span>
               {platillo.platillo.precio}
