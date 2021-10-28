@@ -17,7 +17,7 @@ app.use(cors());
 app.use(express.json({extend: true}));
 
 //puerto de la app
-const PORT = process.env.PORT || 4000; //asigna el puerto o utiliza el 4000
+const port = process.env.port || 4000; //asigna el puerto o utiliza el 4000
 
 //rutas
 app.use('/api/usuario', require('./routes/usuario'));
@@ -42,6 +42,6 @@ app.use('/api/platilloOrdenado', require('./routes/platilloOrdenado'));
 
 
 //arrancar la app
-app.listen(PORT, () =>{
-    console.log(`El servidor esta funcionando en el puerto ${PORT}`);
+app.listen(port, '0.0.0.0', () =>{
+    console.log(`El servidor esta funcionando en el puerto ${port}`);
 });
