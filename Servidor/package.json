@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "engines":{
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon .",
+    "build": "webpack"
+  },
+  "engines": {
+    "npm": "v16.13.0",
     "node": "8.1.0"
   },
-  "scripts": {
-    "start": "nodemon --exec babel-node index.js"
-  },
-  
   "author": "",
   "license": "ISC",
   "devDependencies": {
