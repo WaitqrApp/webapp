@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "npm run production",
+    "heroku-prebuild": "npm install -f",
+    "heroku-postbuild": "npm run production",
     "dev": "react-scripts start",
     "start": "serve -s build",
-    "build": "react-scripts build",
-    "heroku-postbuild": "npm run build"
+    "build": "react-scripts build"
   },
   "author": "",
   "license": "ISC",
