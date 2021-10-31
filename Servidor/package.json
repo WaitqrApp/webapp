@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "postinstall": "npm run production",
     "dev": "react-scripts start",
     "start": "serve -s build",
     "build": "react-scripts build",
