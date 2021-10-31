@@ -43,5 +43,5 @@ app.use('/api/platilloOrdenado', require('./routes/platilloOrdenado'));
 
 //arrancar la app
 app.listen(PORT, '0.0.0.0', () =>{
-    console.log(`El servidor esta funcionando en el puerto ${PORT}`);
+    console.log(`El servidor esta funcionando en el puerto ${port}`);
 });
