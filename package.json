@@ -10,7 +10,7 @@
     "heroku-prebuild": "npm install -f",
     "heroku-postbuild": "npm run production",
     "dev": "react-scripts start",
-    "start": "node index.js"
+    "start": "node Servidor/index.js"
   },
   "author": "",
   "license": "ISC",
