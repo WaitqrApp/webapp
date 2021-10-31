@@ -9,8 +9,7 @@
   "scripts": {
     "heroku-prebuild": "npm install -f",
     "heroku-postbuild": "npm run production",
-    "dev": "react-scripts start",
-    "start": "serve -s build"
+    "dev": "react-scripts start"
   },
   "author": "",
   "license": "ISC",
