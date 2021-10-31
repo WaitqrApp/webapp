@@ -1,49 +1,46 @@
-import React, { Fragment, useContext, useEffect, useState } from 'react';
-import { Container, Row, Col, Form, Button, Modal, Card } from "react-bootstrap";
-import { Nav} from "react-bootstrap";
-import '../Tables/styles/tables.css';
+import React, { Fragment, useContext, useEffect, useState } from "react";
+import {
+  Container,
+  Row,
+  Col,
+  Form,
+  Button,
+  Modal,
+  Card,
+} from "react-bootstrap";
+import { Nav } from "react-bootstrap";
+import "../Tables/styles/tables.css";
 
-import TableModal from './TableModal';
-import mesasContext from '../../../../context/mesas/mesasContext';
+import TableModal from "./TableModal";
+import mesasContext from "../../../../context/mesas/mesasContext";
 
-
-
-
-
-
-function TableCard({mesas}) {
-
+function TableCard({ mesas }) {
   const mesassContext = useContext(mesasContext);
-  const {mesa, guardarMesaActual } = mesassContext;
+  const { mesa, guardarMesaActual } = mesassContext;
 
-    const [modalShow, setModalShow] = useState(false);
+  const [modalShow, setModalShow] = useState(false);
 
-    const seleccionarMesa = mesas =>{
-      console.log("voy a guardar esta mesa" + JSON.stringify(mesas._id))
-      guardarMesaActual(mesas._id)
-  }
+  const seleccionarMesa = (mesas) => {
+    console.log("voy a guardar esta mesa" + JSON.stringify(mesas._id));
+    guardarMesaActual(mesas._id);
+  };
 
   return (
     <Fragment>
-    <Card className="tarjeta-mesa" style={{ width: '18rem', height: "11rem", justifyContent: 'center' }}>
-                        <Card.Body>
-                            <Card.Title className="text-center font-weight-bold">
-                               {mesas.numero}
-                            </Card.Title>
-
-                            <Nav.Item className="mx-auto">
-                  
-                    <Button  variant="light" onClick={() => seleccionarMesa(mesas)}>
-                    <TableModal show={modalShow} onHide={() => setModalShow(false)}
-                                    mesas = {mesas}
-                                />
-                         </Button>
-                    
-                </Nav.Item>
-
-                           
-                        </Card.Body>
-                    </Card>
+      <Card className="tarjeta-mesa mr-3">
+        <Card.Title className="mt-3 text-center font-weight-bold">
+          {mesas.numero}
+        </Card.Title>
+        <Card.Body>
+          <Nav.Item className="mx-auto">
+            <TableModal
+              show={modalShow}
+              onHide={() => setModalShow(false)}
+              mesas={mesas}
+            />
+          </Nav.Item>
+        </Card.Body>
+      </Card>
     </Fragment>
   );
 }

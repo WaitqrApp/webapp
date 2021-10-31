@@ -157,15 +157,12 @@ function AddDish() {
           <Modal.Body className="show-grid">
             <Container>
               <Form>
-                <Form.Group controlId="formHorizontalEmail">
-                  <Col>
-                    <Form.Label>Nombre del Platillo</Form.Label>
-                  </Col>
+                <Form.Group>
                   <Col>
                     <Form.Control
-                      type="text"
                       placeholder="Nombre del platillo"
                       className="input-nombre"
+                      type="text"
                       name="nombre"
                       value={nombre}
                       onChange={handleChange}
@@ -178,12 +175,9 @@ function AddDish() {
                   /*  onChange={(e)=>console.log(e.target.files[0])} */
                   onChange={(e) => setImage(e.target.files[0])}
                   custom
-                  className="input-imagen mb-4 mr-auto ml-auto"
+                  className="input-imagen mb-3"
                 />
-                <Form.Group as={Row}>
-                  <Col sm={3}>
-                    <Form.Label>Descripción</Form.Label>
-                  </Col>
+                <Form.Group>
                   <Col>
                     <Form.Control
                       className="input-nombre"
@@ -195,23 +189,18 @@ function AddDish() {
                     />
                   </Col>
                 </Form.Group>
-                <Col className="mt-2" sm={12}>
-                  <Form.Group as={Row} controlId="formHorizontalPassword">
-                    <Form.Label column sm={"auto"}>
-                      Precio: $
-                    </Form.Label>
-                    <Col className="input-precio" sm={"auto"}>
-                      <Form.Control
-                        onChange={handleChange}
-                        name="precio"
-                        value={precio}
-                        className="input-dinero"
-                        type=""
-                      ></Form.Control>
-                    </Col>
-                  </Form.Group>
-                </Col>
-                <Form.Group as={Row} controlId="formHorizontalCheck">
+                <Form.Group>
+                  <Col className="input-precio">
+                    <Form.Control
+                      onChange={handleChange}
+                      name="precio"
+                      placeholder="Precio"
+                      value={precio}
+                      className="input-dinero"
+                    />
+                  </Col>
+                </Form.Group>
+                <Form.Group>
                   <Col sm={{ span: 10, offset: 2 }}>
                     <Form.Check
                       onChange={handleChange}

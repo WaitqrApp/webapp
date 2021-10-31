@@ -1,190 +1,203 @@
 .sidebar-menu {
-min-height: 89vh !important;
-background-color: rgb(255, 255, 255);
-margin-top: -5vh;
+  min-height: 100vh !important;
+  background-color: rgba(246, 132, 33, 0.062);
+  margin-top: -5vh;
 }
 
 .sidebar-wrapper {
-    position: absolute;
+  position: absolute;
 }
 
-.sidebar-text{
-    color: rgb(7, 46, 72);
-    padding-top: 12%;
-    margin-bottom: 30%;
-    margin-left: 5%;
-    font-weight: bold;
+.sidebar-text {
+  color: rgb(7, 46, 72);
+  padding-top: 12%;
+  margin-bottom: 30%;
+  margin-left: 5%;
+  font-weight: bold;
 }
 
-.sidebar-text-active{
-    font-weight: bold;
-    margin-top: 25%;
-    margin-bottom: 30%;
-    color:rgb(246, 134, 33);
-    margin-left: 5%;
-    width: 110%;
-    background-color: rgba(245, 246, 249, 0)
+.sidebar-text-active {
+  font-weight: bold;
+  margin-top: 25%;
+  margin-bottom: 30%;
+  color: rgb(246, 134, 33);
+  margin-left: 5%;
+  width: 110%;
+  background-color: rgba(245, 246, 249, 0);
 }
 
-.sidebar-text-active:focus{
-    font-weight: bold;
-    margin-top: 25%;
-    margin-bottom: 30%;
-    color:rgb(246, 134, 33);
-    margin-left: 5%;
-    width: 110%;
-    background-color: rgb(245, 246, 249)
+.sidebar-text-active:focus {
+  font-weight: bold;
+  margin-top: 25%;
+  margin-bottom: 30%;
+  color: rgb(246, 134, 33);
+  margin-left: 5%;
+  width: 110%;
+  background-color: rgb(245, 246, 249);
 }
 
-.sidebar-text-active:hover{    
-    color:rgb(246, 134, 33);
+.sidebar-text-active:hover {
+  color: rgb(246, 134, 33);
 }
 
-.sidebar-text:hover{
-    color:rgb(246, 134, 33)
+.sidebar-text:hover {
+  color: rgb(246, 134, 33);
 }
 
 .sidebar-title {
-    font-size: large;
-    padding-top: 2%;
-    text-align: center;
-    color:rgb(246, 134, 33);
-    font-weight: bold;
-
+  font-size: large;
+  padding-top: 2%;
+  text-align: center;
+  color: rgb(246, 134, 33);
+  font-weight: bold;
 }
 
 .sidebar-title:hover {
-    font-size: large;
-    padding-top: 2%;
-    text-align: center;
-    color:rgb(246, 134, 33);
-    font-weight: bold;
-
+  font-size: large;
+  padding-top: 2%;
+  text-align: center;
+  color: rgb(246, 134, 33);
+  font-weight: bold;
 }
 
 .sidebar-sub-title {
-    font-size: small;
-    font-weight: bold;
-    color:rgb(246, 134, 33);
+  font-size: small;
+  font-weight: bold;
+  color: rgb(246, 134, 33);
 }
 
 .sidebar-sub-title:hover {
-    color: rgb(148, 185, 194);
+  color: rgb(148, 185, 194);
 }
 
 .boton-platillo {
-    position: fixed;
-    width: 65%; 
-    bottom: 3%;
-    left: 31%;
-    /*background-color: #FDD000;
+  position: fixed;
+  width: 65%;
+  bottom: 3%;
+  left: 31%;
+  /*background-color: #FDD000;
     border-color: #FDD000;*/
 }
 
 .boton-categoria {
-    position: fixed;
-    width: 13%;
-    left: 16.6%;
-    bottom: 2%;
-    background-color: rgba(246, 132, 33, 0);
+  position: fixed;
+  width: 13%;
+  left: 16.6%;
+  bottom: 2%;
+  background-color: rgba(246, 132, 33, 0);
 }
 
 .boton-disponible {
-    display:block;
-    position: relative;
-    right: 0px;
+  display: block;
+  position: relative;
+  right: 0px;
 }
 
-input[type=checkbox] {
-    z-index: 100;
-    display: block;
-    height: 30px;
-    width: 60px;
-  }
+input[type="checkbox"] {
+  z-index: 100;
+  display: block;
+  height: 30px;
+  width: 60px;
+}
 
 .boton-editar {
-    position: absolute;
-    bottom: 0;
-    left: 10;
-    margin-bottom: 3%;
-    width: 14.2vw;
-    height: 4vh;
-
+  position: relative;
+  bottom: 0;
+  left: 10;
+  margin-bottom: -10%;
+  width: 100%;
+  height: auto;
 }
 
- .boton-menu {
-    margin-top: 8%;
-    margin-right:100%;
-    position: relative;
+.boton-menu {
+  margin-top: 8%;
+  margin-right: 100%;
+  position: relative;
 }
 
-.boton-orden-aceptar{
-    position: relative;
-    bottom: -39%;
-    left: -4%;
-    width: 60%;
-
-}
-.boton-orden-rechazar{
-    position: relative;
-    bottom: -39%;
-    right: -7%;
+.boton-orden-aceptar {
+  position: relative;
+  margin-top: 5%;
+  left: 0%;
+  width: 100%;
 }
 
-.disponible-edit-platillo{
-    align-self: center;
+.platillos {
+  overflow: auto;
+  height: 30vh;
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  padding: 0%;
+}
+
+p {
+  font-size: small;
+}
+.boton-orden-rechazar {
+  position: relative;
+  bottom: -39%;
+  right: -7%;
+}
+
+.disponible-edit-platillo {
+  align-self: center;
 }
 
 .boton-editar-seccion {
-    position: absolute;
-    padding: 0% !important;
-    transform: scale(.7);
-    right:0;
-    margin-top: -3%;
+  position: absolute;
+  padding: 0% !important;
+  transform: scale(0.7);
+  right: 0;
+  margin-top: -3%;
 }
 
-.page-content-wrapper{
-    overflow-y: scroll;
+.page-content-wrapper {
+  overflow-y: scroll;
 }
 .restaurant-button {
-    position: fixed;
-    top: 0px;
-    right: 15px;
-    width: 290px;
-    z-index: 10;
+  position: fixed;
+  top: 0px;
+  right: 15px;
+  width: 290px;
+  z-index: 10;
 }
 
 .contenedorPlatillos {
-    overflow: auto;
-    height: 750px;
+  overflow: auto;
+  height: 750px;
+}
+
+.platillo-card {
+  height: 50vh;
+  width: 15vw;
+  margin-right: 1%;
 }
 
 .descripcion-platillo {
-    padding-bottom: 10%;
+  padding-bottom: 10%;
 }
 
 .imagen-platillo {
-    width: 100%;
-    height: 40%;
-    margin-left: 0%;
-    margin-right: 0%;
+  width: 100%;
 }
 
- /*MODAL EDITAR PLATILLO*/
+/*MODAL EDITAR PLATILLO*/
 
- .input-nombre {
-     width: 100%;
- }
+.input-nombre {
+  width: 100%;
+}
 
- .input-precio {
-    width: 30%;
+.input-precio {
+  width: 100%;
 }
 
 .input-seccion {
-    width: 230%;
+  width: 100%;
 }
 
 .input-imagen {
-    width: 100%;
-    
+  width: 100%;
 }
