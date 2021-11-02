@@ -103,10 +103,10 @@ function Login (props){
                             </div>
                         </form>
 
-                        <Link to={'/nueva-cuenta'} className="enlace-cuenta">
+                       {/*  <Link to={'/nueva-cuenta'} className="enlace-cuenta">
                             Obtener Cuenta
 
-                        </Link>
+                        </Link> */}
                     </div>
                     <CookieConsent>Este sitio usa cookies para mejorar la experiencia de usuario</CookieConsent>
         </div>
