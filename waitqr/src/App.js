@@ -6,7 +6,9 @@ import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
 import Dashboard from './components/Dashboard/Dashboard';
 import Login from './components/auth/Login';
 import NuevaCuenta from './components/auth/NuevaCuenta';
-
+import DishMenu from './components/Dashboard/Sidebar/Menu/DishMenu';
+import Orders from './components/Dashboard/Sidebar/Orders/Orders';
+import Tables from './components/Dashboard/Sidebar/Tables/Tables';
 
 import RestauranteState from './context/restaurantes/restauranteState';
 import MenuState from './context/menus/menusState';
@@ -56,6 +58,9 @@ function App() {
                           <Route exact path="/" component={(Login)} />
                           <Route exact path="/nueva-cuenta" component={(NuevaCuenta)} />
                           <RutaPrivada exact path="/dashboard" component={(Dashboard)} />
+                          <RutaPrivada exact path="/menu"> <Dashboard><DishMenu/></Dashboard></RutaPrivada>
+                          <RutaPrivada exact path="/orders"><Dashboard><Orders/></Dashboard></RutaPrivada>
+                          <RutaPrivada exact path="/tables"><Dashboard><Tables/></Dashboard></RutaPrivada>
                         </Switch>
                       </Router>
                     </AlertaState>
