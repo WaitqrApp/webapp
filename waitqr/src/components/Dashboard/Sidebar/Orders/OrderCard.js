@@ -25,10 +25,7 @@ function OrderCard(orden) {
 
   console.log({ platilloOrdenadoOrden, ordenId: orden.orden._id });
   return (
-    <Card
-      className="tarjeta-orden mt-1"
-      style={{ width: "auto", height: "auto", justifyContent: "center" }}
-    >
+    <Card className="tarjeta-orden" style={{ justifyContent: "center" }}>
       <Card.Body className="">
         <Card.Title className="text-center font-weight-bold">Orden</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">Terraza</Card.Subtitle>

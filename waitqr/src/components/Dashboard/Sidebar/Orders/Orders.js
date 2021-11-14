@@ -81,12 +81,16 @@ function Orders() {
           </DropdownButton>
         </Col>
       </Row>
-      <Row className="tarjeta-orden">
+      <Row className="container-tarjeta-orden">
         {ordenrestaurante
           .filter((orden) => !orden.finalizado)
           .map((orden) => (
-            <Col sm={4} className=" text-left tarjeta-orden">
-              <OrderCard actualizarOrden={actualizarOrden} orden={orden} />
+            <Col className="col-tarjeta-orden p-0">
+              <OrderCard
+                className=""
+                actualizarOrden={actualizarOrden}
+                orden={orden}
+              />
             </Col>
           ))}
       </Row>

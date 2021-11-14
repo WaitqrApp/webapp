@@ -6,10 +6,25 @@
 }
 
 .tarjeta-orden {
-  margin-top: 1%;
-  height: 50vh;
-  width: 60vw;
-  z-index: 10;
+  margin-top: 15%;
+  height: 47vh;
+  width: 15vw !important;
+}
+
+.col-tarjeta-orden {
+  width: 15vw !important;
+  flex-grow: 0;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-top: 3%;
+}
+
+.container-tarjeta-orden {
+  height: 95vh;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  overflow: auto;
 }
 .dropdown-restaurante {
   z-index: 10;
