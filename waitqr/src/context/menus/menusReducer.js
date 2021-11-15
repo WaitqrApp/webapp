@@ -47,13 +47,6 @@ export default (state, action) => {
           (menu) => menu._id === action.payload
         ),
       };
-    case MENU_ACTIVO:
-      return {
-        ...state,
-        menu: state.menusrestaurante.filter(
-          (menu) => menu._id === action.payload
-        ),
-      };
     case LIMPIAR_MENU:
       return {
         ...state,

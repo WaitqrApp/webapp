@@ -59,9 +59,35 @@ function Menu() {
     guardarMenuEscogido(menu.nombre);
   };
 
-  const guardarMenuActivo = (menu) => {};
-  console.log(menusrestaurante);
-  console.log(menuEscogido);
+  const guardarMenuActivo = (menutrue) => {
+    menusrestaurante.map(function (menu) {
+      menu.disponible = false;
+      actualizarMenu(menu);
+      console.log("Entre y puse este menu en", menu.nombre, menu.disponible);
+
+      /*if (menu._id === menutrue._id) {
+        menu.disponible = true;
+        actualizarMenu(menu);
+        console.log("Entre al if y envie este menu", menu.nombre);
+      }
+      if (menu._id != menutrue._id) {
+        menu.disponible = false;
+        actualizarMenu(menu);
+        console.log(
+          "Entre al else y envie este menu",
+          menu.nombre,
+          menu.disponible
+        );
+      }*/
+    });
+    /*menutrue.disponible = false;
+    actualizarMenu(menutrue);
+    console.log(
+      "Este es el nuevo menu activo que envie",
+      menutrue.nombre,
+      menutrue.disponible
+    );*/
+  };
 
   //Extraer el restaurante
   return (
@@ -85,8 +111,10 @@ function Menu() {
                 ))
               }
             >
-              {menusrestaurante.map((menu) => (
-                <Dropdown.Item>{menu.nombre}</Dropdown.Item>
+              {menusrestaurante.map((menutrue) => (
+                <Dropdown.Item onClick={() => guardarMenuActivo(menutrue)}>
+                  {menutrue.nombre}
+                </Dropdown.Item>
               ))}
 
               <Dropdown.Item as="button" onClick={() => setModalShow2(true)}>
