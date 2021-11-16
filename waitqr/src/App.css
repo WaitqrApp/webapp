@@ -1,27 +1,30 @@
 /* Font Color */
 
-h1, h2, p, th {
-  color: #002E48;
+h1,
+h2,
+p,
+th {
+  color: #002e48;
 }
 
 /* The top-right button of the navbar */
- 
+
 .btn-primary {
-    color: #fff;
-    background-color: #EFB63D;
-    border-color: #EFB63D;
+  color: #fff;
+  background-color: #efb63d;
+  border-color: #efb63d;
 }
 
 .btn-primary:focus {
   color: #fff;
-  background-color: #EFB63D;
-  border-color: #EFB63D;
+  background-color: #efb63d;
+  border-color: #efb63d;
 }
 
 .btn-primary:active {
   color: #fff;
-  background-color: #EFB63D;
-  border-color: #EFB63D;
+  background-color: #efb63d;
+  border-color: #efb63d;
 }
 
 /* The side navigation menu */
@@ -54,8 +57,8 @@ h1, h2, p, th {
 
 /* Links on mouse-over */
 .sidebar a:hover:not(.active) {
-  background-color:#ffdb774f;
-  color:  rgb(255, 208, 0);
+  background-color: #ffdb774f;
+  color: rgb(255, 208, 0);
   width: 16.3%;
   text-decoration: none;
 }
@@ -72,7 +75,9 @@ div.content {
     min-width: 100%;
     height: 100%;
   }
-  div.content {margin-left: 0;}
+  div.content {
+    margin-left: 0;
+  }
 }
 
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
@@ -82,8 +87,12 @@ div.content {
     height: 100%;
     position: relative;
   }
-  .sidebar a {float: left;}
-  div.content {margin-left: 0;}
+  .sidebar a {
+    float: left;
+  }
+  div.content {
+    margin-left: 0;
+  }
 }
 
 /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
@@ -94,18 +103,17 @@ div.content {
   }
 }
 
-/*  Navbar */ 
+/*  Navbar */
 
 .navbar {
   max-height: 80px;
 }
 
-.form-control{
+.form-control {
   width: 100%;
-  background-color: rgba(228, 228, 228, 0.404);;
-}d
-
-#dropdown-usuario {
+  background-color: rgba(228, 228, 228, 0.404);
+}
+d #dropdown-usuario {
   position: absolute;
   z-index: 100;
   width: 1000%;
@@ -113,7 +121,7 @@ div.content {
 
 /* Contenido */
 
-#contenido{
+#contenido {
   position: relative;
   background-color: white;
   height: 100vh;
@@ -122,16 +130,6 @@ div.content {
 }
 
 /* Imagenes */
-
-.waitqr-logo {
-    position: relative;
-    height: 200px;
-    width: 200px; 
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 0px;
-    margin-top: -18%;
-}
 
 .dropdown-restaurante {
   position: relative;

@@ -36,14 +36,18 @@ function OrderCard(orden) {
         <Card.Body className="platillos">
           {platilloOrdenadoOrden
             .filter(({ orden: ordenOpt }) => ordenOpt === orden.orden._id)
-            .map((platilloOrdenado) => (
-              <ul>
-                <h5>
-                  {platilloOrdenado.nombre} X {platilloOrdenado.cantidad}
-                </h5>
-                <p>{platilloOrdenado.comentario}</p>
-              </ul>
-            ))}
+            .map((platilloOrdenado) =>
+              platilloOrdenado.ordenado == true ? (
+                <ul>
+                  <h5>
+                    {platilloOrdenado.nombre} X {platilloOrdenado.cantidad}
+                  </h5>
+                  <p>{platilloOrdenado.comentario}</p>
+                </ul>
+              ) : (
+                <span></span>
+              )
+            )}
         </Card.Body>
         <Button
           className="boton-orden-aceptar"

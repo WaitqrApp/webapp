@@ -13,8 +13,13 @@ function Orders() {
   const [restauranteEscogidoId, guardarRestauranteEscogidoId] = useState("");
   //Extraer restaurantes de state inicial
   const restaurantesContext = useContext(restauranteContext);
-  const { mensaje, restaurantes, obtenerRestaurantes, restauranteActual } =
-    restaurantesContext;
+  const {
+    restaurante,
+    mensaje,
+    restaurantes,
+    obtenerRestaurantes,
+    restauranteActual,
+  } = restaurantesContext;
 
   const ordenesContext = useContext(ordenContext);
   const { ordenrestaurante, obtenerOrdenRestaurante, actualizarOrden } =
@@ -30,7 +35,10 @@ function Orders() {
     }
 
     obtenerRestaurantes();
-  }, []); //para que corra solo una vez
+    if (restaurante) {
+      obtenerOrdenRestaurante(restaurante._id);
+    }
+  }, [ordenrestaurante]); //para que corra solo una vez
 
   const seleccionarRestaurante = (restaurante) => {
     restauranteActual(restaurante._id); //fijar un restaurante actual
@@ -83,7 +91,10 @@ function Orders() {
       </Row>
       <Row className="container-tarjeta-orden">
         {ordenrestaurante
-          .filter((orden) => !orden.finalizado)
+          .filter(
+            (orden) => !orden.finalizado,
+            (orden) => (orden.restaurante = restaurante._id)
+          )
           .map((orden) => (
             <Col className="col-tarjeta-orden p-0">
               <OrderCard

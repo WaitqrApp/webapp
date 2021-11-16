@@ -1,19 +1,19 @@
 import React, { useState, useContext, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Col, Row, Container } from "react-bootstrap";
+import { Col, Row, Container, DropdownButton, Dropdown } from "react-bootstrap";
 import Logo from "../img/logo_waiter-01 copy.png";
 import Ayuda from "./Home/Ayuda";
 import AuthContext from "../../../context/autenticacion/authContext";
 import { useHistory } from "react-router-dom";
+import "./sidebar.css";
+
+import restauranteContext from "../../../context/restaurantes/restauranteContext";
+import AlertaContext from "../../../context/alertas/alertaContext";
 
 function Sidebar() {
-  //useEffect(() => {
-  //usuarioAutenticado();
-  //}, [])
-
   return (
-    <div className="sidebar col-md-2">
-      <Col sm={2}>
+    <Col className="sidebar">
+      <Col className="col-waitqr-logo">
         <img className="waitqr-logo" src={Logo} />
       </Col>
       {/*<div className="active">
@@ -51,7 +51,7 @@ function Sidebar() {
       <Col sm={4}>
         <Ayuda />
       </Col>
-    </div>
+    </Col>
   );
 }
 
