@@ -25,6 +25,10 @@ const OrdenSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Restaurante",
   },
+  mesaNombre: {
+    type: String,
+    required: false,
+  },
   finalizado: {
     type: Boolean,
     default: false,

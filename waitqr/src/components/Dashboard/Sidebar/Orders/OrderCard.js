@@ -28,7 +28,7 @@ function OrderCard(orden) {
     <Card className="tarjeta-orden" style={{ justifyContent: "center" }}>
       <Card.Body className="">
         <Card.Title className="text-center font-weight-bold">Orden</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">Terraza</Card.Subtitle>
+        <Card.Subtitle className="mb-2 text-muted">{orden.orden.mesaNombre}</Card.Subtitle>
         <Card.Subtitle className="mb-2 text-muted font-weight-bold">
           {orden.orden.registro.substring(11, 16)} -{" "}
           {orden.orden.registro.substring(0, 10)}
