@@ -47,9 +47,6 @@ function TableCard({ mesas }) {
                 level="Q"
                 style={{ width: 100 }}
                 value={`192.168.0.190:3001/${mesas.restaurante}/${mesas._id}`}
-                
-               
-               
             />
             </div>
         </Card.Body>
