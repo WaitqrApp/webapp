@@ -43,7 +43,7 @@ function Dish(platillo) {
 
   return (
     <CardDeck className="platillo-card overflow-y-scroll">
-      <Card className="mb-0">
+      <Card className="mb-4 mt-2">
         <Card.Img
           className="imagen-platillo"
           variant="top"
@@ -69,7 +69,7 @@ function Dish(platillo) {
                         ...platilloAux,
                         disponible: !platilloAux.disponible,
                       };
-                      console.log(nuevoPlatillo);
+                      /* console.log(nuevoPlatillo); */
                       actualizarPlatillo(nuevoPlatillo);
                       return nuevoPlatillo;
                     })

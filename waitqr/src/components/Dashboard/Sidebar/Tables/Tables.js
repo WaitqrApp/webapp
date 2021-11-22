@@ -48,6 +48,7 @@ function Tables() {
     <>
       <Container fluid>
         <Row>
+          <Col sm={10}></Col>
           <Col sm={2}>
             <DropdownButton
               menuAlign="right"
@@ -58,7 +59,7 @@ function Tables() {
                   <span>{restauranteEscogido}</span>
                 )
               }
-              className="dropdown-restaurante restaurant-button btn-group btn-block"
+              className="dropdown-menus"
             >
               {restaurantes.map((restaurante) => (
                 <Dropdown.Item
