@@ -52,21 +52,6 @@ function Orders() {
     <Container fluid className="">
       <Row>
         <Col sm={8}></Col>
-        {/*
-                <Col xs={2} className="dropdown-seccion">
-                    <Dropdown block>
-                        <Dropdown.Toggle block
-                            menuAlign="right"
-                            title="Sección"
-                            id="dropdown-menu-align-right">
-                            Cocina
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                            <Dropdown.Item>Bar</Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
-                </Col>
-                   */}
         <Col sm={2} className="dropdown-restaurante">
           <DropdownButton
             className="dropdown-restaurante restaurant-button btn-group gtn-block"
@@ -80,9 +65,7 @@ function Orders() {
             }
           >
             {restaurantes.map((restaurante) => (
-              <Dropdown.Item
-                onClick={() => seleccionarRestaurante(restaurante)}
-              >
+              <Dropdown.Item onClick={() => seleccionarRestaurante(restaurante)}>
                 {restaurante.nombre}
               </Dropdown.Item>
             ))}
