@@ -60,6 +60,7 @@ function TableCard({ mesas }) {
 
   const onDownloadClick = () => {
     qrCode.download({
+      name: `${mesas.numero}`,
       extension: fileExt,
     });
   };
@@ -71,13 +72,6 @@ function TableCard({ mesas }) {
           {mesas.numero}
         </Card.Title>
         <Card.Body>
-          <Nav.Item className="mx-auto">
-            <TableModal
-              show={modalShow}
-              onHide={() => setModalShow(false)}
-              mesas={mesas}
-            />
-          </Nav.Item>
           <div className="text-center mt-4">
              <QRCode
               bgColor="#FFFFFF"
@@ -88,8 +82,15 @@ function TableCard({ mesas }) {
             /> 
             <p>{`192.168.0.190:3001/${mesas.restaurante}/${mesas._id}`}</p>
             <p></p>
-            <Button variant="info" onClick={onDownloadClick}>Descargar</Button>
+            <button className="btn-secondary-qr" variant="info" onClick={onDownloadClick}>Descargar QR</button>
           </div>
+          <Nav.Item className="mx-auto mt-4">
+            <TableModal
+              show={modalShow}
+              onHide={() => setModalShow(false)}
+              mesas={mesas}
+            />
+          </Nav.Item>
         </Card.Body>
       </Card>
     </Fragment>
