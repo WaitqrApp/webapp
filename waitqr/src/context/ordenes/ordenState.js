@@ -48,7 +48,7 @@ const OrdenState = (props) => {
       const resultado = await clienteAxios.get("/api/ordenes/restaurante/", {
         params: { restaurante },
       });
-      console.log("RESULTADO ", resultado);
+      //console.log("RESULTADO ", resultado);
       dispatch({
         type: ORDEN_RESTAURANTE,
         payload: resultado.data.ordenes,

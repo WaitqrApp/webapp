@@ -9,7 +9,7 @@ import ordenContext from "../../../../context/ordenes/ordenContext";
 import AlertaContext from "../../../../context/alertas/alertaContext";
 
 function Orders() {
-  const [restauranteEscogido, guardarRestauranteEscogido] = useState("");
+  const [restauranteEscogido, guardarRestauranteEscogido] = useState();
   const [restauranteEscogidoId, guardarRestauranteEscogidoId] = useState("");
   //Extraer restaurantes de state inicial
   const restaurantesContext = useContext(restauranteContext);
@@ -35,10 +35,16 @@ function Orders() {
     }
 
     obtenerRestaurantes();
-    if (restaurante) {
-      obtenerOrdenRestaurante(restaurante._id);
-    }
+    ifObtenerOrdenes();
+    guardarRestauranteEscogido(localStorage.getItem('restaurantewebapp'))
   }, [ordenrestaurante]); //para que corra solo una vez
+
+const ifObtenerOrdenes = e =>{
+  if (restaurante) {
+    obtenerOrdenRestaurante(restaurante[0]._id);
+  }
+
+}
 
   const seleccionarRestaurante = (restaurante) => {
     restauranteActual(restaurante._id); //fijar un restaurante actual
@@ -46,8 +52,8 @@ function Orders() {
     guardarRestauranteEscogidoId(restaurante._id);
     console.log(restaurante._id);
     obtenerOrdenRestaurante(restaurante._id);
+    localStorage.setItem('restaurantewebapp', restaurante)
   };
-
   return (
     <Container fluid className="">
       <Row>
@@ -57,10 +63,11 @@ function Orders() {
             className="dropdown-restaurante restaurant-button btn-group gtn-block"
             size="m"
             title={
-              restauranteEscogido == "" ? (
+              !restaurante ? (
                 <span>Restaurante</span>
-              ) : (
-                <span>{restauranteEscogido}</span>
+              ) 
+              : (
+                <span>{restaurante[0].nombre}</span>
               )
             }
           >

@@ -13,7 +13,7 @@ export default (state,action) =>{
                 formulario: true
             }
         case OBTENER_RESTAURANTES:
-            console.log(action.payload)
+            //console.log(action.payload)
             return{
                 ...state,
                 restaurantes: action.payload
