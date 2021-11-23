@@ -112,7 +112,11 @@ input[type="checkbox"] {
 .boton-menu {
   margin-top: 8%;
   margin-right: 100%;
-  position: relative;
+}
+
+.dropdown-menus {
+  margin-top: 5%;
+  justify-content: center;
 }
 
 .boton-orden-aceptar {
