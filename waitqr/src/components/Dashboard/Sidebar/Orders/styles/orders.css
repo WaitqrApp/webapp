@@ -37,3 +37,7 @@
   width: 290px;
   z-index: 10;
 }
+
+#nuevoPlatilloOrdenado{
+  background-color: green;
+}

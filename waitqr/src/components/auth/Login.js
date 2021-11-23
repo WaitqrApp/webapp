@@ -21,7 +21,7 @@ function Login (props){
        useEffect(() =>{
            usuarioAutenticado()
        if(autenticado){
-           props.history.push('/Dashboard');
+           props.history.push('/menu');
         }
         if(mensaje){
             mostrarAlerta(mensaje.msg, mensaje.categoria);

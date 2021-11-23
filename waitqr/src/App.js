@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, useLocation} from "react-router-dom";
 
 
 import Dashboard from './components/Dashboard/Dashboard';
@@ -9,6 +9,7 @@ import NuevaCuenta from './components/auth/NuevaCuenta';
 import DishMenu from './components/Dashboard/Sidebar/Menu/DishMenu';
 import Orders from './components/Dashboard/Sidebar/Orders/Orders';
 import Tables from './components/Dashboard/Sidebar/Tables/Tables';
+import NoMatch from './components/Dashboard/NoMatch';
 
 import RestauranteState from './context/restaurantes/restauranteState';
 import MenuState from './context/menus/menusState';
@@ -61,6 +62,7 @@ function App() {
                           <RutaPrivada exact path="/menu"> <Dashboard><DishMenu/></Dashboard></RutaPrivada>
                           <RutaPrivada exact path="/orders"><Dashboard><Orders/></Dashboard></RutaPrivada>
                           <RutaPrivada exact path="/tables"><Dashboard><Tables/></Dashboard></RutaPrivada>
+                          <Route path="*"><NoMatch></NoMatch></Route>
                         </Switch>
                       </Router>
                     </AlertaState>
@@ -78,5 +80,7 @@ function App() {
 
   );
 }
+
+
 
 export default App;

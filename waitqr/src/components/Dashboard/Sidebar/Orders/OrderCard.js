@@ -23,7 +23,9 @@ function OrderCard(orden) {
     obtenerPlatilloOrdenado(orden.orden._id);
   }, [orden]);
 
-  console.log({ platilloOrdenadoOrden, ordenId: orden.orden._id });
+  
+
+ // console.log({ platilloOrdenadoOrden, ordenId: orden.orden._id });
   return (
     <Card className="tarjeta-orden" style={{ justifyContent: "center" }}>
       <Card.Body className="">
@@ -36,9 +38,18 @@ function OrderCard(orden) {
         <Card.Body className="platillos">
           {platilloOrdenadoOrden
             .filter(({ orden: ordenOpt }) => ordenOpt === orden.orden._id)
-            .map((platilloOrdenado) =>
+            .map((platilloOrdenado, index) =>
+            
               platilloOrdenado.ordenado == true ? (
-                <ul>
+                index == platilloOrdenadoOrden.length?(
+                  <ul id="nuevoPlatilloOrdenado">
+                  <h5>
+                    {platilloOrdenado.nombre} X {platilloOrdenado.cantidad}
+                  </h5>
+                  <p>{platilloOrdenado.comentario}</p>
+                </ul>
+                ):
+                <ul >
                   <h5>
                     {platilloOrdenado.nombre} X {platilloOrdenado.cantidad}
                   </h5>

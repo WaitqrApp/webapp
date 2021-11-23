@@ -15,6 +15,23 @@ th {
   border-color: #efb63d;
 }
 
+.btn-secondary-qr {
+  color: #fff;
+  background-color: #013047;
+  border-color: #013047;
+  border-radius: 4px;
+
+}
+.btn-secondary-qr:focus{
+  color: #fff;
+  background-color: #013047;
+  border-color: #013047;
+}
+.btn-secondary-qr:active{
+  color: #fff;
+  background-color: #013047;
+  border-color: #013047;
+}
 .btn-primary:focus {
   color: #fff;
   background-color: #efb63d;

@@ -32,7 +32,7 @@ const PlatilloOrdenadoState = (props) => {
         "/api/platilloOrdenado",
         { params: { orden } }
       );
-      console.log({ platillosOrdenadosRes });
+      //console.log({ platillosOrdenadosRes });
       dispatch({
         type: PLATILLOORDENADO_ORDEN,
         payload: platillosOrdenadosRes.data.platillosOrdenados,
