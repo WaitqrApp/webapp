@@ -1,6 +1,6 @@
 .sidebar-menu {
   min-height: 100vh !important;
-  background-color: rgba(246, 132, 33, 0.062);
+  background-color: #072e480a;
   margin-top: -5vh;
 }
 
@@ -20,7 +20,7 @@
   font-weight: bold;
   margin-top: 25%;
   margin-bottom: 30%;
-  color: rgb(246, 134, 33);
+  color: #072e48;
   margin-left: 5%;
   width: 110%;
   background-color: rgba(245, 246, 249, 0);
@@ -30,25 +30,25 @@
   font-weight: bold;
   margin-top: 25%;
   margin-bottom: 30%;
-  color: rgb(246, 134, 33);
+  color: #072e48;
   margin-left: 5%;
   width: 110%;
   background-color: rgb(245, 246, 249);
 }
 
 .sidebar-text-active:hover {
-  color: rgb(246, 134, 33);
+  color: #072e48;
 }
 
 .sidebar-text:hover {
-  color: rgb(246, 134, 33);
+  color: #072e48;
 }
 
 .sidebar-title {
   font-size: large;
   padding-top: 2%;
   text-align: center;
-  color: rgb(246, 134, 33);
+  color: #072e48;
   font-weight: bold;
 }
 
@@ -56,14 +56,14 @@
   font-size: large;
   padding-top: 2%;
   text-align: center;
-  color: rgb(246, 134, 33);
+  color: #072e48;
   font-weight: bold;
 }
 
 .sidebar-sub-title {
   font-size: small;
   font-weight: bold;
-  color: rgb(246, 134, 33);
+  color: #072e48;
 }
 
 .sidebar-sub-title:hover {
@@ -204,4 +204,8 @@ p {
 
 .input-imagen {
   width: 100%;
+}
+
+body {
+  color: #072e48;
 }
