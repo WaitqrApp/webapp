@@ -1,5 +1,8 @@
 const mongoose = require("mongoose");
 
+const moment = require('moment-timezone');
+const dateMexico = moment.tz("America/Mexico_City").format();
+
 const OrdenSchema = mongoose.Schema({
   total: {
     type: Number,
@@ -15,7 +18,7 @@ const OrdenSchema = mongoose.Schema({
   },
   registro: {
     type: Date,
-    default: Date.now(),
+    default: dateMexico,
   },
   restaurante: {
     type: mongoose.Schema.Types.ObjectId,
@@ -23,7 +26,7 @@ const OrdenSchema = mongoose.Schema({
   },
   mesa: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Restaurante",
+    ref: "Mesa",
   },
   mesaNombre: {
     type: String,

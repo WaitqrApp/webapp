@@ -27,7 +27,7 @@ function Orders() {
 
   const alertaContext = useContext(AlertaContext);
   const { alerta, mostrarAlerta } = alertaContext;
-
+  
   //obtener restaurantes cuando carga el componente
   useEffect(() => {
     if (mensaje) {
@@ -35,13 +35,16 @@ function Orders() {
     }
 
     obtenerRestaurantes();
-    ifObtenerOrdenes();
+    setTimeout(ifObtenerOrdenes, 60000);
+    
     guardarRestauranteEscogido(localStorage.getItem('restaurantewebapp'))
+    
   }, [ordenrestaurante]); //para que corra solo una vez
 
 const ifObtenerOrdenes = e =>{
   if (restaurante) {
     obtenerOrdenRestaurante(restaurante[0]._id);
+    console.log("entre")
   }
 
 }
