@@ -4,6 +4,7 @@ import MenuSidebar from "./MenuSidebar";
 import DishMenu from "./DishMenu";
 import "./menusidebar.css";
 import AddRestaurant from "./AddRestaurant";
+import { useHistory } from "react-router-dom";
 
 import AddMenu from "./AddMenu";
 import restauranteContext from "../../../../context/restaurantes/restauranteContext";
@@ -59,34 +60,15 @@ function Menu() {
     guardarMenuEscogido(menu.nombre);
   };
 
+  let history = useHistory();
+
   const guardarMenuActivo = (menutrue) => {
-    menusrestaurante.map(function (menu) {
+    menusrestaurante.map((menu) => {
       menu.disponible = false;
       actualizarMenu(menu);
-      console.log("Entre y puse este menu en", menu.nombre, menu.disponible);
-
-      /*if (menu._id === menutrue._id) {
-        menu.disponible = true;
-        actualizarMenu(menu);
-        console.log("Entre al if y envie este menu", menu.nombre);
-      }
-      if (menu._id != menutrue._id) {
-        menu.disponible = false;
-        actualizarMenu(menu);
-        console.log(
-          "Entre al else y envie este menu",
-          menu.nombre,
-          menu.disponible
-        );
-      }*/
     });
-    /*menutrue.disponible = false;
+    menutrue.disponible = true;
     actualizarMenu(menutrue);
-    console.log(
-      "Este es el nuevo menu activo que envie",
-      menutrue.nombre,
-      menutrue.disponible
-    );*/
   };
 
   //Extraer el restaurante
@@ -94,21 +76,16 @@ function Menu() {
     <>
       <Container fluid>
         <Row>
-          <Col xs={2}>
+          <Col xs={6}></Col>
+          <Col className="text-center" xs={2}>
             <DropdownButton
-              className=""
-              ize="m"
+              className="dropdown-menus"
               title={
-                (restauranteEscogido == "" ? (
-                  <span>Primero escoge un restaurante</span>
+                restauranteEscogido == "" ? (
+                  <span>Menu activo</span>
                 ) : (
                   <span>Menu activo</span>
-                ),
-                menuEscogido !== "" ? (
-                  <span>{menuEscogido}</span>
-                ) : (
-                  <span>Menu activo</span>
-                ))
+                )
               }
             >
               {menusrestaurante.map((menutrue) => (
@@ -123,10 +100,9 @@ function Menu() {
               <AddMenu show={modalShow2} onHide={() => setModalShow2(false)} />
             </DropdownButton>
           </Col>
-          <Col xs={2}>
+          <Col className="text-center" xs={2}>
             <DropdownButton
-              className="boton-menu"
-              ize="m"
+              className="dropdown-menus"
               title={
                 (restauranteEscogido == "" ? (
                   <span>Primero escoge un restaurante</span>
@@ -136,7 +112,7 @@ function Menu() {
                 menuEscogido !== "" ? (
                   <span>{menuEscogido}</span>
                 ) : (
-                  <span> Escoge un menu</span>
+                  <span> Menu</span>
                 ))
               }
             >
@@ -152,9 +128,9 @@ function Menu() {
               <AddMenu show={modalShow2} onHide={() => setModalShow2(false)} />
             </DropdownButton>
           </Col>
-          <Col xs={2}>
+          <Col className="text-center" xs={2}>
             <DropdownButton
-              className="dropdown-restaurante restaurant-button btn-group btn-block"
+              className="dropdown-menus"
               title={
                 restauranteEscogido == "" ? (
                   <span>Restaurante</span>
@@ -185,7 +161,7 @@ function Menu() {
           <Col xs={2} id="sidebar-wrapper">
             <MenuSidebar />
           </Col>
-          <Col xs={10} id="page-content-wrapper">
+          <Col xs={10} id="mt-1 page-content-wrapper">
             <DishMenu />
           </Col>
         </Row>

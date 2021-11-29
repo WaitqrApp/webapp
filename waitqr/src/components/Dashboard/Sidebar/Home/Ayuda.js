@@ -9,14 +9,15 @@ function Ayuda() {
       <Row className="row">
         <img className="help" src={help} />
         <Col sm={12} className="">
-          <h3> ¿Necesitas ayuda?</h3>
+          <h3>Ayudanos a mejorar</h3>
         </Col>
       </Row>
       <Row className="row">
         <Col sm={12} className="">
           <div className="platillosdashboard">
             <p>
-              Podemos ayudarte con mas herramientas para manejar tu restaurante.
+              Colaboremos para traer una mejor experiencia para tu restaurante y
+              comensales
             </p>
           </div>
         </Col>

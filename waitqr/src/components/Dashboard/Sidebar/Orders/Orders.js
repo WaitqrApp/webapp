@@ -63,7 +63,7 @@ const ifObtenerOrdenes = e =>{
         <Col sm={8}></Col>
         <Col sm={2} className="dropdown-restaurante">
           <DropdownButton
-            className="dropdown-restaurante restaurant-button btn-group gtn-block"
+            className="dropdown-menus"
             size="m"
             title={
               !restaurante ? (

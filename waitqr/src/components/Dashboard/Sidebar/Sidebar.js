@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Col, Row, Container, DropdownButton, Dropdown } from "react-bootstrap";
-import Logo from "../img/logo_waiter-01 copy.png";
+import Logo from "../img/logo_waitqr_update.png";
 import Ayuda from "./Home/Ayuda";
 import AuthContext from "../../../context/autenticacion/authContext";
 import { useHistory } from "react-router-dom";
