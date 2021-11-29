@@ -35,7 +35,7 @@ function Orders() {
     }
 
     obtenerRestaurantes();
-    setTimeout(ifObtenerOrdenes, 60000);
+    setTimeout(ifObtenerOrdenes, 30000);
     
     guardarRestauranteEscogido(localStorage.getItem('restaurantewebapp'))
     
@@ -53,9 +53,9 @@ const ifObtenerOrdenes = e =>{
     restauranteActual(restaurante._id); //fijar un restaurante actual
     guardarRestauranteEscogido(restaurante.nombre);
     guardarRestauranteEscogidoId(restaurante._id);
-    console.log(restaurante._id);
+    //console.log(restaurante._id);
     obtenerOrdenRestaurante(restaurante._id);
-    localStorage.setItem('restaurantewebapp', restaurante)
+    localStorage.setItem('restaurantewebapp', restaurante)  
   };
   return (
     <Container fluid className="">

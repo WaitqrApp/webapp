@@ -23,11 +23,19 @@ function OrderCard(orden) {
     obtenerPlatilloOrdenado(orden.orden._id);
   }, [orden]);
 
-  
+  var pagar;
+  if(orden.orden.pagar == true){
+    pagar = "pagar"
+    console.log("pagar")
+  }
+  else{
+    pagar = ""
+    console.log(" no pagar")
+  }
 
  // console.log({ platilloOrdenadoOrden, ordenId: orden.orden._id });
   return (
-    <Card className="tarjeta-orden" style={{ justifyContent: "center" }}>
+    <Card className={`tarjeta-orden ${pagar}` } style={{ justifyContent: "center" }}>
       <Card.Body className="">
         <Card.Title className="text-center font-weight-bold">Orden</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">{orden.orden.mesaNombre}</Card.Subtitle>

@@ -22,6 +22,10 @@ router.get('/',
 platilloController.obtenerPlatillos
 );
 
+router.get('/platillosrestaurante',
+platilloController.obtenerPlatillosRestaurante
+);
+
 //Actualizar platillo
 router.put('/:id',
     auth,

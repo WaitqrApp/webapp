@@ -15,12 +15,14 @@ import AlertaContext from "../../../../context/alertas/alertaContext";
 function Menu() {
   const [modalShow, setModalShow] = useState(false);
   const [modalShow2, setModalShow2] = useState(false);
-  const [restauranteEscogido, guardarRestauranteEscogido] = useState("");
+  const [restauranteEscogido, guardarRestauranteEscogido] = useState();
+  const [restauranteEscogidoId, guardarRestauranteEscogidoId] = useState("");
+
   const [menuEscogido, guardarMenuEscogido] = useState("");
 
   //Extraer restaurantes de state inicial
   const restaurantesContext = useContext(restauranteContext);
-  const { mensaje, restaurantes, obtenerRestaurantes, restauranteActual } =
+  const {restaurante, mensaje, restaurantes, obtenerRestaurantes, restauranteActual } =
     restaurantesContext;
 
   const alertaContext = useContext(AlertaContext);
@@ -28,6 +30,7 @@ function Menu() {
 
   const menussContext = useContext(menusContext);
   const {
+    menu,
     menusrestaurante,
     eliminarMenu,
     obtenerMenus,
@@ -40,6 +43,10 @@ function Menu() {
     if (mensaje) {
       mostrarAlerta(mensaje.msg, mensaje.categoria);
     }
+    guardarRestauranteEscogido(localStorage.getItem('restaurantewebapp'))
+    guardarMenuEscogido(localStorage.getItem('menuwebapp'))
+
+
 
     obtenerRestaurantes();
   }, [mensaje]); //para que corra solo una vez
@@ -52,12 +59,19 @@ function Menu() {
     restauranteActual(restaurante._id); //fijar un restaurante actual
     obtenerMenus(restaurante._id);
     guardarRestauranteEscogido(restaurante.nombre);
+    guardarRestauranteEscogidoId(restaurante._id);
+    localStorage.setItem('restaurantewebapp', restaurante)  
+    localStorage.setItem('restaurantewebappid', restaurante._id)  
+
+
   };
 
   //Funcion para agregar el menu actual
   const seleccionarMenu = (menu) => {
     guardarMenuActual(menu._id); //fijar un menu actual
     guardarMenuEscogido(menu.nombre);
+    localStorage.setItem('menuwebapp', menu)  
+
   };
 
   let history = useHistory();
@@ -87,17 +101,13 @@ function Menu() {
                   <span>Menu activo</span>
                 )
               }
+              
             >
               {menusrestaurante.map((menutrue) => (
                 <Dropdown.Item onClick={() => guardarMenuActivo(menutrue)}>
                   {menutrue.nombre}
                 </Dropdown.Item>
               ))}
-
-              <Dropdown.Item as="button" onClick={() => setModalShow2(true)}>
-                Agregar Menu +
-              </Dropdown.Item>
-              <AddMenu show={modalShow2} onHide={() => setModalShow2(false)} />
             </DropdownButton>
           </Col>
           <Col className="text-center" xs={2}>
@@ -109,10 +119,10 @@ function Menu() {
                 ) : (
                   <span>Escoge un menu</span>
                 ),
-                menuEscogido !== "" ? (
-                  <span>{menuEscogido}</span>
-                ) : (
+                !menu? (
                   <span> Menu</span>
+                ) : (
+                  <span>{menu[0].nombre}</span>
                 ))
               }
             >
@@ -132,10 +142,11 @@ function Menu() {
             <DropdownButton
               className="dropdown-menus"
               title={
-                restauranteEscogido == "" ? (
+                !restaurante ? (
                   <span>Restaurante</span>
-                ) : (
-                  <span>{restauranteEscogido}</span>
+                ) 
+                : (
+                  <span>{restaurante[0].nombre}</span>
                 )
               }
             >

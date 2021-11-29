@@ -2,6 +2,8 @@ import React, {useReducer} from 'react';
 import PlatilloContext from './platillosContext';
 import PlatilloReducer from './platillosReducer';
 import {PLATILLOS_SECCION} from '../../types'
+import {PLATILLOS_RESTAURANTE} from '../../types'
+
 import {AGREGAR_PLATILLO} from '../../types'
 import {VALIDAR_PLATILLO} from '../../types'
 import {ELIMINAR_PLATILLO} from '../../types'
@@ -36,6 +38,19 @@ const PlatilloState = props =>{
             dispatch({
                 type: PLATILLOS_SECCION,
                 payload: resultado.data.platillos
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const obtenerPlatillosRestaurante = async restaurante =>{
+        try {
+            const resultado = await clienteAxios.get('/api/platillos/platillosrestaurante',{params:{restaurante}});
+            console.log(resultado)
+            dispatch({
+                type: PLATILLOS_RESTAURANTE,
+                payload: resultado.data.platillosrestaurante
             })
         } catch (error) {
             console.log(error)
@@ -124,7 +139,8 @@ const PlatilloState = props =>{
                 eliminarPlatillo,
                 guardarPlatilloActual,
                 actualizarPlatillo,
-                limpiarPlatillo
+                limpiarPlatillo,
+                obtenerPlatillosRestaurante
             }}
         >
             {props.children}

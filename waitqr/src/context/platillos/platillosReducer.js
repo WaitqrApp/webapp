@@ -1,4 +1,6 @@
 import {PLATILLOS_SECCION} from '../../types'
+import {PLATILLOS_RESTAURANTE} from '../../types'
+
 import {AGREGAR_PLATILLO} from '../../types'
 import {VALIDAR_PLATILLO} from '../../types'
 import {ELIMINAR_PLATILLO} from '../../types'
@@ -15,6 +17,11 @@ export default (state, action) => {
                 ...state,
                 platillosseccion:action.payload
             }
+            case PLATILLOS_RESTAURANTE:
+                return{
+                    ...state,
+                    platillosrestaurante:action.payload
+                }
         case AGREGAR_PLATILLO:
             return{
                 ...state,

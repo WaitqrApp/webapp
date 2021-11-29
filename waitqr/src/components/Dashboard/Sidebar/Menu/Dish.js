@@ -41,6 +41,19 @@ function Dish(platillo) {
     });
   };
 
+  var favorito;
+  if(platillo.platillo.favorito == true){
+    favorito = "star"
+  }
+  else{
+    favorito = "star_outline"
+  }
+
+  const agregarFavorito= e =>{
+    platillo.platillo.favorito = !platillo.platillo.favorito
+    actualizarPlatillo(platillo.platillo)
+  }
+
   return (
     <CardDeck className="platillo-card overflow-y-scroll">
       <Card className="mb-4 mt-2">
@@ -59,7 +72,7 @@ function Dish(platillo) {
               </Col>
             </Row>
             <Row>
-              <Col>
+              <Col m={8}>
                 <Form.Check
                   className="platillo-disponible mt-2"
                   type="switch"
@@ -76,6 +89,9 @@ function Dish(platillo) {
                   }
                   checked={platilloAux.disponible}
                 ></Form.Check>
+              </Col>
+              <Col m={4}>
+              <span class="material-icons favorito" onClick={()=>agregarFavorito()}>{favorito}</span>
               </Col>
             </Row>
           </Card.Title>

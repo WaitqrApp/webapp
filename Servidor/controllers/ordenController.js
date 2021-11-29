@@ -79,7 +79,7 @@ exports.obtenerOrdenesRestaurante = async (req, res) => {
 exports.actualizarOrden = async (req, res) => {
   try {
     //Extraer la sesionIndividual y comprobar si existe
-    const { sesionIndividual, horarioInicio, horarioFin, total, finalizado } =
+    const { sesionIndividual, horarioInicio, horarioFin, total, finalizado, pagar } =
       req.body;
     const existeSesionIndividual = await SesionIndividual.findById(
       sesionIndividual
@@ -96,6 +96,9 @@ exports.actualizarOrden = async (req, res) => {
 
     if (finalizado !== undefined) {
       nuevaOrden.finalizado = finalizado;
+    }
+    if (pagar !== undefined) {
+      nuevaOrden.pagar = pagar;
     }
 
     if (horarioInicio) {

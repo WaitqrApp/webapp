@@ -36,6 +36,10 @@ const OrdenSchema = mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  pagar: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 module.exports = mongoose.model("Orden", OrdenSchema);

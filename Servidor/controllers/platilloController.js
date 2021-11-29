@@ -1,5 +1,6 @@
 const Platillo = require("../models/Platillo");
 const Seccion = require("../models/Seccion");
+const Restaurante = require("../models/Restaurante");
 const { validationResult } = require("express-validator");
 
 //Crea un nuevo platillo
@@ -55,12 +56,33 @@ exports.obtenerPlatillos = async (req, res) => {
   }
 };
 
+
+//Obtiene los platillos por seccion
+exports.obtenerPlatillosRestaurante = async (req, res) => {
+  try {
+    //Extraer el restaurante y comprobar si existe
+    const { restaurante } = req.query;
+    const existeRestaurante = await Restaurante.findById(restaurante);
+    if (!existeRestaurante) {
+      return res.status(406).json({ msg: "Restaurante no encontrado" });
+    }
+
+
+    //Obtener platillos por restaurante
+    const platillosrestaurante = await Platillo.find({ restaurante });
+    res.json({ platillosrestaurante });
+  } catch (error) {
+    console.log(error);
+    res.status(501).send("Hubo un error");
+  }
+};
+
 //Actualizar una platillo
 
 exports.actualizarPlatillo = async (req, res) => {
   try {
     //Extraer la seccion y comprobar si existe
-    const { seccion, nombre, disponible, precio, descripcion, imagenPlatillo } =
+    const { seccion, nombre, disponible, precio, descripcion, imagenPlatillo, favorito } =
       req.body;
     const existeSeccion = await Seccion.findById(seccion);
 
@@ -93,6 +115,9 @@ exports.actualizarPlatillo = async (req, res) => {
     }
     if (imagenPlatillo) {
       nuevoPlatillo.imagenPlatillo = imagenPlatillo;
+    }
+    if (favorito !== undefined) {
+      nuevoPlatillo.favorito = favorito;
     }
 
     //guardar platillo

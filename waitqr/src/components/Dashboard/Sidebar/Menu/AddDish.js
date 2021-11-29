@@ -26,7 +26,6 @@ function AddDish() {
     actualizarPlatillo,
     limpiarPlatillo,
   } = platillossContext;
-
   //Effect que detecta si hay un platillo seleccionado
   useEffect(() => {
     if (platilloseleccionado !== null) {
@@ -51,7 +50,6 @@ function AddDish() {
     disponible: true,
   });
 
-  console.log(platilloCreado.disponible);
 
   //extraer el nombre del proyecto
   const { nombre, descripcion, precio, platillo, imagenPlatillo, disponible } =
@@ -111,6 +109,8 @@ function AddDish() {
       postImage();
       console.log("antes de enviarlo" + JSON.parse(JSON.stringify(aux)));
       platilloCreado.imagenPlatillo = aux;
+      platilloCreado.restaurante = localStorage.getItem('restaurantewebappid')
+
       agregarPlatillo(platilloCreado);
     } else {
       //actualizar platillo existente

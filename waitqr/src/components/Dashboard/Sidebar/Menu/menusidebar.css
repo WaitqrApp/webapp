@@ -209,3 +209,7 @@ p {
 body {
   color: #072e48;
 }
+
+.favorito{
+  cursor: pointer;
+}

@@ -18,6 +18,10 @@ const PlatilloSchema = mongoose.Schema({
         type: Boolean,
         default: true,
     },
+    favorito:{
+        type: Boolean,
+        default: false,
+    },
    
     seccion:{
         type: mongoose.Schema.Types.ObjectId,
