@@ -38,10 +38,12 @@
   z-index: 10;
 }
 
-#nuevoPlatilloOrdenado{
+#nuevoPlatilloOrdenado {
   background-color: green;
 }
 
-.pagar{
-  background-color: green;
+.pagar {
+  background-color: #072e482a;
+  border-color: #efb63d;
+  border-width: 3px;
 }
