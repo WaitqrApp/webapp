@@ -27,7 +27,7 @@ function Orders() {
 
   const alertaContext = useContext(AlertaContext);
   const { alerta, mostrarAlerta } = alertaContext;
-  
+
   //obtener restaurantes cuando carga el componente
   useEffect(() => {
     if (mensaje) {
@@ -36,18 +36,16 @@ function Orders() {
 
     obtenerRestaurantes();
     setTimeout(ifObtenerOrdenes, 30000);
-    
-    guardarRestauranteEscogido(localStorage.getItem('restaurantewebapp'))
-    
+
+    guardarRestauranteEscogido(localStorage.getItem("restaurantewebapp"));
   }, [ordenrestaurante]); //para que corra solo una vez
 
-const ifObtenerOrdenes = e =>{
-  if (restaurante) {
-    obtenerOrdenRestaurante(restaurante[0]._id);
-    console.log("entre")
-  }
-
-}
+  const ifObtenerOrdenes = (e) => {
+    if (restaurante) {
+      obtenerOrdenRestaurante(restaurante[0]._id);
+      console.log("entre");
+    }
+  };
 
   const seleccionarRestaurante = (restaurante) => {
     restauranteActual(restaurante._id); //fijar un restaurante actual
@@ -55,12 +53,12 @@ const ifObtenerOrdenes = e =>{
     guardarRestauranteEscogidoId(restaurante._id);
     //console.log(restaurante._id);
     obtenerOrdenRestaurante(restaurante._id);
-    localStorage.setItem('restaurantewebapp', restaurante)  
+    localStorage.setItem("restaurantewebapp", restaurante);
   };
   return (
     <Container fluid className="">
       <Row>
-        <Col sm={8}></Col>
+        <Col sm={10}></Col>
         <Col sm={2} className="dropdown-restaurante">
           <DropdownButton
             className="dropdown-menus"
@@ -68,14 +66,15 @@ const ifObtenerOrdenes = e =>{
             title={
               !restaurante ? (
                 <span>Restaurante</span>
-              ) 
-              : (
+              ) : (
                 <span>{restaurante[0].nombre}</span>
               )
             }
           >
             {restaurantes.map((restaurante) => (
-              <Dropdown.Item onClick={() => seleccionarRestaurante(restaurante)}>
+              <Dropdown.Item
+                onClick={() => seleccionarRestaurante(restaurante)}
+              >
                 {restaurante.nombre}
               </Dropdown.Item>
             ))}

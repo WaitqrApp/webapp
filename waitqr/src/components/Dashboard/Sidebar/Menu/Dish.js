@@ -42,17 +42,16 @@ function Dish(platillo) {
   };
 
   var favorito;
-  if(platillo.platillo.favorito == true){
-    favorito = "star"
-  }
-  else{
-    favorito = "star_outline"
+  if (platillo.platillo.favorito == true) {
+    favorito = "star";
+  } else {
+    favorito = "star_outline";
   }
 
-  const agregarFavorito= e =>{
-    platillo.platillo.favorito = !platillo.platillo.favorito
-    actualizarPlatillo(platillo.platillo)
-  }
+  const agregarFavorito = (e) => {
+    platillo.platillo.favorito = !platillo.platillo.favorito;
+    actualizarPlatillo(platillo.platillo);
+  };
 
   return (
     <CardDeck className="platillo-card overflow-y-scroll">
@@ -91,7 +90,12 @@ function Dish(platillo) {
                 ></Form.Check>
               </Col>
               <Col m={4}>
-              <span class="material-icons favorito" onClick={()=>agregarFavorito()}>{favorito}</span>
+                <span
+                  class="material-icons favorito"
+                  onClick={() => agregarFavorito()}
+                >
+                  {favorito}
+                </span>
               </Col>
             </Row>
           </Card.Title>
