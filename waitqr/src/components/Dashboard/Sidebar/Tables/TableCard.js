@@ -78,9 +78,9 @@ function TableCard({ mesas }) {
               fgColor="#000000"
               level="Q"
               style={{ width: 100 }}
-              value={`192.168.0.190:3001/${mesas.restaurante}/${mesas._id}`}
+              value={`clientewaitqr.netlify.app/${mesas.restaurante}/${mesas._id}`}
             /> 
-            <p>{`192.168.0.190:3001/${mesas.restaurante}/${mesas._id}`}</p>
+            <p>{`clientewaitqr.netlify.app/${mesas.restaurante}/${mesas._id}`}</p>
             <p></p>
             <button className="btn-secondary-qr" variant="info" onClick={onDownloadClick}>Descargar QR</button>
           </div>
