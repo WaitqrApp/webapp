@@ -8,7 +8,7 @@
 .tarjeta-orden {
   margin-top: 15%;
   height: 47vh;
-  width: 15vw !important;
+  width: 20vw !important;
 }
 
 .col-tarjeta-orden {
@@ -20,7 +20,7 @@
 }
 
 .container-tarjeta-orden {
-  height: 95vh;
+  height: 92vh;
   display: flex;
   flex-flow: row wrap;
   align-content: flex-start;
