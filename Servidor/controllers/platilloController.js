@@ -46,7 +46,6 @@ exports.obtenerPlatillos = async (req, res) => {
       return res.status(404).json({ msg: "Seccion no encontrada" });
     }
 
-
     //Obtener platillos por seccion
     const platillos = await Platillo.find({ seccion });
     res.json({ platillos });
@@ -55,7 +54,6 @@ exports.obtenerPlatillos = async (req, res) => {
     res.status(500).send("Hubo un error");
   }
 };
-
 
 //Obtiene los platillos por seccion
 exports.obtenerPlatillosRestaurante = async (req, res) => {
@@ -66,7 +64,6 @@ exports.obtenerPlatillosRestaurante = async (req, res) => {
     if (!existeRestaurante) {
       return res.status(406).json({ msg: "Restaurante no encontrado" });
     }
-
 
     //Obtener platillos por restaurante
     const platillosrestaurante = await Platillo.find({ restaurante });
@@ -82,8 +79,15 @@ exports.obtenerPlatillosRestaurante = async (req, res) => {
 exports.actualizarPlatillo = async (req, res) => {
   try {
     //Extraer la seccion y comprobar si existe
-    const { seccion, nombre, disponible, precio, descripcion, imagenPlatillo, favorito } =
-      req.body;
+    const {
+      seccion,
+      nombre,
+      disponible,
+      precio,
+      descripcion,
+      imagenPlatillo,
+      favorito,
+    } = req.body;
     const existeSeccion = await Seccion.findById(seccion);
 
     //Revisar si el platillo existe o no
@@ -116,7 +120,7 @@ exports.actualizarPlatillo = async (req, res) => {
     if (imagenPlatillo) {
       nuevoPlatillo.imagenPlatillo = imagenPlatillo;
     }
-    if (favorito !== undefined) {
+    if (favorito !== null) {
       nuevoPlatillo.favorito = favorito;
     }
 
