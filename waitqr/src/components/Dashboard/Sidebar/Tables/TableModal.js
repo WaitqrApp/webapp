@@ -74,7 +74,7 @@ function TableModal({ mesas }) {
               {
                 <span>
                   Numero de personas en la mesa:{" "}
-                  {sesionindividualsesiongeneral.length}
+                  {sesionindividualsesiongeneral.length + 1}
                 </span>
               }
               {/*<span>{intento}</span>*/}

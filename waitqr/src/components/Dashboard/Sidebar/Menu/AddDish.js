@@ -50,7 +50,6 @@ function AddDish() {
     disponible: true,
   });
 
-
   //extraer el nombre del proyecto
   const { nombre, descripcion, precio, platillo, imagenPlatillo, disponible } =
     platilloCreado;
@@ -93,7 +92,6 @@ function AddDish() {
   };
 
   const onSubmit = (e) => {
-    console.log("ENTRE AL SUBMIT DE platillo PUTO");
     e.preventDefault();
 
     //validar
@@ -109,7 +107,7 @@ function AddDish() {
       postImage();
       console.log("antes de enviarlo" + JSON.parse(JSON.stringify(aux)));
       platilloCreado.imagenPlatillo = aux;
-      platilloCreado.restaurante = localStorage.getItem('restaurantewebappid')
+      platilloCreado.restaurante = localStorage.getItem("restaurantewebappid");
 
       agregarPlatillo(platilloCreado);
     } else {
