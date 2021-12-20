@@ -55,9 +55,6 @@ function AddCategory(props) {
     });
   };
 
-  console.log("saludos pendeoscar");
-  console.log("esta es la seccion: " + seccionseleccionada);
-  console.log("esta es el menu actual: " + menuActual.nombre);
 
   const onSubmit = (e) => {
     console.log("si entre putooooo");

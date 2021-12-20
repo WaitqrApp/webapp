@@ -28,11 +28,14 @@ function DishMenu() {
     <>
       <div className="container-fluid">
         <Row className="contenedorPlatillos">
-          {/*             {console.log("entre a los platillos")}
-           */}{" "}
-          {platillosseccion.map((platillo) => (
-            <Dish platillo={platillo} />
-          ))}
+          {
+            platillosseccion.length == 0 ? 
+            <p>La seccion no tiene platillos</p>
+            :
+            platillosseccion.map((platillo) => (
+              <Dish platillo={platillo} />
+            ))
+          }
         </Row>
       </div>
       <AddDish

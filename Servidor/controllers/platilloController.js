@@ -127,7 +127,7 @@ exports.actualizarPlatillo = async (req, res) => {
     //guardar platillo
     platillo = await Platillo.findOneAndUpdate(
       { _id: req.params.id },
-      nuevoPlatillo,
+      nuevoPlatillo, 
       {
         new: true,
       }

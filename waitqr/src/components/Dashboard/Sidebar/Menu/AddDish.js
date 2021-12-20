@@ -49,6 +49,7 @@ function AddDish() {
     platillo: "",
     disponible: true,
   });
+  const [valorToggle, guardarValorToggle] = useState(false);
 
   //extraer el nombre del proyecto
   const { nombre, descripcion, precio, platillo, imagenPlatillo, disponible } =
@@ -61,6 +62,12 @@ function AddDish() {
   const [guardarSeccionActual] = seccion;
 
   var aux;
+
+  
+
+  const cambiarToggle = () =>{
+    guardarValorToggle(!valorToggle)
+  }
 
   const postImage = () => {
     const data = new FormData();
@@ -108,8 +115,10 @@ function AddDish() {
       console.log("antes de enviarlo" + JSON.parse(JSON.stringify(aux)));
       platilloCreado.imagenPlatillo = aux;
       platilloCreado.restaurante = localStorage.getItem("restaurantewebappid");
+      platilloCreado.disponible = valorToggle;
 
       agregarPlatillo(platilloCreado);
+      obtenerPlatillos(seccion[0]._id)
     } else {
       //actualizar platillo existente
       actualizarPlatillo(platilloCreado);
@@ -201,7 +210,7 @@ function AddDish() {
                 <Form.Group>
                   <Col sm={{ span: 10, offset: 2 }}>
                     <Form.Check
-                      onChange={handleChange}
+                      onClick={() => cambiarToggle()}
                       className="disponible-edit-platillo"
                       type="switch"
                       id="custom-switch"

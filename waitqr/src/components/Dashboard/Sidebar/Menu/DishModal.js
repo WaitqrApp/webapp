@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import {
   Container,
   Row,
@@ -22,6 +22,11 @@ function DishModal({
   onClickEliminarPlatillo,
   guardarPlatilloAux,
 }) {
+
+useEffect(() => {
+  console.log(platillo._id)
+}, [])
+
   const { nombre, descripcion, precio, disponible } = platillo;
   const [image, setImage] = useState("");
   var aux;
