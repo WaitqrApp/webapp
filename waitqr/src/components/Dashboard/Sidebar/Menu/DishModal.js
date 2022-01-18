@@ -16,7 +16,7 @@ import DeleteDishModal from "./DeleteDishModal";
 function DishModal({
   setModalShow,
   modalShow,
-  platillo,
+  platillo, 
   handleChange,
   onGuardarPlatillo,
   onClickEliminarPlatillo,

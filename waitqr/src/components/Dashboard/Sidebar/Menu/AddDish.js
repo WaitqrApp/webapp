@@ -128,7 +128,7 @@ function AddDish() {
     }
 
     //Obtener y filtrar las tareas del proyecto actual, practicamente lo recarga
-    obtenerPlatillos(guardarSeccionActual.id);
+    obtenerPlatillos(seccion.id);
 
     //reiniciar el form
     guardarPlatilloCreado({
