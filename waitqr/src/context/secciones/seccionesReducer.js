@@ -33,7 +33,7 @@ export default (state, action) => {
             }
         case ACTUALIZAR_SECCION:
             return{
-                ...state,
+                ...state, 
                 seccionesmenu: state.seccionesmenu.map(seccion => seccion._id === action.payload._id 
                     ? action.payload
                     : seccion)

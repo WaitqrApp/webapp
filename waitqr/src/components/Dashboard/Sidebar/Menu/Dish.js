@@ -30,6 +30,7 @@ function Dish(platillo) {
   };
 
   const onGuardarPlatillo = (e) => {
+    console.log(platilloAux)
     actualizarPlatillo(platilloAux);
     setModalShow(false);
   };

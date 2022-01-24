@@ -38,8 +38,8 @@ function MenuSideBar(){
     
     const seleccionarSeccion = seccion =>{
         guardarSeccionActual(seccion._id)
+        obtenerSecciones(menu[0]._id)
     }
-    console.log(seccion);
 
     return (
         <>

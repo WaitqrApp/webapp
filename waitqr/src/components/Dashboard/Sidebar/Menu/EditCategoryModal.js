@@ -5,7 +5,6 @@ import './menusidebar.css';
 import seccionesContext from '../../../../context/secciones/seccionesContext';
 
 function EditCategoryModal(seccion) {
-  console.log("hola " + JSON.stringify(seccion.seccion.nombre))
   const seccionessContext = useContext(seccionesContext);
   const { actualizarSeccion, eliminarSeccion } = seccionessContext;
 
@@ -65,7 +64,7 @@ function EditCategoryModal(seccion) {
                 <Form.Label>Nombre de la Sección</Form.Label>
               </Col>
               <Col>  
-                <Form.Control type="text" className="input-seccion" value={nombre} onChange={onChange} />
+                <Form.Control type="text" className="input-seccion" value={nombre} name="nombre" onChange={onChange} />
               </Col>
               </Form.Group>
             </Row>
@@ -80,7 +79,7 @@ function EditCategoryModal(seccion) {
           <Container>
             <Row>
               <Col md={6} className="text-left">
-                <button onClick={onClickEliminarSeccion} type="button" class="btn btn-danger" onClick={handleClose}>
+                <button onClick={onClickEliminarSeccion} type="button" class="btn btn-danger">
                   Eliminar
               </button>
               </Col>

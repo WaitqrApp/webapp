@@ -40,8 +40,9 @@ function OrderCard(orden) {
         <Card.Title className="text-center font-weight-bold">Orden</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">{orden.orden.mesaNombre}</Card.Subtitle>
         <Card.Subtitle className="mb-2 text-muted font-weight-bold">
-          {orden.orden.registro.substring(11, 16)} -{" "}
-          {orden.orden.registro.substring(0, 10)}
+        {orden.orden.registro.toString().substring(11, 16)} -{" "}
+          {orden.orden.registro.toString().substring(0, 10)}
+
         </Card.Subtitle>
         <Card.Body className="platillos">
           {platilloOrdenadoOrden
