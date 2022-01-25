@@ -50,6 +50,10 @@ const PlatilloOrdenadoSchema = mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  tomado: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 module.exports = mongoose.model("PlatilloOrdenado", PlatilloOrdenadoSchema);

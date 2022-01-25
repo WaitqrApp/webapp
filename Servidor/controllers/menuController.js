@@ -89,7 +89,8 @@ exports.actualizarMenu = async (req, res) => {
       nuevoMenu.disponible = disponible;
     }
 
-    console.log("DENTRO DE CONTROLLER", nuevoMenu.nombre, nuevoMenu.disponible);
+    //console.log("DENTRO DE CONTROLLER", nuevoMenu.nombre, nuevoMenu.disponible);
+    
 
     //guardar menu
     menu = await Menu.findOneAndUpdate({ _id: req.params.id }, nuevoMenu, {
