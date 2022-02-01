@@ -26,21 +26,6 @@ function AddDish() {
     actualizarPlatillo,
     limpiarPlatillo,
   } = platillossContext;
-
-  const [cargando, guardarCargando] = useState(false);
-
-  // const cambiarCargando = e =>{
-  //   guardarCargando(false)
-  // }
-
-  // if(cargando==true){
-  //   setTimeout(() => {
-  //     cambiarCargando();
-  //  }, 5000);
-  // }
-
-
-
   //Effect que detecta si hay un platillo seleccionado
   useEffect(() => {
     if (platilloseleccionado !== null) {
@@ -79,7 +64,6 @@ function AddDish() {
   var aux;
 
   
-  
 
   const cambiarToggle = () =>{
     guardarValorToggle(!valorToggle)
@@ -95,14 +79,11 @@ function AddDish() {
       method: "post",
       body: data,
     })
-    
       .then((res) => res.json())
       .then((data) => {
-        guardarCargando(true)
         console.log(data.url);
         aux = JSON.parse(JSON.stringify(data.url));
         console.log("esto tiene aux " + aux);
-        
       })
       .catch((err) => {
         console.log(err);
@@ -244,29 +225,14 @@ function AddDish() {
             <Button variant="secondary" onClick={handleClose}>
               Cancelar
             </Button>
-            
-              {
-                cargando?
-                <Button
-              className="ml-4"
-              type="submit"
-              variant="primary"
-            >
-              Cargando...
-              </Button>
-                :
-                
-                <Button
+            <Button
               className="ml-4"
               type="submit"
               variant="primary"
               onClick={onSubmit}
             >
               Guardar
-              </Button>
-              }
-              
-            
+            </Button>
           </Modal.Footer>
         </Form>
       </Modal>

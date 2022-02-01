@@ -47,7 +47,7 @@ const PlatilloOrdenadoState = (props) => {
     // tarea.id = uuid.v4();
     try {
       const resultado = await clienteAxios.post(
-        "/api/platilloOrdenado",
+        "/api/platillosordenados",
         platilloordenado
       );
       console.log(resultado);
@@ -70,7 +70,7 @@ const PlatilloOrdenadoState = (props) => {
   // Eliminar tarea por id
   const eliminarPlatilloOrdenado = async (id, orden) => {
     try {
-      await clienteAxios.delete(`/api/platilloOrdenado/${id}`, {
+      await clienteAxios.delete(`/api/platillosordenados/${id}`, {
         params: { orden },
       });
       dispatch({
@@ -87,7 +87,7 @@ const PlatilloOrdenadoState = (props) => {
     console.log(platilloordenado);
     try {
       const resultado = await clienteAxios.put(
-        `/api/platilloOrdenado/${platilloordenado._id}`,
+        `/api/platillosordenados/${platilloordenado._id}`,
         platilloordenado
       );
       console.log(resultado);
