@@ -125,6 +125,12 @@ input[type="checkbox"] {
   left: 0%;
   width: 100%;
 }
+.boton-orden-tomado {
+  position: relative;
+  right: 0px;
+  width: 40%;
+  height: 10%;
+}
 
 .platillos {
   overflow: auto;
