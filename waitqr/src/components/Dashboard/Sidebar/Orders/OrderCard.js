@@ -38,6 +38,12 @@ function OrderCard(orden) {
 
   var platilloOrdenadoAux;
 
+  var total = 0;
+  platilloOrdenadoOrden
+    .filter(({ orden: ordenOpt }) => ordenOpt === orden.orden._id)
+    .filter((platilloOrdenado) => platilloOrdenado.tomado == true)
+    .map((platillo) => (total = platillo.precio * platillo.cantidad + total));
+
   const tomado = (e) => {
     platilloOrdenadoOrden
       .filter(({ orden: ordenOpt }) => ordenOpt === orden.orden._id)
@@ -68,29 +74,28 @@ function OrderCard(orden) {
             {orden.orden.registro.toString().substring(11, 16)} -{" "}
             {orden.orden.registro.toString().substring(0, 10)}
           </Card.Subtitle>
+          <Card.Title className="mb-2">Total a pagar: ${total}</Card.Title>
           <Card.Body className="platillos">
-            <Card.Subtitle className="mt-2 font-weight-bold">
+            <Card.Subtitle className="mt-2 mb-2 font-weight-bold">
               Platillos por Tomar
             </Card.Subtitle>
             {platilloOrdenadoOrden
-              .filter(
-                ({ orden: ordenOpt }) => ordenOpt === orden.orden._id,
-                (platilloOrdenado) => platilloOrdenado.tomado == false
-              )
+              .filter(({ orden: ordenOpt }) => ordenOpt === orden.orden._id)
+              .filter((platilloOrdenado) => platilloOrdenado.tomado == false)
               .map((platilloOrdenado, index) =>
                 platilloOrdenado.ordenado == true ? (
                   index == platilloOrdenadoOrden.length ? (
                     <ul id="nuevoPlatilloOrdenado">
-                      <h5>
+                      <h4>
                         {platilloOrdenado.nombre} X {platilloOrdenado.cantidad}
-                      </h5>
+                      </h4>
                       <p>{platilloOrdenado.comentario}</p>
                     </ul>
                   ) : (
                     <ul>
-                      <h5>
+                      <h4>
                         {platilloOrdenado.nombre} X {platilloOrdenado.cantidad}
-                      </h5>
+                      </h4>
                       <p>{platilloOrdenado.comentario}</p>
                     </ul>
                   )
@@ -98,14 +103,13 @@ function OrderCard(orden) {
                   <span></span>
                 )
               )}
-            <Card.Subtitle className="font-weight-bold">
+            <hr></hr>
+            <Card.Subtitle className="mt-3 mb-2 font-weight-bold">
               Platillos Tomados
             </Card.Subtitle>
             {platilloOrdenadoOrden
-              .filter(
-                ({ orden: ordenOpt }) => ordenOpt === orden.orden._id,
-                (platilloOrdenado) => platilloOrdenado.tomado == true
-              )
+              .filter(({ orden: ordenOpt }) => ordenOpt === orden.orden._id)
+              .filter((platilloOrdenado) => platilloOrdenado.tomado == true)
               .map((platilloOrdenado, index) =>
                 platilloOrdenado.ordenado == true ? (
                   index == platilloOrdenadoOrden.length ? (
@@ -113,14 +117,14 @@ function OrderCard(orden) {
                       <h5>
                         {platilloOrdenado.nombre} X {platilloOrdenado.cantidad}
                       </h5>
-                      <p>{platilloOrdenado.comentario}</p>
+                      <p1>{platilloOrdenado.comentario}</p1>
                     </ul>
                   ) : (
                     <ul>
                       <h5>
                         {platilloOrdenado.nombre} X {platilloOrdenado.cantidad}
                       </h5>
-                      <p>{platilloOrdenado.comentario}</p>
+                      <p1>{platilloOrdenado.comentario}</p1>
                     </ul>
                   )
                 ) : (

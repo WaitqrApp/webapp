@@ -230,3 +230,8 @@ body {
   margin-top: 25%;
   text-align: center;
 }
+
+.tarjeta-orden h4 {
+  color: #ff7e00;
+  font-weight: bold;
+}
