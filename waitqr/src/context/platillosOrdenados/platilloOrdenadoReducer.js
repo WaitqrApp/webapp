@@ -42,7 +42,7 @@ export default (state, action) => {
         ...state,
         platilloOrdenadoOrden: state.platilloOrdenadoOrden.map(
           (platilloOrdenado) =>
-          console.log(platilloOrdenado)
+            platilloOrdenado._id === action.payload._id
               ? action.payload
               : platilloOrdenado
         ),
