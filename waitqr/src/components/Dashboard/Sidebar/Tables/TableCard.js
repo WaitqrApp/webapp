@@ -36,7 +36,7 @@ function TableCard({ mesas }) {
       margin: 20,
     },
   });
-  const [url, setUrl] = useState(`192.168.0.190:3001/${mesas.restaurante}/${mesas._id}`);
+  const [url, setUrl] = useState(`https://clientewaitqr.netlify.app/${mesas.restaurante}/${mesas._id}`);
   const [fileExt, setFileExt] = useState("png");
   const ref = useRef(null);
 
