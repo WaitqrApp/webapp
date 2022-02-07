@@ -121,14 +121,15 @@ input[type="checkbox"] {
 
 .boton-orden-aceptar {
   position: relative;
-  margin-top: 5%;
-  left: 0%;
-  width: 100%;
+  right: 0px;
+  width: 47%;
+  height: 10%;
+  margin-left: 5%;
 }
 .boton-orden-tomado {
   position: relative;
   right: 0px;
-  width: 40%;
+  width: 47%;
   height: 10%;
 }
 
@@ -216,6 +217,16 @@ body {
   color: #072e48;
 }
 
-.favorito{
+.favorito {
   cursor: pointer;
+}
+
+.tarjeta-orden h3 {
+  font-size: 150%;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgb(7, 46, 72);
+  margin-top: 25%;
+  text-align: center;
 }
