@@ -29,15 +29,9 @@ function AddDish() {
 
   const [cargando, guardarCargando] = useState(false);
 
-  // const cambiarCargando = e =>{
-  //   guardarCargando(false)
-  // }
 
-  // if(cargando==true){
-  //   setTimeout(() => {
-  //     cambiarCargando();
-  //  }, 5000);
-  // }
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
 
 
@@ -78,10 +72,10 @@ function AddDish() {
 
   var aux;
 
-  
-  
 
-  const cambiarToggle = () =>{
+
+
+  const cambiarToggle = () => {
     guardarValorToggle(!valorToggle)
   }
 
@@ -95,14 +89,33 @@ function AddDish() {
       method: "post",
       body: data,
     })
-    
+
       .then((res) => res.json())
       .then((data) => {
-        guardarCargando(true)
+
         console.log(data.url);
         aux = JSON.parse(JSON.stringify(data.url));
         console.log("esto tiene aux " + aux);
-        
+
+        console.log("antes de enviarlo" + JSON.parse(JSON.stringify(aux)));
+        platilloCreado.imagenPlatillo = aux;
+        platilloCreado.restaurante = localStorage.getItem("restaurantewebappid");
+
+        platilloCreado.disponible = valorToggle;
+
+        console.log("enviare esto", JSON.stringify(platilloCreado))
+
+        agregarPlatillo(platilloCreado);
+        obtenerPlatillos(seccion[0]._id)
+
+        guardarPlatilloCreado({
+          nombre: "",
+          horarioInicio: "",
+          horarioFin: "",
+          disponible: true,
+        });
+
+        handleClose();
       })
       .catch((err) => {
         console.log(err);
@@ -118,7 +131,14 @@ function AddDish() {
   };
 
   const onSubmit = (e) => {
+    console.log("entre al submit")
+    guardarCargando(true);
+    //setTimeout(guardando(),10000);
+    setTimeout(() => {
+      guardarCargando(false)
+    }, 5000)
     e.preventDefault();
+
 
     //validar
     if (nombre.trim() === "") {
@@ -130,14 +150,8 @@ function AddDish() {
     if (platilloseleccionado === null) {
       //agregar la seccion al state de platillos
       platilloCreado.seccion = guardarSeccionActual._id;
+      console.log("punto de control 1")
       postImage();
-      console.log("antes de enviarlo" + JSON.parse(JSON.stringify(aux)));
-      platilloCreado.imagenPlatillo = aux;
-      platilloCreado.restaurante = localStorage.getItem("restaurantewebappid");
-      platilloCreado.disponible = valorToggle;
-
-      agregarPlatillo(platilloCreado);
-      obtenerPlatillos(seccion[0]._id)
     } else {
       //actualizar platillo existente
       actualizarPlatillo(platilloCreado);
@@ -145,23 +159,18 @@ function AddDish() {
       //Elimina menuseleccionado del state
       limpiarPlatillo();
     }
-
-    //Obtener y filtrar las tareas del proyecto actual, practicamente lo recarga
-    obtenerPlatillos(seccion.id);
-
-    //reiniciar el form
-    guardarPlatilloCreado({
-      nombre: "",
-      horarioInicio: "",
-      horarioFin: "",
-      disponible: true,
-    });
-
-    handleClose();
   };
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+
+
+
+
+  const guardando = e => {
+
+    guardarCargando(false);
+  }
+
+  console.log("cargando", cargando)
 
   return (
     <>
@@ -244,29 +253,35 @@ function AddDish() {
             <Button variant="secondary" onClick={handleClose}>
               Cancelar
             </Button>
-            
-              {
-                cargando?
+
+            {
+              cargando == true ?
                 <Button
-              className="ml-4"
-              type="submit"
-              variant="primary"
-            >
-              Cargando...
-              </Button>
+                  className="ml-4 cargandoButton"
+                  variant="primary"
+                >
+                  Cargando...
+                </Button>
                 :
-                
+                <span></span>
+
+            }
+            {
+              cargando == false ?
                 <Button
-              className="ml-4"
-              type="submit"
-              variant="primary"
-              onClick={onSubmit}
-            >
-              Guardar
-              </Button>
-              }
-              
-            
+                  className="ml-4"
+                  type="submit"
+                  variant="primary"
+                  onClick={onSubmit}
+                >
+                  Guardar
+                </Button>
+                :
+                <span></span>
+            }
+
+
+
           </Modal.Footer>
         </Form>
       </Modal>

@@ -235,3 +235,7 @@ body {
   color: #ff7e00;
   font-weight: bold;
 }
+
+.cargandoButton{
+  pointer-events: none;
+}

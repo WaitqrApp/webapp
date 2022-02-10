@@ -24,13 +24,17 @@ function DishMenu() {
       obtenerPlatillos(seccion[0]._id);
     }
   }, [seccion]); //para que corra solo una vez
+
+  var quehay = localStorage.getItem("menuwebapp")
+  console.log(JSON.stringify(quehay))
+
   return (
     <>
       <div className="container-fluid">
         <Row className="contenedorPlatillos">
           {
             platillosseccion.length == 0 ? 
-            <p>La seccion no tiene platillos</p>
+            <p> </p>
             :
             platillosseccion.map((platillo) => (
               <Dish platillo={platillo} />

@@ -12,6 +12,7 @@ import "./styles/orders.css";
 
 import platilloOrdenadoContext from "../../../../context/platillosOrdenados/platilloOrdenadoContext";
 import mesasContext from "../../../../context/mesas/mesasContext";
+import ordenContext from '../../../../context/ordenes/ordenContext';
 
 function OrderCard(orden) {
   //obtener la funcion del context de platillo
@@ -21,6 +22,12 @@ function OrderCard(orden) {
     obtenerPlatilloOrdenado,
     actualizarPlatilloOrdenado,
   } = platillosOrdenadosContext;
+
+
+
+  const ordenesContext = useContext(ordenContext);
+  const { actualizarOrden } =
+    ordenesContext;
 
   const [botontomado, guardarBotonTomado] = useState(true);
 
@@ -38,11 +45,22 @@ function OrderCard(orden) {
 
   var platilloOrdenadoAux;
 
+var [totalstate, guardarTotalState] = useState(0)
+
   var total = 0;
-  platilloOrdenadoOrden
-    .filter(({ orden: ordenOpt }) => ordenOpt === orden.orden._id)
-    .filter((platilloOrdenado) => platilloOrdenado.tomado == true)
-    .map((platillo) => (total = platillo.precio * platillo.cantidad + total));
+
+
+  const cambiarTotal = e => {
+    orden.orden.total = totalstate
+    console.log("este es el total que llego", orden.orden.total)
+    console.log("esta es la orden que tengo", JSON.stringify(orden.orden))
+
+    actualizarOrden(orden.orden)
+  }
+
+
+
+
 
   const tomado = (e) => {
     platilloOrdenadoOrden
@@ -51,10 +69,25 @@ function OrderCard(orden) {
         if (platilloOrdenado.tomado == false) {
           platilloOrdenado.tomado = true;
           actualizarPlatilloOrdenado(platilloOrdenado);
-          //guardarBotonTomado(false)
+
         }
       });
+      cambiarTotal();
+    // setTimeout(() => {
+    //   cambiarTotal();
+    // }, 2000)
+
+
   };
+
+
+
+  platilloOrdenadoOrden
+    .filter(({ orden: ordenOpt }) => ordenOpt === orden.orden._id)
+    .filter((platilloOrdenado) => platilloOrdenado.tomado == true)
+    .map((platillo) => (
+      totalstate = platillo.precio * platillo.cantidad + totalstate
+    ));
 
   // console.log({ platilloOrdenadoOrden, ordenId: orden.orden._id });
   return (
@@ -74,7 +107,7 @@ function OrderCard(orden) {
             {orden.orden.registro.toString().substring(11, 16)} -{" "}
             {orden.orden.registro.toString().substring(0, 10)}
           </Card.Subtitle>
-          <Card.Title className="mb-2">Total a pagar: ${total}</Card.Title>
+          <Card.Title className="mb-2">Total a pagar: ${totalstate}</Card.Title>
           <Card.Body className="platillos">
             <Card.Subtitle className="mt-2 mb-2 font-weight-bold">
               Platillos por Tomar

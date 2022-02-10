@@ -71,6 +71,8 @@ function Menu() {
     guardarMenuActual(menu._id); //fijar un menu actual
     guardarMenuEscogido(menu.nombre);
     localStorage.setItem('menuwebapp', menu)  
+    localStorage.setItem('menuwebappid', menu._id)  
+
 
   };
 
