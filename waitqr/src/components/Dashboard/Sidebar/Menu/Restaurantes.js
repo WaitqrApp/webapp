@@ -18,7 +18,6 @@ export default function Restaurantes() {
         guardarRestauranteEscogido(restaurante);
         guardarRestauranteEscogidoId(restaurante._id);
         localStorage.setItem('restaurantewebapp', restaurante)
-        console.log(JSON.stringify(localStorage.getItem("restaurantewebapp")) ) 
         localStorage.setItem('restaurantewebappid', restaurante._id)  
         restauranteActual(localStorage.getItem("restaurantewebapp"))
       };
