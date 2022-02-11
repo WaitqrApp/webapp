@@ -98,7 +98,7 @@ const MenuState = props =>{
     const guardarMenuActual = menuId =>{
         dispatch({
             type:MENU_ACTUAL,
-            payload: menuId
+            payload: menuId 
         })
          
     }

@@ -24,7 +24,7 @@ const RestauranteState = props => {
         formulario : false,
         restaurantes:[],
         errorformulario: false,
-        restaurante: null,
+        restauranteActual: null,
         mensaje: null  
     }
 
@@ -126,7 +126,7 @@ const RestauranteState = props => {
                 formulario: state.formulario,
                 restaurantes: state.restaurantes,
                 errorformulario:state.errorformulario,
-                restaurante: state.restaurante,
+                restauranteactual: state.restaurante,
                 mensaje: state.mensaje,
                 mostrarFormulario,
                 obtenerRestaurantes,

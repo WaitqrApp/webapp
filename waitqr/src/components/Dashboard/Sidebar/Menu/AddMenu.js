@@ -7,7 +7,7 @@ import {
   Form,
   Button,
   Modal,
-  InputGroup,
+  InputGroup, 
   FormControl,
 } from "react-bootstrap";
 import menusContext from "../../../../context/menus/menusContext";

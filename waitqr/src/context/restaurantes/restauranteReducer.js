@@ -33,7 +33,7 @@ export default (state,action) =>{
             case RESTAURANTE_ACTUAL:
                 return{
                     ...state,
-                    restaurante: state.restaurantes.filter(restaurante => restaurante._id === action.payload)
+                    restauranteactual: action.payload
                 }
                 case ELIMINAR_RESTAURANTE:
                     return{

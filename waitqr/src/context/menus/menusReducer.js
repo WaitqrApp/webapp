@@ -44,7 +44,7 @@ export default (state, action) => {
       return {
         ...state,
         menu: state.menusrestaurante.filter(
-          (menu) => menu._id === action.payload
+          (menu) => menu._id === action.payload 
         ),
       };
     case LIMPIAR_MENU:

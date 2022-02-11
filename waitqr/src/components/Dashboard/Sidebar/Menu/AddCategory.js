@@ -71,6 +71,7 @@ function AddCategory(props) {
     //Si es edicion o si es nueva seccion
     if (seccionseleccionada === null) {
       //agregar la nueva seccion al state de secciones
+      console.log("este es el menu actual", menuActual)
       seccion.menu = menuActual._id;
       agregarSeccion(seccion);
     } else {
@@ -80,6 +81,9 @@ function AddCategory(props) {
       //Elimina menuseleccionado del state
       limpiarSeccion();
     }
+
+    console.log("este es el menui actual", JSON.stringify(menuActual))
+    obtenerSecciones(menuActual.id)
 
     //reiniciar el form
     guardarSeccion({

@@ -26,7 +26,7 @@ function DishMenu() {
   }, [seccion]); //para que corra solo una vez
 
   var quehay = localStorage.getItem("menuwebapp")
-  console.log(JSON.stringify(quehay))
+  //console.log(JSON.stringify(quehay))
 
   return (
     <>
