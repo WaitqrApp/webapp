@@ -12,18 +12,26 @@ import menusContext from "../../../../context/menus/menusContext";
 import AlertaContext from "../../../../context/alertas/alertaContext";
 import MenuActivo from "./MenuActivo";
 import MenuLista from "./MenuLista";
-import Restaurantes from "./Restaurantes";
 
 function Menu() {
- 
- 
 
-
-
+  const [restauranteEscogido, guardarRestauranteEscogido] = useState({});
+  const [restauranteEscogidoId, guardarRestauranteEscogidoId] = useState("");
+  const [modalShow, setModalShow] = useState(false);
   //Extraer restaurantes de state inicial
   const restaurantesContext = useContext(restauranteContext);
-  const {restaurante, mensaje, restaurantes, obtenerRestaurantes, restauranteActual } =
+  const { restauranteactual, mensaje, restaurantes, obtenerRestaurantes, restauranteActual } =
     restaurantesContext;
+  const seleccionarRestaurante = (restaurante) => {
+    restauranteActual(restaurante); //fijar un restaurante actual
+    guardarRestauranteEscogido(restaurante);
+    guardarRestauranteEscogidoId(restaurante._id);
+    localStorage.setItem('restaurantewebapp', restaurante)
+    localStorage.setItem('restaurantewebappid', restaurante._id)
+    restauranteActual(localStorage.getItem("restaurantewebapp"))
+  };
+  let history = useHistory();
+
 
   const alertaContext = useContext(AlertaContext);
   const { alerta, mostrarAlerta } = alertaContext;
@@ -46,9 +54,39 @@ function Menu() {
       <Container fluid>
         <Row>
           <Col xs={6}></Col>
-          <MenuActivo/>
-          <MenuLista/>
-          <Restaurantes/>
+          <MenuActivo />
+          <MenuLista 
+          restauranteEscogido = {restauranteEscogido}
+          />
+          <Col className="text-center" xs={2}>
+            <DropdownButton
+              className="dropdown-menus"
+              title={
+                Object.keys(restauranteEscogido).length === 0  ? (
+                  <span>Restaurante</span>
+                ) 
+                : (
+                  <span>{restauranteEscogido.nombre}</span>
+                )
+              }
+            >
+              {restaurantes.map((restaurante) => (
+                <Dropdown.Item
+                  onClick={() => seleccionarRestaurante(restaurante)}
+                >
+                  {restaurante.nombre}
+                </Dropdown.Item>
+              ))}
+              <Dropdown.Divider />
+              <Dropdown.Item as="button" onClick={() => setModalShow(true)}>
+                Agregar Restaurante +
+              </Dropdown.Item>
+              <AddRestaurant
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+              />
+            </DropdownButton>
+          </Col>
         </Row>
         <Row>
           <Col xs={2} id="sidebar-wrapper">

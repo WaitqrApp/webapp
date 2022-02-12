@@ -8,7 +8,10 @@ import AddMenu from "./AddMenu";
 
 
 
-export default function MenuLista() {
+export default function MenuLista({restauranteEscogido}) {
+    
+    const [modalShow2, setModalShow2] = useState(false);
+
     const [menuEscogido, guardarMenuEscogido] = useState("");
     const menussContext = useContext(menusContext);
     const {
@@ -38,12 +41,12 @@ export default function MenuLista() {
 
     
 
-    const [modalShow2, setModalShow2] = useState(false);
     useEffect(() => {
-        if (restauranteactual) {
-            obtenerMenus(restauranteactual._id);
+        if (restauranteEscogido) {
+            obtenerMenus(restauranteEscogido._id);
         }
-    })
+        console.log("este es el restaurante escogido", restauranteEscogido)
+    },[restauranteEscogido])
 
 
     return (
@@ -51,7 +54,7 @@ export default function MenuLista() {
             <DropdownButton
                 className="dropdown-menus"
                 title={
-                    (restauranteactual ? (
+                    (restauranteEscogido ? (
                         <span>Primero escoge un restaurante</span>
                     ) : (
                         <span>Escoge un menu</span>

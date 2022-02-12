@@ -33,7 +33,7 @@ function AddDish() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-
+console.log("entre")
 
   //Effect que detecta si hay un platillo seleccionado
   useEffect(() => {
