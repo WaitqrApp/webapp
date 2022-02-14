@@ -7,7 +7,7 @@ import {
   Form,
   Button,
   Modal,
-  InputGroup, 
+  InputGroup,
   FormControl,
 } from "react-bootstrap";
 import menusContext from "../../../../context/menus/menusContext";
@@ -15,12 +15,16 @@ import restauranteContext from "../../../../context/restaurantes/restauranteCont
 import "./menusidebar.css";
 
 function AddMenu(props) {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   const [checked, setChecked] = useState(false);
 
   const toggleChecked = () => {
     setChecked((prev) => !prev);
   };
-
+/* 
   //Extraer si un proyecto esta activo
   const restaurantesContext = useContext(restauranteContext);
   const { restaurante } = restaurantesContext;
@@ -109,37 +113,28 @@ function AddMenu(props) {
       disponible: true,
     });
   };
-
+ */
   return (
-    <Modal {...props} aria-labelledby="contained-modal-title-vcenter">
-      <Form onSubmit={onSubmit}>
+    <>
+      <Button variant="primary" onClick={handleShow}>
+        Agregar Menu
+      </Button>
+
+      <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            Agregar Menu
-          </Modal.Title>
+          <Modal.Title>Demo Modal</Modal.Title>
         </Modal.Header>
-        <Modal.Body className="show-grid">
-          <Container>
-            <Form.Group as={Row} controlId="formHorizontalPassword">
-              <Col sm={9}>
-                <Form.Control
-                  type="text"
-                  placeholder="Nombre del menu"
-                  name="nombre"
-                  value={nombre}
-                  onChange={handleChange}
-                />
-              </Col>
-            </Form.Group>
-          </Container>
-        </Modal.Body>
+        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
         <Modal.Footer>
-          <Button type="submit" onClick={props.onHide}>
-            Agregar Menu
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
           </Button>
         </Modal.Footer>
-      </Form>
-    </Modal>
+      </Modal>
+    </>
   );
 }
 

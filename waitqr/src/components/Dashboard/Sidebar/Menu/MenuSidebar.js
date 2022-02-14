@@ -1,11 +1,8 @@
 import React, {useState, useEffect, useContext} from "react";
 import { Nav, Button } from "react-bootstrap";
 import './menusidebar.css';
-import AddCategory from './AddCategory';
-import AddRestaurant from './AddRestaurant';
 import EditCategoryModal from './EditCategoryModal';
 import AddCategoryButton from './AddCategoryButton';
-import DeleteCategoryModal from './DeleteCategoryModal';
 import menusContext from '../../../../context/menus/menusContext';
 import seccionesContext from '../../../../context/secciones/seccionesContext';
 import AlertaContext from '../../../../context/alertas/alertaContext';

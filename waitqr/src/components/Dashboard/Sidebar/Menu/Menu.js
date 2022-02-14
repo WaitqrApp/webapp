@@ -4,6 +4,7 @@ import MenuSidebar from "./MenuSidebar";
 import DishMenu from "./DishMenu";
 import "./menusidebar.css";
 import AddRestaurant from "./AddRestaurant";
+import AddMenu from "./AddMenu";
 import { useHistory } from "react-router-dom";
 
 import restauranteContext from "../../../../context/restaurantes/restauranteContext";
@@ -14,29 +15,30 @@ import MenuActivo from "./MenuActivo";
 import MenuLista from "./MenuLista";
 
 function Menu() {
-
   const [restauranteEscogido, guardarRestauranteEscogido] = useState({});
   const [restauranteEscogidoId, guardarRestauranteEscogidoId] = useState("");
   const [modalShow, setModalShow] = useState(false);
   //Extraer restaurantes de state inicial
   const restaurantesContext = useContext(restauranteContext);
-  const { restauranteactual, mensaje, restaurantes, obtenerRestaurantes, restauranteActual } =
-    restaurantesContext;
+  const {
+    restauranteactual,
+    mensaje,
+    restaurantes,
+    obtenerRestaurantes,
+    restauranteActual,
+  } = restaurantesContext;
   const seleccionarRestaurante = (restaurante) => {
     restauranteActual(restaurante); //fijar un restaurante actual
     guardarRestauranteEscogido(restaurante);
     guardarRestauranteEscogidoId(restaurante._id);
-    localStorage.setItem('restaurantewebapp', restaurante)
-    localStorage.setItem('restaurantewebappid', restaurante._id)
-    restauranteActual(localStorage.getItem("restaurantewebapp"))
+    localStorage.setItem("restaurantewebapp", restaurante);
+    localStorage.setItem("restaurantewebappid", restaurante._id);
+    restauranteActual(localStorage.getItem("restaurantewebapp"));
   };
   let history = useHistory();
 
-
   const alertaContext = useContext(AlertaContext);
   const { alerta, mostrarAlerta } = alertaContext;
-
-
 
   //obtener restaurantes cuando carga el componente
   useEffect(() => {
@@ -48,24 +50,20 @@ function Menu() {
     obtenerRestaurantes();
   }, [mensaje]); //para que corra solo una vez
 
-
   return (
     <>
       <Container fluid>
         <Row>
           <Col xs={6}></Col>
           <MenuActivo />
-          <MenuLista 
-          restauranteEscogido = {restauranteEscogido}
-          />
+          <MenuLista restauranteEscogido={restauranteEscogido} />
           <Col className="text-center" xs={2}>
             <DropdownButton
               className="dropdown-menus"
               title={
-                Object.keys(restauranteEscogido).length === 0  ? (
+                Object.keys(restauranteEscogido).length === 0 ? (
                   <span>Restaurante</span>
-                ) 
-                : (
+                ) : (
                   <span>{restauranteEscogido.nombre}</span>
                 )
               }
