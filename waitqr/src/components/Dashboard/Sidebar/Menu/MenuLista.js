@@ -30,6 +30,16 @@ function MenuLista({ restauranteEscogido }) {
     localStorage.setItem("menuwebapp", menu);
     localStorage.setItem("menuwebappid", menu._id);
   };
+
+ const CargarDeNuevo = restauranteEscogido =>{
+  try {
+    console.log("ändo en el try")
+    obtenerMenus(restauranteEscogido._id);
+  } catch (error) {
+    console.log(error)
+  } 
+ 
+  }
   let history = useHistory();
 
   useEffect(() => {
@@ -62,7 +72,9 @@ function MenuLista({ restauranteEscogido }) {
           <AddMenu
            show={modalShow}
             onHide={() => setModalShow(false)}
-            restauranteEscogido = {restauranteEscogido} />
+            restauranteEscogido = {restauranteEscogido}
+            CargarDeNuevo = {CargarDeNuevo}
+            />
         </Dropdown.Item>
       </DropdownButton>
     </Col>

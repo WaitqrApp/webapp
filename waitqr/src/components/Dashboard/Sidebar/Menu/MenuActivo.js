@@ -20,10 +20,8 @@ export default function MenuActivo() {
     useEffect(()=>{
          restauranteactual = localStorage.getItem("restaurantewebapp")
         if(restauranteactual){
-            console.log(restauranteactual._id)
             obtenerMenus(restauranteactual._id)
         }
-        console.log(restauranteactual)
     })
    
 

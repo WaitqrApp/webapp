@@ -19,7 +19,7 @@ function MenuSideBar(){
 
     //obtener la funcion del context de seccion
     const seccionessContext = useContext(seccionesContext);
-    const {seccion,seccionesmenu, obtenerSecciones, guardarSeccionActual} = seccionessContext;
+    const {seccionactual,seccionesmenu, obtenerSecciones, guardarSeccionActual} = seccionessContext;
 
     const alertaContext = useContext(AlertaContext);
     const {alerta, mostrarAlerta} = alertaContext;
@@ -27,7 +27,7 @@ function MenuSideBar(){
 
     //obtener secciones cuando carga el componente
     useEffect(() =>{
-
+        console.log("llego este nuevo menu", menuactual)
         if(menuactual){
             obtenerSecciones(menuactual._id)
         }
@@ -35,7 +35,7 @@ function MenuSideBar(){
     }, [menuactual]); //para que corra solo una vez
     
     const seleccionarSeccion = seccion =>{
-        guardarSeccionActual(seccion._id)
+        guardarSeccionActual(seccion)
         obtenerSecciones(menuactual._id)
     }
 

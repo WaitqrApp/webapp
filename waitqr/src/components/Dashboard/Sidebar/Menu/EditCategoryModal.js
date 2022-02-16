@@ -22,7 +22,6 @@ function EditCategoryModal(seccion) {
 
   const { nombre, disponible } = seccionAux;
   seccionAux.nombre = seccion.seccion.nombre;
-  console.log(seccionAux.nombre)
 
   const onChange = e => {
     guardarSeccionAux({

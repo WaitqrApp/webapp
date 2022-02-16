@@ -13,7 +13,7 @@ function AddDish() {
 
   //Extraer si una seccion esta activa
   const seccionessContext = useContext(seccionesContext);
-  const { seccion } = seccionessContext;
+  const { seccionactual } = seccionessContext;
 
   //obtener la funcion del context de platillo
   const platillossContext = useContext(platillosContext);
@@ -33,7 +33,6 @@ function AddDish() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-console.log("entre")
 
   //Effect que detecta si hay un platillo seleccionado
   useEffect(() => {
@@ -65,10 +64,8 @@ console.log("entre")
     platilloCreado;
 
   //si no hay restaurante seleccionado
-  if (!seccion) return null;
+  if (!seccionactual) return null;
 
-  //Array destructuring para extraer el proyecto actual
-  const [guardarSeccionActual] = seccion;
 
   var aux;
 
@@ -106,7 +103,7 @@ console.log("entre")
         console.log("enviare esto", JSON.stringify(platilloCreado))
 
         agregarPlatillo(platilloCreado);
-        obtenerPlatillos(seccion[0]._id)
+        obtenerPlatillos(seccionactual._id)
 
         guardarPlatilloCreado({
           nombre: "",
@@ -149,7 +146,7 @@ console.log("entre")
     //Si es edicion o si es nueva menu
     if (platilloseleccionado === null) {
       //agregar la seccion al state de platillos
-      platilloCreado.seccion = guardarSeccionActual._id;
+      platilloCreado.seccion = seccionactual._id;
       console.log("punto de control 1")
       postImage();
     } else {

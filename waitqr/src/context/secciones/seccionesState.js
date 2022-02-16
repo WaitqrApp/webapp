@@ -17,7 +17,7 @@ const SeccionState = props =>{
         seccionesmenu: [],
         errormenu: false,
         seccionseleccionada:null,
-        seccion: null
+        seccionactual: null
 
     }
 
@@ -96,10 +96,17 @@ const SeccionState = props =>{
     }
     
     const guardarSeccionActual= seccionId =>{
-        dispatch({
-            type:SECCION_ACTUAL,
-            payload: seccionId
-        })
+        try {
+            console.log("llego esta seccion", seccionId)
+            dispatch({
+                type:SECCION_ACTUAL,
+                payload: seccionId
+            })
+            
+        } catch (error) {
+            console.log(error)
+        }
+        
     }
     
     
@@ -117,7 +124,7 @@ const SeccionState = props =>{
                 seccionesmenu: state.seccionesmenu,
                 errormenu: state.errormenu,
                 seccionseleccionada: state.seccionseleccionada,
-                seccion: state.seccion,
+                seccionactual: state.seccionactual,
                 obtenerSecciones,
                 agregarSeccion,
                 validarSeccion,

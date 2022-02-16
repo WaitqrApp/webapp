@@ -3,6 +3,9 @@ import { Row, Col, Card, CardDeck, Form, Container } from "react-bootstrap";
 import DishModal from "./DishModal";
 import "./menusidebar.css";
 
+import seccionesContext from "../../../../context/secciones/seccionesContext";
+
+
 import platillosContext from "../../../../context/platillos/platillosContext";
 
 function Dish(platillo) {
@@ -19,6 +22,9 @@ function Dish(platillo) {
     eliminarPlatillo,
   } = platillosContextLocal;
 
+  const seccionessContext = useContext(seccionesContext);
+  const { seccionactual } = seccionessContext;
+
   const [modalShow, setModalShow] = useState(false);
 
   const platilloAuxInicial = platillo.platillo;
@@ -27,6 +33,7 @@ function Dish(platillo) {
 
   const onClickEliminarPlatillo = (e) => {
     eliminarPlatillo(platillo.platillo._id, platillo.platillo.seccion);
+    obtenerPlatillos(seccionactual._id)
   };
 
   const onGuardarPlatillo = (e) => {

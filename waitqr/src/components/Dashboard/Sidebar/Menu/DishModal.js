@@ -13,6 +13,8 @@ import {
 import "./menusidebar.css";
 import DeleteDishModal from "./DeleteDishModal";
 
+
+
 function DishModal({
   setModalShow,
   modalShow,
@@ -23,9 +25,11 @@ function DishModal({
   guardarPlatilloAux,
 }) {
 
+console.log("me llego este platillo", platillo)
 useEffect(() => {
   console.log(platillo._id)
 }, [])
+
 
   const { nombre, descripcion, precio, disponible } = platillo;
   const [image, setImage] = useState("");

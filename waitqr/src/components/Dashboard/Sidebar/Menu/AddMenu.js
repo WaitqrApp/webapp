@@ -28,7 +28,6 @@ function AddMenu(props) {
     setChecked((prev) => !prev);
   };
 
-  console.log(props.restauranteEscogido)
 //obtener la funcion del context de menu
 const menussContext = useContext(menusContext);
 const {
@@ -74,6 +73,7 @@ if (!props.restauranteEscogido) return null;
   
 
   const {restauranteEscogido }= props;
+  const{CargarDeNuevo} = props;
 
   //leer los valores del formulario
   const handleChange = (e) => {
@@ -98,6 +98,7 @@ if (!props.restauranteEscogido) return null;
       //agregar el nuevo menu al state de menus
       menu.restaurante = restauranteEscogido._id;
       agregarMenu(menu);
+      CargarDeNuevo(restauranteEscogido);
     } else {
       //actualizar menu existente
       actualizarMenu(menu);
@@ -107,7 +108,7 @@ if (!props.restauranteEscogido) return null;
     }
 
     //Obtener y filtrar las tareas del proyecto actual, practicamente lo recarga
-    obtenerMenus(restauranteEscogido.id);
+    obtenerMenus(restauranteEscogido._id);
 
     //reiniciar el form
     guardarMenu({
