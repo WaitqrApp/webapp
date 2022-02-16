@@ -17,7 +17,7 @@ const MenuState = props =>{
         menusrestaurante: [],
         errormenu: false,
         menuseleccionado:null,
-        menu:null
+        menuactual:null
 
     }
 
@@ -96,10 +96,16 @@ const MenuState = props =>{
     }
     //Extrae una tarea para edicion
     const guardarMenuActual = menuId =>{
+        try {
+            console.log(menuId)
         dispatch({
             type:MENU_ACTUAL,
             payload: menuId 
         })
+        } catch (error) {
+            console.log(error)
+        }
+        
          
     }
 
@@ -119,7 +125,7 @@ const MenuState = props =>{
                 menusrestaurante: state.menusrestaurante,
                 errormenu: state.errormenu,
                 menuseleccionado: state.menuseleccionado,
-                menu: state.menu,
+                menuactual: state.menuactual,
                 obtenerMenus,
                 agregarMenu,
                 validarMenu,

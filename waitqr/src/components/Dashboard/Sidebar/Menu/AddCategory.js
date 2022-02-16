@@ -4,6 +4,7 @@ import menusContext from "../../../../context/menus/menusContext";
 import seccionesContext from "../../../../context/secciones/seccionesContext";
 
 function AddCategory(props) {
+  console.log("entre")
   const [checked, setChecked] = useState(false);
 
   //Extraer si un menu esta activo

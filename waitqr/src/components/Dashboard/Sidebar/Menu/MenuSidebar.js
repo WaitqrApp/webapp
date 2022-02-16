@@ -12,7 +12,8 @@ function MenuSideBar(){
 
     //Extraer si un menu esta activo
     const menussContext = useContext(menusContext); 
-    const {menu } = menussContext;
+    const {menuactual } = menussContext;
+    
     
 
 
@@ -27,15 +28,15 @@ function MenuSideBar(){
     //obtener secciones cuando carga el componente
     useEffect(() =>{
 
-        if(menu){
-            obtenerSecciones(menu[0]._id)
+        if(menuactual){
+            obtenerSecciones(menuactual._id)
         }
         
-    }, [menu]); //para que corra solo una vez
+    }, [menuactual]); //para que corra solo una vez
     
     const seleccionarSeccion = seccion =>{
         guardarSeccionActual(seccion._id)
-        obtenerSecciones(menu[0]._id)
+        obtenerSecciones(menuactual._id)
     }
 
     return (

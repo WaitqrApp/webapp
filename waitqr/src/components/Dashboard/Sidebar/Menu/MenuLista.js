@@ -25,7 +25,7 @@ function MenuLista({ restauranteEscogido }) {
 
   //Funcion para agregar el menu actual
   const seleccionarMenu = (menu) => {
-    guardarMenuActual(menu._id); //fijar un menu actual
+    guardarMenuActual(menu); //fijar un menu actual
     guardarMenuEscogido(menu.nombre);
     localStorage.setItem("menuwebapp", menu);
     localStorage.setItem("menuwebappid", menu._id);
@@ -59,7 +59,10 @@ function MenuLista({ restauranteEscogido }) {
         ))}
         <Dropdown.Divider />
         <Dropdown.Item as="button" onClick={() => setModalShow(true)}>
-          <AddMenu show={modalShow} onHide={() => setModalShow(false)} />
+          <AddMenu
+           show={modalShow}
+            onHide={() => setModalShow(false)}
+            restauranteEscogido = {restauranteEscogido} />
         </Dropdown.Item>
       </DropdownButton>
     </Col>
