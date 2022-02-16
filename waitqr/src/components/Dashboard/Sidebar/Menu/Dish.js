@@ -56,9 +56,11 @@ function Dish(platillo) {
     favorito = "star_outline";
   }
 
-  const agregarFavorito = (e) => {
-    platillo.platillo.favorito = !platillo.platillo.favorito;
-    actualizarPlatillo(platillo.platillo);
+  const agregarFavorito = platillo => {
+    obtenerPlatillos(platillo.seccion)
+    console.log("este es el platillo que recibo", platillo)
+    platillo.favorito = !platillo.favorito;
+    actualizarPlatillo(platillo);
   };
 
   return (
@@ -100,7 +102,7 @@ function Dish(platillo) {
               <Col m={4}>
                 <span
                   class="material-icons favorito"
-                  onClick={() => agregarFavorito()}
+                  onClick={() => agregarFavorito(platillo.platillo)}
                 >
                   {favorito}
                 </span>

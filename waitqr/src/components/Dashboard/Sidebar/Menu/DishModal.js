@@ -145,16 +145,7 @@ const [platilloAux, guardarPlatilloAux] = useState({
                 </Form.Group>
               </Col>
               <Form.Group as={Row}>
-                <Col sm={{ span: 10, offset: 2 }}>
-                  <Form.Check type="switch" onClick={() => 
-                    guardarPlatilloAux((platilloAux) => ({
-                        ...platilloAux,
-                        disponible: !platilloAux.disponible,
-                      }))} 
-                      checked={platillo.disponible}
-                      >
-                  </Form.Check>
-                </Col>
+                
               </Form.Group>
             </Form>
           </Container>
