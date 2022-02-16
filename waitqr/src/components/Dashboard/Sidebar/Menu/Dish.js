@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Row, Col, Card, CardDeck, Form, Container } from "react-bootstrap";
+import { Row, Col, Card, CardDeck, Form, Container, Button } from "react-bootstrap";
 import DishModal from "./DishModal";
 import "./menusidebar.css";
 
@@ -117,15 +117,12 @@ function Dish(platillo) {
             </span>
           </Card.Text>
           <Row>
+          
             <DishModal
               className="boton-editar"
               setModalShow={setModalShow}
               modalShow={modalShow}
-              platillo={platilloAux}
-              handleChange={handleChange}
-              onGuardarPlatillo={onGuardarPlatillo}
-              onClickEliminarPlatillo={onClickEliminarPlatillo}
-              guardarPlatilloAux={guardarPlatilloAux}
+              platillo={platillo.platillo}
             />
           </Row>
           <Row></Row>

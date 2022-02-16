@@ -53,7 +53,7 @@ function MenuSideBar(){
                     <Button className="boton-editar-seccion" variant="light">
                          <EditCategoryModal
                             seccion = {seccion}
-                         ></EditCategoryModal>
+                         ></EditCategoryModal>   
                          </Button>
                     </Nav.Link>
                 </Nav.Item>

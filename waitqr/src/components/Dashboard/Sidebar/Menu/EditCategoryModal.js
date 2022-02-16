@@ -42,7 +42,7 @@ function EditCategoryModal(seccion) {
   }
 
   const onClickEliminarSeccion = e => {
-    eliminarSeccion(seccion.seccion._id, seccion.seccion.menu);
+    eliminarSeccion(seccion.seccion._id, seccion.seccion.menu);  
     handleClose();
   }
 
