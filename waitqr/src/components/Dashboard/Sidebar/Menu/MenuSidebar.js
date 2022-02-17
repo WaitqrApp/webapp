@@ -1,11 +1,8 @@
 import React, {useState, useEffect, useContext} from "react";
 import { Nav, Button } from "react-bootstrap";
 import './menusidebar.css';
-import AddCategory from './AddCategory';
-import AddRestaurant from './AddRestaurant';
 import EditCategoryModal from './EditCategoryModal';
 import AddCategoryButton from './AddCategoryButton';
-import DeleteCategoryModal from './DeleteCategoryModal';
 import menusContext from '../../../../context/menus/menusContext';
 import seccionesContext from '../../../../context/secciones/seccionesContext';
 import AlertaContext from '../../../../context/alertas/alertaContext';
@@ -15,13 +12,14 @@ function MenuSideBar(){
 
     //Extraer si un menu esta activo
     const menussContext = useContext(menusContext); 
-    const {menu } = menussContext;
+    const {menuactual } = menussContext;
+    
     
 
 
     //obtener la funcion del context de seccion
     const seccionessContext = useContext(seccionesContext);
-    const {seccion,seccionesmenu, obtenerSecciones, guardarSeccionActual} = seccionessContext;
+    const {seccionactual,seccionesmenu, obtenerSecciones, guardarSeccionActual} = seccionessContext;
 
     const alertaContext = useContext(AlertaContext);
     const {alerta, mostrarAlerta} = alertaContext;
@@ -29,17 +27,17 @@ function MenuSideBar(){
 
     //obtener secciones cuando carga el componente
     useEffect(() =>{
-
-        if(menu){
-            obtenerSecciones(menu[0]._id)
+        console.log("llego este nuevo menu", menuactual)
+        if(menuactual){
+            obtenerSecciones(menuactual._id)
         }
         
-    }, [menu]); //para que corra solo una vez
+    }, [menuactual]); //para que corra solo una vez
     
     const seleccionarSeccion = seccion =>{
-        guardarSeccionActual(seccion._id)
+        guardarSeccionActual(seccion)
+        obtenerSecciones(menuactual._id)
     }
-    console.log(seccion);
 
     return (
         <>
@@ -55,7 +53,7 @@ function MenuSideBar(){
                     <Button className="boton-editar-seccion" variant="light">
                          <EditCategoryModal
                             seccion = {seccion}
-                         ></EditCategoryModal>
+                         ></EditCategoryModal>   
                          </Button>
                     </Nav.Link>
                 </Nav.Item>
