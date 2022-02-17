@@ -15,57 +15,65 @@ import restauranteContext from "../../../../context/restaurantes/restauranteCont
 import "./menusidebar.css";
 
 function AddMenu(props) {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   const [checked, setChecked] = useState(false);
+   //Extraer si un proyecto esta activo
+   const restaurantesContext = useContext(restauranteContext);
+   const { restaurante } = restaurantesContext;
 
   const toggleChecked = () => {
     setChecked((prev) => !prev);
   };
 
-  //Extraer si un proyecto esta activo
-  const restaurantesContext = useContext(restauranteContext);
-  const { restaurante } = restaurantesContext;
+//obtener la funcion del context de menu
+const menussContext = useContext(menusContext);
+const {
+  menuseleccionado,
+  errormenu,
+  agregarMenu,
+  validarMenu,
+  obtenerMenus,
+  actualizarMenu,
+  limpiarMenu,
+} = menussContext;
 
-  //obtener la funcion del context de menu
-  const menussContext = useContext(menusContext);
-  const {
-    menuseleccionado,
-    errormenu,
-    agregarMenu,
-    validarMenu,
-    obtenerMenus,
-    actualizarMenu,
-    limpiarMenu,
-  } = menussContext;
+ //Effect que detecta si hay una menu seleccionado
+ useEffect(() => {
+  if (menuseleccionado !== null) {
+    guardarMenu(menuseleccionado);
+  } else {
+    guardarMenu({
+      nombre: "",
+      horarioInicio: "",
+      horarioFin: "",
+      disponible: true,
+    });
+  }
+}, [menuseleccionado]); //para que este revisando la menu seleccionada
 
-  //Effect que detecta si hay una menu seleccionado
-  useEffect(() => {
-    if (menuseleccionado !== null) {
-      guardarMenu(menuseleccionado);
-    } else {
-      guardarMenu({
-        nombre: "",
-        horarioInicio: "",
-        horarioFin: "",
-        disponible: true,
-      });
-    }
-  }, [menuseleccionado]); //para que este revisando la menu seleccionada
+ //state del formulario
+ const [menu, guardarMenu] = useState({
+  nombre: "",
+  horarioInicio: "",
+  horarioFin: "",
+  disponible: true,
+});
+//extraer el nombre del proyecto
+const { nombre, horarioFin, horarioInicio, disponible } = menu;
 
-  //state del formulario
-  const [menu, guardarMenu] = useState({
-    nombre: "",
-    horarioInicio: "",
-    horarioFin: "",
-    disponible: true,
-  });
-  //extraer el nombre del proyecto
-  const { nombre, horarioFin, horarioInicio, disponible } = menu;
+//si no hay restaurante seleccionado
+if (!props.restauranteEscogido) return null;
 
-  //si no hay restaurante seleccionado
-  if (!restaurante) return null;
 
   //Array destructuring para extraer el proyecto actual
-  const [restauranteActual] = restaurante;
+
+  
+
+  const {restauranteEscogido }= props;
+  const{CargarDeNuevo} = props;
 
   //leer los valores del formulario
   const handleChange = (e) => {
@@ -88,8 +96,9 @@ function AddMenu(props) {
     //Si es edicion o si es nueva menu
     if (menuseleccionado === null) {
       //agregar el nuevo menu al state de menus
-      menu.restaurante = restauranteActual._id;
+      menu.restaurante = restauranteEscogido._id;
       agregarMenu(menu);
+      CargarDeNuevo(restauranteEscogido);
     } else {
       //actualizar menu existente
       actualizarMenu(menu);
@@ -99,7 +108,7 @@ function AddMenu(props) {
     }
 
     //Obtener y filtrar las tareas del proyecto actual, practicamente lo recarga
-    obtenerMenus(restauranteActual.id);
+    obtenerMenus(restauranteEscogido._id);
 
     //reiniciar el form
     guardarMenu({
@@ -110,36 +119,52 @@ function AddMenu(props) {
     });
   };
 
+
+/* 
+ 
+
+ 
+
+ 
+
+  
+
+ */
   return (
-    <Modal {...props} aria-labelledby="contained-modal-title-vcenter">
+    <>
+      <Button variant="primary" onClick={handleShow}>
+        Agregar Menu
+      </Button>
+
+      <Modal show={show} onHide={handleClose}>
       <Form onSubmit={onSubmit}>
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            Agregar Menu
-          </Modal.Title>
+          <Modal.Title>Agregar Menu</Modal.Title>
         </Modal.Header>
         <Modal.Body className="show-grid">
           <Container>
             <Form.Group as={Row} controlId="formHorizontalPassword">
               <Col sm={9}>
-                <Form.Control
+                 <Form.Control
                   type="text"
                   placeholder="Nombre del menu"
                   name="nombre"
                   value={nombre}
                   onChange={handleChange}
-                />
+                /> 
               </Col>
             </Form.Group>
           </Container>
         </Modal.Body>
         <Modal.Footer>
-          <Button type="submit" onClick={props.onHide}>
-            Agregar Menu
+         
+          <Button variant="primary"type="submit"onClick={handleClose}>
+           Agregar Menu
           </Button>
         </Modal.Footer>
-      </Form>
-    </Modal>
+        </Form>
+      </Modal>
+    </>
   );
 }
 

@@ -41,7 +41,7 @@ export default (state, action) => {
         case SECCION_ACTUAL:
         return{
             ...state,
-            seccion: state.seccionesmenu.filter(seccion => seccion._id === action.payload)
+            seccionactual:  action.payload
         }
         case LIMPIAR_SECCION:
             return{

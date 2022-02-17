@@ -8,7 +8,7 @@ import "./menusidebar.css";
 function DishMenu() {
   //Extraer si una seccion esta activa
   const seccionessContext = useContext(seccionesContext);
-  const { seccion } = seccionessContext;
+  const { seccionactual } = seccionessContext;
 
   //obtener la funcion del context de platillo
   const platillossContext = useContext(platillosContext);
@@ -19,14 +19,19 @@ function DishMenu() {
   const [modalShow2, setModalShow2] = useState(false);
   //obtener platillos cuando carga el componente
   useEffect(() => {
-    if (seccion) {
-      console.log(seccion[0]._id);
-      obtenerPlatillos(seccion[0]._id);
+    console.log("aqui andoi 1")
+    
+    if (seccionactual) {
+      console.log("aqui ando 2")
+      console.log(seccionactual._id);
+      obtenerPlatillos(seccionactual._id); 
     }
-  }, [seccion]); //para que corra solo una vez
+  }, [seccionactual]); //para que corra solo una vez
 
+
+  
   var quehay = localStorage.getItem("menuwebapp")
-  console.log(JSON.stringify(quehay))
+  //console.log(JSON.stringify(quehay))
 
   return (
     <>

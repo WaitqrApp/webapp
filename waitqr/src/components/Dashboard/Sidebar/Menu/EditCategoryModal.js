@@ -22,7 +22,6 @@ function EditCategoryModal(seccion) {
 
   const { nombre, disponible } = seccionAux;
   seccionAux.nombre = seccion.seccion.nombre;
-  console.log(seccionAux.nombre)
 
   const onChange = e => {
     guardarSeccionAux({
@@ -43,7 +42,7 @@ function EditCategoryModal(seccion) {
   }
 
   const onClickEliminarSeccion = e => {
-    eliminarSeccion(seccion.seccion._id, seccion.seccion.menu);
+    eliminarSeccion(seccion.seccion._id, seccion.seccion.menu);  
     handleClose();
   }
 

@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useContext } from 'react';
 import restauranteContext from '../../../../context/restaurantes/restauranteContext';
-import { Container, Row, Col, Card, Form, Button, Modal, InputGroup, FormControl } from "react-bootstrap";
+import { Container, Row, Col, Form, Button, Modal } from "react-bootstrap";
 
 function AddRestaurant(props) {
 

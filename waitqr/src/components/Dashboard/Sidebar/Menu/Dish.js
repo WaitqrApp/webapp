@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Row, Col, Card, CardDeck, Form, Container } from "react-bootstrap";
+import { Row, Col, Card, CardDeck, Form, Container, Button } from "react-bootstrap";
 import DishModal from "./DishModal";
 import "./menusidebar.css";
+
+import seccionesContext from "../../../../context/secciones/seccionesContext";
+
 
 import platillosContext from "../../../../context/platillos/platillosContext";
 
@@ -19,6 +22,9 @@ function Dish(platillo) {
     eliminarPlatillo,
   } = platillosContextLocal;
 
+  const seccionessContext = useContext(seccionesContext);
+  const { seccionactual } = seccionessContext;
+
   const [modalShow, setModalShow] = useState(false);
 
   const platilloAuxInicial = platillo.platillo;
@@ -27,6 +33,7 @@ function Dish(platillo) {
 
   const onClickEliminarPlatillo = (e) => {
     eliminarPlatillo(platillo.platillo._id, platillo.platillo.seccion);
+    obtenerPlatillos(seccionactual._id)
   };
 
   const onGuardarPlatillo = (e) => {
@@ -49,9 +56,11 @@ function Dish(platillo) {
     favorito = "star_outline";
   }
 
-  const agregarFavorito = (e) => {
-    platillo.platillo.favorito = !platillo.platillo.favorito;
-    actualizarPlatillo(platillo.platillo);
+  const agregarFavorito = platillo => {
+    obtenerPlatillos(platillo.seccion)
+    console.log("este es el platillo que recibo", platillo)
+    platillo.favorito = !platillo.favorito;
+    actualizarPlatillo(platillo);
   };
 
   return (
@@ -93,7 +102,7 @@ function Dish(platillo) {
               <Col m={4}>
                 <span
                   class="material-icons favorito"
-                  onClick={() => agregarFavorito()}
+                  onClick={() => agregarFavorito(platillo.platillo)}
                 >
                   {favorito}
                 </span>
@@ -110,15 +119,12 @@ function Dish(platillo) {
             </span>
           </Card.Text>
           <Row>
+          
             <DishModal
               className="boton-editar"
               setModalShow={setModalShow}
               modalShow={modalShow}
-              platillo={platilloAux}
-              handleChange={handleChange}
-              onGuardarPlatillo={onGuardarPlatillo}
-              onClickEliminarPlatillo={onClickEliminarPlatillo}
-              guardarPlatilloAux={guardarPlatilloAux}
+              platillo={platillo.platillo}
             />
           </Row>
           <Row></Row>

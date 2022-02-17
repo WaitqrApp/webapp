@@ -12,58 +12,86 @@ import {
 } from "react-bootstrap";
 import "./menusidebar.css";
 import DeleteDishModal from "./DeleteDishModal";
+import platillosContext from "../../../../context/platillos/platillosContext";
+
+
+
 
 function DishModal({
   setModalShow,
   modalShow,
   platillo, 
-  handleChange,
-  onGuardarPlatillo,
-  onClickEliminarPlatillo,
-  guardarPlatilloAux,
+  
 }) {
 
-useEffect(() => {
-  console.log(platillo._id)
-}, [])
+  const platillosContextLocal = useContext(platillosContext);
+  const {
+    platilloseleccionado,
+    errorplatillo,
+    agregarPlatillo,
+    validarPlatillo,
+    obtenerPlatillos,
+    actualizarPlatillo,
+    limpiarPlatillo,
+    eliminarPlatillo,
+  } = platillosContextLocal;
 
-  const { nombre, descripcion, precio, disponible } = platillo;
-  const [image, setImage] = useState("");
-  var aux;
+console.log("me llego este platillo", platillo)
 
-  const postImage = () => {
-    const data = new FormData();
-    data.append("file", image);
-    data.append("upload_preset", "waitqrapp");
-    data.append("cloud_name", "waitqrapp");
+const [platilloAux, guardarPlatilloAux] = useState({
+  nombre : "",
+  descripcion:"",
+  precio:"",
+})
 
-    fetch("https://api.cloudinary.com/v1_1/waitqrapp/image/upload", {
-      method: "post",
-      body: data,
+  const { nombre, descripcion, precio, disponible } = platilloAux;
+  platilloAux.nombre = platillo.nombre;
+  platilloAux.descripcion = platillo.descripcion;
+  platilloAux.precio = platillo.precio;
+  platilloAux.disponible = platillo.disponible;
+
+  const handleChange = e => {
+    guardarPlatilloAux({
+      ...platilloAux,
+      [e.target.name]: e.target.value,
+
     })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data.url);
-        aux = JSON.parse(JSON.stringify(data.url));
-        console.log("esto tiene aux 2 " + aux);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+
+  }
+
+  const onGuardarPlatillo = e =>{
+    //actualizarPlatillo()
+    platillo.nombre = nombre;
+    platillo.descripcion = descripcion;
+    platillo.precio = precio;
+    platillo.disponible = disponible;
+
+    console.log(JSON.stringify(platillo))
+    actualizarPlatillo(platillo)
+    setModalShow(false);
+  }
+
+  const onClickEliminarPlatillo = (e) => {
+    eliminarPlatillo(platillo._id, platillo.seccion);
+    obtenerPlatillos(platillo.seccion)
+    setModalShow(false);
   };
-  postImage();
+ 
   
 
   return (
     <>
-      <Button
-        className="boton-editar"
-        block
-        variant="primary"
-        onClick={() => setModalShow(true)}
+      <Button 
+       className="boton-editar"
+       block
+       variant="primary"
+       onClick={() => setModalShow(true)}
+      
       >
         Editar Platillo
       </Button>
+        
+      
       <Modal show={modalShow} onHide={() => setModalShow(false)}>
         <Modal.Header closeButton>
           <Modal.Title>Editar Platillo</Modal.Title>
@@ -85,16 +113,7 @@ useEffect(() => {
                   </Col>
                 </Form.Group>
               </Col>
-              <Col sm={12}>
-              <Form.File
-                  label="Imagen Platillo"
-                  /* onChange={handleChange,(e)=>console.log(e.target.files)} */
-                  /*  onChange={(e)=>console.log(e.target.files[0])} */
-                  onChange={(e) => setImage(e.target.files[0])}
-                  custom
-                  className="input-imagen mb-4 mr-auto ml-auto"
-                />
-              </Col>
+              
               <Col className="mt-2" sm={12}>
                 <Form.Group as={Row} controlId="formHorizontalPassword">
                   <Form.Label column sm={"auto"}>
@@ -126,16 +145,7 @@ useEffect(() => {
                 </Form.Group>
               </Col>
               <Form.Group as={Row}>
-                <Col sm={{ span: 10, offset: 2 }}>
-                  <Form.Check type="switch" onClick={() => 
-                    guardarPlatilloAux((platilloAux) => ({
-                        ...platilloAux,
-                        disponible: !platilloAux.disponible,
-                      }))} 
-                      checked={platillo.disponible}
-                      >
-                  </Form.Check>
-                </Col>
+                
               </Form.Group>
             </Form>
           </Container>

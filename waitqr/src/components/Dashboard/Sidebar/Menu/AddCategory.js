@@ -8,7 +8,7 @@ function AddCategory(props) {
 
   //Extraer si un menu esta activo
   const menussContext = useContext(menusContext);
-  const { menu } = menussContext;
+  const { menuactual } = menussContext;
 
   //obtener la funcion del context de seccion
   const seccionessContext = useContext(seccionesContext);
@@ -42,10 +42,9 @@ function AddCategory(props) {
   //extraer el nombre del proyecto
   const { nombre, disponible } = seccion;
   //si no hay restaurante seleccionado
-  if (!menu) return null;
+  if (!menuactual) return null;
 
-  //Array destructuring para extraer el proyecto actual
-  const [menuActual] = menu;
+  
 
   //leer los valores del formulario
   const handleChange = (e) => {
@@ -71,7 +70,8 @@ function AddCategory(props) {
     //Si es edicion o si es nueva seccion
     if (seccionseleccionada === null) {
       //agregar la nueva seccion al state de secciones
-      seccion.menu = menuActual._id;
+      console.log("este es el menu actual", menuactual)
+      seccion.menu = menuactual._id;
       agregarSeccion(seccion);
     } else {
       //actualizar menu existente
@@ -80,6 +80,9 @@ function AddCategory(props) {
       //Elimina menuseleccionado del state
       limpiarSeccion();
     }
+
+    console.log("este es el menui actual", JSON.stringify(menuactual))
+    obtenerSecciones(menuactual._id)
 
     //reiniciar el form
     guardarSeccion({
