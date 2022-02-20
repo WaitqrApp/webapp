@@ -41,29 +41,30 @@ function MenuSideBar(){
 
     return (
         <>
-            <Nav className="col-md-12 d-none d-md-block sidebar-menu"
-            >
-                <div className="sidebar-sticky"></div>
-                <Nav.Item className="mx-auto">
-                    <Nav.Link className="sidebar-title" href="">Secciones</Nav.Link>
-                </Nav.Item>
-                {seccionesmenu.map(seccion=>(
-                <Nav.Item className="mx-auto">
-                    <Nav.Link className="sidebar-text-active" onClick={() => seleccionarSeccion(seccion)}>{seccion.nombre}
-                    <Button className="boton-editar-seccion" variant="light">
-                         <EditCategoryModal
-                            seccion = {seccion}
-                         ></EditCategoryModal>   
-                         </Button>
-                    </Nav.Link>
-                </Nav.Item>
-                ))}
-                
-                <Nav.Item>
-                    <AddCategoryButton/>
-                </Nav.Item>
-            </Nav>
+          <Nav className="col-md-12 d-none d-md-block sidebar-menu">
+            <Nav.Item className="mx-auto">
+              <Nav.Link className="sidebar-title" href="">
+                Secciones
+              </Nav.Link>
+            </Nav.Item>
+            {seccionesmenu.map((seccion) => (
+              <Nav.Item className="mx-auto">
+                <Nav.Link
+                  className="sidebar-text-active"
+                  onClick={() => seleccionarSeccion(seccion)}
+                >
+                  {seccion.nombre}
+                  <Button className="boton-editar-seccion" variant="light">
+                    <EditCategoryModal seccion={seccion}></EditCategoryModal>
+                  </Button>
+                </Nav.Link>
+              </Nav.Item>
+            ))}
+            <Nav.Item>
+              <AddCategoryButton />
+            </Nav.Item>
+          </Nav>
         </>
-    );
+      );
 }
 export default MenuSideBar;

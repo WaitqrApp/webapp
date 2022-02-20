@@ -1,7 +1,8 @@
 .sidebar-menu {
-  min-height: 100vh !important;
+  height: 100vh !important;
   background-color: #072e480a;
   margin-top: -5vh;
+  overflow-y: scroll;
 }
 
 .sidebar-wrapper {
@@ -50,6 +51,7 @@
   text-align: center;
   color: #072e48;
   font-weight: bold;
+  pointer-events: none;
 }
 
 .sidebar-title:hover {
