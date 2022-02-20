@@ -25,10 +25,8 @@ function Ayuda() {
       <Row className="row">
      
         <Col sm={12} className="">
-        
-          <div className="">
+          <div className="platillosdashboard">
             <button className="btn btn-warning">CONTÁCTANOS</button>
-           
           </div>
           
         </Col>

@@ -65,10 +65,6 @@
   color: #002e48;
 }
 
-a .special:hover{
-  background-color: red;
-  font-style: italic;
-}
 .dashboard-componente p1 {
   font-size: medium;
   color: #f68521;
