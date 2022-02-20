@@ -24,8 +24,10 @@ function Ayuda() {
       </Row>
       <Row className="row">
         <Col sm={12} className="">
-          <div className="platillosdashboard">
-            <button className="btn btn-warning">CONTÁCTANOS</button>
+          <div>
+            <a class="special" href="mailto:contacto@waitqrapp.com">
+              contacto@waitqrapp.com
+            </a>
           </div>
         </Col>
       </Row>
