@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import '../../App.css';
-import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
+import {HashRouter as Router, Switch, Route, } from "react-router-dom";
 import Sidebar from './Sidebar/Sidebar';
 import Navbar from '../Navbar';
 import Home from './Home';

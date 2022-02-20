@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles/home.css";
 import help from "../../img/Help.png";
-import { Row, Container, Col } from "react-bootstrap";
+import { Row, Container, Col, Button } from "react-bootstrap";
 
 function Ayuda() {
   return (
@@ -23,12 +23,14 @@ function Ayuda() {
         </Col>
       </Row>
       <Row className="row">
+     
         <Col sm={12} className="">
-          <div>
-            <a class="special" href="mailto:contacto@waitqrapp.com">
-              contacto@waitqrapp.com
-            </a>
+        
+          <div className="">
+            <button className="btn btn-warning">CONTÁCTANOS</button>
+           
           </div>
+          
         </Col>
       </Row>
     </Container>
