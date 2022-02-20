@@ -14,7 +14,7 @@ function Orders() {
   //Extraer restaurantes de state inicial
   const restaurantesContext = useContext(restauranteContext);
   const {
-    restaurante,
+    restauranteactual,
     mensaje,
     restaurantes,
     obtenerRestaurantes,
@@ -37,7 +37,7 @@ function Orders() {
 
     obtenerRestaurantes();
     if(bandera == 0){
-        obtenerOrdenRestaurante(restaurante[0]._id);
+        obtenerOrdenRestaurante(restauranteactual._id);
         guardarBandera(1)
       
     }
@@ -49,13 +49,15 @@ function Orders() {
   }, [ordenrestaurante]); //para que corra solo una vez
 
   const ifObtenerOrdenes = (e) => {
-    if (restaurante) {
-      obtenerOrdenRestaurante(restaurante[0]._id);
+    console.log("el restaurante actual fue:", JSON.stringify(restauranteactual))
+    console.log("entre a la funcion ifobtener")
+    if (restauranteactual) {
+      obtenerOrdenRestaurante(restauranteactual._id);
     }
   };
 
   const seleccionarRestaurante = (restaurante) => {
-    restauranteActual(restaurante._id); //fijar un restaurante actual
+    restauranteActual(restaurante); //fijar un restaurante actual
     guardarRestauranteEscogido(restaurante.nombre);
     guardarRestauranteEscogidoId(restaurante._id);
     //console.log(restaurante._id);
@@ -71,10 +73,10 @@ function Orders() {
             className="dropdown-menus"
             size="m"
             title={
-              !restaurante ? (
+              !restauranteactual ? (
                 <span>Restaurante</span>
               ) : (
-                <span>{restaurante[0].nombre}</span>
+                <span>{restauranteactual.nombre}</span>
               )
             }
           >
@@ -92,7 +94,7 @@ function Orders() {
         {ordenrestaurante
           .filter(
             (orden) => !orden.finalizado,
-            (orden) => (orden.restaurante = restaurante._id)
+            (orden) => (orden.restaurante = restauranteactual._id)
           )
           .map((orden) => (
             <Col className="col-tarjeta-orden p-0">
