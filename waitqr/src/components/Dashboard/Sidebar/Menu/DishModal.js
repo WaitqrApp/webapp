@@ -11,7 +11,6 @@ import {
   FormControl,
 } from "react-bootstrap";
 import "./menusidebar.css";
-import DeleteDishModal from "./DeleteDishModal";
 import platillosContext from "../../../../context/platillos/platillosContext";
 
 
@@ -26,17 +25,26 @@ function DishModal({
 
   const platillosContextLocal = useContext(platillosContext);
   const {
-    platilloseleccionado,
-    errorplatillo,
-    agregarPlatillo,
-    validarPlatillo,
     obtenerPlatillos,
     actualizarPlatillo,
-    limpiarPlatillo,
     eliminarPlatillo,
   } = platillosContextLocal;
 
 console.log("me llego este platillo", platillo)
+
+
+
+useEffect(() =>{
+  if(platillo!== null){
+      guardarPlatilloAux(platillo)
+  }else{
+      guardarPlatilloAux({
+        nombre: '',
+        descripcion: '',
+        precio: ''
+      })
+  }
+}, [platillo]); //para que este revisando la tarea seleccionada
 
 const [platilloAux, guardarPlatilloAux] = useState({
   nombre : "",
@@ -44,11 +52,8 @@ const [platilloAux, guardarPlatilloAux] = useState({
   precio:"",
 })
 
-  const { nombre, descripcion, precio, disponible } = platilloAux;
-  platilloAux.nombre = platillo.nombre;
-  platilloAux.descripcion = platillo.descripcion;
-  platilloAux.precio = platillo.precio;
-  platilloAux.disponible = platillo.disponible;
+  const { nombre, descripcion, precio} = platilloAux;
+
 
   const handleChange = e => {
     guardarPlatilloAux({
@@ -61,10 +66,11 @@ const [platilloAux, guardarPlatilloAux] = useState({
 
   const onGuardarPlatillo = e =>{
     //actualizarPlatillo()
+
+    
     platillo.nombre = nombre;
     platillo.descripcion = descripcion;
     platillo.precio = precio;
-    platillo.disponible = disponible;
 
     console.log(JSON.stringify(platillo))
     actualizarPlatillo(platillo)
