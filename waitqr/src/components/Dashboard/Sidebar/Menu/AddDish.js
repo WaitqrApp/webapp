@@ -135,7 +135,7 @@ function AddDish() {
       guardarCargando(false)
     }, 5000)
     e.preventDefault();
-
+  
 
     //validar
     if (nombre.trim() === "") {

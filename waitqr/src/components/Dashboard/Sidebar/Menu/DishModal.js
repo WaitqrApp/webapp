@@ -12,6 +12,7 @@ import {
 } from "react-bootstrap";
 import "./menusidebar.css";
 import platillosContext from "../../../../context/platillos/platillosContext";
+import nombreetiquetaContext from "../../../../context/nombreetiquetas/nombreetiquetasContext"
 
 
 
@@ -30,6 +31,14 @@ function DishModal({
     eliminarPlatillo,
   } = platillosContextLocal;
 
+  const nombreetiquetasContext = useContext(nombreetiquetaContext);
+  const{
+    agregarNombreEtiqueta,
+    obtenerNombreEtiquetas,
+    validarNombreEtiqueta,
+    nombreetiquetasplatillo
+  } = nombreetiquetasContext
+
 console.log("me llego este platillo", platillo)
 
 
@@ -44,6 +53,8 @@ useEffect(() =>{
         precio: ''
       })
   }
+
+  obtenerNombreEtiquetas(platillo._id)
 }, [platillo]); //para que este revisando la tarea seleccionada
 
 const [platilloAux, guardarPlatilloAux] = useState({
@@ -55,6 +66,11 @@ const [platilloAux, guardarPlatilloAux] = useState({
   const { nombre, descripcion, precio} = platilloAux;
 
 
+  const [nombreetiquetaAux, guardarNombreEtiquetaAux] = useState({
+    nombreetiqueta: ""
+  })
+  const {nombreetiqueta} = nombreetiquetaAux
+
   const handleChange = e => {
     guardarPlatilloAux({
       ...platilloAux,
@@ -62,6 +78,23 @@ const [platilloAux, guardarPlatilloAux] = useState({
 
     })
 
+  }
+
+  const handleChangeNombreEtiqueta = e => {
+    guardarPlatilloAux({
+      ...nombreetiquetaAux,
+      [e.target.name]: e.target.value,
+
+    })
+
+  }
+
+  const onAgregarNombreEtiqueta = e =>{
+    if(nombreetiqueta.trim() === ""){
+      validarNombreEtiqueta();
+      return;
+    }
+    agregarNombreEtiqueta(nombreetiquetaAux)
   }
 
   const onGuardarPlatillo = e =>{
@@ -151,9 +184,45 @@ const [platilloAux, guardarPlatilloAux] = useState({
                 </Form.Group>
               </Col>
               <Form.Group as={Row}>
+              {
+              nombreetiquetasplatillo.length === 0 ?
+              <p>no hay nombre de etiqueta</p>
+              :
+              nombreetiquetasplatillo.map((nombreetiqueta) =>(
+                <p>{nombreetiqueta.nombre}</p>
                 
+              ))
+            }
               </Form.Group>
             </Form>
+            
+
+            <hr></hr>
+            <Form>
+              <Col sm={12}>
+                <Form.Group as={Row} controlId="formHorizontalEmail">
+                  <Col sm={8}>
+                    <Form.Control
+                    placeholder="Agregar Nombre Etiqueta"
+                      onChange={handleChangeNombreEtiqueta}
+                      name="nombreetiqueta"
+                       value={nombreetiqueta}
+                      className="input-nombre"
+                      type="text"
+                    ></Form.Control>
+                  </Col>
+                  <Col sm={4}>
+                  <Button
+                  variant="primary"
+                  type="submit"
+                   onClick={onAgregarNombreEtiqueta}
+                >
+                  Agregar
+                </Button>
+                  </Col>
+                </Form.Group>
+              </Col>
+              </Form>
           </Container>
         </Modal.Body>
         <Modal.Footer>
