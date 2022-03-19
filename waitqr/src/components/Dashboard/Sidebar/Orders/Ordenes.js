@@ -1,16 +1,14 @@
-import React, { Fragment, useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import OrderCard from "./OrderCard";
-import { Dropdown, DropdownButton, Col, Row, Container, Table} from "react-bootstrap";
+import { Dropdown, DropdownButton, Col, Row, Container } from "react-bootstrap";
 import "./styles/orders.css";
-import "bootstrap/js/src/collapse.js";
 
 import restauranteContext from "../../../../context/restaurantes/restauranteContext";
 import ordenContext from "../../../../context/ordenes/ordenContext";
 
 import AlertaContext from "../../../../context/alertas/alertaContext";
-import OrderTable from "./OrderTable";
 
-function Orders() {
+function Ordenes() {
   const [restauranteEscogido, guardarRestauranteEscogido] = useState();
   const [restauranteEscogidoId, guardarRestauranteEscogidoId] = useState("");
   //Extraer restaurantes de state inicial
@@ -43,7 +41,7 @@ function Orders() {
         guardarBandera(1)
       
     }
-    setTimeout(ifObtenerOrdenes, 1500000);
+    setTimeout(ifObtenerOrdenes, 15000);
 
     
 
@@ -67,34 +65,8 @@ function Orders() {
     localStorage.setItem("restaurantewebapp", restaurante);
   };
   return (
-
-    
     <Container fluid className="">
-      <Row><Table striped bordered hover className="text-center">
-                    <thead>
-                        <tr>
-                            <th># Orden</th>
-                            <th>Mesa</th>
-                            <th>Fecha</th>
-                            <th>Tomado</th>
-                            <th>Finalizar</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {ordenrestaurante
-          .filter(
-            (orden) => !orden.finalizado,
-            (orden) => (orden.restaurante = restauranteactual._id)
-          )
-          .map((orden) => (
-              <OrderTable
-                className=""
-                actualizarOrden={actualizarOrden}
-                orden={orden}
-              />
-          ))}
-          </tbody>
-                </Table>
+      <Row>
         <Col sm={10}></Col>
         <Col sm={2} className="dropdown-restaurante">
           <DropdownButton
@@ -108,7 +80,6 @@ function Orders() {
               )
             }
           >
-            
             {restaurantes.map((restaurante) => (
               <Dropdown.Item
                 onClick={() => seleccionarRestaurante(restaurante)}
@@ -135,11 +106,8 @@ function Orders() {
             </Col>
           ))}
       </Row>
-    
-     
-  </Container>
-
+    </Container>
   );
 }
 
-export default Orders;
+export default Ordenes;

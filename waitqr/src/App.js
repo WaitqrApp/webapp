@@ -7,6 +7,8 @@ import Login from "./components/auth/Login";
 import NuevaCuenta from "./components/auth/NuevaCuenta";
 import DishMenu from "./components/Dashboard/Sidebar/Menu/DishMenu";
 import Orders from "./components/Dashboard/Sidebar/Orders/Orders";
+import Ordenes from "./components/Dashboard/Sidebar/Orders/Ordenes";
+
 import Tables from "./components/Dashboard/Sidebar/Tables/Tables";
 import NoMatch from "./components/Dashboard/NoMatch";
 
@@ -76,6 +78,11 @@ function App() {
                                   <RutaPrivada exact path="/orders">
                                     <Dashboard>
                                       <Orders />
+                                    </Dashboard>
+                                  </RutaPrivada>
+                                  <RutaPrivada exact path="/ordenes">
+                                    <Dashboard>
+                                      <Ordenes />
                                     </Dashboard>
                                   </RutaPrivada>
                                   <RutaPrivada exact path="/tables">
